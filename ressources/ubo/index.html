@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title></title>
+<!-- 2019-06-17 Mon 13:07 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Org-mode">
+<meta name="author" content="Nicolas Petton">
+
+<link  href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<style type="text/css">
+/* org mode styles on top of twbs */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-size: 18px;
+    margin-bottom: 105px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 101px;
+    background-color: #f5f5f5;
+}
+
+footer > div {
+    padding: 10px;
+}
+
+footer p {
+    margin: 0 0 5px;
+    text-align: center;
+    font-size: 16px;
+}
+
+#table-of-contents {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+blockquote p {
+    font-size: 18px;
+}
+
+pre {
+    font-size: 16px;
+}
+
+.footpara {
+    display: inline-block;
+}
+
+figcaption {
+  font-size: 16px;
+  color: #666;
+  font-style: italic;
+  padding-bottom: 15px;
+}
+
+/* from twbs docs */
+
+.bs-docs-sidebar.affix {
+    position: static;
+}
+@media (min-width: 768px) {
+    .bs-docs-sidebar {
+        padding-left: 20px;
+    }
+}
+
+/* All levels of nav */
+.bs-docs-sidebar .nav > li > a {
+    display: block;
+    padding: 4px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #999;
+}
+.bs-docs-sidebar .nav > li > a:hover,
+.bs-docs-sidebar .nav > li > a:focus {
+    padding-left: 19px;
+    color: #A1283B;
+    text-decoration: none;
+    background-color: transparent;
+    border-left: 1px solid #A1283B;
+}
+.bs-docs-sidebar .nav > .active > a,
+.bs-docs-sidebar .nav > .active:hover > a,
+.bs-docs-sidebar .nav > .active:focus > a {
+    padding-left: 18px;
+    font-weight: bold;
+    color: #A1283B;
+    background-color: transparent;
+    border-left: 2px solid #A1283B;
+}
+
+/* Nav: second level (shown on .active) */
+.bs-docs-sidebar .nav .nav {
+    display: none; /* Hide by default, but at >768px, show it */
+    padding-bottom: 10px;
+}
+.bs-docs-sidebar .nav .nav > li > a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 30px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.bs-docs-sidebar .nav .nav > li > a:hover,
+.bs-docs-sidebar .nav .nav > li > a:focus {
+    padding-left: 29px;
+}
+.bs-docs-sidebar .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav > .active:focus > a {
+    padding-left: 28px;
+    font-weight: 500;
+}
+
+/* Nav: third level (shown on .active) */
+.bs-docs-sidebar .nav .nav .nav {
+    padding-bottom: 10px;
+}
+.bs-docs-sidebar .nav .nav .nav > li > a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 40px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.bs-docs-sidebar .nav .nav .nav > li > a:hover,
+.bs-docs-sidebar .nav .nav .nav > li > a:focus {
+    padding-left: 39px;
+}
+.bs-docs-sidebar .nav .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav .nav > .active:focus > a {
+    padding-left: 38px;
+    font-weight: 500;
+}
+
+/* Show and affix the side nav when space allows it */
+@media (min-width: 992px) {
+    .bs-docs-sidebar .nav > .active > ul {
+        display: block;
+    }
+    /* Widen the fixed sidebar */
+    .bs-docs-sidebar.affix,
+    .bs-docs-sidebar.affix-bottom {
+        width: 213px;
+    }
+    .bs-docs-sidebar.affix {
+        position: fixed; /* Undo the static from mobile first approach */
+        top: 20px;
+    }
+    .bs-docs-sidebar.affix-bottom {
+        position: absolute; /* Undo the static from mobile first approach */
+    }
+    .bs-docs-sidebar.affix .bs-docs-sidenav,.bs-docs-sidebar.affix-bottom .bs-docs-sidenav {
+        margin-top: 0;
+        margin-bottom: 0
+    }
+}
+@media (min-width: 1200px) {
+    /* Widen the fixed sidebar again */
+    .bs-docs-sidebar.affix-bottom,
+    .bs-docs-sidebar.affix {
+        width: 263px;
+    }
+}
+</style>
+<script type="text/javascript">
+$(function() {
+    'use strict';
+
+    $('.bs-docs-sidebar li').first().addClass('active');
+
+    $(document.body).scrollspy({target: '.bs-docs-sidebar'});
+
+    $('.bs-docs-sidebar').affix();
+});
+</script>
+</head>
+<body>
+<div id="content" class="container">
+<div class="row"><div class="col-md-9"><h1 class="title"></h1>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Évaluation du projet</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Les critères suivants sont donnés à titre indicatif pour que les
+étudiants aient une idée de ce qui est attendu.
+</p>
+</div>
+
+<div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Critères</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>qualité du code (50%)
+<ul class="org-ul">
+<li>découpage structuré du code
+</li>
+<li>nommage des variables, fonctions, fichiers,…
+</li>
+<li>lisibilité: indentation, commentaire, longueur des lignes,…
+</li>
+</ul>
+</li>
+<li>implémentation des fonctionnalités (30%)
+</li>
+<li>autour du code (20%)
+<ul class="org-ul">
+<li>git : commits atomiques, les 2 auteurs doivent participer
+</li>
+<li>documentation : un fichier README devra être à la racine du projet
+et devra décrire le lancement et l'utilisation de l'application
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Notation</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+La note est donnée entre 0 et 20, les deux étant possibles.
+</p>
+
+<p>
+Une même note est donnée aux deux étudiants du binôme sauf en cas de
+grosse disparité.
+</p>
+
+<p>
+Si un des deux étudiants à du mal à expliquer n'importe quelle partie
+du code, sa note sera réduite.
+</p>
+
+<p>
+Chaque heure de retard coûte deux points sur la note finale. Ne pas
+rendre avant 8h le jour de la soutenance vaut zéro.
+</p>
+
+<p>
+Tout partage de code entre groupes vaudra zéro à tous les membres des
+groupes concernés. Il est de la responsabilité de chaque groupe de ne
+partager le code qu'avec l'enseignant. GitLab, entre autres, vous
+permet d'avoir des dépôts Git privés.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Application web</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+La suite décrit étape par étape les tâches à faire pour mener le
+projet à son terme. La réalisation du projet nécessite beaucoup de
+lecture de documentation en anglais.
+</p>
+
+<p>
+Le projet est une application web de gestion des tâches à faire.
+</p>
+
+
+<figure>
+<p><img src="media/screenshot-complete.png" class="img-responsive" alt="screenshot-complete.png">
+</p>
+</figure>
+
+<p>
+Le projet est composée de cette façon :
+</p>
+
+<ul class="org-ul">
+<li>Un serveur web envoie du contenu statique (<code>index.html</code>, <code>index.js</code>
+et <code>index.css</code>) et fournit une API REST pour récupérer et manipuler
+une liste de tâches à faire. Le code du serveur est écrit en
+JavaScript et est exécuté par NodeJS.
+</li>
+<li>Une base de données maintient une liste des tâches. Le serveur s'y
+connecte pour répondre aux requêtes REST envoyées par les
+clients. La base de données est fournie par MongoDB et son driver
+NodeJS.
+</li>
+<li>Le client est une application JavaScript qui doit fonctionner sous
+au moins Firefox et Chromium dans leurs dernières versions. Le
+client consiste en un fichier <code>index.html</code> contenant un <code>&lt;body&gt;</code>
+vide ou presque vide. Le cœur du client est implémenté dans
+<code>index.js</code>. Ce fichier a pour rôle de remplir le <code>&lt;body&gt;</code> en faisant
+des requêtes REST au serveur. Le rendu est décrit dans le fichier
+<a href="media/index.css">index.css fourni</a>.
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Lisez l'ensemble de l'énoncé</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Il est recommandé de lire tout ce qui suit avant de commencer à écrire
+du code pour se faire une idée du travail à réaliser sur l'ensemble du
+projet.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> Créez un projet Javascript</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+L'étape se termine quand la commande suivante affiche le bon
+résultat :
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-text">  $ curl 'http://localhost:8081/api/hello'
+  hello from server
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-2-2-1" class="outline-4">
+<h4 id="sec-2-2-1"><span class="section-number-4">2.2.1</span> Créez un nouveau projet</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<p>
+Utilisez <code>npm init</code> pour créer un nouveau projet JavaScript. Avec
+<a href="https://yarnpkg.com/">Yarn</a>, ajoutez <a href="https://expressjs.com/">ExpressJS</a> comme dépendance à votre projet.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2-2-2" class="outline-4">
+<h4 id="sec-2-2-2"><span class="section-number-4">2.2.2</span> Ajoutez la route GET /api/hello</h4>
+<div class="outline-text-4" id="text-2-2-2">
+<p>
+Créez un fichier JavaScript pour le code serveur, chargez-y ExpressJS
+et ajoutez une route <code>GET /api/hello</code> qui retourne <code>'hello from server'</code>
+comme réponse.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2-2-3" class="outline-4">
+<h4 id="sec-2-2-3"><span class="section-number-4">2.2.3</span> Lancez le projet</h4>
+<div class="outline-text-4" id="text-2-2-3">
+<p>
+Utilisez la commande <code>node</code> sur votre fichier JavaScript pour lancer
+le serveur web.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2-2-4" class="outline-4">
+<h4 id="sec-2-2-4"><span class="section-number-4">2.2.4</span> Vérifiez le bon fonctionnement</h4>
+<div class="outline-text-4" id="text-2-2-4">
+<p>
+Dans un autre terminal, utilisez la commande <code>curl</code> comme ci-dessus
+pour obtenir la réponse <code>hello from server</code>. Si ça ne fonctionne pas,
+faites les changements qui s'imposent dans le code serveur, tuez
+<code>node</code> (avec <code>Ctrl+c</code>), relancez <code>node</code> puis <code>curl</code>.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2-3" class="outline-3">
+<h3 id="sec-2-3"><span class="section-number-3">2.3</span> Ajoutez les fichiers statiques du client</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+L'étape se termine quand <a href="http://localhost:8081">http://localhost:8081</a> affiche <code>hello from
+server</code> dans le navigateur.
+</p>
+</div>
+<div id="outline-container-sec-2-3-1" class="outline-4">
+<h4 id="sec-2-3-1"><span class="section-number-4">2.3.1</span> Ajoutez un fichier html chargeant index.js</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<p>
+Créez un dossier <code>client/</code> au sein du projet et placez-y un fichier
+<code>index.html</code> valide (incluant <code>&lt;head&gt;</code> et <code>&lt;body&gt;</code>) et sans contenu
+(balise <code>&lt;body&gt;</code> vide).
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2-3-2" class="outline-4">
+<h4 id="sec-2-3-2"><span class="section-number-4">2.3.2</span> Ajouter la route GET /</h4>
+<div class="outline-text-4" id="text-2-3-2">
+<p>
+Ajouter une route <code>GET /</code> dans le code serveur retournant les fichiers
+statiques du dossier créé au paragraphe précédent.
+</p>
+
+<p>
+Après avoir relancé le serveur, assurez-vous qu'un navigateur web
+pointant vers <a href="http://localhost:8081">http://localhost:8081</a> retourne bien votre fichier html.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2-3-3" class="outline-4">
+<h4 id="sec-2-3-3"><span class="section-number-4">2.3.3</span> Ajoutez un fichier index.js</h4>
+<div class="outline-text-4" id="text-2-3-3">
+<p>
+Ajoutez un fichier <code>index.js</code> vide à côté du fichier html et modifiez
+votre fichier html pour inclure <code>index.js</code>.
+</p>
+
+<p>
+Modifiez le fichier <code>index.js</code> pour que celui-ci interroge le serveur
+sur la route <code>GET /api/hello</code>. Ceci peut se faire avec la <a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch">fetch()</a>. La
+réponse du serveur doit être ajoutée au document (DOM). Ceci peut se
+faire avec les fonctions <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement">document.createElement()</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/createTextNode">createTextNode()</a> et
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild">appendChild()</a>.
+</p>
+
+<p>
+Rafraichissez la page dans le navigateur pour vous assurez que le
+texte <code>hello from server</code> s'affiche.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2-4" class="outline-3">
+<h3 id="sec-2-4"><span class="section-number-3">2.4</span> Connectez la base de données</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+L'étape se termine quand le navigateur affiche <code>[{_id: …}]</code>
+</p>
+</div>
+<div id="outline-container-sec-2-4-1" class="outline-4">
+<h4 id="sec-2-4-1"><span class="section-number-4">2.4.1</span> Créez une base de données Mongo</h4>
+<div class="outline-text-4" id="text-2-4-1">
+<p>
+Installez Mongo serveur et Mongo client sur votre machine. Lancez le
+serveur avec la commande <code>mongod</code> et l'option <code>dbpath</code>.
+</p>
+
+<p>
+Dans un autre terminal, lancez le <a href="https://docs.mongodb.com/manual/mongo/#the-mongo-shell">shell mongo</a>. Créez une base de
+données <code>"todo"</code> avec la commande <code>use</code> puis, à l'aide de la commande
+<code>insertOne</code>, insérez dans la collection <code>todo</code> un nouveau document
+contenant :
+</p>
+<ul class="org-ul">
+<li>une clé <code>"label"</code> avec pour valeur <code>"acheter des pommes"</code> et
+</li>
+<li>une clé <code>"completed"</code> avec pour valeur <code>false</code>.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-4-2" class="outline-4">
+<h4 id="sec-2-4-2"><span class="section-number-4">2.4.2</span> Ajoutez mongodb au code serveur</h4>
+<div class="outline-text-4" id="text-2-4-2">
+<p>
+Avec Yarn, ajoutez la dépendance <a href="https://www.npmjs.com/package/mongodb">mongodb</a> à votre projet. Adaptez le
+code de votre serveur pour que la <a href="https://mongodb.github.io/node-mongodb-native/3.0/api/MongoClient.html#connect">base de données soit connectée</a> avant
+de lancer le serveur ExpressJS. Vérifiez que le navigateur web arrive
+toujours à se connecter au serveur.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2-4-3" class="outline-4">
+<h4 id="sec-2-4-3"><span class="section-number-4">2.4.3</span> Ajoutez une route GET /api/list</h4>
+<div class="outline-text-4" id="text-2-4-3">
+<p>
+Ajoutez une route <code>GET /api/list</code> qui envoie tous les todo de la base
+de données en réponse (utilisez <a href="https://mongodb.github.io/node-mongodb-native/3.0/api/Collection.html#find">find()</a> et <a href="https://mongodb.github.io/node-mongodb-native/3.0/api/Cursor.html#toArray">toArray()</a>).
+</p>
+
+<p>
+Essayez votre route avec curl:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-shell">$ curl <span style="color: #98be65;">'http://localhost:8081/api/list'</span>
+[{<span style="color: #98be65;">"_id"</span>:<span style="color: #98be65;">"5a7318ebb62a3d550fbb657b"</span>,<span style="color: #98be65;">"label"</span>:<span style="color: #98be65;">"acheter des pommes"</span>,<span style="color: #98be65;">"completed"</span>:false}]
+</pre>
+</div>
+
+<p>
+Changez la route dans le code client puis rafraichissez la page dans
+le navigateur pour vous assurer que le texte attendu s'affiche.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2-5" class="outline-3">
+<h3 id="sec-2-5"><span class="section-number-3">2.5</span> Affichez les todos</h3>
+<div class="outline-text-3" id="text-2-5">
+<p>
+L'étape ce termine quand vous obtenez un résultat similaire à
+cette image :
+</p>
+
+
+<figure>
+<p><img src="media/screenshot-with-labels.png" class="img-responsive" alt="screenshot-with-labels.png">
+</p>
+</figure>
+</div>
+
+<div id="outline-container-sec-2-5-1" class="outline-4">
+<h4 id="sec-2-5-1"><span class="section-number-4">2.5.1</span> Insérez un deuxième todo dans la base</h4>
+<div class="outline-text-4" id="text-2-5-1">
+<p>
+Grâce au shell mongo, insérez un nouveau todo dans la base de données.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2-5-2" class="outline-4">
+<h4 id="sec-2-5-2"><span class="section-number-4">2.5.2</span> Affichez tous les labels</h4>
+<div class="outline-text-4" id="text-2-5-2">
+<p>
+Adaptez le code du client pour qu'il interprète la réponse du serveur
+comme étant du JSON. La réponse étant un tableau de todo, itérez sur
+la réponse pour afficher tous les todos.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2-5-3" class="outline-4">
+<h4 id="sec-2-5-3"><span class="section-number-4">2.5.3</span> Insérez la feuille de style</h4>
+<div class="outline-text-4" id="text-2-5-3">
+<p>
+Téléchargez la feuille de style <a href="media/index.css">index.css</a> et lisez la. Adaptez votre
+fichier <code>index.html</code> pour qu'il inclut la feuille de style. Adaptez le
+DOM généré par <code>index.js</code> pour qu'il soit celui attendu par la feuille
+de style.
+</p>
+
+<p>
+Rafraichissez la page dans le navigateur et vérifiez le résultat.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2-6" class="outline-3">
+<h3 id="sec-2-6"><span class="section-number-3">2.6</span> Ajoutez une case à cocher</h3>
+<div class="outline-text-3" id="text-2-6">
+<p>
+L'étape ce termine quand vous obtenez un résultat similaire à
+cette image :
+</p>
+
+
+<figure>
+<p><img src="media/screenshot-with-checkboxes.png" class="img-responsive" alt="screenshot-with-checkboxes.png">
+</p>
+</figure>
+
+<p>
+Un clic sur une case à cocher doit changer dans la base de données le
+statut (complété ou pas) du todo associé.
+</p>
+</div>
+
+<div id="outline-container-sec-2-6-1" class="outline-4">
+<h4 id="sec-2-6-1"><span class="section-number-4">2.6.1</span> Ajoutez une route PUT /api/todo/:id</h4>
+<div class="outline-text-4" id="text-2-6-1">
+<p>
+Chaque document en base étant associé à un identifiant, vous pouvez
+utilisez cet identifiant pour communiquer au serveur quel todo il doit
+modifier en base. 
+</p>
+
+<p>
+Avec Yarn, ajoutez la dépendance <a href="https://www.npmjs.com/package/body-parser">body-parser</a> à votre projet. Ajoutez
+également le middleware <code>bodyParser.json()</code> à ExpressJS dans votre
+code serveur. Ajoutez enfin une route paramétrée <code>PUT /api/todo/:id</code>
+qui reçoit du client un todo en JSON pour pouvoir le sauver en base de
+données. Utilisez <a href="https://mongodb.github.io/node-mongodb-native/3.0/api/ObjectID.html">ObjectId</a> et <a href="https://mongodb.github.io/node-mongodb-native/3.0/api/Collection.html#updateOne">updateOne()</a> pour chercher un todo
+existant et le modifier.
+</p>
+
+<p>
+Essayez votre route avec curl en adaptant l'identifiant :
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-shell">$ curl --request PUT --data <span style="color: #98be65;">'{"completed": true}'</span> --header <span style="color: #98be65;">'Content-Type: application/json'</span> <span style="color: #98be65;">'http://localhost:8081/api/todo/5a7318ebb62a3d550fbb657b'</span>
+$ curl <span style="color: #98be65;">'http://localhost:8081/api/list'</span>
+[{<span style="color: #98be65;">"_id"</span>:<span style="color: #98be65;">"5a7318ebb62a3d550fbb657b"</span>,<span style="color: #98be65;">"label"</span>:<span style="color: #98be65;">"acheter des pommes"</span>,<span style="color: #98be65;">"completed"</span>:true}]
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2-6-2" class="outline-4">
+<h4 id="sec-2-6-2"><span class="section-number-4">2.6.2</span> Affichez une case à cocher</h4>
+<div class="outline-text-4" id="text-2-6-2">
+<p>
+Pour chaque todo, faites afficher à votre client une case à cocher
+représentant la valeur de la clé <code>completed</code>.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2-6-3" class="outline-4">
+<h4 id="sec-2-6-3"><span class="section-number-4">2.6.3</span> Envoyez les requêtes PUT depuis le client</h4>
+<div class="outline-text-4" id="text-2-6-3">
+<p>
+Adaptez le code client pour que chaque clic sur une case à cocher
+change l'état du todo associé dans la base de données (utilisez
+<code>addEventListener</code>). Le client doit envoyer du JSON et doit l'indiquer
+dans sa requête. Un clic sur la case à cocher doit aussi immédiatement
+barrer le todo, c'est à dire sans que l'utilisateur n'ait à rafraichir
+la page.
+</p>
+
+<p>
+Une fois que vous avez cliqué sur une case à cocher, rafraichissez la
+page dans le navigateur pour vérifier que votre changement est
+persistant.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2-7" class="outline-3">
+<h3 id="sec-2-7"><span class="section-number-3">2.7</span> Ajoutez un champs texte</h3>
+<div class="outline-text-3" id="text-2-7">
+<p>
+L'étape se termine quand il est possible d'ajouter des todos en base
+de données depuis la page web.
+</p>
+</div>
+<div id="outline-container-sec-2-7-1" class="outline-4">
+<h4 id="sec-2-7-1"><span class="section-number-4">2.7.1</span> Ajoutez une route POST /api/todo</h4>
+<div class="outline-text-4" id="text-2-7-1">
+<p>
+Cette route va permettre de créer de nouveaux todo.
+</p>
+
+<p>
+Essayez votre route avec curl en adaptant l'identifiant :
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-shell">$ curl --request POST --data <span style="color: #98be65;">'{"label": "charger mon ordi", "completed": false}'</span> --header <span style="color: #98be65;">'Content-Type: application/json'</span> <span style="color: #98be65;">'http://localhost:8081/api/todo'</span>
+$ curl <span style="color: #98be65;">'http://localhost:8081/api/list'</span>
+[&#8230;{<span style="color: #98be65;">"_id"</span>:<span style="color: #98be65;">"5a737690535ddd7efd8d8abb"</span>,<span style="color: #98be65;">"label"</span>:<span style="color: #98be65;">"charger mon ordi"</span>,<span style="color: #98be65;">"completed"</span>:false}]
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2-7-2" class="outline-4">
+<h4 id="sec-2-7-2"><span class="section-number-4">2.7.2</span> Ajoutez le champs texte</h4>
+<div class="outline-text-4" id="text-2-7-2">
+<p>
+Adaptez le code client pour qu'il affiche un champs texte et qu'il
+envoie un nouveau todo sur la route <code>POST /api/todo</code> lorsque
+l'utilisateur valide la saisie. Un appui sur la touche <code>Enter</code> doit
+immédiatement afficher le nouveau todo, c'est à dire sans que
+l'utilisateur n'ait à rafraichir la page. Assurez-vous qu'il est
+possible de marquer le todo comme complété immédiatement et que le
+changement est persistant.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2-8" class="outline-3">
+<h3 id="sec-2-8"><span class="section-number-3">2.8</span> Dernière étape: Ajoutez un bouton</h3>
+<div class="outline-text-3" id="text-2-8">
+<p>
+Ajoutez une route <code>DELETE /api/todo</code> qui supprime de la base de
+données tous les todos complétés. Ajoutez un bouton dans le client qui
+utilise cette route. Un appui sur le bouton doit immédiatement effacer
+les todos complétés de la page, c'est à dire sans que l'utilisateur
+n'ait à rafraichir la page.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2-9" class="outline-3">
+<h3 id="sec-2-9"><span class="section-number-3">2.9</span> Pour les plus rapides</h3>
+<div class="outline-text-3" id="text-2-9">
+<p>
+Si vous avez fini les étapes précédentes, vous pouvez poursuivre
+l'application avec ces quelques idées :
+</p>
+
+<ul class="org-ul">
+<li>éditer le label d'un todo ;
+</li>
+<li>ré-ordonner les todos pour mettre les plus urgents et importants en
+haut ;
+</li>
+<li>gérer plusieurs listes en parallèle (e.g., une liste perso et une
+liste pro) ;
+</li>
+<li>gérer un arbre de todos plutôt qu'une liste.
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="col-md-3"><nav id="table-of-contents">
+<div id="text-table-of-contents" class="bs-docs-sidebar">
+<ul class="nav">
+<li><a href="#sec-1">1. Évaluation du projet</a>
+<ul class="nav">
+<li><a href="#sec-1-1">1.1. Critères</a></li>
+<li><a href="#sec-1-2">1.2. Notation</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Application web</a>
+<ul class="nav">
+<li><a href="#sec-2-1">2.1. Lisez l'ensemble de l'énoncé</a></li>
+<li><a href="#sec-2-2">2.2. Créez un projet Javascript</a></li>
+<li><a href="#sec-2-3">2.3. Ajoutez les fichiers statiques du client</a></li>
+<li><a href="#sec-2-4">2.4. Connectez la base de données</a></li>
+<li><a href="#sec-2-5">2.5. Affichez les todos</a></li>
+<li><a href="#sec-2-6">2.6. Ajoutez une case à cocher</a></li>
+<li><a href="#sec-2-7">2.7. Ajoutez un champs texte</a></li>
+<li><a href="#sec-2-8">2.8. Dernière étape: Ajoutez un bouton</a></li>
+<li><a href="#sec-2-9">2.9. Pour les plus rapides</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+</div></div></div>
+<footer id="postamble" class="">
+<div><p class="author">Author: Nicolas Petton</p>
+<p class="date">Created: 2019-06-17 Mon 13:07</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.2 (<a href="http://orgmode.org">Org-mode</a> 9.2)</p>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+     xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+     xmlns:georss="http://www.georss.org/georss"
+     xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:media="http://search.yahoo.com/mrss/"><channel>
+  <title></title>
+  <atom:link href="http://nicolas-petton.fr/blog/discover-js2-refactor.xml" rel="self" type="application/rss+xml" />
+  <link>http://nicolas-petton.fr/blog/</link>
+  <description><![CDATA[]]></description>
+  <language>en</language>
+  <pubDate>Wed, 02 Aug 2017 10:02:13 +0200</pubDate>
+  <lastBuildDate>Wed, 02 Aug 2017 10:02:13 +0200</lastBuildDate>
+  <generator>Emacs 25.2 Org-mode 9.0.9</generator>
+  <webMaster>nicolas@petton.fr (Nicolas Petton)</webMaster>
+  <image>
+    <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
+    <title></title>
+    <link>http://nicolas-petton.fr/blog/</link>
+  </image>
+
+  <item>
+    <title>discover-js2-refactor</title>
+    <link>http://nicolas-petton.fr/blog/discover-js2-refactor.html#org91dc432</link>
+    <author>nicolas@petton.fr (Nicolas Petton)</author>
+    <guid isPermaLink="false">http://nicolas-petton.fr/blog/discover-js2-refactor.html#org91dc432</guid>
+    <pubDate>Wed, 29 Jan 2014 15:37:00 +0100</pubDate>
+    <category><![CDATA[emacs]]></category>
+    <category><![CDATA[javascript]]></category>
+    <description><![CDATA[<div class="pubdate">
+    January 29, 2014
+    </div>
+
+    <div id="outline-container-orgba474a5" class="outline-3">
+    <h3 id="orgba474a5"><a id="ID-03af0159-3100-4068-9484-0469b409f7f2"></a>Making js2-refactor more discoverable</h3>
+    <div class="outline-text-3" id="text-orgba474a5">
+    <p>
+    Since I started using Emacs for most of my development, I've been a
+    big fan of <a href="https://github.com/mooz/js2-mode/">js2-mode</a>, a major mode for editing JavaScript files based
+    on an AST, and <a href="https://github.com/magnars/js2-refactor.el">js2-refactor</a>, a library built on top of it to perform
+    refactorings.
+    </p>
+
+    <p>
+    When <a href="http://damiencassou.seasidehosting.st/">Damien</a> pointed me to <a href="https://github.com/mickeynp/discover.el">discover.el</a>, a library which adds <a href="https://github.com/magit/magit">Magit</a>
+    like context menus to Emacs, I decided to improve js2-refactor and
+    add a discover menu for it, to make all these great refactoring more
+    accessible and discoverable.
+    </p>
+
+    <p>
+    The package is simply named "discover-js2-refactor" and can be
+    downloaded on <a href="https://github.com/NicolasPetton/discover-js2-refactor">github</a>.
+    </p>
+
+
+    <div class="figure">
+    <p><img src="https://raw.github.com/NicolasPetton/discover-js2-refactor/master/screenshot.png" alt="screenshot.png" />
+    </p>
+    <p><span class="figure-number">Figure 1: </span>discover-js2-refactor, the mandatory screenshot</p>
+    </div>
+    </div>
+    </div>
+
+    <div id="outline-container-orgcb2b7a0" class="outline-3">
+    <h3 id="orgcb2b7a0"><a id="ID-efd1904a-cdf6-4175-b73b-0a77d28c79de"></a>Installing discover-js2-refactor</h3>
+    <div class="outline-text-3" id="text-orgcb2b7a0">
+    <p>
+    The package is available on <a href="http://melpa.milkbox.net/#/">melpa</a>, if you have it enabled you can
+    simply evaluate the following code to install the package.
+    </p>
+
+    <div class="org-src-container">
+    <pre><code class="src src-emacs-lisp">   (package-install 'discover-js2-refactor)
+    </code></pre>
+    </div>
+
+
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'nicolas-petton'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+    </div>
+    ]]></description>
+  </item>
+</channel>
+</rss>

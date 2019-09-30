@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+     xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+     xmlns:georss="http://www.georss.org/georss"
+     xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:media="http://search.yahoo.com/mrss/"><channel>
+  <title>Interview Företagsplatsen #6: Damien Cassou</title>
+  <atom:link href="http://nicolas-petton.fr/blog/interview-damien-cassou.xml" rel="self" type="application/rss+xml" />
+  <link>http://nicolas-petton.fr/blog/</link>
+  <description><![CDATA[]]></description>
+  <language>en</language>
+  <pubDate>Wed, 02 Aug 2017 10:02:29 +0200</pubDate>
+  <lastBuildDate>Wed, 02 Aug 2017 10:02:29 +0200</lastBuildDate>
+  <generator>Emacs 25.2 Org-mode 9.0.9</generator>
+  <webMaster>nicolas@petton.fr (Nicolas Petton)</webMaster>
+  <image>
+    <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
+    <title>Interview Företagsplatsen #6: Damien Cassou</title>
+    <link>http://nicolas-petton.fr/blog/</link>
+  </image>
+
+
+  <item>
+    <title>Interview with *Damien* Cassou</title>
+    <link>http://nicolas-petton.fr/blog/interview-damien-cassou.html#org8be245d</link>
+    <author>nicolas@petton.fr (Nicolas Petton)</author>
+    <guid isPermaLink="false">http://nicolas-petton.fr/blog/interview-damien-cassou.html#org8be245d</guid>
+    <pubDate>Wed, 16 Nov 2016 13:45:00 +0100</pubDate>
+
+    <description><![CDATA[<div class="pubdate">
+    Nov 16, 2016
+    </div>
+
+    <p>
+    This is the sixth post of my series of interviews of my colleagues at <a href="http://ftgp.se">FTGP</a>.
+    </p>
+
+    <p>
+    This is my second interview of <a href="http://damiencassou.seasidehosting.st/">Damien</a>, the first one was done when we were
+    both working at <a href="http://inria.fr">Inria</a>, in the <a href="http://rmod.inria.fr/">RMoD team</a>. Back then we shared our office
+    together with <a href="http://benjamin.vanryseghem.com/">Benjamin</a>, another former member of RMoD now working with us!
+    </p>
+
+    <p>
+    With Damien we often hack <a href="https://petton.fr/git/nico/amd-mode.el">Emacs packages</a>, pair program and discuss nerd things
+    like self-hosting or Free Software.
+    </p>
+
+
+    <div class="figure">
+    <p><img src="http://nicolas-petton.fr/blog/../images/damien-3.jpg" alt="Damien Cassou at work image" align="center" />
+    </p>
+    <p><span class="figure-number">Figure 1: </span>Damien at work</p>
+    </div>
+
+    <p>
+    <b><i>Hi Damien, thanks for taking this interview.
+    Can you describe yourself and your background?</i></b>
+    </p>
+
+    <p>
+    My name is Damien Cassou and I arrived in the company early September.  Before
+    that, I have been studying in Talence (close to Bordeaux), France, from
+    preschool to Phd. My master and PhD thesis are in the software engineering and
+    programming language domains. After that I did 2 postdocs and got a permanent
+    position as associate professor in Lille, France. I spent 4 great years there,
+    meeting very nice people (looking at you <a href="http://rmod.inria.fr/">RMoD</a> and <a href="http://fil.univ-lille1.fr/">FIL</a>) and learning a lot.
+    </p>
+
+    <p>
+    I decided to quit to move closer to family and accepted working at FTGP. I've
+    been writing code for many years now and I love contributing to FLOSS
+    (free/libre open-source software).
+    </p>
+
+    <p>
+    I'm married and have a 3-year old daughter. I spend my non-working
+    time with them, enjoying life playing and walking around. I also like
+    to read.
+    </p>
+
+    <p>
+    <b><i>What does a typical day at work look like?</i></b>
+    </p>
+
+    <p>
+    I typically arrive at work around 8:30 while other developers are
+    sleeping or taking care of children :-). This gives me some time to
+    reflect on what to do during the day, to clean what I have done during
+    the last days, to update todo lists (both in org-mode and jira), to
+    read... Then, I focus on a task or two until 11am, when the
+    standup-sitted meeting starts. After the meeting and lunch with
+    colleagues, I typically spend the rest of the day pair-programming
+    with people. We often do remote pair-programing with screen, keyboard
+    and mouse sharing. I like that part a lot.
+    </p>
+
+    <p>
+    I spend most of my days on Emacs with good Javascript support
+    (<a href="https://github.com/magnars/js2-refactor.el">js2-refactor</a>, <a href="https://petton.fr/git/nico/amd-mode.el">amd-mode</a>, <a href="https://petton.fr/git/nico/jade">jade</a>, ...). 
+    </p>
+
+    <p>
+    Sometimes I have to go dirty and use a Windows VM with Visual Studio to do C#
+    programming :-D.
+    </p>
+
+    <p>
+    <b><i>What do you do on your free time? (both in front of and away from your computer)?</i></b>
+    </p>
+
+    <p>
+    Outside of work, I try to limit the time spent on my computer to enjoy
+    family. I spend time with Sarah, our 3.5-year old daughter. We often
+    read books (the same ones again and again :-)) and play. When Sarah is
+    sleeping at night, Jenny, my wife, and I watch movies and TV series,
+    read books or talk. I'm currently reading a book on Nonviolent
+    Communication and often read fantasy books. During the week-ends, we
+    visit Stockholm as we just moved there and it's a beautiful city.
+    </p>
+
+
+    <div class="figure">
+    <p><img src="http://nicolas-petton.fr/blog/../images/damien-1.png" alt="Damien Cassou" align="center" />
+    </p>
+    <p><span class="figure-number">Figure 2: </span>Damien with his daughter in Stockholm</p>
+    </div>
+
+
+    <div class="figure">
+    <p><img src="http://nicolas-petton.fr/blog/../images/damien-2.jpg" alt="Damien Cassou" align="center" />
+    </p>
+    <p><span class="figure-number">Figure 3: </span>Damien in the Swedish winter</p>
+    </div>
+
+    <p>
+    When on my computer, most of my free time is on contributing to FLOSS (Free
+    Libre Open-Source Software). These days I mostly contribute to NixOS, a
+    wonderful GNU/Linux distribution that you should have a look at, and Emacs,
+    the main application I run on NixOS.
+    </p>
+
+    <p>
+    <b><i>Ok, now you have to tell us why you like NixOS so much ;-)</i></b>
+    </p>
+
+    <p>
+    How much space do you give me to answer this question? :-).
+    </p>
+
+    <p>
+    <a href="http://nixos.org/nix/">Nix</a> is a package manager as is Apt. It is however fundamentally different. Apt
+    and the others have grown out from scripts downloading files and writing them
+    in filesystems, potentially replacing existing files. Nix does not modify
+    what's already in a filesystem, it just adds to it. In practice, this means Nix
+    never writes to nor read from <code>/usr/</code> or <code>/lib/</code>: each package is installed in
+    a separate <code>/nix/store/</code> directory that only depends on packages in
+    <code>/nix/store/</code>. From this very simple choice, a lot of nice properties appear:
+    atomic updates, rollbacks, multiple versions of same package, complete
+    dependency specifications, non-privileged installations, transparent
+    source/binary deployment and reproducibility. Nix can be installed on Linux,
+    Mac OS X and other systems.
+    </p>
+
+    <p>
+    <a href="http://nixos.org">NixOS</a> is a GNU/Linux distribution built on top of Nix. Beyond having all the
+    good features brought by Nix for the whole system, NixOS applies the same
+    principles to the system configuration.  Everything in NixOS is configured
+    through a dedicated text file (named <code>configuration.nix</code> and written in the Nix
+    functional language): e.g., the boot (filesystems, boot parameters, encryption,
+    kernel modules, ...), the network (hostname, network manager, ...), the
+    services (X11 configuration, desktop manager, keyboard layout, nginx, ...) and
+    the users (home directory, name, password, groups, ...). From this file, NixOS
+    builds a fresh system that doesn't depend on its previous state. This has many
+    advantages including reproducibility, rollback from grub, versioning of the
+    configuration and sharing of a configuration between several computers. The
+    thing I love most is that my system is textually described and can be rebuilt
+    from scratch at any time: it is not the result of a sequence of changes.
+    </p>
+
+    <p>
+    Both Nix and NixOS have been around for a decade now, evolve a lot (NixOS is in
+    the top 10 most active github projects <a href="http://krihelinator.xyz/">http://krihelinator.xyz/</a>), and rely on
+    solid research works. I really love both Nix and NixOS but both suffer from a
+    too small community that is having a hard time producing all the packages
+    needed by Linux distributions today.
+    </p>
+
+    <p>
+    <b><i>What was your favorite movie of the year?</i></b>
+    </p>
+
+    <p>
+    I typically don't watch that many recent movies and usually forget them as soon
+    as I see "The End". Except for Star Trek. I really like the Star Treks :-).
+    </p>
+
+    <p>
+    <b><i>If you were doing an interview of one of your colleagues, what question would you ask him?</i></b>
+    </p>
+
+    <p>
+    What would you change in this company to make it a better place?
+    </p>
+
+    <p>
+    <b><i>Mikael had a question for the next interview: Why is Företagsplatsen such an awesome place to work at?</i></b>
+    </p>
+
+    <p>
+    I see many reasons. The first one being that people are nice with each
+    other. We solve problems and conflicts by discussing them together. Also, I
+    like the presence of Louise in the company: we should seek for more women and
+    make sure we keep her :-). I particularly appreciate the general agreement that
+    quality is important enough to dedicate time to it: we write automated tests,
+    we refactor code, we pay attention to source code history, … We even have
+    regular meetings to discuss about what is wrong and how to improve.
+    </p>
+
+    <p>
+    <b><i>Thank you Damien!</i></b>
+    </p>
+
+
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'nicolas-petton'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    ]]></description>
+</item>
+</channel>
+</rss>

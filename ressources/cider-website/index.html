@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+    <head>
+        <title>CIDER</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <link href='https://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+        <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,width=device-width" />
+        <script src="js/jquery.js"></script>
+        <script src="js/animations.js"></script>
+
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <div class="header">
+                <nav class="main">
+                    <img src="img/logo-small.png" alt="CIDER"/>
+                    <a href="index.html">Home</a>
+                    <a href="#">Getting started</a>
+                    <a href="#">Documentation →</a>
+                    <a href="#">GitHub →</a>
+                </nav>
+            </div>
+
+            <div class="teaser">
+                <div class="container">
+                    <!-- <div class="left"> -->
+                        <p class="acronym">
+                            <b>C</b>lojure(Script) <b>I</b>nteractive <b>D</b>evelopment <b>E</b>nvironment that <b>R</b>ocks!
+                        </p>
+                        <div class="description narrow">
+                            <p>
+                                CIDER extends <a href="http://gnu.org/software/emacs">Emacs</a> with
+                                support for interactive programming in Clojure.
+                            </p>
+                            <p>
+                                It adds support for interacting with a running
+                                Clojure process for compilation, debugging,
+                                definition and documentation lookup, running tests
+                                and so on.
+                            </p>
+                        </div>
+
+                        <a class="btn main">Get started!</a>
+                        <a class="btn">Learn more</a>
+                        <!-- </div> -->
+                        <!-- <div class="right">
+                             <img class="casks" src="img/cider-casks.png"/>
+                             <img class="tasty" src="img/tasty.png"/>
+                             </div> -->
+                </div>
+                <div class="container nopadding">
+                    <div class="reviews">
+                        <p><span class="quote">"110% customer satisfaction"</span> – Bozhidar Batsov</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screencast">
+                <div class="container">
+                    <h2>
+                        <img src="img/mug.png"/>
+                        <div>
+                            The best brewery in town!
+                            <span>Discover CIDER in video</span>
+                        </div>
+                    </h2>
+                    <img src="img/screencast.png" alt="screencast"/>
+
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="container">
+
+                    <h2>The REPL</h2>
+                    <div class="left">
+                        <p>CIDER comes with a powerful REPL, which is quite
+                        handy when you want to experiment with the code you're
+                        working on or just explore some stuff (e.g. a library
+                        you're playing with).</p>
+                    </div>
+
+                    <div class="right repl">
+                        <img src="img/repl.png"/>
+                        <span class="result"></span>
+                        <span class="prompt first">user =>&nbsp;</span>
+                        <span class="animate first">
+                            <span class="content"></span>
+                            <span class="caret animated"></span>
+                        </span>
+                        <span class="prompt second">user =>&nbsp;</span>
+                        <span class="animate second">
+                            <span class="caret animated"></span>
+                        </span>
+                    </div>
+
+                    <div class="gap small"></div>
+
+                    <h2 class="debugger-header"><img src="img/steps.png"/>The debugger</h2>
+
+                    <p class="narrow centered">CIDER ships with a powerful
+                        interactive Clojure debugger inspired by Emacs's own
+                        <a href="http://www.gnu.org/software/emacs/manual/html_node/elisp/Edebug.html">Edebug</a>.
+                        <b>You're going to love it!</b></p>
+
+                    <div class="debugger-screencast">
+                        <img src="img/cider_debugger.gif"/>
+                    </div>
+
+                    <div class="gap"></div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </body>
+</html>

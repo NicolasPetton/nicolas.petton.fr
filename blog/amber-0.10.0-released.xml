@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+     xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+     xmlns:georss="http://www.georss.org/georss"
+     xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:media="http://search.yahoo.com/mrss/"><channel>
+  <title><b>Amber</b> 0.10.0</title>
+  <atom:link href="http://nicolas-petton.fr/blog/amber-0.10.0-released.xml" rel="self" type="application/rss+xml" />
+  <link>http://nicolas-petton.fr/blog/</link>
+  <description><![CDATA[]]></description>
+  <language>en</language>
+  <pubDate>Wed, 02 Aug 2017 10:02:08 +0200</pubDate>
+  <lastBuildDate>Wed, 02 Aug 2017 10:02:08 +0200</lastBuildDate>
+  <generator>Emacs 25.2 Org-mode 9.0.9</generator>
+  <webMaster>nicolas@petton.fr (Nicolas Petton)</webMaster>
+  <image>
+    <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
+    <title><b>Amber</b> 0.10.0</title>
+    <link>http://nicolas-petton.fr/blog/</link>
+  </image>
+
+
+  <item>
+    <title>Amber 0.10.0 released!</title>
+    <link>http://nicolas-petton.fr/blog/amber-0.10.0-released.html#orgb85a697</link>
+    <author>nicolas@petton.fr (Nicolas Petton)</author>
+    <guid isPermaLink="false">http://nicolas-petton.fr/blog/amber-0.10.0-released.html#orgb85a697</guid>
+    <pubDate>Wed, 13 Mar 2013 12:00:00 +0100</pubDate>
+    <category><![CDATA[amber]]></category>
+    <category><![CDATA[smalltalk]]></category>
+    <description><![CDATA[<div class="pubdate">
+    March 13, 2013
+    </div>
+
+
+    <p>
+    Today we released <a href="http://amber-lang.net">Amber 0.10.0</a>. After a year of work, we beleive this is a great release. 
+    I'm especially glad to say that this release was a real community effort.
+    </p>
+
+    <p>
+    Read the <a href="https://groups.google.com/forum/#!searchin/amber-lang/0.10.0/amber-lang/RHEVegrCnJY/EfLzltER-XoJ">full announcement</a>.
+    </p>
+    ]]></description>
+  </item>
+</channel>
+</rss>

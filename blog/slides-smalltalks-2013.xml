@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+     xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+     xmlns:georss="http://www.georss.org/georss"
+     xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:media="http://search.yahoo.com/mrss/"><channel>
+  <title></title>
+  <atom:link href="http://nicolas-petton.fr/blog/slides-smalltalks-2013.xml" rel="self" type="application/rss+xml" />
+  <link>http://nicolas-petton.fr/blog/</link>
+  <description><![CDATA[]]></description>
+  <language>en</language>
+  <pubDate>Wed, 02 Aug 2017 10:02:40 +0200</pubDate>
+  <lastBuildDate>Wed, 02 Aug 2017 10:02:40 +0200</lastBuildDate>
+  <generator>Emacs 25.2 Org-mode 9.0.9</generator>
+  <webMaster>nicolas@petton.fr (Nicolas Petton)</webMaster>
+  <image>
+    <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
+    <title></title>
+    <link>http://nicolas-petton.fr/blog/</link>
+  </image>
+
+  <item>
+    <title>Slides from my presentation at Smalltalks 2013</title>
+    <link>http://nicolas-petton.fr/blog/slides-smalltalks-2013.html#org8d4708b</link>
+    <author>nicolas@petton.fr (Nicolas Petton)</author>
+    <guid isPermaLink="false">http://nicolas-petton.fr/blog/slides-smalltalks-2013.html#org8d4708b</guid>
+    <pubDate>Tue, 03 Dec 2013 15:18:00 +0100</pubDate>
+    <category><![CDATA[amber]]></category>
+    <category><![CDATA[agentina]]></category>
+    <category><![CDATA[smalltalks]]></category>
+    <description><![CDATA[<div class="pubdate">
+    December 3, 2013
+  </div>
+
+  <p>
+    I just put online <a href="http://nicolas-petton.fr/ressources/amber-smalltalks-2013/index.html">slides</a> from my presentation of <a href="http://amber-lang.net">Amber</a> at <a href="http://www.fast.org.ar/smalltalks2013/">Smalltalks 2013</a> in Rosario.
+  </p>
+    ]]></description>
+  </item>
+</channel>
+</rss>
