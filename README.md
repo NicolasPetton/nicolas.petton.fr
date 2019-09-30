@@ -1,4 +1,4 @@
-NicolasPetton.github.io
-=======================
+nicolas.petton.fr
+=================
 
-My website/blog
+My website/blog (built with Emacs and orgmode).
