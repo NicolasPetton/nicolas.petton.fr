@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>X components</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" type="text/css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/javascript.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+
+  <body>
+    <script type="module" src="./index.js"></script>
+
+    <h1>X — Functional component examples</h1>
+    <h2>Stateful counter</h2>
+
+    <p>The famous counter example is implemented as follows in X.</p>
+
+    <p>It is declared as a function of the initial state, state being maintained between re-renders using the <code>useState</code> hook.</p>
+    
+    <pre><code class="javascript">
+let counter = component("x-counter", ({count = 0} = {}) => html => {
+  let [currentCount, setCount] = useState(count);
+  html.h2(currentCount);
+
+  html.button({ click: () => setCount(currentCount + 1) }, "++");
+  html.button({ click: () => setCount(currentCount - 1) }, "--");
+});
+    </code></pre>
+
+    
+    <div id="counter"></div>
+
+    <h2>Counter with attributes</h2>
+
+    It can be useful to setup components by using attributes:
+
+    <pre><code class="html">
+&lt;x-counter count="2"&gt;&lt;/x-counter&gt;
+    </code></pre>
+
+    <p>This is the implementation of a counter component that uses a <code>count</code> attribute:</p>
+
+    <pre><code class="javascript">
+let counter = () => html => {
+  let [count, setCount] = useAttribute("count");
+
+  html.h2(count);
+  html.button({ click: () => setCount(Number(count) + 1) }, "++");
+  html.button({ click: () => setCount(Number(count) - 1) }, "--");
+};
+
+counter.observedAttributes = ['count'];
+component('x-counter2', counter);
+    </code></pre>
+
+    <p>Note that the attribute is accessed using the <code>useAttribute</code> hook.</p>
+
+    <div id="counter-attr"></div>
+
+    <h2>Forms & Inputs</h2>
+
+    <p>Here is a simple form example:</p>
+
+    <pre><code>
+let fullname = component(
+  "x-fullname",
+  ({ firstName = "John", lastName = "Doe" } = {}) => html => {
+    let [currentFirstName, setFirstName] = useState(firstName);
+    let [currentLastName, setLastName] = useState(lastName);
+
+    html.h3(`Your fullname is ${currentFirstName} ${currentLastName}`);
+
+    html.form(
+      html.input({
+        value: currentFirstName,
+        change: ({ target }) => setFirstName(target.value)
+      }),
+      html.input({
+        value: currentLastName,
+        change: ({ target }) => setLastName(target.value)
+      })
+    );
+  }
+);
+    </pre></code>
+    <div id="fullname"></div>
+
+    <h2>Component composition</h2>
+
+    <pre><code>
+const wrapper = component("x-wrapper", ({ children = [] } = {}) => html => {
+  html.h3("Parent component with children");
+  html.render(children);
+});
+
+const composite = component("x-composite", () => html =>
+  html.render(wrapper({ children: [counter(), counter()] }))
+);
+    </pre></code>
+    <div id="composite"></div>
+
+    <h2>Damien example</h2>
+    <div id="damien-comp"></div>
+  </body>
+</html>
