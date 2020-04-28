@@ -10400,7 +10400,7 @@ very-muted-foreground: #888888
     }
 }</pre>
 </div>
-<div created="20200425205442979" dependents="$:/plugins/kixam/moment $:/plugins/kixam/datepicker $:/plugins/flibbles/relink" description="Simple project management for TiddlyWiki" list="installation usage" modified="20200427153510728" name="Project Manager" plugin-type="plugin" tags="" title="$:/plugins/nico/pm" type="application/json" version="0.0.35">
+<div created="20200425205442979" dependents="$:/plugins/kixam/moment $:/plugins/kixam/datepicker $:/plugins/flibbles/relink" description="Simple project management for TiddlyWiki" list="installation usage" modified="20200427153510728" name="Project Manager" plugin-type="plugin" tags="" title="$:/plugins/nico/pm" type="application/json" version="0.0.37">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/nico/pm/images/calendar-check&quot;: {
@@ -10488,10 +10488,10 @@ very-muted-foreground: #888888
         },
         &quot;$:/plugins/nico/pm/ui/Schedule&quot;: {
             &quot;created&quot;: &quot;20200424193230404&quot;,
-            &quot;text&quot;: &quot;\\define schedule-today()\n  &lt;$list filter=\&quot;[!has[draft.of]!tag[done]tag[todo]days:due[0]]\&quot; template=\&quot;$:/plugins/nico/pm/ui/TodoTemplate\&quot; emptyMessage=\&quot;🌞 All clear!\&quot;/&gt;\n\\end\n\n\\define schedule-range(start end)\n  &lt;$list filter=\&quot;[!has[draft.of]!tag[done]tag[todo]!days:due[$start$]days:due[$end$]sort[due]]\&quot; template=\&quot;$:/plugins/nico/pm/ui/TodoTemplate\&quot; emptyMessage=\&quot;🌞 All clear!\&quot;/&gt;\n\\end\n\n\\define schedule-overdue()\n  &lt;$list filter=\&quot;[!has[draft.of]!tag[done]tag[todo]!days:due[-1]sort[due]]\&quot; template=\&quot;$:/plugins/nico/pm/ui/TodoTemplate\&quot;/&gt;\n\\end\n\n&lt;$list filter=\&quot;[!has[draft.of]!tag[done]tag[todo]limit[1]]\&quot;&gt;\n\n  !! Overdue\n\n  &lt;&lt;schedule-overdue&gt;&gt;\n\n&lt;/$list&gt;\n\n!! Today\n\n&lt;&lt;schedule-today&gt;&gt;\n\n!! Next 7 days\n\n&lt;&lt;schedule-range 1 7&gt;&gt;\n\n!! Next 30 days\n\n&lt;&lt;schedule-range 7 30&gt;&gt;&quot;,
+            &quot;text&quot;: &quot;\\define schedule-today()\n  &lt;$list filter=\&quot;[!has[draft.of]!tag[done]tag[todo]days:due[0]]\&quot; template=\&quot;$:/plugins/nico/pm/ui/TodoTemplate\&quot; emptyMessage=\&quot;🌞 All clear!\&quot;/&gt;\n\\end\n\n\\define schedule-range(start end)\n  &lt;$list filter=\&quot;[!has[draft.of]!tag[done]tag[todo]!days:due[$start$]days:due[$end$]sort[due]]\&quot; template=\&quot;$:/plugins/nico/pm/ui/TodoTemplate\&quot; emptyMessage=\&quot;🌞 All clear!\&quot;/&gt;\n\\end\n\n\\define schedule-overdue()\n  &lt;$list filter=\&quot;[!has[draft.of]!tag[done]tag[todo]!days:due[-1]sort[due]]\&quot; template=\&quot;$:/plugins/nico/pm/ui/TodoTemplate\&quot;/&gt;\n\\end\n\n&lt;$list filter=\&quot;[!has[draft.of]!tag[done]tag[todo]!days:due[-1]limit[1]]\&quot;&gt;\n\n  !! Overdue\n\n  &lt;&lt;schedule-overdue&gt;&gt;\n\n&lt;/$list&gt;\n\n!! Today\n\n&lt;&lt;schedule-today&gt;&gt;\n\n!! Next 7 days\n\n&lt;&lt;schedule-range 1 7&gt;&gt;\n\n!! Next 30 days\n\n&lt;&lt;schedule-range 7 30&gt;&gt;&quot;,
             &quot;title&quot;: &quot;$:/plugins/nico/pm/ui/Schedule&quot;,
             &quot;tags&quot;: &quot;$:/plugins/nico/pm/tags/dashboard&quot;,
-            &quot;modified&quot;: &quot;20200428115544724&quot;,
+            &quot;modified&quot;: &quot;20200428120734010&quot;,
             &quot;list-after&quot;: &quot;$:/plugins/nico/pm/ui/InboxAndProjects&quot;,
             &quot;caption&quot;: &quot;{{$:/plugins/nico/pm/images/calendar-check}} Schedule&quot;
         },
@@ -10603,7 +10603,7 @@ very-muted-foreground: #888888
 <div created="20200427203207938" modified="20200427203316748" title="$:/state/pm-show-archived">
 <pre></pre>
 </div>
-<div created="20200427202709233" modified="20200427203156289" title="$:/state/projects-and-schedule-643664625">
+<div created="20200427202709233" modified="20200428121436138" title="$:/state/projects-and-schedule-643664625">
 <pre>$:/plugins/nico/pm/ui/InboxAndProjects</pre>
 </div>
 <div created="20200427201516404" modified="20200427201516404" title="$:/state/showeditpreview">
@@ -10627,7 +10627,7 @@ very-muted-foreground: #888888
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="$:/Import Home Demo Usage Installation" title="$:/StoryList">
+<div list="Home Demo Usage Installation" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -10974,7 +10974,7 @@ I started this project as an experiment to see how good ~TiddlyWiki could be as 
 <div created="20200427202110842" modified="20200427202123865" tags="" title="Usage">
 <pre>{{$:/plugins/nico/pm/usage}}</pre>
 </div>
-<div created="20200427202700859" due="20200428000000000" modified="20200427202706092" tags="Inbox todo" title="Water plants">
+<div created="20200427202700859" due="20200428000000000" modified="20200428121425332" tags="Inbox todo" title="Water plants">
 <pre></pre>
 </div>
 
