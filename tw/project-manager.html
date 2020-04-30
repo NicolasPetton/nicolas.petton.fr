@@ -181,6 +181,8 @@ Error message and password prompt
 
 <li>$:/state/sidebar</li>
 
+<li>$:/state/tab--1498284803</li>
+
 <li>$:/state/tab--1963855381</li>
 
 <li>$:/state/tab--86143343</li>
@@ -10296,7 +10298,7 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div author="Nicolas Petton" bag="default" core-version="&gt;=5.0.0" created="20200419141233574" dependents="$:/themes/tiddlywiki/vanilla" description="A clean, uncluttered theme" modified="20200430075025314" name="Notebook" plugin-priority="0" plugin-type="theme" revision="0" tags="" title="$:/plugins/nico/notebook" type="application/json" version="0.0.5">
+<div author="Nicolas Petton" bag="default" core-version="&gt;=5.0.0" created="20200419141233574" dependents="$:/themes/tiddlywiki/vanilla" description="A clean, uncluttered theme" modified="20200430075025314" name="Notebook" plugin-priority="0" plugin-type="theme" revision="0" tags="" title="$:/plugins/nico/notebook" type="application/json" version="0.0.6">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/core/ui/KeyboardShortcut/toggle-sidebar&quot;: {
@@ -10315,12 +10317,12 @@ Error message and password prompt
         },
         &quot;$:/plugins/nico/notebook/base&quot;: {
             &quot;created&quot;: &quot;20200419141443144&quot;,
-            &quot;text&quot;: &quot;\\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline\n\n\\define if-sidebar(text)\n  &lt;$reveal state=\&quot;$:/state/notebook-sidebar\&quot; type=\&quot;match\&quot; text=\&quot;yes\&quot;&gt;\n    $text$\n  &lt;/$reveal&gt;\n\\end\n\n/* Top and bottom bars */\n\n/* Hide the top-right bar */\n.tc-topbar.tc-topbar-right {\n  display: none;\n}\n\ndiv.tc-sidebar-header {\n  padding: 0;\n  min-height: 0;\n}\n\n.tc-story-river {\n  padding: 0 !important;\n  margin-top: {{$:/plugins/nico/notebook/metrics/topbar-height}};\n}\n\nh1.tc-site-title {\n  margin-top: 14px;\n  font-size: 1.5em !important;\n}\n\n.nc-bar {\n  position: fixed;\n  left: 0;\n  right: 0;\n  padding: 8px;\n  height: {{$:/plugins/nico/notebook/metrics/topbar-height}};\n  background: #f7f7f7ed;\n  display: flex;\n  justify-content: space-between;\n}\n\n.nc-bar.nc-topbar {\n  top: 0;\n  border-bottom: 1px solid &lt;&lt;colour tiddler-border&gt;&gt;;\n  box-shadow: inset 0 -2px 2px -2px &lt;&lt;colour tiddler-border&gt;&gt;;\n}\n\n.nc-bar.nc-bottombar {\n  bottom: 0;\n  background: #f7f7f7;\n  border-top: 1px solid &lt;&lt;colour tiddler-border&gt;&gt;;\n  box-shadow: inset 0 2px 2px -2px &lt;&lt;colour tiddler-border&gt;&gt;;\n}\n\n.nc-bar .left {\n  padding-left: 3px;\n  font-size: 1.5em;\n}\n\n.nc-bar .left svg {\n  fill: &lt;&lt;colour sidebar-controls-foreground&gt;&gt;;\n}\n\n.nc-bar .center {\n  width: 550px;\n  margin-left: 150px;\n}\n\n.nc-bar .center input {\n  width: 400px;\n  padding: .6em;\n  margin-top: -.2em;\n  background: white;\n  box-shadow: 0 2px 3px rgba(0,0,0,0.06);\n  transition: all ease-in .2s;\n}\n\n.nc-bar .center .tc-block-dropdown.tc-search-drop-down {\n  margin-left: 0;\n  width: 400px;\n  border: 0;\n  box-shadow: 0 0 6px 0 #ccc;\n  border-radius: 6px;\n  padding: 20px;\n}\n\n.nc-bar p {\n  margin: 0;\n}\n\n.nc-bar .tc-page-controls {\n  margin-top: 0;\n}\n\nnc-bar .tc-page-controls button {\n  margin-right: 1em;\n}\n\n@media (max-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {\n  .nc-topbar {\n    display: none;\n  }\n\n  .tc-story-river {\n    padding: 0 !important;\n    margin-top: 0;\n  }\n}\n\n@media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {\n  .nc-bottombar {\n    display: none;\n  }\n}\n\n/* Sidebar */\n\n.nc-sidebar {\n  background: #f7f7f7;\n  border-right: 1px solid &lt;&lt;colour tiddler-border&gt;&gt;;\n  width: {{$:/plugins/nico/notebook/metrics/sidebar-width}};\n  overflow-y: auto;\n  overflow-x: hidden;\n  text-overflow: ellipsis;\n}\n\n.nc-sidebar .segment {\n  padding: 5px 15px;\n  border-bottom: 1px solid #eee;\n}\n\n@media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {\n  .nc-sidebar .mobile-only {\n    display: none;\n  }\n}\n\n.nc-sidebar h1.tc-site-title {\n  margin: 0;\n}\n\n.nc-sidebar p {\n  margin: 2px 0;\n}\n\n.nc-sidebar .tc-site-subtitle {\n  color: &lt;&lt;colour site-title-foreground&gt;&gt;;\n}\n\n.nc-sidebar .section .label {\n  padding: 2px 0;\n  color: #777777;\n  fill: #777777;\n}\n\n.nc-sidebar .section .label .caret {\n  display: inline-block;\n  width: 15px;\n}\n\n.nc-sidebar .section .content {\n  padding-left: 10px;\n  padding-top: 5px;\n  font-size: .95em;\n}\n\n@media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {\n  .nc-sidebar {\n    position: fixed;\n    left: 0;\n    top: {{$:/plugins/nico/notebook/metrics/topbar-height}};\n    bottom: 0;\n  }\n}\n\n&lt;&lt;if-sidebar \&quot;\&quot;\&quot;\n@media (max-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {\n  .nc-sidebar {\n    overflow: auto;\n    position: fixed;\n    left: 0;\n    top: 0;\n    bottom: 48px;\n    z-index: 3000;\n  }\n}\n\n@media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {\n  .tc-story-river {\n    margin-left: {{$:/plugins/nico/notebook/metrics/sidebar-width}} !important;\n  }\n}\n\&quot;\&quot;\&quot;&gt;&gt;\n\n/* Animate the hamburger button */\n\n@keyframes menu-bars-1 {\n  0%   {}\n  100% {\n    transform: rotate(-45deg) translateY(-10px) translateX(-6px);\n    fill: #3B3B41;\n  }\n}\n\n@keyframes menu-bars-2 {\n  0%   {}\n  100% { opacity: 0; }\n}\n\n@keyframes menu-bars-3 {\n  0%   {}\n  100% {\n    transform: rotate(45deg) translateY(6px) translateX(2px);\n    fill: #3B3B41;\n  }\n}\n\n.nc-bar .bars .bar {\n    transform: rotate(0) translateY(0) translateX(0);\n    opacity: 1;\n    transform-origin: 20px 10px;\n    transition: transform 0.4s ease-in-out, opacity 0.2s ease-in-out, fill .4s ease-in-out;\n}\n\n.nc-bar .bars .bar:nth-of-type(3) {\n    transform-origin: 20px 20px;\n}\n\n.nc-bar button.open .bars .bar:nth-of-type(1) {\n  animation: menu-bars-1 .4s;\n  animation-fill-mode: forwards;\n}\n.nc-bar button.open .bars .bar:nth-of-type(2) {\n  animation: menu-bars-2 .4s;\n  animation-fill-mode: forwards;\n}\n.nc-bar button.open .bars .bar:nth-of-type(3) {\n  animation: menu-bars-3 .4s;\n  animation-fill-mode: forwards;\n}\n\ndiv.tc-tiddler-frame {\n  padding: 48px 25% 42px 25%;\n}\n\n@media (max-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {\n  div.tc-tiddler-frame {\n    padding: 14px;\n  }\n}\n\n@media screen {\n  .tc-tiddler-frame {\n    border-top: 0 !important;\n    border-left: 0 !important;\n    border-right: 0 !important;\n    border-radius: 0 !important;\n    margin-bottom: 0 !important;\n  }\n}\n\n/* Inputs &amp; fonts */\n\nhr {\n  border: 3px solid &lt;&lt;colour tiddler-title-foreground&gt;&gt;;\n  border-bottom: 0;\n  margin: 40px 0 30px 0;  \n}\n\ninput {\n  transition: box-shadow 0.15s ease-in-out;\n  border: 1px solid #d9d9d9;\n  padding: 0.3em;\n  border-radius: 4px;\n}\n\ninput:focus {\n  border-color: #aaa;\n}\n\n.tc-titlebar h2, .tc-site-title {\n  font-size: 28px !important;\n  line-height: 34px !important;\n  font-weight: 600 !important;\n  letter-spacing: -0.5px !important;\n}\n\nh1, h2, h3, h4, h5, h6 {\n  color: &lt;&lt;colour tiddler-title-foreground&gt;&gt;\n}\n\n@media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {\n  .tc-tiddler-frame .tc-tiddler-controls svg {\n    fill: transparent;\n    transition: all .2s ease-in;\n  }\n  \n  .tc-tiddler-controls svg.tc-image-close-button, \n  .tc-tiddler-controls svg.tc-image-done-button,\n  .tc-tiddler-frame .tc-tiddler-controls:hover svg {\n    fill: #cccccc;\n  }\n}\n\n.tc-tiddler-body h1,\n.tc-tiddler-body h2,\n.tc-tiddler-preview-preview h1,\n.tc-tiddler-preview-preview h2 {\n  font-weight: bold;\n}\n\nbutton:active, button:focus {\n  outline: none;\n}\n\nbutton.tc-tag-label, span.tc-tag-label {\n  padding: 0.3em 1em !important;\n}\n\n.nc-refs {\n  color: #888;\n  font-size: .9em;\n}\n\n.nc-refs h4 {\n  font-weight: bold;\n  margin-bottom: 4px;\n}\n\n.nc-post-created {\n  color: #acacac;\n  font-size: .8em;\n}\n&quot;,
+            &quot;text&quot;: &quot;\\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline\n\n\\define if-sidebar(text)\n  &lt;$reveal state=\&quot;$:/state/notebook-sidebar\&quot; type=\&quot;match\&quot; text=\&quot;yes\&quot;&gt;\n    $text$\n  &lt;/$reveal&gt;\n\\end\n\n/* Top and bottom bars */\n\n/* Hide the top-right bar */\n.tc-topbar.tc-topbar-right {\n  display: none;\n}\n\ndiv.tc-sidebar-header {\n  padding: 0;\n  min-height: 0;\n}\n\n.tc-story-river {\n  padding: 0 !important;\n  margin-top: {{$:/plugins/nico/notebook/metrics/topbar-height}};\n}\n\nh1.tc-site-title {\n  margin-top: 14px;\n  font-size: 1.5em !important;\n}\n\n.nc-bar {\n  position: fixed;\n  left: 0;\n  right: 0;\n  padding: 8px;\n  height: {{$:/plugins/nico/notebook/metrics/topbar-height}};\n  background: #f7f7f7ed;\n  display: flex;\n  justify-content: space-between;\n}\n\n.nc-bar.nc-topbar {\n  top: 0;\n  border-bottom: 1px solid &lt;&lt;colour tiddler-border&gt;&gt;;\n  box-shadow: inset 0 -2px 2px -2px &lt;&lt;colour tiddler-border&gt;&gt;;\n}\n\n.nc-bar.nc-bottombar {\n  bottom: 0;\n  background: #f7f7f7;\n  border-top: 1px solid &lt;&lt;colour tiddler-border&gt;&gt;;\n  box-shadow: inset 0 2px 2px -2px &lt;&lt;colour tiddler-border&gt;&gt;;\n}\n\n.nc-bar .left {\n  padding-left: 3px;\n  font-size: 1.5em;\n}\n\n.nc-bar .left svg {\n  fill: &lt;&lt;colour sidebar-controls-foreground&gt;&gt;;\n}\n\n.nc-bar .center {\n  width: 550px;\n  margin-left: 150px;\n}\n\n.nc-bar .center input {\n  width: 400px;\n  padding: .6em;\n  margin-top: -.2em;\n  background: white;\n  box-shadow: 0 2px 3px rgba(0,0,0,0.06);\n  transition: all ease-in .2s;\n  outline: 0;\n}\n\n.nc-bar .center .tc-block-dropdown.tc-search-drop-down {\n  margin-left: 0;\n  width: 400px;\n  border: 0;\n  box-shadow: 0 0 6px 0 #ccc;\n  border-radius: 6px;\n  padding: 20px;\n}\n\n.nc-bar p {\n  margin: 0;\n}\n\n.nc-bar .tc-page-controls {\n  margin-top: 0;\n}\n\nnc-bar .tc-page-controls button {\n  margin-right: 1em;\n}\n\n@media (max-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {\n  .nc-topbar {\n    display: none;\n  }\n\n  .tc-story-river {\n    padding: 0 !important;\n    margin-top: 0;\n  }\n}\n\n@media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {\n  .nc-bottombar {\n    display: none;\n  }\n}\n\n/* Sidebar */\n\n.nc-sidebar {\n  background: #f7f7f7;\n  border-right: 1px solid &lt;&lt;colour tiddler-border&gt;&gt;;\n  width: {{$:/plugins/nico/notebook/metrics/sidebar-width}};\n  overflow-y: auto;\n  overflow-x: hidden;\n  text-overflow: ellipsis;\n}\n\n.nc-sidebar .segment {\n  padding: 5px 15px;\n  border-bottom: 1px solid #eee;\n}\n\n@media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {\n  .nc-sidebar .mobile-only {\n    display: none;\n  }\n}\n\n.nc-sidebar h1.tc-site-title {\n  margin: 0;\n}\n\n.nc-sidebar p {\n  margin: 2px 0;\n}\n\n.nc-sidebar .tc-site-subtitle {\n  color: &lt;&lt;colour site-title-foreground&gt;&gt;;\n}\n\n.nc-sidebar .section .label {\n  padding: 2px 0;\n  color: #777777;\n  fill: #777777;\n}\n\n.nc-sidebar .section .label .caret {\n  display: inline-block;\n  width: 15px;\n}\n\n.nc-sidebar .section .content {\n  padding-left: 10px;\n  padding-top: 5px;\n  font-size: .95em;\n}\n\n@media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {\n  .nc-sidebar {\n    position: fixed;\n    left: 0;\n    top: {{$:/plugins/nico/notebook/metrics/topbar-height}};\n    bottom: 0;\n  }\n}\n\n&lt;&lt;if-sidebar \&quot;\&quot;\&quot;\n@media (max-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {\n  .nc-sidebar {\n    overflow: auto;\n    position: fixed;\n    left: 0;\n    top: 0;\n    bottom: 48px;\n    z-index: 3000;\n  }\n}\n\n@media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {\n  .tc-story-river {\n    margin-left: {{$:/plugins/nico/notebook/metrics/sidebar-width}} !important;\n  }\n}\n\&quot;\&quot;\&quot;&gt;&gt;\n\n/* Animate the hamburger button */\n\n@keyframes menu-bars-1 {\n  0%   {}\n  100% {\n    transform: rotate(-45deg) translateY(-10px) translateX(-6px);\n    fill: #3B3B41;\n  }\n}\n\n@keyframes menu-bars-2 {\n  0%   {}\n  100% { opacity: 0; }\n}\n\n@keyframes menu-bars-3 {\n  0%   {}\n  100% {\n    transform: rotate(45deg) translateY(6px) translateX(2px);\n    fill: #3B3B41;\n  }\n}\n\n.nc-bar .bars .bar {\n    transform: rotate(0) translateY(0) translateX(0);\n    opacity: 1;\n    transform-origin: 20px 10px;\n    transition: transform 0.4s ease-in-out, opacity 0.2s ease-in-out, fill .4s ease-in-out;\n}\n\n.nc-bar .bars .bar:nth-of-type(3) {\n    transform-origin: 20px 20px;\n}\n\n.nc-bar button.open .bars .bar:nth-of-type(1) {\n  animation: menu-bars-1 .4s;\n  animation-fill-mode: forwards;\n}\n.nc-bar button.open .bars .bar:nth-of-type(2) {\n  animation: menu-bars-2 .4s;\n  animation-fill-mode: forwards;\n}\n.nc-bar button.open .bars .bar:nth-of-type(3) {\n  animation: menu-bars-3 .4s;\n  animation-fill-mode: forwards;\n}\n\ndiv.tc-tiddler-frame {\n  padding: 48px 25% 42px 25%;\n}\n\n@media (max-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {\n  div.tc-tiddler-frame {\n    padding: 14px;\n  }\n}\n\n@media screen {\n  .tc-tiddler-frame {\n    border-top: 0 !important;\n    border-left: 0 !important;\n    border-right: 0 !important;\n    border-radius: 0 !important;\n    margin-bottom: 0 !important;\n  }\n}\n\n/* Inputs &amp; fonts */\n\nhr {\n  border: 3px solid &lt;&lt;colour tiddler-title-foreground&gt;&gt;;\n  border-bottom: 0;\n  margin: 40px 0 30px 0;  \n}\n\ninput {\n  transition: box-shadow 0.15s ease-in-out;\n  border: 1px solid #d9d9d9;\n  padding: 0.3em;\n  border-radius: 4px;\n}\n\ninput:focus {\n  border-color: #aaa;\n}\n\n.tc-titlebar h2, .tc-site-title {\n  font-size: 28px !important;\n  line-height: 34px !important;\n  font-weight: 600 !important;\n  letter-spacing: -0.5px !important;\n}\n\nh1, h2, h3, h4, h5, h6 {\n  color: &lt;&lt;colour tiddler-title-foreground&gt;&gt;\n}\n\n@media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {\n  .tc-tiddler-frame .tc-tiddler-controls svg {\n    fill: transparent;\n    transition: all .2s ease-in;\n  }\n  \n  .tc-tiddler-controls svg.tc-image-close-button, \n  .tc-tiddler-controls svg.tc-image-done-button,\n  .tc-tiddler-frame .tc-tiddler-controls:hover svg {\n    fill: #cccccc;\n  }\n}\n\n.tc-tiddler-body h1,\n.tc-tiddler-body h2,\n.tc-tiddler-preview-preview h1,\n.tc-tiddler-preview-preview h2 {\n  font-weight: bold;\n}\n\nbutton:active, button:focus {\n  outline: none;\n}\n\nbutton.tc-tag-label, span.tc-tag-label {\n  padding: 0.3em 1em !important;\n}\n\n.nc-refs {\n  color: #888;\n  font-size: .9em;\n}\n\n.nc-refs h4 {\n  font-weight: bold;\n  margin-bottom: 4px;\n}\n\n.nc-post-created {\n  color: #acacac;\n  font-size: .8em;\n}\n&quot;,
             &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
             &quot;title&quot;: &quot;$:/plugins/nico/notebook/base&quot;,
             &quot;tags&quot;: &quot;$:/tags/Stylesheet&quot;,
             &quot;revision&quot;: &quot;0&quot;,
-            &quot;modified&quot;: &quot;20200430081638504&quot;,
+            &quot;modified&quot;: &quot;20200430084853534&quot;,
             &quot;bag&quot;: &quot;default&quot;
         },
         &quot;$:/plugins/nico/notebook/images/bars&quot;: {
@@ -10480,15 +10482,15 @@ Error message and password prompt
         },
         &quot;$:/state/notebook-sidebar&quot;: {
             &quot;created&quot;: &quot;20200429142736872&quot;,
-            &quot;text&quot;: &quot;yes&quot;,
+            &quot;text&quot;: &quot;no&quot;,
             &quot;title&quot;: &quot;$:/state/notebook-sidebar&quot;,
-            &quot;modified&quot;: &quot;20200430081539143&quot;
+            &quot;modified&quot;: &quot;20200430082854179&quot;
         },
         &quot;$:/state/notebook-sidebar-section&quot;: {
-            &quot;text&quot;: &quot;$:/themes/nico/notebook/Sidebar/Open&quot;,
+            &quot;created&quot;: &quot;20200429194630535&quot;,
+            &quot;text&quot;: &quot;&quot;,
             &quot;title&quot;: &quot;$:/state/notebook-sidebar-section&quot;,
-            &quot;modified&quot;: &quot;20200430080945941&quot;,
-            &quot;created&quot;: &quot;20200429194630535&quot;
+            &quot;modified&quot;: &quot;20200430082846499&quot;
         }
     }
 }</pre>
@@ -10712,7 +10714,7 @@ Error message and password prompt
 <div created="20200427201909319" modified="20200427202700859" title="$:/state/Inbox" todo_name="">
 <pre></pre>
 </div>
-<div created="20200429142736872" modified="20200430082551777" title="$:/state/notebook-sidebar">
+<div created="20200429142736872" modified="20200430084900696" title="$:/state/notebook-sidebar">
 <pre>no</pre>
 </div>
 <div created="20200427202508002" modified="20200428112148144" title="$:/state/plugin-info--1250430794-$:/plugins/nico/pm--613631494">
@@ -10733,6 +10735,9 @@ Error message and password prompt
 <div created="20200427202543003" modified="20200430082145580" title="$:/state/sidebar">
 <pre>no</pre>
 </div>
+<div created="20200430084828170" modified="20200430084828170" title="$:/state/tab--1498284803">
+<pre>$:/core/ui/AdvancedSearch/Shadows</pre>
+</div>
 <div created="20200427201933721" modified="20200430082720642" title="$:/state/tab--1963855381">
 <pre>$:/core/ui/ControlPanel/Palette</pre>
 </div>
@@ -10748,11 +10753,11 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20200430082605527" list="[[Project Manager]] Demo Usage Installation" modified="20200430082747087" title="$:/StoryList">
+<div created="20200430082857672" list="$:/AdvancedSearch $:/plugins/nico/notebook/base [[Project Manager]] Demo Usage Installation" modified="20200430084832176" title="$:/StoryList">
 <pre></pre>
 </div>
-<div created="20200430082619375" modified="20200430082620578" title="$:/temp/advancedsearch">
-<pre>notebook</pre>
+<div created="20200430082619375" modified="20200430084830919" title="$:/temp/advancedsearch">
+<pre>notebook/ba</pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
 <pre>{
@@ -10767,7 +10772,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;file:///home/nico/Downloads/project-manager.html&quot;
+            &quot;text&quot;: &quot;file:///home/nico/Downloads/tiddlywiki/project-manager.html&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
@@ -10787,7 +10792,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/home/nico/Downloads/project-manager.html&quot;
+            &quot;text&quot;: &quot;/home/nico/Downloads/tiddlywiki/project-manager.html&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
