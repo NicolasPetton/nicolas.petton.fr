@@ -10298,7 +10298,7 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div author="Nicolas Petton" bag="default" core-version="&gt;=5.0.0" created="20200419141233574" dependents="$:/themes/tiddlywiki/vanilla" description="A clean, uncluttered theme" modified="20200430075025314" name="Notebook" plugin-priority="0" plugin-type="theme" revision="0" tags="" title="$:/plugins/nico/notebook" type="application/json" version="0.0.6">
+<div author="Nicolas Petton" bag="default" core-version="&gt;=5.0.0" created="20200419141233574" dependents="$:/themes/tiddlywiki/vanilla" description="A clean, uncluttered theme" modified="20200430075025314" name="Notebook" plugin-priority="0" plugin-type="theme" revision="0" tags="" title="$:/plugins/nico/notebook" type="application/json" version="0.0.8">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/core/ui/KeyboardShortcut/toggle-sidebar&quot;: {
@@ -10322,7 +10322,7 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/plugins/nico/notebook/base&quot;,
             &quot;tags&quot;: &quot;$:/tags/Stylesheet&quot;,
             &quot;revision&quot;: &quot;0&quot;,
-            &quot;modified&quot;: &quot;20200430084853534&quot;,
+            &quot;modified&quot;: &quot;20200430085028310&quot;,
             &quot;bag&quot;: &quot;default&quot;
         },
         &quot;$:/plugins/nico/notebook/images/bars&quot;: {
@@ -10435,11 +10435,11 @@ Error message and password prompt
             &quot;created&quot;: &quot;20200429115248943&quot;
         },
         &quot;$:/plugins/nico/notebook/ui/Sidebar&quot;: {
-            &quot;text&quot;: &quot;\\whitespace trim\n\\define config-title()\n$:/config/SideBarSegments/Visibility/$(listItem)$\n\\end\n\n&lt;$reveal state=\&quot;$:/state/notebook-sidebar\&quot; type=\&quot;match\&quot; text=\&quot;yes\&quot; default=\&quot;yes\&quot; retain=\&quot;yes\&quot; animate=\&quot;no\&quot;&gt;\n    &lt;$scrollable fallthrough=\&quot;no\&quot; class=\&quot;tc-sidebar-scrollable\&quot;&gt;\n    &lt;div class=\&quot;nc-sidebar\&quot;&gt;\n      &lt;$list filter=\&quot;[all[shadows+tiddlers]tag[$:/plugins/nico/notebook/tags/Sidebar]!has[draft.of]]\&quot; variable=\&quot;listItem\&quot;&gt;\n        &lt;$reveal type=\&quot;nomatch\&quot; state=&lt;&lt;config-title&gt;&gt; text=\&quot;hide\&quot;  tag=\&quot;div\&quot;&gt;\n          &lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt; mode=\&quot;inline\&quot;/&gt;\n        &lt;/$reveal&gt;\n      &lt;/$list&gt;\n    &lt;/div&gt;\n    &lt;/$scrollable&gt;\n&lt;/$reveal&gt;\n\n&quot;,
+            &quot;created&quot;: &quot;20200428201218885&quot;,
+            &quot;text&quot;: &quot;\\whitespace trim\n\\define config-title()\n$:/config/SideBarSegments/Visibility/$(listItem)$\n\\end\n\n&lt;$reveal state=\&quot;$:/state/notebook-sidebar\&quot; type=\&quot;match\&quot; text=\&quot;yes\&quot; default=\&quot;yes\&quot; retain=\&quot;yes\&quot; animate=\&quot;no\&quot;&gt;\n    &lt;$scrollable fallthrough=\&quot;no\&quot;&gt;\n    &lt;div class=\&quot;nc-sidebar\&quot;&gt;\n      &lt;$list filter=\&quot;[all[shadows+tiddlers]tag[$:/plugins/nico/notebook/tags/Sidebar]!has[draft.of]]\&quot; variable=\&quot;listItem\&quot;&gt;\n        &lt;$reveal type=\&quot;nomatch\&quot; state=&lt;&lt;config-title&gt;&gt; text=\&quot;hide\&quot;  tag=\&quot;div\&quot;&gt;\n          &lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt; mode=\&quot;inline\&quot;/&gt;\n        &lt;/$reveal&gt;\n      &lt;/$list&gt;\n    &lt;/div&gt;\n    &lt;/$scrollable&gt;\n&lt;/$reveal&gt;\n\n&quot;,
             &quot;title&quot;: &quot;$:/plugins/nico/notebook/ui/Sidebar&quot;,
             &quot;tags&quot;: &quot;$:/tags/PageTemplate&quot;,
-            &quot;modified&quot;: &quot;20200430081349888&quot;,
-            &quot;created&quot;: &quot;20200428201218885&quot;
+            &quot;modified&quot;: &quot;20200430120910774&quot;
         },
         &quot;$:/plugins/nico/notebook/ui/Sidebar/Headings&quot;: {
             &quot;text&quot;: &quot;&lt;div class=\&quot;segment\&quot;&gt;\n  &lt;h1 class=\&quot;tc-site-title\&quot;&gt;\n    {{$:/SiteTitle}}\n  &lt;/h1&gt;\n  &lt;div class=\&quot;tc-site-subtitle\&quot;&gt;\n    {{$:/SiteSubtitle}}\n  &lt;/div&gt;\n&lt;/div&gt;\n&quot;,
@@ -10484,13 +10484,13 @@ Error message and password prompt
             &quot;created&quot;: &quot;20200429142736872&quot;,
             &quot;text&quot;: &quot;no&quot;,
             &quot;title&quot;: &quot;$:/state/notebook-sidebar&quot;,
-            &quot;modified&quot;: &quot;20200430082854179&quot;
+            &quot;modified&quot;: &quot;20200430120837728&quot;
         },
         &quot;$:/state/notebook-sidebar-section&quot;: {
             &quot;created&quot;: &quot;20200429194630535&quot;,
-            &quot;text&quot;: &quot;&quot;,
+            &quot;text&quot;: &quot;$:/plugins/nico/notebook/Sidebar/Open&quot;,
             &quot;title&quot;: &quot;$:/state/notebook-sidebar-section&quot;,
-            &quot;modified&quot;: &quot;20200430082846499&quot;
+            &quot;modified&quot;: &quot;20200430120828366&quot;
         }
     }
 }</pre>
@@ -10714,8 +10714,8 @@ Error message and password prompt
 <div created="20200427201909319" modified="20200427202700859" title="$:/state/Inbox" todo_name="">
 <pre></pre>
 </div>
-<div created="20200429142736872" modified="20200430084900696" title="$:/state/notebook-sidebar">
-<pre>no</pre>
+<div created="20200429142736872" modified="20200430121042324" title="$:/state/notebook-sidebar">
+<pre>yes</pre>
 </div>
 <div created="20200427202508002" modified="20200428112148144" title="$:/state/plugin-info--1250430794-$:/plugins/nico/pm--613631494">
 <pre>contents</pre>
@@ -10753,7 +10753,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20200430082857672" list="$:/AdvancedSearch $:/plugins/nico/notebook/base [[Project Manager]] Demo Usage Installation" modified="20200430084832176" title="$:/StoryList">
+<div list="$:/Import [[Project Manager]] Demo Usage Installation" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200430082619375" modified="20200430084830919" title="$:/temp/advancedsearch">
@@ -10772,27 +10772,27 @@ Error message and password prompt
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;file:///home/nico/Downloads/tiddlywiki/project-manager.html&quot;
+            &quot;text&quot;: &quot;http://localhost:4003/tiddlywiki/project-manager.html&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
-            &quot;text&quot;: &quot;&quot;
+            &quot;text&quot;: &quot;localhost:4003&quot;
         },
         &quot;$:/info/url/hostname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/hostname&quot;,
-            &quot;text&quot;: &quot;&quot;
+            &quot;text&quot;: &quot;localhost&quot;
         },
         &quot;$:/info/url/protocol&quot;: {
             &quot;title&quot;: &quot;$:/info/url/protocol&quot;,
-            &quot;text&quot;: &quot;file:&quot;
+            &quot;text&quot;: &quot;http:&quot;
         },
         &quot;$:/info/url/port&quot;: {
             &quot;title&quot;: &quot;$:/info/url/port&quot;,
-            &quot;text&quot;: &quot;&quot;
+            &quot;text&quot;: &quot;4003&quot;
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/home/nico/Downloads/tiddlywiki/project-manager.html&quot;
+            &quot;text&quot;: &quot;/tiddlywiki/project-manager.html&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -10800,7 +10800,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/origin&quot;: {
             &quot;title&quot;: &quot;$:/info/url/origin&quot;,
-            &quot;text&quot;: &quot;null&quot;
+            &quot;text&quot;: &quot;http://localhost:4003&quot;
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
