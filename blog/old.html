@@ -1,0 +1,1772 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-08-25 Tue 15:42 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Blog posts and notes.</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Nicolas Petton" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link href='/images/favicon.ico' rel='shortcut icon' type='image/x-icon'>
+<link rel='stylesheet' href='https://code.cdn.mozilla.net/fonts/fira.css'>
+<link rel='stylesheet' href='../css/site.css?v=3' type='text/css'/>
+<link rel='stylesheet' href='../css/blog.css?v=2' type='text/css'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<script src='/js/jquery.js' type='text/javascript'></script>
+<link href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-2614862-2', 'nicolas-petton.fr');
+  ga('send', 'pageview');
+</script>
+<link rel="alternate" type="application/rss+xml"
+                href="http://nicolas-petton.fr/blog/index.xml"
+                title="RSS feed">
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="preamble" class="status">
+<div class='intro'>
+<img src='/images/profile.jpg' alt='Nicolas Petton'/>
+<h1>Nicolas Petton</h1>
+<p>Web developer, Lisper, Smalltalker & Emacs maniac.</p>
+</div>
+
+<div class='nav'>
+<ul>
+<li><a href='/'>Home</a>–</li>
+<li><a href='/blog/index.html'>Blog</a>–</li>
+<li><a href='https://emacs.cafe'>Emacs Café</a>–</li>
+<li><a href='/contact.html'>Contact</a>–</li>
+<li><a href='http://github.com/NicolasPetton'><i class="fa fa-github"></i></a>–</li>
+<li><a href='http://twitter.com/NicolasPetton'><i class="fa fa-twitter"></i></a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<h1 class="title">Blog posts and notes.</h1>
+
+<div id="outline-container-org6e10079" class="outline-2">
+<h2 id="org6e10079">Interview with <b>Damien</b> Cassou</h2>
+<div class="outline-text-2" id="text-org6e10079">
+<div class="pubdate">
+Nov 11, 2016
+</div>
+
+<p>
+This is the sixth post of my series of interviews of my colleagues at <a href="http://ftgp.se">FTGP</a>.
+</p>
+
+<p>
+This is my second interview of <a href="http://damien.cassou.me/">Damien</a>, the first one was done when we were
+both working at <a href="http://inria.fr">Inria</a>, in the <a href="http://rmod.inria.fr/">RMoD team</a>. Back then we shared our office
+together with <a href="http://benjamin.vanryseghem.com/">Benjamin</a>, another former member of RMoD now working with us!
+</p>
+
+<p>
+With Damien we often hack <a href="https://petton.fr/git/nico/amd-mode.el">Emacs packages</a>, pair program and discuss nerd things
+like self-hosting or Free Software.
+</p>
+
+
+<div class="figure">
+<p><img src="../images/damien-3.jpg" alt="Damien Cassou at work image" align="center" />
+</p>
+<p><span class="figure-number">Figure 1: </span>Damien at work</p>
+</div>
+
+<p>
+<a href="interview-damien-cassou.html">Read the interview</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8a4cf77" class="outline-2">
+<h2 id="org8a4cf77">Data binding with <b>objectjs</b></h2>
+<div class="outline-text-2" id="text-org8a4cf77">
+<div class="pubdate">
+Sept 6, 2016
+</div>
+
+<p>
+Objectjs is a simple object model for JavaScript, you can read more about it
+<a href="https://github.com/foretagsplatsen/objectjs">here</a>.
+</p>
+
+<p>
+I've been thinking for a while about adding first-class properties to it to
+enable data binding in <a href="https://github.com/foretagsplatsen/widgetjs">widgetjs</a>.
+</p>
+
+<p>
+The idea is not new: whenever a domain object property is updated, any widget
+rendering that property could be updated automatically.  <a href="https://facebook.github.io/react/">React</a> has been doing
+this for a while, but I'll explain here a slightly different approach that we
+took.
+</p>
+
+<p>
+<a href="objectjs-data-binding.html">Read more</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge6f4ca0" class="outline-2">
+<h2 id="orge6f4ca0">Going for a ThinkPad x220</h2>
+<div class="outline-text-2" id="text-orge6f4ca0">
+<div class="pubdate">
+July 1, 2016
+</div>
+</div>
+
+<div id="outline-container-orgd697d83" class="outline-3">
+<h3 id="orgd697d83">Looking for the perfect secondary laptop</h3>
+<div class="outline-text-3" id="text-orgd697d83">
+<p>
+I've been looking for a second hand laptop to use at home and for travelling for
+a while, so that I wouldn't have to carry my primary laptop from and to work
+every day.
+</p>
+
+<p>
+I've been using a ThinkPad t440s for the last 2 years, and I'm really happy with
+it.  The keyboard - while being a chiclet keyboard - feels really good, the
+laptop is quite lightweight and slim for a 14 inches, and the IPS matte screen
+is amazing: it has very good viewing angles, a high resolution, and vibrant
+colors. However, I'm not happy at all with the trackpad, which lacks physical
+buttons, making the trackpoint pretty useless on this machine, a shame for a
+ThinkPad.
+</p>
+
+
+<div class="figure">
+<p><img src="../images/x220-keyboard.jpg" alt="x220 image" align="center" />
+</p>
+<p><span class="figure-number">Figure 2: </span>The keyboard of the ThinkPad x220</p>
+</div>
+
+<p>
+<a href="x220.html">Read more.</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0634b3b" class="outline-2">
+<h2 id="org0634b3b">Interview with <b>Mikael</b> Hägerbro</h2>
+<div class="outline-text-2" id="text-org0634b3b">
+<div class="pubdate">
+Feb 22, 2016
+</div>
+
+<p>
+This is the fifth post of my series of interviews of my colleagues
+at <a href="http://foretagsplatsen.se">FTGP</a>.
+</p>
+
+<p>
+While writing this introduction, I realized that I have been working with Mikael
+for the past 6 years! Time really flies.
+</p>
+
+<p>
+<a href="interview-mikael.html">Read the interview</a>.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org03cf924" class="outline-2">
+<h2 id="org03cf924">A simple <b>object model</b> in JavaScript part #2</h2>
+<div class="outline-text-2" id="text-org03cf924">
+<div class="pubdate">
+Feb 22, 2016
+</div>
+
+<p>
+In <a href="simple-object-model-javascript.html">my previous post</a>, I wrote about an approach to class-based OO in JavaScript.
+I mentioned class extensions (the ability to reopen and extend classes from the
+outside of the class definition) without showing how that can be done.
+</p>
+
+<p>
+<a href="simple-object-model-javascript-2.html">Read more</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org86ff161" class="outline-2">
+<h2 id="org86ff161">A simple <b>object model</b> in JavaScript</h2>
+<div class="outline-text-2" id="text-org86ff161">
+<div class="pubdate">
+Feb 12, 2016
+</div>
+
+<p>
+At <a href="http://foretagsplatsen.se/">Företagsplatsen</a> we are developing a web application with a fairly large
+JavaScript codebase.  We have been using for the past 5 years a coding style
+described by Douglas Crockford in his book "JavaScript, the good parts" as
+"functional inheritance", which looks like the following.
+</p>
+
+<p>
+<a href="simple-object-model-javascript.html">Read more</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org71fe679" class="outline-2">
+<h2 id="org71fe679">Interview with <b>Seçkin</b> Savaşçı</h2>
+<div class="outline-text-2" id="text-org71fe679">
+<div class="pubdate">
+Feb 9, 2016
+</div>
+
+<p>
+This is the fourth post of my series of interviews of my colleagues
+at <a href="http://foretagsplatsen.se">FTGP</a>.
+</p>
+
+<p>
+Seçkin is the newling sofware engineer at Företagsplatsen, coming to us straight
+from Turkey (well, that's not entirely true, as he got his Master degree in
+Stockholm).
+</p>
+
+<p>
+<a href="interview-seckin.html">Read the interview</a>.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org8a7b80f" class="outline-2">
+<h2 id="org8a7b80f">Working on the <b>Emacs website</b></h2>
+<div class="outline-text-2" id="text-org8a7b80f">
+<div class="pubdate">
+November 29, 2015
+</div>
+
+<p>
+After working on the <a href="working-on-the-emacs-logo.html">Emacs logo</a> and the <a href="http://nicolas-petton.fr/ressources/elpa/">ELPA website</a>, I'm now working on the
+Emacs website, you can have a look at my work (in progress) <a href="http://nicolas-petton.fr/ressources/emacs-website/">here</a>!
+</p>
+
+
+<div class="figure">
+<p><img src="../images/emacs-website.png" alt="emacs-website.png" />
+</p>
+</div>
+
+<p>
+Please note that
+</p>
+<ul class="org-ul">
+<li>It's wip</li>
+<li>Many links are broken</li>
+<li>It's not mobile device ready yet</li>
+</ul>
+
+<p>
+As always, feedback welcome!
+</p>
+
+<p>
+<a href="working-on-the-emacs-website.html">Comments</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc57d26b" class="outline-2">
+<h2 id="orgc57d26b">Working on the <b>Emacs logo</b></h2>
+<div class="outline-text-2" id="text-orgc57d26b">
+<div class="pubdate">
+October 21, 2015
+</div>
+
+<p>
+Recently I've been working on a new iteration of the Emacs logo.  My final
+goal is to improve the first experience newcomers have with Emacs, from the
+website to Emacs startup screen.
+</p>
+
+<p>
+As a first step, I'm working on dusting off our logo, improving the
+current website, and designing a proper website for GNU ELPA.
+</p>
+
+
+<div class="figure">
+<p><img src="../images/emacs-in-context2.png" alt="emacs-in-context2.png" />
+</p>
+</div>
+
+<p>
+<a href="working-on-the-emacs-logo.html">Read more</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org00a35e0" class="outline-2">
+<h2 id="org00a35e0"><b>Lazy sequences</b> in Emacs with stream.el</h2>
+<div class="outline-text-2" id="text-org00a35e0">
+<div class="pubdate">
+October 14, 2015
+</div>
+
+<p>
+I just pushed to GNU ELPA the first version of <a href="https://github.com/NicolasPetton/stream">stream</a>, a new streaming library
+for Emacs. Streams are implemented as delayed evaluation of cons cells, and
+are immutable. In that sense they are similar to streams in the SICP book or
+to Clojure's lazy sequences.
+</p>
+
+<p>
+<a href="stream.html">Read more</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org50ae83d" class="outline-2">
+<h2 id="org50ae83d">Fourth <b>Emacs Meetup</b></h2>
+<div class="outline-text-2" id="text-org50ae83d">
+<div class="pubdate">
+June 14, 2015
+</div>
+
+<p>
+Last Thursday I hosted the <a href="http://www.meetup.com/Stockholm-Emacs-Meetup/events/222609506/">fourth Emacs Meetup</a>.
+</p>
+
+<p>
+The plan was to have a look at how to write a major-mode, and after
+some smalltalk around a beer and a slice of pizza, <a href="https://github.com/Lindydancer">Anders Lindgren</a>
+made <a href="../ressources/presentation-stripped6.html">a presentation</a> about <code>font-lock</code>.  After that we had a close a
+look at <a href="https://github.com/NicolasPetton/pass-mode">pass-mode</a>, a major-mode for managing <a href="http://passwordstore.org/">pass</a> keychains.
+</p>
+
+<p>
+I plan to host another meetup in August, so stay tuned!
+</p>
+
+<p>
+<a href="fourth-emacs-meetup.html">Comments</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org42c9e03" class="outline-2">
+<h2 id="org42c9e03">Third Emacs <b>Meetup</b></h2>
+<div class="outline-text-2" id="text-org42c9e03">
+<div class="pubdate">
+March 18, 2015
+</div>
+
+<p>
+The next <a href="http://www.meetup.com/Stockholm-Emacs-Meetup/events/221122996/">Emacs meetup</a> in Stockholm is scheduled for Thursday, April 9!
+</p>
+
+<p>
+This meetup will be dedicated to <a href="http://orgmode.org/">Orgmode</a>. Org mode is a unique and
+wonderful mode for keeping notes, maintaining TODO lists, planning
+projects, and authoring documents with a fast and effective
+plain-text system.
+</p>
+
+<p>
+Together we will learn how to use the main features of this mode, as
+well as the builtin agenda, the capturing system, and more!
+</p>
+
+<p>
+I would also of course be very interested in sharing experiences and
+tips, so bring your laptops with you!
+</p>
+
+<p>
+<a href="emacs-meetup-orgmode.html">Comments</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgedf9a0f" class="outline-2">
+<h2 id="orgedf9a0f">Interview with <b>Louise</b> Axhake</h2>
+<div class="outline-text-2" id="text-orgedf9a0f">
+<div class="pubdate">
+Jan 30, 2015
+</div>
+
+<p>
+It's been almost six months now since I moved to Stockholm, working
+full-time at <a href="http://foretagsplatsen.se/en">Företagsplatsen</a> as a software engineer, and this is the
+third post of my series of interviews of my colleagues.
+</p>
+
+<p>
+Louise joined the team in January. She was previously working at
+PwC, one of our customers. We started doing this interview on her
+first week in the team, and I've been working with her for a month
+now, which has been a lot of fun!
+</p>
+
+<p>
+<a href="interview-louise.html">Read the interview</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org13d8f14" class="outline-2">
+<h2 id="org13d8f14">Emacs <b>Meetup</b></h2>
+<div class="outline-text-2" id="text-org13d8f14">
+<div class="pubdate">
+January 19, 2015
+</div>
+
+<p>
+Next Friday I'll be hosting the first <a href="http://www.meetup.com/Stockholm-Emacs-Meetup/events/219189463/">Emacs Meetup</a> in Stockholm at
+<a href="http://foretagsplatsen.se/">Företagsplatsen</a>! 
+</p>
+
+<p>
+I have planned to show the basics of Emacs and its terminology,
+maybe go over the builtin tutorial, then to dive into some
+interesting modes and tools that can be of great help to
+developers. If I have enough time, I would also like to explore
+Emacs Lisp, at least the basics :)
+</p>
+
+<p>
+I would also of course be very interested in sharing experiences and
+tips, so bring your laptops with you!
+</p>
+
+<p>
+<a href="emacs-meetup.html">Comments</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge80d285" class="outline-2">
+<h2 id="orge80d285">No <b>Smalltalk</b> anymore.</h2>
+<div class="outline-text-2" id="text-orge80d285">
+<div class="pubdate">
+December 19, 2014
+</div>
+
+<p>
+&#x2026; at least for now!
+</p>
+
+<p>
+Since I decided to step down as <a href="amber-new-maintainer.html">Amber maintainer</a>, several colleagues
+and friends have asked me why I wasn't doing any Smalltalk anymore,
+some urging me to get back on track.
+</p>
+
+<p>
+This is an attempt to explain why I'm currently not doing any
+Smalltalk.
+</p>
+
+<p>
+<a href="no-more-smalltalk.html">Read the full post</a>.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org56fc88c" class="outline-2">
+<h2 id="org56fc88c">Interview with <b>Benjamin</b> Van Ryseghem</h2>
+<div class="outline-text-2" id="text-org56fc88c">
+<div class="pubdate">
+Dec 8, 2014
+</div>
+
+<p>
+This is the second post of my series of interviews of my colleagues
+at <a href="http://foretagsplatsen.se">FTGP</a>.
+</p>
+
+<p>
+Ben joined FTGP almost a year ago. We previously worked together in
+the <a href="http://rmod.inria.fr">RMOD</a> team at Inria. We shared our office with <a href="http://damiencassou.seasidehosting.st">Damien</a> and the
+three of us had a lot of fun working together.
+</p>
+
+<p>
+<a href="interview-ben.html">Read the interview</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdf2fbbb" class="outline-2">
+<h2 id="orgdf2fbbb"><b>Watching Buffers</b> with buffer-watcher.el</h2>
+<div class="outline-text-2" id="text-orgdf2fbbb">
+<div class="pubdate">
+October 24, 2014
+</div>
+
+<p>
+<a href="https://github.com/NicolasPetton/emacs.d/tree/master/local-packages/buffer-watcher">buffer-watcher.el</a> makes it easy to evaluate shell commands each time
+a buffer is saved in Emacs.
+</p>
+
+<p>
+You can specify a mode and base path for which a specific script
+should be evaluated, and each time you save a buffer that matches
+the criteria, the hook will be run.
+</p>
+
+<p>
+Here's an example that runs <code>lessc</code> each time a less file is saved
+in the project <code>proj</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="color: #c678dd; font-weight: bold;">require</span> '<span style="color: #da8548; font-weight: bold;">buffer-watcher</span>)
+(add-to-list 'buffer-watcher-commands '(<span style="color: #98be65;">"Lessc hook"</span> less-css-mode <span style="color: #98be65;">"~/projects/proj/"</span> <span style="color: #98be65;">"lessc % &gt; style.css"</span>))
+</pre>
+</div>
+
+<p>
+The command will be run from within the same folder as the save file,
+and <code>%</code> is expanded to the buffer's file name.
+</p>
+
+<p>
+If you're into <code>customize</code>, you can <code>M-x customize-group RET
+  buffer-watcher</code> to add your commands.
+</p>
+
+
+<div class="figure">
+<p><img src="../images/buffer-watcher.png" alt="buffer-watcher.png" />
+</p>
+</div>
+
+<p>
+You can grab buffer-watcher from my <a href="https://github.com/NicolasPetton/emacs.d/tree/master/local-packages/buffer-watcher">emacs settings</a> on GitHub.
+</p>
+
+<p>
+<a href="buffer-watcher.html">Comments</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1d235f8" class="outline-2">
+<h2 id="org1d235f8">Interview with <b>Johan</b> Degerfeldt</h2>
+<div class="outline-text-2" id="text-org1d235f8">
+<div class="pubdate">
+Oct 16, 2014
+</div>
+
+<p>
+Two months ago I moved to Stockholm, working full-time at
+<a href="http://foretagsplatsen.se/en">Företagsplatsen</a> as a software engineer. Företagsplatsen (or FTGP for
+short as we call it) is a really fun IT company to work at, I really
+enjoy the people and the culture. Just like I did with my previous
+job at Inria, I decided to do another series of interviews of my
+colleagues at FTGP.
+</p>
+
+<p>
+As the CEO of the company, it only made sense to interview Johan
+first. I guess Johan looks like what we imagine of a viking: tall,
+light hair and a beard, but he is definitely more talkative than the
+average Swedish guy. He's half of the time joking around and the
+other half really serious talking business and stuff, making him a
+really cool guy to work with.
+</p>
+
+<p>
+<a href="interview-johan.html">Read the interview</a>
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org074d6dc" class="outline-2">
+<h2 id="org074d6dc"><b>Amber</b> 0.13</h2>
+<div class="outline-text-2" id="text-org074d6dc">
+<p>
+Amber 0.13.1 has been released!
+</p>
+
+<p>
+<a href="amber-0.13-released.html">Read more</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga426d2c" class="outline-2">
+<h2 id="orga426d2c"><b>Amber</b> has a new maintainer</h2>
+<div class="outline-text-2" id="text-orga426d2c">
+<p>
+As you have probably noticed, I've been a bit away from Amber for some
+time.
+</p>
+
+<p>
+Herby has been the unofficial maintainer of Amber since then and he has
+done an amazing job!
+</p>
+
+<p>
+So, after some discussions we decided to make it a bit more official,
+so here it is: Herbert Vojčík is the new maintainer of Amber.
+</p>
+
+<p>
+It does not mean that I will totally disappear, I'll stay around!
+</p>
+
+<p>
+<a href="amber-new-maintainer.html">Comments</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgac5f306" class="outline-2">
+<h2 id="orgac5f306"><b>Multi-occur</b> on projects</h2>
+<div class="outline-text-2" id="text-orgac5f306">
+<p>
+<b>Update</b>: <a href="http://damiencassou.seasidehosting.st/">Damien Cassou</a> tricked me into extracting it in a
+package. You can get it here: <a href="https://github.com/NicolasPetton/noccur.el">github.com/NicolasPetton/noccur.el</a>.
+</p>
+
+<p>
+<a href="http://www.emacswiki.org/emacs/OccurMode">Occur-mode</a> is one of the awesome modes that come builtin with
+Emacs. 
+</p>
+
+<p>
+Sometimes I just want to run <code>multi-occur</code> on all (or a subdirectory)
+of a project I'm working on. Used with keyboard macros it makes it a
+snap to perform modifications on many buffers at once.
+</p>
+
+<p>
+I wrote a tiny package containing the following functions that does just that:
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="color: #c678dd; font-weight: bold;">require</span> '<span style="color: #da8548; font-weight: bold;">projectile</span>)
+
+(<span style="color: #c678dd; font-weight: bold;">defun</span> <span style="color: #61afef;">noccur-dired</span> (regexp <span style="color: #61afef;">&amp;optional</span> nlines)
+  <span style="color: #9eac8c;">"Perform `</span><span style="color: #da8548; font-weight: bold;">multi-occur</span><span style="color: #9eac8c;">' with REGEXP in all dired marked files.</span>
+<span style="color: #9eac8c;">When called with a prefix argument NLINES, display NLINES lines before and after."</span>
+  (<span style="color: #c678dd; font-weight: bold;">interactive</span> (occur-read-primary-args))
+  (multi-occur (mapcar #'find-file (dired-get-marked-files)) regexp nlines))
+
+(<span style="color: #c678dd; font-weight: bold;">defun</span> <span style="color: #61afef;">noccur-project</span> (regexp <span style="color: #61afef;">&amp;optional</span> nlines)
+  <span style="color: #9eac8c;">"Perform `</span><span style="color: #da8548; font-weight: bold;">multi-occur</span><span style="color: #9eac8c;">' in the current project files."</span>
+  (<span style="color: #c678dd; font-weight: bold;">interactive</span> (occur-read-primary-args))
+  (<span style="color: #c678dd; font-weight: bold;">let*</span> ((directory (read-directory-name <span style="color: #98be65;">"Search in directory: "</span>))
+         (files (<span style="color: #c678dd; font-weight: bold;">if</span> (<span style="color: #c678dd; font-weight: bold;">and</span> directory (not (string= directory (projectile-project-root))))
+                    (projectile-files-in-project-directory directory)
+                  (projectile-current-project-files)))
+         (buffers (mapcar #'find-file 
+                          (mapcar #'(lambda (file)
+                                      (expand-file-name file (projectile-project-root)))
+                                  files))))
+    (multi-occur buffers regexp nlines)))
+
+(<span style="color: #c678dd; font-weight: bold;">provide</span> '<span style="color: #da8548; font-weight: bold;">noccur</span>)
+</pre>
+</div>
+
+<p>
+It requires projectile for the `noccur-project` function, but
+`noccur-dired` is very similar and doesn't require it.
+</p>
+
+<p>
+The way I use it is the following:
+</p>
+
+<p>
+<code>M-x noccur-project RET foo RET</code> then I can edit the occur buffer's
+content with <code>occur-edit-mode</code> (bound to <code>e</code>). To save changes in all
+modified buffer and go back to <code>occur-mode</code> press <code>C-c C-c</code>.
+</p>
+
+<p>
+<a href="mutli-occur-on-projects.html">Comments</a>
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org618f0f0" class="outline-2">
+<h2 id="org618f0f0"><b>Dark Emacs windows</b> in GNOME</h2>
+<div class="outline-text-2" id="text-org618f0f0">
+<p>
+Gnome 3's default theme Adwaita has support for both light and dark
+window decorations. Many media apps like Totem use the dark theme. It
+puts the focus on the content and it's easier on the eyes.
+</p>
+
+<p>
+Emacs with a <a href="https://github.com/niflheim-theme/emacs">dark theme</a> and the large white-ish window decoration
+isn't really a fit on my desktop, but that can be easily fixed using a
+bit of elisp with xprop!
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="color: #c678dd; font-weight: bold;">defun</span> <span style="color: #61afef;">set-selected-frame-dark</span> ()
+  (<span style="color: #c678dd; font-weight: bold;">interactive</span>)
+  (<span style="color: #c678dd; font-weight: bold;">let</span> ((frame-name (get-frame-name (selected-frame))))
+    (call-process-shell-command (concat <span style="color: #98be65;">"xprop -f _GTK_THEME_VARIANT 8u -set _GTK_THEME_VARIANT \"dark\" -name \""</span>
+                                        frame-name
+                                        <span style="color: #98be65;">"\""</span>))))
+
+(<span style="color: #c678dd; font-weight: bold;">if</span> (window-system)
+    (set-selected-frame-dark))
+</pre>
+</div>
+
+<p>
+Here's a screenshot of both versions:
+</p>
+
+<p>
+<img src="../images/emacs-light.png" alt="emacs-light.png" />
+<img src="../images/emacs-dark.png" alt="emacs-dark.png" />
+</p>
+
+<p>
+<a href="emacs-dark-window-decoration.html">Comments</a>
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org4289785" class="outline-2">
+<h2 id="org4289785"><b>isearch</b> thing</h2>
+<div class="outline-text-2" id="text-org4289785">
+<p>
+Wouldn't it be awesome if when using isearch, I could search for the symbol
+under the cursor, or the active region if any?
+</p>
+
+<p>
+Unfortunately, AFAIK isearch can search for the next word (with <code>C-w</code>), but not
+the symbol at point or the region contents. This small snippet fixes the
+problem!
+</p>
+
+<p>
+Note: it overrides <code>C-t</code> in isearch-mode, but as I never use it, I do not mind :)
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="color: #c678dd; font-weight: bold;">defun</span> <span style="color: #61afef;">symbol-name-at-point</span> ()
+  (<span style="color: #c678dd; font-weight: bold;">let</span> ((symbol (symbol-at-point)))
+    (<span style="color: #c678dd; font-weight: bold;">if</span> symbol
+        (symbol-name symbol)
+      <span style="color: #98be65;">""</span>)))
+
+(<span style="color: #c678dd; font-weight: bold;">defun</span> <span style="color: #61afef;">current-thing</span> ()
+  <span style="color: #9eac8c;">"Return the current \"thing\":</span>
+<span style="color: #9eac8c;">- if the region is active, return the region's text and deactivate the mark</span>
+<span style="color: #9eac8c;">- else return the symbol at point or the empty string."</span>
+  (<span style="color: #c678dd; font-weight: bold;">let</span> ((thing (<span style="color: #c678dd; font-weight: bold;">if</span> (region-active-p)
+                   (buffer-substring (region-beginning) (region-end))
+                 (symbol-name-at-point))))
+    (deactivate-mark)
+    thing))
+
+(<span style="color: #c678dd; font-weight: bold;">defun</span> <span style="color: #61afef;">isearch-thing</span> ()
+  <span style="color: #9eac8c;">"Search for the current \"thing\":</span>
+<span style="color: #9eac8c;">- if the region is active, return the region's text and deactivate the mark</span>
+<span style="color: #9eac8c;">- else return the symbol at point or the empty string."</span>
+  (<span style="color: #c678dd; font-weight: bold;">interactive</span>)
+  (isearch-yank-string (current-thing)))
+
+(define-key isearch-mode-map (kbd <span style="color: #98be65;">"C-t"</span>) #'isearch-thing)
+</pre>
+</div>
+
+<p>
+<a href="isearch-thing.html">Comments</a>
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgf5fca3b" class="outline-2">
+<h2 id="orgf5fca3b"><b>Farewell</b> RMoD!</h2>
+<div class="outline-text-2" id="text-orgf5fca3b">
+<p>
+Today is my last day at <a href="http://rmod.inria.fr/">RMoD</a>. 
+</p>
+
+<p>
+The last two years have been an incredibly rich experience, and I'm
+profoundly sad to leave my colleagues. I have in the past two years
+met and worked with a lot of very smart people and many of them
+became very close friends. I'm still saying goodbye to people, so
+I'll make this post short. :)
+</p>
+
+<p>
+The first thing that comes to my mind when I think about the last
+two years is that I'm very proud of having been part of RMoD. It
+hasn't always been easy, but it has been all in all a very joyful
+experience.
+</p>
+
+<p>
+I will of course stay around, and come back to visit the team around
+February next year. 
+</p>
+
+<p>
+In two weeks I'll be packing my stuff to go to Stockholm, where I
+will be working in another development team. It's a totally new
+adventure that will begin, so stay tuned!
+</p>
+
+<p>
+<a href="farewell-rmod.html">Comments</a>
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org582a510" class="outline-2">
+<h2 id="org582a510">Interview with <b>Clara</b> Allende</h2>
+<div class="outline-text-2" id="text-org582a510">
+<div class="pubdate">
+July 18, 2014
+</div>
+
+<p>
+This is the sixth post of my series of interviews, in which I
+<a href="working-at-rmod.html">interview my colleagues</a> of the <a href="http://rmod.lille.inria.fr/web/">RMoD</a> team.
+</p>
+
+<p>
+Clara joined RMoD recently for an internship in the team. I first
+met her in Argentina for the Smalltalks conference last year, where
+we had a couple (well, a bit more than that) beers together with
+other argentinians, talked about Smalltalk among other things. She's
+now a good friend of mine and I'm really happy to make this
+interview with her, probably my last interview of the RMoD team
+members, as I'm leaving the team today.
+</p>
+
+<p>
+<a href="interview-clara.html">Read the interview!</a>
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org702efc6" class="outline-2">
+<h2 id="org702efc6"><b>Tide &amp; Marina</b> at RMoD</h2>
+<div class="outline-text-2" id="text-org702efc6">
+<div class="pubdate">
+July 3, 2014
+</div>
+
+<p>
+Today I gave a presentation (probably my last one, as I will leave
+for Stockholm soon) about <a href="https://github.com/tide-framework/tide">Tide</a> and <a href="https://github.com/tide-framework/marina">Marina</a> to my colleagues of
+RMoD. 
+</p>
+
+<p>
+Tide is a new web framework that makes Pharo and Amber communication
+a breeze. Marina is the CMS that powers <a href="http://pharo.org">the new Pharo website</a>.
+</p>
+
+<p>
+Here are the <a href="http://nicolas-petton.fr/ressources/tide-marina-rmod-2014/index.html">slides</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga76e7e6" class="outline-2">
+<h2 id="orga76e7e6"><b>tmate.io</b> terminal sharing made easy</h2>
+<div class="outline-text-2" id="text-orga76e7e6">
+<div class="pubdate">
+July 3, 2014
+</div>
+
+<p>
+Recently I was looking for good remote pair programming tools, like
+screen sharing and audio/video tools. 
+</p>
+
+<p>
+For audio, Jabber and Skype work fine. I also use Google Hangout
+from time to time.
+</p>
+
+<p>
+For screen sharing I used <a href="http://teamviewer.com">Teamviewer</a> in the past, but the quality
+isn't always good enough to share an Emacs window, and it is a
+commercial application. Skype's screen sharing works fine but it's
+read-only sharing.
+</p>
+
+<p>
+I decided to give the famous tmux a try, and stumbled upon <a href="http://tmate.io">Tmate</a>, a
+tmux fork that makes terminal sharing a breeze. 
+</p>
+
+<p>
+The idea behind tmate is simple, it's like tmux but with sugar on
+top so that you don't have to setup anything (you can setup your own
+tmate server if you want though), just start <code>tmate</code> in a terminal
+and it will handle the ssh server connection for you and give you a
+one time ssh access that you can copy/paste to you mates.
+</p>
+
+<p>
+It's as good as tmux: it's fast, reliable and works great in
+general, even with slow bandwidths. Best of all, it's free software,
+works on Linux and OSX. I finally have a great tool to share an
+Emacs session.
+</p>
+
+<p>
+<a href="http://tmate.io">Tmate website</a>.
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-org73a949d" class="outline-2">
+<h2 id="org73a949d"><b>Amber</b> 0.12.6</h2>
+<div class="outline-text-2" id="text-org73a949d">
+<div class="pubdate">
+July 1, 2014
+</div>
+
+<p>
+Read the <a href="amber-0.12.6-released.html">announcement</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgaadd36d" class="outline-2">
+<h2 id="orgaadd36d">Interview with <b>Guillermo</b> Polito</h2>
+<div class="outline-text-2" id="text-orgaadd36d">
+<div class="pubdate">
+June 18, 2014
+</div>
+
+<p>
+This is the fifth post of my series of interviews, in which I
+<a href="working-at-rmod.html">interview my colleagues</a> of the <a href="http://rmod.lille.inria.fr/web/">RMoD</a> team. After the <a href="interview-jean-baptiste.html">Interview with
+Jean-Baptiste Arnaud</a>, I interview <a href="http://playingwithobjects.wordpress.com/">Guillermo Polito</a>.
+</p>
+
+<p>
+Guille (pronounce it Guiche) is another one of the <a href="http://playingwithobjects.wordpress.com/">many</a> <a href="http://marianopeck.wordpress.com/">argentinians</a>
+who have been working at <a href="http://inria.fr">Inria</a>. Guille is doing a PhD in RMoD, he
+drinks mate all day long (which argentinian doesn't?), and he's
+always in when it comes to going for a beer <a href="http://www.cafecitoyen.org/">somewhere</a> in Lille after
+work.
+</p>
+
+<p>
+<a href="interview-guille.html">Read the interview</a>!
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org94e8991" class="outline-2">
+<h2 id="org94e8991"><b>Per-computer</b> Emacs settings</h2>
+<div class="outline-text-2" id="text-org94e8991">
+<div class="pubdate">
+June 11, 2014
+</div>
+
+<p>
+I use Emacs on all of my machines, being laptops or servers. While
+my Emacs settings are shared among all of my computers, some of
+these settings really matter for one specific computer.
+</p>
+
+<p>
+<a href="per-computer-emacs-settings.html">Read the post</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org092e618" class="outline-2">
+<h2 id="org092e618">Interview with <b>Jean-Baptiste</b> Arnaud</h2>
+<div class="outline-text-2" id="text-org092e618">
+<div class="pubdate">
+June 11, 2014
+</div>
+
+
+<p>
+This is the fourth post of my series of interviews, in which I
+<a href="working-at-rmod.html">interview my colleagues</a> of the <a href="http://rmod.lille.inria.fr/web/">RMoD</a> team.
+</p>
+
+<p>
+This time I interview Jean-Baptiste Arnaud.
+</p>
+
+<p>
+<a href="interview-jean-baptiste.html">Read the interview!</a>
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org902912d" class="outline-2">
+<h2 id="org902912d"><b>Amber</b> test runner</h2>
+<div class="outline-text-2" id="text-org902912d">
+<div class="pubdate">
+May 13, 2014
+</div>
+
+<p>
+Today the <code>helios-sunit</code> branch has been merged into <code>master</code>. This
+is an important milestone for Helios, Amber's new IDE, as it now has
+a fully functional test runner.
+</p>
+
+
+<div class="figure">
+<p><img src="../images/helios-sunit.png" alt="helios sunit" width="600px" />
+</p>
+<p><span class="figure-number">Figure 6: </span>Helios' test runner</p>
+</div>
+
+<p>
+<a href="helios-sunit.html">Comments</a>
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org5e07bc7" class="outline-2">
+<h2 id="org5e07bc7"><b>Amber</b> 0.12.4</h2>
+<div class="outline-text-2" id="text-org5e07bc7">
+<div class="pubdate">
+April 11, 2014
+</div>
+<p>
+After 3 months of development, we are happy to announce the release of
+Amber 0.12.4.
+</p>
+
+
+<p>
+Highlights:
+</p>
+
+<ul class="org-ul">
+<li>Several improvements in Helios, including UI-related and debugger improvements</li>
+<li>Loading Amber without cloning the repository has been simplified</li>
+<li>A new documentation (in progress) can be found at <a href="http://docs.amber-lang.net/">http://docs.amber-lang.net/</a>[1]</li>
+</ul>
+
+<p>
+Commits: <a href="https://github.com/amber-smalltalk/amber/compare/0.12.3...0.12.4">https://github.com/amber-smalltalk/amber/compare/0.12.3...0.12.4</a>[2]
+</p>
+
+<p>
+Issues: <a href="https://github.com/amber-smalltalk/amber/issues?milestone=12&amp;state=closed">https://github.com/amber-smalltalk/amber/issues?milestone=12&amp;state=closed</a>[3]
+</p>
+
+
+<p>
+Install Amber 0.12.4 from <a href="http://docs.amber-lang.net">here</a>!
+</p>
+
+<p>
+<a href="amber-1.12.4-released.html">Comments</a>
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org7926cd9" class="outline-2">
+<h2 id="org7926cd9"><b>Helios</b> as a desktop app</h2>
+<div class="outline-text-2" id="text-org7926cd9">
+<div class="pubdate">
+April 3, 2014
+</div>
+
+<p>
+I just pushed on the <a href="https://github.com/amber-smalltalk/amber/tree/nw-helios-app">nw-helios-app</a> branch a working version of
+Helios running as a desktop app, remotely connected to an Amber app.
+</p>
+
+
+<div class="figure">
+<p><img src="../images/nw-helios.png" alt="niflheim" />  
+</p>
+<p><span class="figure-number">Figure 7: </span>Niflheim theme</p>
+</div>
+
+<p>
+To try it yourself, you'll first need to install <a href="https://github.com/rogerwang/node-webkit">node-webkit</a> then
+run from the `hw-helios-app` branch:
+</p>
+
+<div class="BASH">
+<p>
+nw helios.nw
+</p>
+
+</div>
+
+<p>
+<a href="nw-helios.html">Comments</a>.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgacab1ca" class="outline-2">
+<h2 id="orgacab1ca">Interview with <b>Stéphane</b> Ducasse</h2>
+<div class="outline-text-2" id="text-orgacab1ca">
+<div class="pubdate">
+February 7, 2014
+</div>
+
+<p>
+This is the third post of a series, in which I <a href="working-at-rmod.html">interview my colleagues</a> of the
+<a href="http://rmod.lille.inria.fr/web/">RMoD</a> team (in Lille, France). This is the interview of Stéphane Ducasse, our
+leader and the backbone of RMoD.
+</p>
+
+<p>
+<a href="interview-stef.html">Read the interview!</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org36d2f82" class="outline-2">
+<h2 id="org36d2f82">A <b>dark theme</b> for Emacs</h2>
+<div class="outline-text-2" id="text-org36d2f82">
+<div class="pubdate">
+March 28, 2014
+</div>
+
+<p>
+Together with <a href="http://benjamin.vanryseghem.com/">Benjamin</a> we made a new theme for Emacs: <a href="https://github.com/niflheim-theme/emacs">Niflheim</a>.
+</p>
+
+
+<div class="figure">
+<p><img src="https://raw.githubusercontent.com/niflheim-theme/emacs/master/screenshot.png" alt="niflheim" />
+</p>
+<p><span class="figure-number">Figure 8: </span>Niflheim theme</p>
+</div>
+</div>
+
+
+<div id="outline-container-org1793eb0" class="outline-3">
+<h3 id="org1793eb0">The best way to install it is to use the <a href="http://melpa.milkbox.net/">MELPA</a> package archive:</h3>
+<div class="outline-text-3" id="text-org1793eb0">
+<div class="SH">
+<p>
+M-x package-install RET niflheim-theme
+</p>
+
+</div>
+
+<p>
+<a href="niflheim-theme.html">Comments</a>
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org2c6bed5" class="outline-2">
+<h2 id="org2c6bed5">Interview with <b>Esteban</b> Lorenzano</h2>
+<div class="outline-text-2" id="text-org2c6bed5">
+<div class="pubdate">
+February 6, 2014
+</div>
+
+<p>
+This is the second post of a series, in which I <a href="working-at-rmod.html">interview my
+colleagues</a> of the <a href="http://rmod.lille.inria.fr/web/">RMoD</a> team (in Lille, France). This time I
+interview Esteban Lorenzano, my neighbour, colleague and friend.
+</p>
+
+<p>
+<a href="interview-esteban.html">Read the interview!</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org103f36e" class="outline-2">
+<h2 id="org103f36e"><b>Details</b> matter</h2>
+<div class="outline-text-2" id="text-org103f36e">
+<div class="pubdate">
+February 6, 2014
+</div>
+
+<p>
+Helios is moving forward with interesting new features, especially
+regarding navigation in code. These improvements are for the major
+part small and might be seen as unimportant details. The thing is
+details matter! Polishing Helios is now a priority in Amber's
+development, and a full replacement of the old IDE is planned for
+one of the next releases.
+</p>
+
+<p>
+Here's a short video demonstrating some of the changes I like the
+most.
+</p>
+
+<p>
+<a href="details-matter.html">Watch the screencast</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc77634b" class="outline-2">
+<h2 id="orgc77634b"><b>Help us</b> write a documentation for Amber!</h2>
+<div class="outline-text-2" id="text-orgc77634b">
+<div class="pubdate">
+January 29, 2014
+</div>
+
+<p>
+There's a new website in Amber-land: <a href="http://docs.amber-lang.net">docs.amber-lang.net</a>.
+</p>
+
+<p>
+We just started to extract pages from our Github <a href="https://github.com/amber-smalltalk/amber/wiki">wiki</a> into a new
+website dedicated to Amber's documentation. It often requires
+rewriting and quality improvements. As the current wiki misses a lot
+of content and is far from covering all aspects of Amber, there's
+quite some work yet to be done.
+</p>
+
+<p>
+You can help us make Amber a better documented language! You can
+contribute on <a href="https://github.com/amber-smalltalk/amber-documentation">github</a>, send us pull requests, report typos and other
+issues or ask for for specific topics to be covered.
+</p>
+
+<p>
+We need more topics covered, reviews, etc.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2733ad6" class="outline-2">
+<h2 id="org2733ad6">Interview with <b>Damien</b> Cassou</h2>
+<div class="outline-text-2" id="text-org2733ad6">
+<div class="pubdate">
+January 15, 2014
+</div>
+
+<p>
+This is the first post of a series, in which I <a href="working-at-rmod.html">interview my colleagues</a> of the
+<a href="http://rmod.lille.inria.fr/web/">RMoD</a> team (in Lille, France), with the hope that I can share part of what it
+really means to work here.
+</p>
+
+<p>
+<a href="interview-damien.html">Read the interview</a>.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org91b612c" class="outline-2">
+<h2 id="org91b612c"><b>RMoD</b> A series of interviews</h2>
+<div class="outline-text-2" id="text-org91b612c">
+<div class="pubdate">
+January 14, 2014
+</div>
+
+<p>
+I have the incredible chance to work in an amazing environment,
+surrounded by smart and passionate people. This place is <a href="http://rmod.lille.inria.fr/web/">RMoD</a>, a
+research team at <a href="http://www.inria.fr/">Inria</a> <a href="https://www.inria.fr/en/centre/lille">Lille</a>. 
+</p>
+
+<p>
+At RMoD we not only make <a href="http://pharo-project.org">Pharo</a>, <a href="http://amber-lang.net">Amber</a>, work on <a href="http://www.moosetechnology.org/">Moose</a> and do
+<a href="http://rmod.lille.inria.fr/web/pier/research">research</a>. For me the work is all about the people, the energy and
+shared passion. A lot of the culture of the team is actually built
+<i>outside</i> of the office, during the friday evenings at <a href="http://www.cafecitoyen.org">Café Citoyen</a>
+sharing a beer, or during other events. I'm actually proud to say
+that many of my colleagues became very good friends over time.
+</p>
+
+<p>
+I decided to share my experiences of working there, and to do so I
+will start a series of interviews of the team members on my blog. My
+goal is not to ask technical questions about Pharo or a PhD thesis,
+but to share the human side of the story.
+</p>
+
+<p>
+I will post the interviews as they get completed, so stay tuned!
+</p>
+
+<p>
+<a href="working-at-rmod.html">Comments</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3e55af9" class="outline-2">
+<h2 id="org3e55af9"><b>Poll</b> What would you like to have in future releases of Amber?</h2>
+<div class="outline-text-2" id="text-org3e55af9">
+<div class="pubdate">
+January 13, 2014
+</div>
+
+<p>
+A new release of <a href="http://amber-lang.net">Amber</a> is approaching. In order to focus on what
+matters to users, we created an online <a href="https://docs.google.com/forms/d/1wNTxIk3LZh2JHCVL_SSst_QJmLKh6znrkRWzwD8RuEY/viewform">poll</a> asking about what users
+want most in future releases of Amber.
+</p>
+
+<p>
+Fill the form <a href="https://docs.google.com/forms/d/1wNTxIk3LZh2JHCVL_SSst_QJmLKh6znrkRWzwD8RuEY/viewform">here</a>!
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9e34c62" class="outline-2">
+<h2 id="org9e34c62"><b>Keybindings</b> in Amber's new IDE</h2>
+<div class="outline-text-2" id="text-org9e34c62">
+<div class="pubdate">
+January 13, 2014
+</div>
+
+<p>
+Amber's new IDE, fondly named Helios, has been built with keyboard
+power users in mind from the beginning. It evolved quite a bit over
+time, and keyboard shortcuts as well as their UI are no exception.
+</p>
+
+<p>
+<a href="helios-keybindings.html">Read more.</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org02d8f0b" class="outline-2">
+<h2 id="org02d8f0b"><b>Amber</b> 0.12.2</h2>
+<div class="outline-text-2" id="text-org02d8f0b">
+<div class="pubdate">
+December 3, 2013
+</div>
+
+<p>
+This is the second minor release of <a href="http://amber-lang.net">Amber</a> 0.12 (<a href="https://groups.google.com/d/msg/amber-lang/dv6lEYiKrAk/dBdNAlLb-xMJ">announcement</a>), 20
+days after the release of version <a href="https://groups.google.com/d/msg/amber-lang/m5dqUAYFM6M/dqzmk7nwwNwJ">0.12.1</a>.
+</p>
+
+<p>
+<a href="amber-0.12.2-released.html">Read more.</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org02a3903" class="outline-2">
+<h2 id="org02a3903">Slides from my presentation at <b>Smalltalks 2013</b></h2>
+<div class="outline-text-2" id="text-org02a3903">
+<div class="pubdate">
+December 3, 2013
+</div>
+
+<p>
+I just put online <a href="http://nicolas-petton.fr/ressources/amber-smalltalks-2013/index.html">slides</a> from my presentation of <a href="http://amber-lang.net">Amber</a> at <a href="http://www.fast.org.ar/smalltalks2013/">Smalltalks 2013</a> in Rosario.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5bc9d0b" class="outline-2">
+<h2 id="org5bc9d0b"><b>Amber</b> 0.12.0</h2>
+<div class="outline-text-2" id="text-org5bc9d0b">
+<div class="pubdate">
+November 12, 2013
+</div>
+
+<p>
+The last 3 months have been exciting in Amber-land!
+</p>
+
+<p>
+The new release includes a lot of improvements, from the new package
+management to the AST interpreter, as well as improvements in
+Helios, the CLI tools and the compiler, among other changes.
+</p>
+
+<p>
+<a href="amber-0.12.0-released.html">Read more</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org697167e" class="outline-2">
+<h2 id="org697167e">Amber's new <b>compiler</b></h2>
+<div class="outline-text-2" id="text-org697167e">
+<div class="pubdate">
+October 18, 2013
+</div>
+
+<p>
+Amber's compiler has been improved some months ago and a post
+explaining its new architecture was a long overdue.
+</p>
+
+<p>
+Following Opal (the new <a href="http://pharo-project.org">Pharo</a> compiler) architecture, the compiler
+has been entirely rewritten from a single, complex and stateful AST
+visitor into several smaller, single-purpose classes, making it a
+more flexible and extensible compiler.
+</p>
+
+<p>
+<a href="amber-compiler.html">Read more</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge5de544" class="outline-2">
+<h2 id="orge5de544">Arrived in <b>Buenos Aires</b></h2>
+<div class="outline-text-2" id="text-orge5de544">
+<div class="pubdate">
+October 18, 2013
+</div>
+
+<p>
+Yesterday I arrived in Buenos Aires. 
+</p>
+
+<p>
+Next week I'll be heading to Rosario for the <a href="http://www.fast.org.ar/smalltalks2013">Smalltalks</a> conference
+where I'll be giving a <a href="http://www.fast.org.ar/smalltalks2013/talks/Amber%20Smalltalk%253A%20A%20Smalltalk%20that%20runs%20inside%20your%20web%20browser">talk</a> about <a href="http://amber-lang.net">Amber</a>. This talk will highlight
+key features and use-cases of Amber, explain some of the internals
+as well as important new and planned features.
+</p>
+
+<p>
+I hope to see you there!
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb677a43" class="outline-2">
+<h2 id="orgb677a43">Installing <b>Pharo on Ubuntu</b></h2>
+<div class="outline-text-2" id="text-orgb677a43">
+<div class="pubdate">
+October 15, 2013
+</div>
+
+
+<p>
+I'm always surprised when I see that people are still installing the
+<a href="http://pharo-project.org">Pharo</a> Virtual Machine by hand on Ubuntu while <a href="http://damiencassou.seasidehosting.st">Damien Cassou</a> has made
+a ppa for it.
+</p>
+
+<p>
+<a href="installing-pharo-on-ubuntu.html">Read more</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbee4478" class="outline-2">
+<h2 id="orgbee4478">Blogging with <b>org-mode</b></h2>
+<div class="outline-text-2" id="text-orgbee4478">
+<div class="pubdate">
+October 15, 2013
+</div>
+
+<p>
+I just switched my personal website and blog engine from <a href="http://jekyllrb.com">Jekyll</a> to
+<a href="http://orgmode.org">Org-mode</a>. As all my blog posts were already written in the
+<code>org-mode</code> format, switching was a breeze. Org-mode includes a <a href="http://orgmode.org/w/?p%3Dorg-mode.git%3Ba%3Dblob_plain%3Bf%3Dcontrib/lisp/ox-rss.el%3Bhb%3DHEAD">RSS
+exporter</a> in the <i>contrib</i> directory and together with its HTML
+<a href="http://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html">publishing</a> features, it makes it a very powerful website builder.
+</p>
+
+<p>
+<a href="blogging-with-org-mode.html">Read more</a>.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org4167257" class="outline-2">
+<h2 id="org4167257">Amber <b>0.10.0</b></h2>
+<div class="outline-text-2" id="text-org4167257">
+<div class="pubdate">
+March 13, 2013
+</div>
+
+
+<p>
+Today we released <a href="http://amber-lang.net">Amber 0.10.0</a>. After a year of work, we beleive this is a great release. 
+I'm especially glad to say that this release was a real community effort.
+</p>
+
+<p>
+Read the <a href="https://groups.google.com/forum/#!searchin/amber-lang/0.10.0/amber-lang/RHEVegrCnJY/EfLzltER-XoJ">full announcement</a>.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<div class='footer'>
+Copyright 2020 Nicolas Petton.<br>
+Last updated 2020-08-24 Mon 14:42. <br>
+Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.3.6).
+</div>
+</div>
+</body>
+</html>
