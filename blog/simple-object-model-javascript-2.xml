@@ -14,10 +14,10 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Wed, 02 Aug 2017 10:02:37 +0200</pubDate>
-  <lastBuildDate>Wed, 02 Aug 2017 10:02:37 +0200</lastBuildDate>
-  <generator>Emacs 25.2 Org-mode 9.0.9</generator>
-  <webMaster>nicolas@petton.fr (Nicolas Petton)</webMaster>
+  <pubDate>Mon, 24 Aug 2020 14:43:05 +0200</pubDate>
+  <lastBuildDate>Mon, 24 Aug 2020 14:43:05 +0200</lastBuildDate>
+  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
     <title>A simple object model in JavaScript (part #2)</title>
@@ -28,7 +28,7 @@
   <item>
     <title>A simple *object model* in JavaScript part #2</title>
     <link>http://nicolas-petton.fr/blog/simple-object-model-javascript-2.html#org40390de</link>
-    <author>nicolas@petton.fr (Nicolas Petton)</author>
+    <author>nico@petton.fr (Nicolas Petton)</author>
     <guid isPermaLink="false">http://nicolas-petton.fr/blog/simple-object-model-javascript-2.html#org40390de</guid>
     <pubDate>Mon, 22 Feb 2016 08:52:00 +0100</pubDate>
 
@@ -37,20 +37,20 @@
     </div>
 
     <p>
-    In <a href="http://nicolas-petton.fr/blog/simple-object-model-javascript.html">my previous post</a>, I wrote about an approach to class-based OO in JavaScript.
+    In <a href="simple-object-model-javascript.html">my previous post</a>, I wrote about an approach to class-based OO in JavaScript.
     I mentioned class extensions (the ability to reopen and extend classes from the
     outside of the class definition) without showing how that can be done.
     </p>
 
     <div id="outline-container-org1993e24" class="outline-3">
-    <h3 id="org1993e24"><a id="ID-0da6cc32-c206-4287-8e1c-7ffb6906ea79"></a>An example</h3>
+    <h3 id="org1993e24">An example</h3>
     <div class="outline-text-3" id="text-org1993e24">
     <p>
     Let's take the same <code>animal</code> example as before:
     </p>
 
     <div class="org-src-container">
-    <pre><code class="src src-js"><span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #61afef;">animal</span> = object.subclass(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">that</span>, <span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
+    <pre class="src src-js"><span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #61afef;">animal</span> = object.subclass(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">that</span>, <span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
 
     <span style="color: #c678dd; font-weight: bold;">that</span>.initialize = <span style="color: #c678dd; font-weight: bold;">function</span>() {
     <span style="color: #c678dd; font-weight: bold;">my</span>.name = <span style="color: #c678dd; font-weight: bold;">spec</span>.name;
@@ -71,7 +71,7 @@
     <span style="color: #c678dd; font-weight: bold;">return</span> <span style="color: #98be65;">'dog named'</span> + <span style="color: #c678dd; font-weight: bold;">that</span>.<span style="color: #c678dd; font-weight: bold;">super</span>.getName();
     };
     });
-    </code></pre>
+    </pre>
     </div>
 
     <p>
@@ -80,12 +80,12 @@
     </p>
 
     <div class="org-src-container">
-    <pre><code class="src src-js">object.extend(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">that</span>, <span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
+    <pre class="src src-js">object.extend(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">that</span>, <span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
     <span style="color: #c678dd; font-weight: bold;">that</span>.isAnimal = <span style="color: #c678dd; font-weight: bold;">function</span>() {
     <span style="color: #c678dd; font-weight: bold;">return</span> <span style="color: #da8548; font-weight: bold;">false</span>;
     };
     })
-    </code></pre>
+    </pre>
     </div>
 
     <p>
@@ -99,7 +99,7 @@
     </p>
 
     <div class="org-src-container">
-    <pre><code class="src src-js">object.extensions = [];
+    <pre class="src src-js">object.extensions = [];
 
     object.subclass = <span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #61afef;">builder</span>) {
     <span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #c678dd; font-weight: bold;">that</span> = <span style="color: #da8548; font-weight: bold;">this</span>;
@@ -138,7 +138,7 @@
     object.extend = <span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #61afef;">builder</span>) {
     <span style="color: #da8548; font-weight: bold;">this</span>.extensions.push(builder);
     };
-    </code></pre>
+    </pre>
     </div>
 
     <p>

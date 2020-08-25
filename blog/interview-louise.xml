@@ -14,10 +14,10 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Wed, 02 Aug 2017 09:56:09 +0200</pubDate>
-  <lastBuildDate>Wed, 02 Aug 2017 09:56:09 +0200</lastBuildDate>
-  <generator>Emacs 25.2 Org-mode 9.0.9</generator>
-  <webMaster>nicolas@petton.fr (Nicolas Petton)</webMaster>
+  <pubDate>Mon, 24 Aug 2020 14:42:09 +0200</pubDate>
+  <lastBuildDate>Mon, 24 Aug 2020 14:42:09 +0200</lastBuildDate>
+  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
     <title>Interview Företagsplatsen #3: <b>Louise</b> Axhake</title>
@@ -28,7 +28,7 @@
   <item>
     <title>Interview with *Louise* Axhake</title>
     <link>http://nicolas-petton.fr/blog/interview-louise.html#org00f770b</link>
-    <author>nicolas@petton.fr (Nicolas Petton)</author>
+    <author>nico@petton.fr (Nicolas Petton)</author>
     <guid isPermaLink="false">http://nicolas-petton.fr/blog/interview-louise.html#org00f770b</guid>
     <pubDate>Fri, 30 Jan 2015 11:56:00 +0100</pubDate>
 
@@ -52,7 +52,7 @@
 
 
     <div class="figure">
-    <p><img src="http://nicolas-petton.fr/blog/../images/louise1.jpg" alt="Louise Axhake image" align="center" />
+    <p><img src="../images/louise1.jpg" alt="Louise Axhake image" align="center" />
     </p>
     <p><span class="figure-number">Figure 1: </span>Louise Axhake</p>
     </div>
@@ -84,7 +84,7 @@
 
 
     <div class="figure">
-    <p><img src="http://nicolas-petton.fr/blog/../images/louise2.jpg" alt="Louise" align="center" />
+    <p><img src="../images/louise2.jpg" alt="Louise" align="center" />
     </p>
     <p><span class="figure-number">Figure 2: </span>Louise the family woman</p>
     </div>
@@ -151,7 +151,7 @@
 
 
     <div class="figure">
-    <p><img src="http://nicolas-petton.fr/blog/../images/louise3.jpg" alt="Louise's kids" align="center" />
+    <p><img src="../images/louise3.jpg" alt="Louise's kids" align="center" />
     </p>
     <p><span class="figure-number">Figure 3: </span>Louise's kids</p>
     </div>

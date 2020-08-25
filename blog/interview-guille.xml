@@ -14,10 +14,10 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Wed, 02 Aug 2017 10:02:35 +0200</pubDate>
-  <lastBuildDate>Wed, 02 Aug 2017 10:02:35 +0200</lastBuildDate>
-  <generator>Emacs 25.2 Org-mode 9.0.9</generator>
-  <webMaster>nicolas@petton.fr (Nicolas Petton)</webMaster>
+  <pubDate>Mon, 24 Aug 2020 14:42:53 +0200</pubDate>
+  <lastBuildDate>Mon, 24 Aug 2020 14:42:53 +0200</lastBuildDate>
+  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
     <title>Interview RMoD #5: Guillermo Polito</title>
@@ -28,7 +28,7 @@
   <item>
     <title>Interview with *Guillermo* Polito</title>
     <link>http://nicolas-petton.fr/blog/interview-guille.html#org142541f</link>
-    <author>nicolas@petton.fr (Nicolas Petton)</author>
+    <author>nico@petton.fr (Nicolas Petton)</author>
     <guid isPermaLink="false">http://nicolas-petton.fr/blog/interview-guille.html#org142541f</guid>
     <pubDate>Wed, 18 Jun 2014 15:20:00 +0200</pubDate>
 
@@ -37,9 +37,9 @@
     </div>
 
     <p>
-    This is the fifth post of my series of interviews, in which I
-    <a href="http://nicolas-petton.fr/blog/working-at-rmod.html#org5e9b89b">interview my colleagues</a> of the <a href="http://rmod.lille.inria.fr/web/">RMoD</a> team. After the <a href="http://nicolas-petton.fr/blog/interview-jean-baptiste.html#org1103c36">Interview with
-    Jean-Baptiste Arnaud</a>, I interview <a href="http://playingwithobjects.wordpress.com/">Guillermo Polito</a>.
+    This is the fifth post of my series of interviews, in which I <a href="working-at-rmod.html">interview my
+    colleagues</a> of the <a href="http://rmod.lille.inria.fr/web/">RMoD</a> team. After the <a href="interview-jean-baptiste.html">Interview with Jean-Baptiste Arnaud</a>, I
+    interview <a href="http://playingwithobjects.wordpress.com/">Guillermo Polito</a>.
     </p>
 
     <p>
@@ -52,7 +52,7 @@
 
 
     <div class="figure">
-    <p><img src="http://nicolas-petton.fr/blog/../images/guille1.jpeg" alt="Guillermo Polito image" align="center" />
+    <p><img src="../images/guille1.jpeg" alt="Guillermo Polito image" align="center" />
     </p>
     <p><span class="figure-number">Figure 1: </span>Guille at his desk</p>
     </div>
@@ -91,7 +91,7 @@
 
 
     <div class="figure">
-    <p><img src="http://nicolas-petton.fr/blog/../images/guille3.png" alt="Guillermo Lamas image" align="center" />
+    <p><img src="../images/guille3.png" alt="Guillermo Lamas image" align="center" />
     </p>
     <p><span class="figure-number">Figure 2: </span>Guillermo Lamas</p>
     </div>
@@ -131,7 +131,7 @@
 
 
     <div class="figure">
-    <p><img src="http://nicolas-petton.fr/blog/../images/guille2.jpeg" alt="Mate image" align="center" />
+    <p><img src="../images/guille2.jpeg" alt="Mate image" align="center" />
     </p>
     <p><span class="figure-number">Figure 3: </span>Guille's Mate</p>
     </div>
@@ -193,7 +193,7 @@
 
     <p>
     If you liked this interview, you might also want to check out the
-    <a href="http://nicolas-petton.fr/blog/interview-jean-baptiste.html#org1103c36">Interview with Jean-Baptiste Arnaud</a>.
+    <a href="interview-jean-baptiste.html">Interview with Jean-Baptiste Arnaud</a>.
     </p>
 
     <div id="disqus_thread"></div>

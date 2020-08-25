@@ -240,3 +240,22 @@ body .clearfix {
 .photo label {
   display: block;
 }
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+  justify-content: space-between;
+}
+.gallery .figure {
+  padding: 0;
+  margin-top: 20px;
+}
+.gallery .figure p {
+  display: inline;
+}
+.gallery .figure img {
+  max-width: 330px;
+}
+.gallery .figure img.landscape {
+  max-width: 690px;
+}

@@ -14,10 +14,10 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Wed, 02 Aug 2017 10:02:09 +0200</pubDate>
-  <lastBuildDate>Wed, 02 Aug 2017 10:02:09 +0200</lastBuildDate>
-  <generator>Emacs 25.2 Org-mode 9.0.9</generator>
-  <webMaster>nicolas@petton.fr (Nicolas Petton)</webMaster>
+  <pubDate>Mon, 24 Aug 2020 14:43:12 +0200</pubDate>
+  <lastBuildDate>Mon, 24 Aug 2020 14:43:12 +0200</lastBuildDate>
+  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
     <title>Amber's new test runner</title>
@@ -28,7 +28,7 @@
   <item>
     <title>*Amber* test runner</title>
     <link>http://nicolas-petton.fr/blog/helios-sunit.html#orgb6bfd92</link>
-    <author>nicolas@petton.fr (Nicolas Petton)</author>
+    <author>nico@petton.fr (Nicolas Petton)</author>
     <guid isPermaLink="false">http://nicolas-petton.fr/blog/helios-sunit.html#orgb6bfd92</guid>
     <pubDate>Tue, 13 May 2014 14:08:00 +0200</pubDate>
 
@@ -44,7 +44,7 @@
 
 
     <div class="figure">
-    <p><img src="http://nicolas-petton.fr/blog/../images/helios-sunit.png" alt="helios sunit" width="600px" />
+    <p><img src="../images/helios-sunit.png" alt="helios sunit" width="600px" />
     </p>
     <p><span class="figure-number">Figure 1: </span>Helios' test runner</p>
     </div>

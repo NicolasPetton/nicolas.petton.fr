@@ -14,10 +14,10 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Wed, 02 Aug 2017 10:02:13 +0200</pubDate>
-  <lastBuildDate>Wed, 02 Aug 2017 10:02:13 +0200</lastBuildDate>
-  <generator>Emacs 25.2 Org-mode 9.0.9</generator>
-  <webMaster>nicolas@petton.fr (Nicolas Petton)</webMaster>
+  <pubDate>Mon, 24 Aug 2020 14:42:52 +0200</pubDate>
+  <lastBuildDate>Mon, 24 Aug 2020 14:42:52 +0200</lastBuildDate>
+  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
     <title></title>
@@ -27,7 +27,7 @@
   <item>
     <title>discover-js2-refactor</title>
     <link>http://nicolas-petton.fr/blog/discover-js2-refactor.html#org91dc432</link>
-    <author>nicolas@petton.fr (Nicolas Petton)</author>
+    <author>nico@petton.fr (Nicolas Petton)</author>
     <guid isPermaLink="false">http://nicolas-petton.fr/blog/discover-js2-refactor.html#org91dc432</guid>
     <pubDate>Wed, 29 Jan 2014 15:37:00 +0100</pubDate>
     <category><![CDATA[emacs]]></category>
@@ -37,7 +37,7 @@
     </div>
 
     <div id="outline-container-orgba474a5" class="outline-3">
-    <h3 id="orgba474a5"><a id="ID-03af0159-3100-4068-9484-0469b409f7f2"></a>Making js2-refactor more discoverable</h3>
+    <h3 id="orgba474a5">Making js2-refactor more discoverable</h3>
     <div class="outline-text-3" id="text-orgba474a5">
     <p>
     Since I started using Emacs for most of my development, I've been a
@@ -68,7 +68,7 @@
     </div>
 
     <div id="outline-container-orgcb2b7a0" class="outline-3">
-    <h3 id="orgcb2b7a0"><a id="ID-efd1904a-cdf6-4175-b73b-0a77d28c79de"></a>Installing discover-js2-refactor</h3>
+    <h3 id="orgcb2b7a0">Installing discover-js2-refactor</h3>
     <div class="outline-text-3" id="text-orgcb2b7a0">
     <p>
     The package is available on <a href="http://melpa.milkbox.net/#/">melpa</a>, if you have it enabled you can
@@ -76,8 +76,8 @@
     </p>
 
     <div class="org-src-container">
-    <pre><code class="src src-emacs-lisp">   (package-install 'discover-js2-refactor)
-    </code></pre>
+    <pre class="src src-emacs-lisp">   (package-install 'discover-js2-refactor)
+    </pre>
     </div>
 
 

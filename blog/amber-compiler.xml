@@ -14,10 +14,10 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Wed, 02 Aug 2017 10:02:06 +0200</pubDate>
-  <lastBuildDate>Wed, 02 Aug 2017 10:02:06 +0200</lastBuildDate>
-  <generator>Emacs 25.2 Org-mode 9.0.9</generator>
-  <webMaster>nicolas@petton.fr (Nicolas Petton)</webMaster>
+  <pubDate>Mon, 24 Aug 2020 14:42:17 +0200</pubDate>
+  <lastBuildDate>Mon, 24 Aug 2020 14:42:17 +0200</lastBuildDate>
+  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
     <title>Amber's new compiler</title>
@@ -28,7 +28,7 @@
   <item>
     <title>Amber's new *compiler*</title>
     <link>http://nicolas-petton.fr/blog/amber-compiler.html#orge7c073a</link>
-    <author>nicolas@petton.fr (Nicolas Petton)</author>
+    <author>nico@petton.fr (Nicolas Petton)</author>
     <guid isPermaLink="false">http://nicolas-petton.fr/blog/amber-compiler.html#orge7c073a</guid>
     <pubDate>Fri, 18 Oct 2013 06:55:00 +0200</pubDate>
 
@@ -49,7 +49,7 @@
     </p>
 
     <div id="outline-container-org919cc05" class="outline-3">
-    <h3 id="org919cc05"><a id="ID-b922a3e9-fa23-4db9-a86b-8df6bf730977"></a>The new architecture</h3>
+    <h3 id="org919cc05">The new architecture</h3>
     <div class="outline-text-3" id="text-org919cc05">
     <p>
     The AST produced by the parser is first annotated and validated by
@@ -62,11 +62,11 @@
 
 
     <div class="org-src-container">
-    <pre><code class="src src-ruby">   | ast ir output |
+    <pre class="src src-ruby">   | ast ir output |
 
     ast := <span style="color: #61afef;">Smalltalk</span> current <span style="color: #da8548; font-weight: bold;">parse:</span> <span style="color: #98be65;">'foo true ifTrue: [ ^ self asString ]'</span>.
     (<span style="color: #61afef;">SemanticAnalyzer</span> <span style="color: #da8548; font-weight: bold;">on:</span> <span style="color: #61afef;">Object</span>) visit: ast.
-    </code></pre>
+    </pre>
     </div>
 
 
@@ -79,8 +79,8 @@
 
 
     <div class="org-src-container">
-    <pre><code class="src src-ruby">   ir := <span style="color: #61afef;">IRASTTranslator</span> new <span style="color: #da8548; font-weight: bold;">visit:</span> ast.
-    </code></pre>
+    <pre class="src src-ruby">   ir := <span style="color: #61afef;">IRASTTranslator</span> new <span style="color: #da8548; font-weight: bold;">visit:</span> ast.
+    </pre>
     </div>
 
 
@@ -100,11 +100,11 @@
 
 
     <div class="org-src-container">
-    <pre><code class="src src-ruby">   output := <span style="color: #61afef;">IRJSTranslator</span> new
+    <pre class="src src-ruby">   output := <span style="color: #61afef;">IRJSTranslator</span> new
     <span style="color: #da8548; font-weight: bold;">currentClass:</span> <span style="color: #61afef;">Object</span>;
     <span style="color: #da8548; font-weight: bold;">visit:</span> ir;
     contents
-    </code></pre>
+    </pre>
     </div>
 
 
@@ -115,7 +115,7 @@
     </div>
     </div>
     <div id="outline-container-org06db85d" class="outline-3">
-    <h3 id="org06db85d"><a id="ID-b9289317-95e2-422d-b90c-7b0fcd7d7890"></a>The public API</h3>
+    <h3 id="org06db85d">The public API</h3>
     <div class="outline-text-3" id="text-org06db85d">
     <p>
     The <code>Compiler</code> facade hides all the internals away and provides the
@@ -126,7 +126,8 @@
     </p>
 
     <div class="org-src-container">
-    <pre><code class="src src-ruby">   <span style="color: #98be65;">"Compiling without installing"</span>
+    <pre class="src src-ruby">
+    <span style="color: #98be65;">"Compiling without installing"</span>
     <span style="color: #61afef;">Compiler</span> new
     <span style="color: #da8548; font-weight: bold;">codeGeneratorClass:</span> <span style="color: #61afef;">InliningCodeGenerator</span>; <span style="color: #98be65;">"Default, can be omitted"</span>
     <span style="color: #da8548; font-weight: bold;">compile:</span> <span style="color: #98be65;">'foo true ifTrue: [ ^ self asString ]'</span>
@@ -139,13 +140,13 @@
     <span style="color: #da8548; font-weight: bold;">forClass:</span> <span style="color: #61afef;">Object</span>
     <span style="color: #da8548; font-weight: bold;">category:</span> <span style="color: #98be65;">'foo'</span>
 
-    </code></pre>
+    </pre>
     </div>
     </div>
     </div>
 
     <div id="outline-container-org9e79cd5" class="outline-3">
-    <h3 id="org9e79cd5"><a id="ID-f0d4cc95-d0ba-451b-984f-953b67c4c72d"></a>The end</h3>
+    <h3 id="org9e79cd5">The end</h3>
     <div class="outline-text-3" id="text-org9e79cd5">
     <p>
     That's all for now. The new compiler is a very important brick for

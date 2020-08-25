@@ -14,10 +14,10 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Wed, 02 Aug 2017 10:02:41 +0200</pubDate>
-  <lastBuildDate>Wed, 02 Aug 2017 10:02:41 +0200</lastBuildDate>
-  <generator>Emacs 25.2 Org-mode 9.0.9</generator>
-  <webMaster>nicolas@petton.fr (Nicolas Petton)</webMaster>
+  <pubDate>Mon, 24 Aug 2020 14:43:06 +0200</pubDate>
+  <lastBuildDate>Mon, 24 Aug 2020 14:43:06 +0200</lastBuildDate>
+  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
     <title>Interview RMoD #6: Clara Allende</title>
@@ -28,7 +28,7 @@
   <item>
     <title>Interview with *Clara* Allende</title>
     <link>http://nicolas-petton.fr/blog/interview-clara.html#orgb09993e</link>
-    <author>nicolas@petton.fr (Nicolas Petton)</author>
+    <author>nico@petton.fr (Nicolas Petton)</author>
     <guid isPermaLink="false">http://nicolas-petton.fr/blog/interview-clara.html#orgb09993e</guid>
     <pubDate>Wed, 11 Jun 2014 15:53:00 +0200</pubDate>
 
@@ -38,7 +38,7 @@
 
     <p>
     This is the sixth post of my series of interviews, in which I
-    <a href="http://nicolas-petton.fr/blog/working-at-rmod.html#org5e9b89b">interview my colleagues</a> of the <a href="http://rmod.lille.inria.fr/web/">RMoD</a> team.
+    <a href="working-at-rmod.html">interview my colleagues</a> of the <a href="http://rmod.lille.inria.fr/web/">RMoD</a> team.
     </p>
 
     <p>
@@ -53,7 +53,7 @@
 
 
     <div class="figure">
-    <p><img src="http://nicolas-petton.fr/blog/../images/clara-1.jpeg" alt="Clara Allende image" align="center" />
+    <p><img src="../images/clara-1.jpeg" alt="Clara Allende image" align="center" />
     </p>
     <p><span class="figure-number">Figure 1: </span>Clara at work</p>
     </div>
@@ -95,7 +95,7 @@
 
 
     <div class="figure">
-    <p><img src="http://nicolas-petton.fr/blog/../images/clara-2.jpeg" alt="Clara Allende image" align="center" />
+    <p><img src="../images/clara-2.jpeg" alt="Clara Allende image" align="center" />
     </p>
     <p><span class="figure-number">Figure 2: </span>Clara's current book</p>
     </div>
@@ -136,7 +136,7 @@
 
 
     <div class="figure">
-    <p><img src="http://nicolas-petton.fr/blog/../images/clara-3.jpeg" alt="Clara Allende with other argentinians image" align="center" />
+    <p><img src="../images/clara-3.jpeg" alt="Clara Allende with other argentinians image" align="center" />
     </p>
     <p><span class="figure-number">Figure 3: </span>Clara and some other argentinians of the team</p>
     </div>
@@ -152,7 +152,7 @@
 
 
     <div class="figure">
-    <p><img src="http://nicolas-petton.fr/blog/../images/clara-4.jpeg" alt="Clara Allende dancing image" align="center" />
+    <p><img src="../images/clara-4.jpeg" alt="Clara Allende dancing image" align="center" />
     </p>
     <p><span class="figure-number">Figure 4: </span>Clara dancing</p>
     </div>
@@ -164,7 +164,7 @@
 
     <p>
     If you liked this interview, you might also want to check out the
-    <a href="http://nicolas-petton.fr/blog/interview-stef.html#org7d0dbe2">Interview with Stéphane Ducasse</a>.
+    <a href="interview-stef.html">Interview with Stéphane Ducasse</a>.
     </p>
 
 

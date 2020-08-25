@@ -14,10 +14,10 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Wed, 02 Aug 2017 09:56:05 +0200</pubDate>
-  <lastBuildDate>Wed, 02 Aug 2017 09:56:05 +0200</lastBuildDate>
-  <generator>Emacs 25.2 Org-mode 9.0.9</generator>
-  <webMaster>nicolas@petton.fr (Nicolas Petton)</webMaster>
+  <pubDate>Mon, 24 Aug 2020 14:42:18 +0200</pubDate>
+  <lastBuildDate>Mon, 24 Aug 2020 14:42:18 +0200</lastBuildDate>
+  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
     <title>Data binding with objectjs</title>
@@ -28,7 +28,7 @@
   <item>
     <title>Data binding with *objectjs*</title>
     <link>http://nicolas-petton.fr/blog/objectjs-data-binding.html#orgbc12f63</link>
-    <author>nicolas@petton.fr (Nicolas Petton)</author>
+    <author>nico@petton.fr (Nicolas Petton)</author>
     <guid isPermaLink="false">http://nicolas-petton.fr/blog/objectjs-data-binding.html#orgbc12f63</guid>
     <pubDate>Tue, 06 Sep 2016 22:09:00 +0200</pubDate>
 
@@ -54,7 +54,7 @@
     </p>
 
     <div id="outline-container-orgc109f69" class="outline-3">
-    <h3 id="orgc109f69"><a id="ID-42b5775b-3c43-4a73-817e-29922f267662"></a>The counter example revisited</h3>
+    <h3 id="orgc109f69">The counter example revisited</h3>
     <div class="outline-text-3" id="text-orgc109f69">
     <p>
     Let's have a look at a simple counter widget with two buttons to increment and
@@ -62,7 +62,7 @@
     </p>
 
     <div class="org-src-container">
-    <pre><code class="src src-js">    <span style="color: #687080; font-style: italic;">// </span><span style="color: #687080; font-style: italic;">The counter model</span>
+    <pre class="src src-js">    <span style="color: #687080; font-style: italic;">// </span><span style="color: #687080; font-style: italic;">The counter model</span>
     <span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #61afef;">counter</span> = objectjs.object.subclass(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">that</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
     <span style="color: #c678dd; font-weight: bold;">my</span>.initialize = <span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>) {
     <span style="color: #c678dd; font-weight: bold;">my</span>.<span style="color: #c678dd; font-weight: bold;">super</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>);
@@ -100,7 +100,7 @@
     };
     });
 
-    </code></pre>
+    </pre>
     </div>
 
     <p>
@@ -117,7 +117,7 @@
     </div>
 
     <div id="outline-container-org446edd8" class="outline-3">
-    <h3 id="org446edd8"><a id="ID-6675dd9b-fb67-4396-8f99-96e19421d294"></a>Properties in <code>objectjs</code></h3>
+    <h3 id="org446edd8">Properties in <code>objectjs</code></h3>
     <div class="outline-text-3" id="text-org446edd8">
     <p>
     The first thing to get data binding is a way to listen to domain attribute
@@ -125,7 +125,7 @@
     </p>
 
     <div class="org-src-container">
-    <pre><code class="src src-js">object.extend(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">that</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
+    <pre class="src src-js">object.extend(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">that</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
     <span style="color: #c678dd; font-weight: bold;">my</span>.property = <span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #61afef;">propName</span>, <span style="color: #61afef;">initialValue</span>) {
     <span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #61afef;">value</span> = initialValue;
     Object.defineProperty(<span style="color: #c678dd; font-weight: bold;">my</span>, propName, {
@@ -142,7 +142,7 @@
     });
     };
     });
-    </code></pre>
+    </pre>
     </div>
 
     <p>
@@ -157,14 +157,14 @@
     </p>
 
     <div class="org-src-container">
-    <pre><code class="src src-js">    <span style="color: #687080; font-style: italic;">// </span><span style="color: #687080; font-style: italic;">Register to property accesses for data binding</span>
+    <pre class="src src-js">    <span style="color: #687080; font-style: italic;">// </span><span style="color: #687080; font-style: italic;">Register to property accesses for data binding</span>
     objectjs.propertyEventEmitter.instance().onAccess(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #61afef;">instance</span>, <span style="color: #61afef;">propName</span>) {
     <span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #61afef;">widget</span> = currentWidget.get();
     <span style="color: #c678dd; font-weight: bold;">if</span> (widget) {
     instance.onPropertyChange(propName, widget.update);
     }
     });
-    </code></pre>
+    </pre>
     </div>
 
     <p>
@@ -176,14 +176,14 @@
     </div>
 
     <div id="outline-container-org3dc9ffb" class="outline-3">
-    <h3 id="org3dc9ffb"><a id="ID-376360ca-05a7-4d94-854e-19093228cdab"></a>A better counter example</h3>
+    <h3 id="org3dc9ffb">A better counter example</h3>
     <div class="outline-text-3" id="text-org3dc9ffb">
     <p>
     Now we can define properties and let the widgets update themselves whenever they change:
     </p>
 
     <div class="org-src-container">
-    <pre><code class="src src-js"><span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #61afef;">counter</span> = objectjs.object.subclass(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">that</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
+    <pre class="src src-js"><span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #61afef;">counter</span> = objectjs.object.subclass(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">that</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
     <span style="color: #c678dd; font-weight: bold;">my</span>.initialize = <span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>) {
     <span style="color: #c678dd; font-weight: bold;">my</span>.<span style="color: #c678dd; font-weight: bold;">super</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>);
     <span style="color: #c678dd; font-weight: bold;">my</span>.property(<span style="color: #98be65;">"count"</span>, 0);
@@ -212,7 +212,7 @@
     html.<span style="color: #61afef; background-color: #38394c; font-weight: bold;">button</span>(<span style="color: #98be65;">'-'</span>).click(<span style="color: #c678dd; font-weight: bold;">my</span>.counter.decrement);
     };
     });
-    </code></pre>
+    </pre>
     </div>
 
     <p>
@@ -264,7 +264,7 @@
 
 
     <div id="outline-container-orgbe6754c" class="outline-3">
-    <h3 id="orgbe6754c"><a id="ID-9bd7dfa0-7cd4-4398-90e7-10fd4e696eb5"></a>Benefits</h3>
+    <h3 id="orgbe6754c">Benefits</h3>
     <div class="outline-text-3" id="text-orgbe6754c">
     <p>
     The approach taken is a bit different from React, but I think it has its

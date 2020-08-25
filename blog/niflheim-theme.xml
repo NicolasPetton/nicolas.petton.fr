@@ -14,10 +14,10 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Wed, 02 Aug 2017 09:56:09 +0200</pubDate>
-  <lastBuildDate>Wed, 02 Aug 2017 09:56:09 +0200</lastBuildDate>
-  <generator>Emacs 25.2 Org-mode 9.0.9</generator>
-  <webMaster>nicolas@petton.fr (Nicolas Petton)</webMaster>
+  <pubDate>Mon, 24 Aug 2020 14:42:52 +0200</pubDate>
+  <lastBuildDate>Mon, 24 Aug 2020 14:42:52 +0200</lastBuildDate>
+  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
     <title>A new dark theme for Emacs</title>
@@ -28,7 +28,7 @@
   <item>
     <title>A *dark theme* for Emacs</title>
     <link>http://nicolas-petton.fr/blog/niflheim-theme.html#org0c39c43</link>
-    <author>nicolas@petton.fr (Nicolas Petton)</author>
+    <author>nico@petton.fr (Nicolas Petton)</author>
     <guid isPermaLink="false">http://nicolas-petton.fr/blog/niflheim-theme.html#org0c39c43</guid>
     <pubDate>Fri, 28 Mar 2014 15:22:00 +0100</pubDate>
 
@@ -48,7 +48,7 @@
     </div>
 
     <div id="outline-container-org3686c70" class="outline-3">
-    <h3 id="org3686c70"><a id="ID-a93c9b46-3131-4d48-b654-43789d312406"></a>The best way to install it is to use the <a href="http://melpa.milkbox.net/">MELPA</a> package archive:</h3>
+    <h3 id="org3686c70">The best way to install it is to use the <a href="http://melpa.milkbox.net/">MELPA</a> package archive:</h3>
     <div class="outline-text-3" id="text-org3686c70">
     <div class="SH">
     <p>

@@ -14,10 +14,10 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Wed, 02 Aug 2017 10:02:19 +0200</pubDate>
-  <lastBuildDate>Wed, 02 Aug 2017 10:02:19 +0200</lastBuildDate>
-  <generator>Emacs 25.2 Org-mode 9.0.9</generator>
-  <webMaster>nicolas@petton.fr (Nicolas Petton)</webMaster>
+  <pubDate>Mon, 24 Aug 2020 14:42:27 +0200</pubDate>
+  <lastBuildDate>Mon, 24 Aug 2020 14:42:27 +0200</lastBuildDate>
+  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
     <title>A simple object model in JavaScript</title>
@@ -28,7 +28,7 @@
   <item>
     <title>A simple *object model* in JavaScript</title>
     <link>http://nicolas-petton.fr/blog/simple-object-model-javascript.html#org2f5b149</link>
-    <author>nicolas@petton.fr (Nicolas Petton)</author>
+    <author>nico@petton.fr (Nicolas Petton)</author>
     <guid isPermaLink="false">http://nicolas-petton.fr/blog/simple-object-model-javascript.html#org2f5b149</guid>
     <pubDate>Fri, 12 Feb 2016 17:07:00 +0100</pubDate>
 
@@ -37,7 +37,7 @@
     </div>
 
     <div id="outline-container-orged77838" class="outline-3">
-    <h3 id="orged77838"><a id="ID-949b30f6-cd30-4e72-9fe7-6bf1887ace3e"></a>The problem</h3>
+    <h3 id="orged77838">The problem</h3>
     <div class="outline-text-3" id="text-orged77838">
     <p>
     At <a href="http://foretagsplatsen.se/">Företagsplatsen</a> we are developing a web application with a fairly large
@@ -47,7 +47,7 @@
     </p>
 
     <div class="org-src-container">
-    <pre><code class="src src-js"><span style="color: #c678dd; font-weight: bold;">function</span> <span style="color: #61afef;">animal</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
+    <pre class="src src-js"><span style="color: #c678dd; font-weight: bold;">function</span> <span style="color: #61afef;">animal</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
     <span style="color: #c678dd; font-weight: bold;">spec</span> = <span style="color: #c678dd; font-weight: bold;">spec</span> || {};
     <span style="color: #c678dd; font-weight: bold;">my</span> = <span style="color: #c678dd; font-weight: bold;">my</span> || {};
 
@@ -74,7 +74,7 @@
 
     <span style="color: #c678dd; font-weight: bold;">return</span> <span style="color: #c678dd; font-weight: bold;">that</span>;
     }
-    </code></pre>
+    </pre>
     </div>
 
     <p>
@@ -94,7 +94,7 @@
     </p>
 
     <div class="org-src-container">
-    <pre><code class="src src-js"><span style="color: #c678dd; font-weight: bold;">function</span> <span style="color: #61afef;">foo</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
+    <pre class="src src-js"><span style="color: #c678dd; font-weight: bold;">function</span> <span style="color: #61afef;">foo</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
     <span style="color: #c678dd; font-weight: bold;">spec</span> = <span style="color: #c678dd; font-weight: bold;">spec</span> || {};
     <span style="color: #c678dd; font-weight: bold;">my</span> = <span style="color: #c678dd; font-weight: bold;">my</span> || {};
 
@@ -104,7 +104,7 @@
 
     <span style="color: #c678dd; font-weight: bold;">return</span> <span style="color: #c678dd; font-weight: bold;">that</span>;
     }
-    </code></pre>
+    </pre>
     </div>
 
     <p>
@@ -135,7 +135,7 @@
     </p>
 
     <div class="org-src-container">
-    <pre><code class="src src-js"><span style="color: #c678dd; font-weight: bold;">function</span> <span style="color: #61afef;">a</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
+    <pre class="src src-js"><span style="color: #c678dd; font-weight: bold;">function</span> <span style="color: #61afef;">a</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
     <span style="color: #c678dd; font-weight: bold;">spec</span> = <span style="color: #c678dd; font-weight: bold;">spec</span> || {};
     <span style="color: #c678dd; font-weight: bold;">my</span> = <span style="color: #c678dd; font-weight: bold;">my</span> || {};
 
@@ -165,7 +165,7 @@
 
     <span style="color: #c678dd; font-weight: bold;">return</span> <span style="color: #c678dd; font-weight: bold;">that</span>;
     }
-    </code></pre>
+    </pre>
     </div>
 
     <p>
@@ -175,7 +175,7 @@
     </div>
 
     <div id="outline-container-org252e080" class="outline-3">
-    <h3 id="org252e080"><a id="ID-1eaccdc3-144d-47ed-b03b-7388053f6fcb"></a>Fixing the problem, but&#x2026;</h3>
+    <h3 id="org252e080">Fixing the problem, but&#x2026;</h3>
     <div class="outline-text-3" id="text-org252e080">
     <p>
     I've been thinking about this for a while, but we have a major constraint:
@@ -196,14 +196,14 @@
     </p>
 
     <div class="org-src-container">
-    <pre><code class="src src-js"><span style="color: #c678dd; font-weight: bold;">function</span> <span style="color: #61afef;">object</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
+    <pre class="src src-js"><span style="color: #c678dd; font-weight: bold;">function</span> <span style="color: #61afef;">object</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
     <span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #c678dd; font-weight: bold;">that</span> = {};
 
     <span style="color: #c678dd; font-weight: bold;">that</span>.initialize = <span style="color: #c678dd; font-weight: bold;">function</span>() {};
 
     <span style="color: #c678dd; font-weight: bold;">return</span> <span style="color: #c678dd; font-weight: bold;">that</span>;
     }
-    </code></pre>
+    </pre>
     </div>
 
     <p>
@@ -212,7 +212,7 @@
     </p>
 
     <div class="org-src-container">
-    <pre><code class="src src-js">object.subclass = <span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #61afef;">builder</span>) {
+    <pre class="src src-js">object.subclass = <span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #61afef;">builder</span>) {
     <span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #c678dd; font-weight: bold;">that</span> = <span style="color: #da8548; font-weight: bold;">this</span>;
 
     <span style="color: #c678dd; font-weight: bold;">function</span> <span style="color: #61afef;">klass</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
@@ -229,7 +229,7 @@
 
     <span style="color: #c678dd; font-weight: bold;">return</span> klass;
     };
-    </code></pre>
+    </pre>
     </div>
 
     <p>
@@ -237,7 +237,7 @@
     </p>
 
     <div class="org-src-container">
-    <pre><code class="src src-js"><span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #61afef;">animal</span> = object.subclass(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">that</span>, <span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
+    <pre class="src src-js"><span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #61afef;">animal</span> = object.subclass(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">that</span>, <span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
 
     <span style="color: #c678dd; font-weight: bold;">that</span>.initialize = <span style="color: #c678dd; font-weight: bold;">function</span>() {
     <span style="color: #c678dd; font-weight: bold;">my</span>.name = <span style="color: #c678dd; font-weight: bold;">spec</span>.name;
@@ -254,7 +254,7 @@
     <span style="color: #c678dd; font-weight: bold;">return</span> <span style="color: #98be65;">'dog named'</span> + <span style="color: #c678dd; font-weight: bold;">my</span>.name;
     };
     });
-    </code></pre>
+    </pre>
     </div>
 
     <p>
@@ -273,7 +273,7 @@
     </div>
 
     <div id="outline-container-org1094f61" class="outline-3">
-    <h3 id="org1094f61"><a id="ID-ee97241e-6410-47be-b88d-0810afd96c72"></a>Adding support for <code>super</code></h3>
+    <h3 id="org1094f61">Adding support for <code>super</code></h3>
     <div class="outline-text-3" id="text-org1094f61">
     <p>
     We still cannot perform super calls though, but now that we have the beginnings
@@ -281,7 +281,7 @@
     </p>
 
     <div class="org-src-container">
-    <pre><code class="src src-js">object.subclass = <span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #61afef;">builder</span>) {
+    <pre class="src src-js">object.subclass = <span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #61afef;">builder</span>) {
     <span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #c678dd; font-weight: bold;">that</span> = <span style="color: #da8548; font-weight: bold;">this</span>;
 
     <span style="color: #c678dd; font-weight: bold;">function</span> <span style="color: #61afef;">klass</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
@@ -302,7 +302,7 @@
 
     <span style="color: #c678dd; font-weight: bold;">return</span> klass;
     };
-    </code></pre>
+    </pre>
     </div>
 
     <p>
@@ -311,7 +311,7 @@
     </p>
 
     <div class="org-src-container">
-    <pre><code class="src src-js"><span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #61afef;">animal</span> = object.subclass(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">that</span>, <span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
+    <pre class="src src-js"><span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #61afef;">animal</span> = object.subclass(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">that</span>, <span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
 
     <span style="color: #c678dd; font-weight: bold;">that</span>.initialize = <span style="color: #c678dd; font-weight: bold;">function</span>() {
     <span style="color: #c678dd; font-weight: bold;">my</span>.name = <span style="color: #c678dd; font-weight: bold;">spec</span>.name;
@@ -328,7 +328,7 @@
     <span style="color: #c678dd; font-weight: bold;">return</span> <span style="color: #98be65;">'dog named'</span> + <span style="color: #c678dd; font-weight: bold;">that</span>.<span style="color: #c678dd; font-weight: bold;">super</span>.getName();
     };
     });
-    </code></pre>
+    </pre>
     </div>
 
     <p>
@@ -337,19 +337,19 @@
     </p>
 
     <div class="org-src-container">
-    <pre><code class="src src-js"><span style="color: #c678dd; font-weight: bold;">function</span> <span style="color: #61afef;">object</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
+    <pre class="src src-js"><span style="color: #c678dd; font-weight: bold;">function</span> <span style="color: #61afef;">object</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
     <span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #c678dd; font-weight: bold;">that</span> = {};
 
     <span style="color: #c678dd; font-weight: bold;">that</span>.klass = object;
 
-    <span style="color: #687080; font-style: italic;">/**</span>
-    <span style="color: #687080; font-style: italic;">     * initialize is called by the framework upon object instantiation.</span>
-    <span style="color: #687080; font-style: italic;">     */</span>
+    <span style="color: #9eac8c;">/**</span>
+    <span style="color: #9eac8c;">     * initialize is called by the framework upon object instantiation.</span>
+    <span style="color: #9eac8c;">     */</span>
     <span style="color: #c678dd; font-weight: bold;">that</span>.initialize = <span style="color: #c678dd; font-weight: bold;">function</span>() {};
 
-    <span style="color: #687080; font-style: italic;">/**</span>
-    <span style="color: #687080; font-style: italic;">     * Throws an error because the method should have been overridden.</span>
-    <span style="color: #687080; font-style: italic;">     */</span>
+    <span style="color: #9eac8c;">/**</span>
+    <span style="color: #9eac8c;">     * Throws an error because the method should have been overridden.</span>
+    <span style="color: #9eac8c;">     */</span>
     <span style="color: #c678dd; font-weight: bold;">that</span>.subclassResponsibility = <span style="color: #c678dd; font-weight: bold;">function</span>() {
     <span style="color: #c678dd; font-weight: bold;">throw</span> <span style="color: #c678dd; font-weight: bold;">new</span> <span style="color: #61afef;">Error</span>(<span style="color: #98be65;">"Subclass responsibility"</span>);
     };
@@ -357,14 +357,14 @@
     <span style="color: #c678dd; font-weight: bold;">return</span> <span style="color: #c678dd; font-weight: bold;">that</span>;
     }
 
-    <span style="color: #687080; font-style: italic;">/**</span>
-    <span style="color: #687080; font-style: italic;"> * Return an array of direct subclasses.</span>
-    <span style="color: #687080; font-style: italic;"> */</span>
+    <span style="color: #9eac8c;">/**</span>
+    <span style="color: #9eac8c;"> * Return an array of direct subclasses.</span>
+    <span style="color: #9eac8c;"> */</span>
     object.subclasses = [];
 
-    <span style="color: #687080; font-style: italic;">/**</span>
-    <span style="color: #687080; font-style: italic;"> * Return an array of all subclasses.</span>
-    <span style="color: #687080; font-style: italic;"> */</span>
+    <span style="color: #9eac8c;">/**</span>
+    <span style="color: #9eac8c;"> * Return an array of all subclasses.</span>
+    <span style="color: #9eac8c;"> */</span>
     object.allSubclasses = <span style="color: #c678dd; font-weight: bold;">function</span>() {
     <span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #61afef;">allSubclasses</span> = <span style="color: #da8548; font-weight: bold;">this</span>.subclasses;
     <span style="color: #da8548; font-weight: bold;">this</span>.subclasses.forEach(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #61afef;">klass</span>) {
@@ -404,13 +404,13 @@
 
     <span style="color: #c678dd; font-weight: bold;">return</span> klass;
     };
-    </code></pre>
+    </pre>
     </div>
     </div>
     </div>
 
     <div id="outline-container-orgf15a6e1" class="outline-3">
-    <h3 id="orgf15a6e1"><a id="ID-15464464-1780-460f-81dd-86af01cd8ee2"></a>Conclusion</h3>
+    <h3 id="orgf15a6e1">Conclusion</h3>
     <div class="outline-text-3" id="text-orgf15a6e1">
     <p>
     This solution can be a great alternative for us.  It fixes all of our issues:

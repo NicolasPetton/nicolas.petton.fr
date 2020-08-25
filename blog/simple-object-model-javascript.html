@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-08-02 Wed 09:55 -->
+<!-- 2020-08-25 Tue 15:42 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>A simple object model in JavaScript</title>
@@ -161,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -182,7 +195,7 @@
 </style>
 <link href='/images/favicon.ico' rel='shortcut icon' type='image/x-icon'>
 <link rel='stylesheet' href='https://code.cdn.mozilla.net/fonts/fira.css'>
-<link rel='stylesheet' href='../css/site.css?v=2' type='text/css'/>
+<link rel='stylesheet' href='../css/site.css?v=3' type='text/css'/>
 <link rel='stylesheet' href='../css/blog.css?v=2' type='text/css'/>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <script src='/js/jquery.js' type='text/javascript'></script>
@@ -203,7 +216,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2017 Free Software Foundation, Inc.
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -258,10 +271,9 @@ for the JavaScript code in this tag.
 <li><a href='/'>Home</a>–</li>
 <li><a href='/blog/index.html'>Blog</a>–</li>
 <li><a href='https://emacs.cafe'>Emacs Café</a>–</li>
-<li><a href='https://petton.fr/git/nico'>GitLab</a>–</li>
-<li><a href='http://github.com/NicolasPetton'>GitHub</a>–</li>
-<li><a href='http://twitter.com/NicolasPetton'>Twitter</a>–</li>
-<li><a href='/contact.html'>Contact</a></li>
+<li><a href='/contact.html'>Contact</a>–</li>
+<li><a href='http://github.com/NicolasPetton'><i class="fa fa-github"></i></a>–</li>
+<li><a href='http://twitter.com/NicolasPetton'><i class="fa fa-twitter"></i></a></li>
 </ul>
 </div>
 </div>
@@ -269,7 +281,7 @@ for the JavaScript code in this tag.
 <h1 class="title">A simple object model in JavaScript</h1>
 
 <div id="outline-container-org0629982" class="outline-2">
-<h2 id="org0629982"><a id="ID-e5aadd8e-46f8-44ef-a051-47381833d7bc"></a>A simple <b>object model</b> in JavaScript</h2>
+<h2 id="org0629982">A simple <b>object model</b> in JavaScript</h2>
 <div class="outline-text-2" id="text-org0629982">
 <div class="pubdate">
 Feb 12, 2016
@@ -277,7 +289,7 @@ Feb 12, 2016
 </div>
 
 <div id="outline-container-org641a23e" class="outline-3">
-<h3 id="org641a23e"><a id="ID-949b30f6-cd30-4e72-9fe7-6bf1887ace3e"></a>The problem</h3>
+<h3 id="org641a23e">The problem</h3>
 <div class="outline-text-3" id="text-org641a23e">
 <p>
 At <a href="http://foretagsplatsen.se/">Företagsplatsen</a> we are developing a web application with a fairly large
@@ -287,7 +299,7 @@ described by Douglas Crockford in his book "JavaScript, the good parts" as
 </p>
 
 <div class="org-src-container">
-<pre><code class="src src-js"><span style="color: #c678dd; font-weight: bold;">function</span> <span style="color: #61afef;">animal</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
+<pre class="src src-js"><span style="color: #c678dd; font-weight: bold;">function</span> <span style="color: #61afef;">animal</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
     <span style="color: #c678dd; font-weight: bold;">spec</span> = <span style="color: #c678dd; font-weight: bold;">spec</span> || {};
     <span style="color: #c678dd; font-weight: bold;">my</span> = <span style="color: #c678dd; font-weight: bold;">my</span> || {};
 
@@ -314,7 +326,7 @@ described by Douglas Crockford in his book "JavaScript, the good parts" as
 
     <span style="color: #c678dd; font-weight: bold;">return</span> <span style="color: #c678dd; font-weight: bold;">that</span>;
 }
-</code></pre>
+</pre>
 </div>
 
 <p>
@@ -334,7 +346,7 @@ keep repeating the same code over and over again:
 </p>
 
 <div class="org-src-container">
-<pre><code class="src src-js"><span style="color: #c678dd; font-weight: bold;">function</span> <span style="color: #61afef;">foo</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
+<pre class="src src-js"><span style="color: #c678dd; font-weight: bold;">function</span> <span style="color: #61afef;">foo</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
     <span style="color: #c678dd; font-weight: bold;">spec</span> = <span style="color: #c678dd; font-weight: bold;">spec</span> || {};
     <span style="color: #c678dd; font-weight: bold;">my</span> = <span style="color: #c678dd; font-weight: bold;">my</span> || {};
 
@@ -344,7 +356,7 @@ keep repeating the same code over and over again:
 
     <span style="color: #c678dd; font-weight: bold;">return</span> <span style="color: #c678dd; font-weight: bold;">that</span>;
 }
-</code></pre>
+</pre>
 </div>
 
 <p>
@@ -375,7 +387,7 @@ following:
 </p>
 
 <div class="org-src-container">
-<pre><code class="src src-js"><span style="color: #c678dd; font-weight: bold;">function</span> <span style="color: #61afef;">a</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
+<pre class="src src-js"><span style="color: #c678dd; font-weight: bold;">function</span> <span style="color: #61afef;">a</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
     <span style="color: #c678dd; font-weight: bold;">spec</span> = <span style="color: #c678dd; font-weight: bold;">spec</span> || {};
     <span style="color: #c678dd; font-weight: bold;">my</span> = <span style="color: #c678dd; font-weight: bold;">my</span> || {};
 
@@ -405,7 +417,7 @@ following:
 
     <span style="color: #c678dd; font-weight: bold;">return</span> <span style="color: #c678dd; font-weight: bold;">that</span>;
 }
-</code></pre>
+</pre>
 </div>
 
 <p>
@@ -415,7 +427,7 @@ Urgh, not very good.
 </div>
 
 <div id="outline-container-org5c7970f" class="outline-3">
-<h3 id="org5c7970f"><a id="ID-1eaccdc3-144d-47ed-b03b-7388053f6fcb"></a>Fixing the problem, but&#x2026;</h3>
+<h3 id="org5c7970f">Fixing the problem, but&#x2026;</h3>
 <div class="outline-text-3" id="text-org5c7970f">
 <p>
 I've been thinking about this for a while, but we have a major constraint:
@@ -436,14 +448,14 @@ lowercase "o"):
 </p>
 
 <div class="org-src-container">
-<pre><code class="src src-js"><span style="color: #c678dd; font-weight: bold;">function</span> <span style="color: #61afef;">object</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
+<pre class="src src-js"><span style="color: #c678dd; font-weight: bold;">function</span> <span style="color: #61afef;">object</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
     <span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #c678dd; font-weight: bold;">that</span> = {};
 
     <span style="color: #c678dd; font-weight: bold;">that</span>.initialize = <span style="color: #c678dd; font-weight: bold;">function</span>() {};
 
     <span style="color: #c678dd; font-weight: bold;">return</span> <span style="color: #c678dd; font-weight: bold;">that</span>;
 }
-</code></pre>
+</pre>
 </div>
 
 <p>
@@ -452,7 +464,7 @@ encapsulate the object creation:
 </p>
 
 <div class="org-src-container">
-<pre><code class="src src-js">object.subclass = <span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #61afef;">builder</span>) {
+<pre class="src src-js">object.subclass = <span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #61afef;">builder</span>) {
     <span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #c678dd; font-weight: bold;">that</span> = <span style="color: #da8548; font-weight: bold;">this</span>;
 
     <span style="color: #c678dd; font-weight: bold;">function</span> <span style="color: #61afef;">klass</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
@@ -469,7 +481,7 @@ encapsulate the object creation:
 
     <span style="color: #c678dd; font-weight: bold;">return</span> klass;
 };
-</code></pre>
+</pre>
 </div>
 
 <p>
@@ -477,7 +489,7 @@ Ok, let's see how the first example looks like now:
 </p>
 
 <div class="org-src-container">
-<pre><code class="src src-js"><span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #61afef;">animal</span> = object.subclass(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">that</span>, <span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
+<pre class="src src-js"><span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #61afef;">animal</span> = object.subclass(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">that</span>, <span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
 
     <span style="color: #c678dd; font-weight: bold;">that</span>.initialize = <span style="color: #c678dd; font-weight: bold;">function</span>() {
         <span style="color: #c678dd; font-weight: bold;">my</span>.name = <span style="color: #c678dd; font-weight: bold;">spec</span>.name;
@@ -494,7 +506,7 @@ Ok, let's see how the first example looks like now:
         <span style="color: #c678dd; font-weight: bold;">return</span> <span style="color: #98be65;">'dog named'</span> + <span style="color: #c678dd; font-weight: bold;">my</span>.name;
     };
 });
-</code></pre>
+</pre>
 </div>
 
 <p>
@@ -513,7 +525,7 @@ upon object instantiation.</li>
 </div>
 
 <div id="outline-container-org21c0b42" class="outline-3">
-<h3 id="org21c0b42"><a id="ID-ee97241e-6410-47be-b88d-0810afd96c72"></a>Adding support for <code>super</code></h3>
+<h3 id="org21c0b42">Adding support for <code>super</code></h3>
 <div class="outline-text-3" id="text-org21c0b42">
 <p>
 We still cannot perform super calls though, but now that we have the beginnings
@@ -521,7 +533,7 @@ of an infrastructure, that's something easy enough to fix!
 </p>
 
 <div class="org-src-container">
-<pre><code class="src src-js">object.subclass = <span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #61afef;">builder</span>) {
+<pre class="src src-js">object.subclass = <span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #61afef;">builder</span>) {
     <span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #c678dd; font-weight: bold;">that</span> = <span style="color: #da8548; font-weight: bold;">this</span>;
 
     <span style="color: #c678dd; font-weight: bold;">function</span> <span style="color: #61afef;">klass</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
@@ -542,7 +554,7 @@ of an infrastructure, that's something easy enough to fix!
 
     <span style="color: #c678dd; font-weight: bold;">return</span> klass;
 };
-</code></pre>
+</pre>
 </div>
 
 <p>
@@ -551,7 +563,7 @@ Now, we have access to <code>super</code> for both public and protected methods 
 </p>
 
 <div class="org-src-container">
-<pre><code class="src src-js"><span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #61afef;">animal</span> = object.subclass(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">that</span>, <span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
+<pre class="src src-js"><span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #61afef;">animal</span> = object.subclass(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">that</span>, <span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
 
     <span style="color: #c678dd; font-weight: bold;">that</span>.initialize = <span style="color: #c678dd; font-weight: bold;">function</span>() {
         <span style="color: #c678dd; font-weight: bold;">my</span>.name = <span style="color: #c678dd; font-weight: bold;">spec</span>.name;
@@ -568,7 +580,7 @@ Now, we have access to <code>super</code> for both public and protected methods 
         <span style="color: #c678dd; font-weight: bold;">return</span> <span style="color: #98be65;">'dog named'</span> + <span style="color: #c678dd; font-weight: bold;">that</span>.<span style="color: #c678dd; font-weight: bold;">super</span>.getName();
     };
 });
-</code></pre>
+</pre>
 </div>
 
 <p>
@@ -577,19 +589,19 @@ methods, access to the subclasses, and some other goodies.
 </p>
 
 <div class="org-src-container">
-<pre><code class="src src-js"><span style="color: #c678dd; font-weight: bold;">function</span> <span style="color: #61afef;">object</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
+<pre class="src src-js"><span style="color: #c678dd; font-weight: bold;">function</span> <span style="color: #61afef;">object</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
     <span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #c678dd; font-weight: bold;">that</span> = {};
 
     <span style="color: #c678dd; font-weight: bold;">that</span>.klass = object;
 
-    <span style="color: #687080; font-style: italic;">/**</span>
-<span style="color: #687080; font-style: italic;">     * initialize is called by the framework upon object instantiation.</span>
-<span style="color: #687080; font-style: italic;">     */</span>
+    <span style="color: #9eac8c;">/**</span>
+<span style="color: #9eac8c;">     * initialize is called by the framework upon object instantiation.</span>
+<span style="color: #9eac8c;">     */</span>
     <span style="color: #c678dd; font-weight: bold;">that</span>.initialize = <span style="color: #c678dd; font-weight: bold;">function</span>() {};
 
-    <span style="color: #687080; font-style: italic;">/**</span>
-<span style="color: #687080; font-style: italic;">     * Throws an error because the method should have been overridden.</span>
-<span style="color: #687080; font-style: italic;">     */</span>
+    <span style="color: #9eac8c;">/**</span>
+<span style="color: #9eac8c;">     * Throws an error because the method should have been overridden.</span>
+<span style="color: #9eac8c;">     */</span>
     <span style="color: #c678dd; font-weight: bold;">that</span>.subclassResponsibility = <span style="color: #c678dd; font-weight: bold;">function</span>() {
             <span style="color: #c678dd; font-weight: bold;">throw</span> <span style="color: #c678dd; font-weight: bold;">new</span> <span style="color: #61afef;">Error</span>(<span style="color: #98be65;">"Subclass responsibility"</span>);
     };
@@ -597,14 +609,14 @@ methods, access to the subclasses, and some other goodies.
     <span style="color: #c678dd; font-weight: bold;">return</span> <span style="color: #c678dd; font-weight: bold;">that</span>;
 }
 
-<span style="color: #687080; font-style: italic;">/**</span>
-<span style="color: #687080; font-style: italic;"> * Return an array of direct subclasses.</span>
-<span style="color: #687080; font-style: italic;"> */</span>
+<span style="color: #9eac8c;">/**</span>
+<span style="color: #9eac8c;"> * Return an array of direct subclasses.</span>
+<span style="color: #9eac8c;"> */</span>
 object.subclasses = [];
 
-<span style="color: #687080; font-style: italic;">/**</span>
-<span style="color: #687080; font-style: italic;"> * Return an array of all subclasses.</span>
-<span style="color: #687080; font-style: italic;"> */</span>
+<span style="color: #9eac8c;">/**</span>
+<span style="color: #9eac8c;"> * Return an array of all subclasses.</span>
+<span style="color: #9eac8c;"> */</span>
 object.allSubclasses = <span style="color: #c678dd; font-weight: bold;">function</span>() {
     <span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #61afef;">allSubclasses</span> = <span style="color: #da8548; font-weight: bold;">this</span>.subclasses;
     <span style="color: #da8548; font-weight: bold;">this</span>.subclasses.forEach(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #61afef;">klass</span>) {
@@ -644,13 +656,13 @@ object.subclass = <span style="color: #c678dd; font-weight: bold;">function</spa
 
     <span style="color: #c678dd; font-weight: bold;">return</span> klass;
 };
-</code></pre>
+</pre>
 </div>
 </div>
 </div>
 
 <div id="outline-container-org484f04f" class="outline-3">
-<h3 id="org484f04f"><a id="ID-15464464-1780-460f-81dd-86af01cd8ee2"></a>Conclusion</h3>
+<h3 id="org484f04f">Conclusion</h3>
 <div class="outline-text-3" id="text-org484f04f">
 <p>
 This solution can be a great alternative for us.  It fixes all of our issues:
@@ -708,9 +720,9 @@ mostly because that's exactly how we think of them when writing code.
 </div></div>
 <div id="postamble" class="status">
 <div class='footer'>
-Copyright 2017 Nicolas Petton.<br>
-Last updated 2017-08-02 Wed 09:53. <br>
-Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.2.1 (<a href="http://orgmode.org">Org</a> mode 9.0.9).
+Copyright 2020 Nicolas Petton.<br>
+Last updated 2020-08-24 Mon 14:42. <br>
+Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.3.6).
 </div>
 </div>
 </body>

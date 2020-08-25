@@ -14,10 +14,10 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Wed, 02 Aug 2017 10:02:33 +0200</pubDate>
-  <lastBuildDate>Wed, 02 Aug 2017 10:02:33 +0200</lastBuildDate>
-  <generator>Emacs 25.2 Org-mode 9.0.9</generator>
-  <webMaster>nicolas@petton.fr (Nicolas Petton)</webMaster>
+  <pubDate>Mon, 24 Aug 2020 14:42:44 +0200</pubDate>
+  <lastBuildDate>Mon, 24 Aug 2020 14:42:44 +0200</lastBuildDate>
+  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
     <title>Fourth Emacs meetup</title>
@@ -28,7 +28,7 @@
   <item>
     <title>Fourth *Emacs Meetup*</title>
     <link>http://nicolas-petton.fr/blog/fourth-emacs-meetup.html#org1d49451</link>
-    <author>nicolas@petton.fr (Nicolas Petton)</author>
+    <author>nico@petton.fr (Nicolas Petton)</author>
     <guid isPermaLink="false">http://nicolas-petton.fr/blog/fourth-emacs-meetup.html#org1d49451</guid>
     <pubDate>Sun, 14 Jun 2015 15:37:00 +0200</pubDate>
 
@@ -43,7 +43,7 @@
     <p>
     The plan was to have a look at how to write a major-mode, and after
     some smalltalk around a beer and a slice of pizza, <a href="https://github.com/Lindydancer">Anders Lindgren</a>
-    made <a href="http://nicolas-petton.fr/blog/../ressources/presentation-stripped6.html">a presentation</a> about <code>font-lock</code>.  After that we had a close a
+    made <a href="../ressources/presentation-stripped6.html">a presentation</a> about <code>font-lock</code>.  After that we had a close a
     look at <a href="https://github.com/NicolasPetton/pass-mode">pass-mode</a>, a major-mode for managing <a href="http://passwordstore.org/">pass</a> keychains.
     </p>
 

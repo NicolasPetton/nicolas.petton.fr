@@ -14,10 +14,10 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Wed, 02 Aug 2017 09:56:08 +0200</pubDate>
-  <lastBuildDate>Wed, 02 Aug 2017 09:56:08 +0200</lastBuildDate>
-  <generator>Emacs 25.2 Org-mode 9.0.9</generator>
-  <webMaster>nicolas@petton.fr (Nicolas Petton)</webMaster>
+  <pubDate>Mon, 24 Aug 2020 14:42:53 +0200</pubDate>
+  <lastBuildDate>Mon, 24 Aug 2020 14:42:53 +0200</lastBuildDate>
+  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
     <title><b>Watching</b> buffers</title>
@@ -28,7 +28,7 @@
   <item>
     <title>*Watching Buffers* with buffer-watcher.el</title>
     <link>http://nicolas-petton.fr/blog/buffer-watcher.html#org854dbbf</link>
-    <author>nicolas@petton.fr (Nicolas Petton)</author>
+    <author>nico@petton.fr (Nicolas Petton)</author>
     <guid isPermaLink="false">http://nicolas-petton.fr/blog/buffer-watcher.html#org854dbbf</guid>
     <pubDate>Fri, 24 Oct 2014 17:55:00 +0200</pubDate>
 
@@ -53,9 +53,9 @@
     </p>
 
     <div class="org-src-container">
-    <pre><code class="src src-emacs-lisp">(<span style="color: #c678dd; font-weight: bold;">require</span> '<span style="color: #da8548; font-weight: bold;">buffer-watcher</span>)
+    <pre class="src src-emacs-lisp">(<span style="color: #c678dd; font-weight: bold;">require</span> '<span style="color: #da8548; font-weight: bold;">buffer-watcher</span>)
     (add-to-list 'buffer-watcher-commands '(<span style="color: #98be65;">"Lessc hook"</span> less-css-mode <span style="color: #98be65;">"~/projects/proj/"</span> <span style="color: #98be65;">"lessc % &gt; style.css"</span>))
-    </code></pre>
+    </pre>
     </div>
 
     <p>
@@ -70,7 +70,7 @@
 
 
     <div class="figure">
-    <p><img src="http://nicolas-petton.fr/blog/../images/buffer-watcher.png" alt="buffer-watcher.png" />
+    <p><img src="../images/buffer-watcher.png" alt="buffer-watcher.png" />
     </p>
     </div>
 

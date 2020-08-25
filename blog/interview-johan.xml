@@ -14,10 +14,10 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Wed, 02 Aug 2017 10:02:14 +0200</pubDate>
-  <lastBuildDate>Wed, 02 Aug 2017 10:02:14 +0200</lastBuildDate>
-  <generator>Emacs 25.2 Org-mode 9.0.9</generator>
-  <webMaster>nicolas@petton.fr (Nicolas Petton)</webMaster>
+  <pubDate>Mon, 24 Aug 2020 14:42:55 +0200</pubDate>
+  <lastBuildDate>Mon, 24 Aug 2020 14:42:55 +0200</lastBuildDate>
+  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
     <title>Interview Företagsplatsen #1: <b>Johan</b> Degerfeldt</title>
@@ -28,7 +28,7 @@
   <item>
     <title>Interview with *Johan* Degerfeldt</title>
     <link>http://nicolas-petton.fr/blog/interview-johan.html#org713f312</link>
-    <author>nicolas@petton.fr (Nicolas Petton)</author>
+    <author>nico@petton.fr (Nicolas Petton)</author>
     <guid isPermaLink="false">http://nicolas-petton.fr/blog/interview-johan.html#org713f312</guid>
     <pubDate>Wed, 11 Jun 2014 15:53:00 +0200</pubDate>
 
@@ -57,7 +57,7 @@
 
 
     <div class="figure">
-    <p><img src="http://nicolas-petton.fr/blog/../images/johan1.jpg" alt="Johan Degerfeldt image" align="center" />
+    <p><img src="../images/johan1.jpg" alt="Johan Degerfeldt image" align="center" />
     </p>
     <p><span class="figure-number">Figure 1: </span>Johan Degerfeldt</p>
     </div>
@@ -123,7 +123,7 @@
 
 
     <div class="figure">
-    <p><img src="http://nicolas-petton.fr/blog/../images/johan2.jpg" alt="Johan" align="center" />
+    <p><img src="../images/johan2.jpg" alt="Johan" align="center" />
     </p>
     <p><span class="figure-number">Figure 2: </span>Johan the business man</p>
     </div>
@@ -163,7 +163,7 @@
 
 
     <div class="figure">
-    <p><img src="http://nicolas-petton.fr/blog/../images/boardmeeting.jpg" alt="board meeting" align="center" />
+    <p><img src="../images/boardmeeting.jpg" alt="board meeting" align="center" />
     </p>
     <p><span class="figure-number">Figure 3: </span>A board meeting</p>
     </div>
@@ -213,7 +213,7 @@
 
 
     <div class="figure">
-    <p><img src="http://nicolas-petton.fr/blog/../images/johan3.jpg" alt="Johan" align="center" />
+    <p><img src="../images/johan3.jpg" alt="Johan" align="center" />
     </p>
     <p><span class="figure-number">Figure 4: </span>Johan the family man</p>
     </div>

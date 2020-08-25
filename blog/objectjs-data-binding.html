@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-08-02 Wed 09:55 -->
+<!-- 2020-08-25 Tue 15:42 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Data binding with objectjs</title>
@@ -161,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -182,7 +195,7 @@
 </style>
 <link href='/images/favicon.ico' rel='shortcut icon' type='image/x-icon'>
 <link rel='stylesheet' href='https://code.cdn.mozilla.net/fonts/fira.css'>
-<link rel='stylesheet' href='../css/site.css?v=2' type='text/css'/>
+<link rel='stylesheet' href='../css/site.css?v=3' type='text/css'/>
 <link rel='stylesheet' href='../css/blog.css?v=2' type='text/css'/>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <script src='/js/jquery.js' type='text/javascript'></script>
@@ -203,7 +216,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2017 Free Software Foundation, Inc.
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -258,10 +271,9 @@ for the JavaScript code in this tag.
 <li><a href='/'>Home</a>–</li>
 <li><a href='/blog/index.html'>Blog</a>–</li>
 <li><a href='https://emacs.cafe'>Emacs Café</a>–</li>
-<li><a href='https://petton.fr/git/nico'>GitLab</a>–</li>
-<li><a href='http://github.com/NicolasPetton'>GitHub</a>–</li>
-<li><a href='http://twitter.com/NicolasPetton'>Twitter</a>–</li>
-<li><a href='/contact.html'>Contact</a></li>
+<li><a href='/contact.html'>Contact</a>–</li>
+<li><a href='http://github.com/NicolasPetton'><i class="fa fa-github"></i></a>–</li>
+<li><a href='http://twitter.com/NicolasPetton'><i class="fa fa-twitter"></i></a></li>
 </ul>
 </div>
 </div>
@@ -269,7 +281,7 @@ for the JavaScript code in this tag.
 <h1 class="title">Data binding with objectjs</h1>
 
 <div id="outline-container-org770b4cd" class="outline-2">
-<h2 id="org770b4cd"><a id="ID-f1cfbd1e-ee55-4dbe-8dbf-392eafd43841"></a>Data binding with <b>objectjs</b></h2>
+<h2 id="org770b4cd">Data binding with <b>objectjs</b></h2>
 <div class="outline-text-2" id="text-org770b4cd">
 <div class="pubdate">
 Sept 6, 2016
@@ -294,7 +306,7 @@ took.
 </div>
 
 <div id="outline-container-orgde90f2e" class="outline-3">
-<h3 id="orgde90f2e"><a id="ID-42b5775b-3c43-4a73-817e-29922f267662"></a>The counter example revisited</h3>
+<h3 id="orgde90f2e">The counter example revisited</h3>
 <div class="outline-text-3" id="text-orgde90f2e">
 <p>
 Let's have a look at a simple counter widget with two buttons to increment and
@@ -302,7 +314,7 @@ decrement a counter, as it is today in <a href="https://github.com/foretagsplats
 </p>
 
 <div class="org-src-container">
-<pre><code class="src src-js">    <span style="color: #687080; font-style: italic;">// </span><span style="color: #687080; font-style: italic;">The counter model</span>
+<pre class="src src-js">    <span style="color: #687080; font-style: italic;">// </span><span style="color: #687080; font-style: italic;">The counter model</span>
     <span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #61afef;">counter</span> = objectjs.object.subclass(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">that</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
         <span style="color: #c678dd; font-weight: bold;">my</span>.initialize = <span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>) {
             <span style="color: #c678dd; font-weight: bold;">my</span>.<span style="color: #c678dd; font-weight: bold;">super</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>);
@@ -340,7 +352,7 @@ decrement a counter, as it is today in <a href="https://github.com/foretagsplats
         };
     });
 
-</code></pre>
+</pre>
 </div>
 
 <p>
@@ -357,7 +369,7 @@ updates of widgets.
 </div>
 
 <div id="outline-container-org4328c8d" class="outline-3">
-<h3 id="org4328c8d"><a id="ID-6675dd9b-fb67-4396-8f99-96e19421d294"></a>Properties in <code>objectjs</code></h3>
+<h3 id="org4328c8d">Properties in <code>objectjs</code></h3>
 <div class="outline-text-3" id="text-org4328c8d">
 <p>
 The first thing to get data binding is a way to listen to domain attribute
@@ -365,7 +377,7 @@ changes.  That's easy enough with ECMAScript5 <a href="https://developer.mozilla
 </p>
 
 <div class="org-src-container">
-<pre><code class="src src-js">object.extend(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">that</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
+<pre class="src src-js">object.extend(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">that</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
     <span style="color: #c678dd; font-weight: bold;">my</span>.property = <span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #61afef;">propName</span>, <span style="color: #61afef;">initialValue</span>) {
         <span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #61afef;">value</span> = initialValue;
         Object.defineProperty(<span style="color: #c678dd; font-weight: bold;">my</span>, propName, {
@@ -382,7 +394,7 @@ changes.  That's easy enough with ECMAScript5 <a href="https://developer.mozilla
         });
     };
 });
-</code></pre>
+</pre>
 </div>
 
 <p>
@@ -397,14 +409,14 @@ With this in place, we can now listen for property changes on the widget side:
 </p>
 
 <div class="org-src-container">
-<pre><code class="src src-js">    <span style="color: #687080; font-style: italic;">// </span><span style="color: #687080; font-style: italic;">Register to property accesses for data binding</span>
+<pre class="src src-js">    <span style="color: #687080; font-style: italic;">// </span><span style="color: #687080; font-style: italic;">Register to property accesses for data binding</span>
     objectjs.propertyEventEmitter.instance().onAccess(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #61afef;">instance</span>, <span style="color: #61afef;">propName</span>) {
         <span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #61afef;">widget</span> = currentWidget.get();
         <span style="color: #c678dd; font-weight: bold;">if</span> (widget) {
             instance.onPropertyChange(propName, widget.update);
         }
     });
-</code></pre>
+</pre>
 </div>
 
 <p>
@@ -416,14 +428,14 @@ during the rendering which widget should listen to property changes.
 </div>
 
 <div id="outline-container-org2a2a4bb" class="outline-3">
-<h3 id="org2a2a4bb"><a id="ID-376360ca-05a7-4d94-854e-19093228cdab"></a>A better counter example</h3>
+<h3 id="org2a2a4bb">A better counter example</h3>
 <div class="outline-text-3" id="text-org2a2a4bb">
 <p>
 Now we can define properties and let the widgets update themselves whenever they change:
 </p>
 
 <div class="org-src-container">
-<pre><code class="src src-js"><span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #61afef;">counter</span> = objectjs.object.subclass(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">that</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
+<pre class="src src-js"><span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #61afef;">counter</span> = objectjs.object.subclass(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">that</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
     <span style="color: #c678dd; font-weight: bold;">my</span>.initialize = <span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>) {
         <span style="color: #c678dd; font-weight: bold;">my</span>.<span style="color: #c678dd; font-weight: bold;">super</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>);
         <span style="color: #c678dd; font-weight: bold;">my</span>.property(<span style="color: #98be65;">"count"</span>, 0);
@@ -452,7 +464,7 @@ Now we can define properties and let the widgets update themselves whenever they
         html.<span style="color: #61afef; background-color: #38394c; font-weight: bold;">button</span>(<span style="color: #98be65;">'-'</span>).click(<span style="color: #c678dd; font-weight: bold;">my</span>.counter.decrement);
     };
 });
-</code></pre>
+</pre>
 </div>
 
 <p>
@@ -504,7 +516,7 @@ Here's 2 counter widgets in action:
 
 
 <div id="outline-container-org95d2b4e" class="outline-3">
-<h3 id="org95d2b4e"><a id="ID-9bd7dfa0-7cd4-4398-90e7-10fd4e696eb5"></a>Benefits</h3>
+<h3 id="org95d2b4e">Benefits</h3>
 <div class="outline-text-3" id="text-org95d2b4e">
 <p>
 The approach taken is a bit different from React, but I think it has its
@@ -550,9 +562,9 @@ dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 </div>
 <div id="postamble" class="status">
 <div class='footer'>
-Copyright 2017 Nicolas Petton.<br>
-Last updated 2017-08-02 Wed 09:53. <br>
-Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.2.1 (<a href="http://orgmode.org">Org</a> mode 9.0.9).
+Copyright 2020 Nicolas Petton.<br>
+Last updated 2020-08-24 Mon 14:42. <br>
+Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.3.6).
 </div>
 </div>
 </body>

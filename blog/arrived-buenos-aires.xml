@@ -14,10 +14,10 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Wed, 02 Aug 2017 10:02:34 +0200</pubDate>
-  <lastBuildDate>Wed, 02 Aug 2017 10:02:34 +0200</lastBuildDate>
-  <generator>Emacs 25.2 Org-mode 9.0.9</generator>
-  <webMaster>nicolas@petton.fr (Nicolas Petton)</webMaster>
+  <pubDate>Mon, 24 Aug 2020 14:42:10 +0200</pubDate>
+  <lastBuildDate>Mon, 24 Aug 2020 14:42:10 +0200</lastBuildDate>
+  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
     <title></title>
@@ -27,7 +27,7 @@
   <item>
     <title>Arrived in Buenos Aires</title>
     <link>http://nicolas-petton.fr/blog/arrived-buenos-aires.html#orgb4b06e5</link>
-    <author>nicolas@petton.fr (Nicolas Petton)</author>
+    <author>nico@petton.fr (Nicolas Petton)</author>
     <guid isPermaLink="false">http://nicolas-petton.fr/blog/arrived-buenos-aires.html#orgb4b06e5</guid>
     <pubDate>Fri, 18 Oct 2013 01:49:00 +0200</pubDate>
     <category><![CDATA[argentina]]></category>
@@ -43,7 +43,7 @@
 
     <p>
     Next week I'll be heading to Rosario for the <a href="http://www.fast.org.ar/smalltalks2013">Smalltalks</a> conference
-    where I'll be giving a <a href="http://www.fast.org.ar/smalltalks2013/talks/Amber%20Smalltalk%3A%20A%20Smalltalk%20that%20runs%20inside%20your%20web%20browser">talk</a> about <a href="http://amber-lang.net">Amber</a>. This talk will highlight
+    where I'll be giving a <a href="http://www.fast.org.ar/smalltalks2013/talks/Amber%20Smalltalk%253A%20A%20Smalltalk%20that%20runs%20inside%20your%20web%20browser">talk</a> about <a href="http://amber-lang.net">Amber</a>. This talk will highlight
     key features and use-cases of Amber, explain some of the internals
     as well as important new and planned features.
     </p>

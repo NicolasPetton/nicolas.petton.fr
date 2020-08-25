@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-08-02 Wed 09:56 -->
+<!-- 2020-08-25 Tue 15:42 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>A dark window decoration for Emacs</title>
@@ -161,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -182,7 +195,7 @@
 </style>
 <link href='/images/favicon.ico' rel='shortcut icon' type='image/x-icon'>
 <link rel='stylesheet' href='https://code.cdn.mozilla.net/fonts/fira.css'>
-<link rel='stylesheet' href='../css/site.css?v=2' type='text/css'/>
+<link rel='stylesheet' href='../css/site.css?v=3' type='text/css'/>
 <link rel='stylesheet' href='../css/blog.css?v=2' type='text/css'/>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <script src='/js/jquery.js' type='text/javascript'></script>
@@ -203,7 +216,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2017 Free Software Foundation, Inc.
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -258,10 +271,9 @@ for the JavaScript code in this tag.
 <li><a href='/'>Home</a>–</li>
 <li><a href='/blog/index.html'>Blog</a>–</li>
 <li><a href='https://emacs.cafe'>Emacs Café</a>–</li>
-<li><a href='https://petton.fr/git/nico'>GitLab</a>–</li>
-<li><a href='http://github.com/NicolasPetton'>GitHub</a>–</li>
-<li><a href='http://twitter.com/NicolasPetton'>Twitter</a>–</li>
-<li><a href='/contact.html'>Contact</a></li>
+<li><a href='/contact.html'>Contact</a>–</li>
+<li><a href='http://github.com/NicolasPetton'><i class="fa fa-github"></i></a>–</li>
+<li><a href='http://twitter.com/NicolasPetton'><i class="fa fa-twitter"></i></a></li>
 </ul>
 </div>
 </div>
@@ -269,7 +281,7 @@ for the JavaScript code in this tag.
 <h1 class="title">A dark window decoration for Emacs</h1>
 
 <div id="outline-container-orgbc4eb54" class="outline-2">
-<h2 id="orgbc4eb54"><a id="ID-ae96728e-bac9-46c6-8eda-a488f5608540"></a><b>Dark Emacs windows</b> in GNOME</h2>
+<h2 id="orgbc4eb54"><b>Dark Emacs windows</b> in GNOME</h2>
 <div class="outline-text-2" id="text-orgbc4eb54">
 <p>
 Gnome 3's default theme Adwaita has support for both light and dark
@@ -284,7 +296,7 @@ bit of elisp with xprop!
 </p>
 
 <div class="org-src-container">
-<pre><code class="src src-emacs-lisp">(<span style="color: #c678dd; font-weight: bold;">defun</span> <span style="color: #61afef;">set-selected-frame-dark</span> ()
+<pre class="src src-emacs-lisp">(<span style="color: #c678dd; font-weight: bold;">defun</span> <span style="color: #61afef;">set-selected-frame-dark</span> ()
   (<span style="color: #c678dd; font-weight: bold;">interactive</span>)
   (<span style="color: #c678dd; font-weight: bold;">let</span> ((frame-name (get-frame-name (selected-frame))))
     (call-process-shell-command (concat <span style="color: #98be65;">"xprop -f _GTK_THEME_VARIANT 8u -set _GTK_THEME_VARIANT \"dark\" -name \""</span>
@@ -293,7 +305,7 @@ bit of elisp with xprop!
 
 (<span style="color: #c678dd; font-weight: bold;">if</span> (window-system)
     (set-selected-frame-dark))
-</code></pre>
+</pre>
 </div>
 
 <p>
@@ -325,9 +337,9 @@ dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 </div>
 <div id="postamble" class="status">
 <div class='footer'>
-Copyright 2017 Nicolas Petton.<br>
-Last updated 2017-08-02 Wed 09:53. <br>
-Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.2.1 (<a href="http://orgmode.org">Org</a> mode 9.0.9).
+Copyright 2020 Nicolas Petton.<br>
+Last updated 2020-08-24 Mon 14:42. <br>
+Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.3.6).
 </div>
 </div>
 </body>

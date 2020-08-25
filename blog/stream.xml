@@ -14,10 +14,10 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Wed, 02 Aug 2017 10:02:28 +0200</pubDate>
-  <lastBuildDate>Wed, 02 Aug 2017 10:02:28 +0200</lastBuildDate>
-  <generator>Emacs 25.2 Org-mode 9.0.9</generator>
-  <webMaster>nicolas@petton.fr (Nicolas Petton)</webMaster>
+  <pubDate>Mon, 24 Aug 2020 14:42:45 +0200</pubDate>
+  <lastBuildDate>Mon, 24 Aug 2020 14:42:45 +0200</lastBuildDate>
+  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
     <title>stream.el</title>
@@ -28,7 +28,7 @@
   <item>
     <title>*Lazy sequences* in Emacs with stream.el</title>
     <link>http://nicolas-petton.fr/blog/stream.html#org9aed758</link>
-    <author>nicolas@petton.fr (Nicolas Petton)</author>
+    <author>nico@petton.fr (Nicolas Petton)</author>
     <guid isPermaLink="false">http://nicolas-petton.fr/blog/stream.html#org9aed758</guid>
     <pubDate>Wed, 14 Oct 2015 17:25:00 +0200</pubDate>
 
@@ -81,11 +81,11 @@
     </p>
 
     <div class="org-src-container">
-    <pre><code class="src src-emacs-lisp">(<span style="color: #c678dd; font-weight: bold;">defun</span> <span style="color: #61afef;">ones</span> ()
+    <pre class="src src-emacs-lisp">(<span style="color: #c678dd; font-weight: bold;">defun</span> <span style="color: #61afef;">ones</span> ()
     (stream-cons 1 (ones)))
 
     (ones) <span style="color: #687080; font-style: italic;">;; </span><span style="color: #687080; font-style: italic;">=&gt; stream</span>
-    </code></pre>
+    </pre>
     </div>
 
     <p>
@@ -94,11 +94,11 @@
     </p>
 
     <div class="org-src-container">
-    <pre><code class="src src-emacs-lisp">(<span style="color: #c678dd; font-weight: bold;">defun</span> <span style="color: #61afef;">fib</span> (a b)
+    <pre class="src src-emacs-lisp">(<span style="color: #c678dd; font-weight: bold;">defun</span> <span style="color: #61afef;">fib</span> (a b)
     (stream-cons a (fib b (+ a b))))
 
     (fib 0 1)
-    </code></pre>
+    </pre>
     </div>
 
     <p>
@@ -107,8 +107,8 @@
     </p>
 
     <div class="org-src-container">
-    <pre><code class="src src-emacs-lisp">(seq-take (stream (current-buffer)) 50) <span style="color: #687080; font-style: italic;">;; </span><span style="color: #687080; font-style: italic;">=&gt; stream</span>
-    </code></pre>
+    <pre class="src src-emacs-lisp">(seq-take (stream (current-buffer)) 50) <span style="color: #687080; font-style: italic;">;; </span><span style="color: #687080; font-style: italic;">=&gt; stream</span>
+    </pre>
     </div>
 
     <p>
@@ -118,8 +118,8 @@
     </p>
 
     <div class="org-src-container">
-    <pre><code class="src src-emacs-lisp">(seq-map #'1+ (seq-take (fib 0 1) 50)) <span style="color: #687080; font-style: italic;">;; </span><span style="color: #687080; font-style: italic;">=&gt; stream</span>
-    </code></pre>
+    <pre class="src src-emacs-lisp">(seq-map #'1+ (seq-take (fib 0 1) 50)) <span style="color: #687080; font-style: italic;">;; </span><span style="color: #687080; font-style: italic;">=&gt; stream</span>
+    </pre>
     </div>
 
     <p>

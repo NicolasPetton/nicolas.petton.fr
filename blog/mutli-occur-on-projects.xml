@@ -14,10 +14,10 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Wed, 02 Aug 2017 10:02:11 +0200</pubDate>
-  <lastBuildDate>Wed, 02 Aug 2017 10:02:11 +0200</lastBuildDate>
-  <generator>Emacs 25.2 Org-mode 9.0.9</generator>
-  <webMaster>nicolas@petton.fr (Nicolas Petton)</webMaster>
+  <pubDate>Mon, 24 Aug 2020 14:43:01 +0200</pubDate>
+  <lastBuildDate>Mon, 24 Aug 2020 14:43:01 +0200</lastBuildDate>
+  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
     <title>Running multi-occur in many buffers</title>
@@ -28,7 +28,7 @@
   <item>
     <title>*Multi-occur* on projects</title>
     <link>http://nicolas-petton.fr/blog/multi-occur-on-projects.html</link>
-    <author>nicolas@petton.fr (Nicolas Petton)</author>
+    <author>nico@petton.fr (Nicolas Petton)</author>
     <guid isPermaLink="false">http://nicolas-petton.fr/blog/multi-occur-on-projects.html</guid>
     <pubDate>Fri, 05 Sep 2014 13:01:00 +0200</pubDate>
 
@@ -54,16 +54,16 @@
 
 
     <div class="org-src-container">
-    <pre><code class="src src-emacs-lisp">(<span style="color: #c678dd; font-weight: bold;">require</span> '<span style="color: #da8548; font-weight: bold;">projectile</span>)
+    <pre class="src src-emacs-lisp">(<span style="color: #c678dd; font-weight: bold;">require</span> '<span style="color: #da8548; font-weight: bold;">projectile</span>)
 
     (<span style="color: #c678dd; font-weight: bold;">defun</span> <span style="color: #61afef;">noccur-dired</span> (regexp <span style="color: #61afef;">&amp;optional</span> nlines)
-    <span style="color: #9eac8c;">"Perform `</span><span style="color: #9eac8c; font-weight: bold;">multi-occur</span><span style="color: #9eac8c;">' with REGEXP in all dired marked files.</span>
+    <span style="color: #9eac8c;">"Perform `</span><span style="color: #da8548; font-weight: bold;">multi-occur</span><span style="color: #9eac8c;">' with REGEXP in all dired marked files.</span>
     <span style="color: #9eac8c;">When called with a prefix argument NLINES, display NLINES lines before and after."</span>
     (<span style="color: #c678dd; font-weight: bold;">interactive</span> (occur-read-primary-args))
     (multi-occur (mapcar #'find-file (dired-get-marked-files)) regexp nlines))
 
     (<span style="color: #c678dd; font-weight: bold;">defun</span> <span style="color: #61afef;">noccur-project</span> (regexp <span style="color: #61afef;">&amp;optional</span> nlines)
-    <span style="color: #9eac8c;">"Perform `</span><span style="color: #9eac8c; font-weight: bold;">multi-occur</span><span style="color: #9eac8c;">' in the current project files."</span>
+    <span style="color: #9eac8c;">"Perform `</span><span style="color: #da8548; font-weight: bold;">multi-occur</span><span style="color: #9eac8c;">' in the current project files."</span>
     (<span style="color: #c678dd; font-weight: bold;">interactive</span> (occur-read-primary-args))
     (<span style="color: #c678dd; font-weight: bold;">let*</span> ((directory (read-directory-name <span style="color: #98be65;">"Search in directory: "</span>))
     (files (<span style="color: #c678dd; font-weight: bold;">if</span> (<span style="color: #c678dd; font-weight: bold;">and</span> directory (not (string= directory (projectile-project-root))))
@@ -76,7 +76,7 @@
     (multi-occur buffers regexp nlines)))
 
     (<span style="color: #c678dd; font-weight: bold;">provide</span> '<span style="color: #da8548; font-weight: bold;">noccur</span>)
-    </code></pre>
+    </pre>
     </div>
 
     <p>

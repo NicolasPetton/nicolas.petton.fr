@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-08-02 Wed 09:55 -->
+<!-- 2020-08-25 Tue 15:42 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Amber's new compiler</title>
@@ -161,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -182,7 +195,7 @@
 </style>
 <link href='/images/favicon.ico' rel='shortcut icon' type='image/x-icon'>
 <link rel='stylesheet' href='https://code.cdn.mozilla.net/fonts/fira.css'>
-<link rel='stylesheet' href='../css/site.css?v=2' type='text/css'/>
+<link rel='stylesheet' href='../css/site.css?v=3' type='text/css'/>
 <link rel='stylesheet' href='../css/blog.css?v=2' type='text/css'/>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <script src='/js/jquery.js' type='text/javascript'></script>
@@ -203,7 +216,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2017 Free Software Foundation, Inc.
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -258,10 +271,9 @@ for the JavaScript code in this tag.
 <li><a href='/'>Home</a>–</li>
 <li><a href='/blog/index.html'>Blog</a>–</li>
 <li><a href='https://emacs.cafe'>Emacs Café</a>–</li>
-<li><a href='https://petton.fr/git/nico'>GitLab</a>–</li>
-<li><a href='http://github.com/NicolasPetton'>GitHub</a>–</li>
-<li><a href='http://twitter.com/NicolasPetton'>Twitter</a>–</li>
-<li><a href='/contact.html'>Contact</a></li>
+<li><a href='/contact.html'>Contact</a>–</li>
+<li><a href='http://github.com/NicolasPetton'><i class="fa fa-github"></i></a>–</li>
+<li><a href='http://twitter.com/NicolasPetton'><i class="fa fa-twitter"></i></a></li>
 </ul>
 </div>
 </div>
@@ -269,7 +281,7 @@ for the JavaScript code in this tag.
 <h1 class="title">Amber's new compiler</h1>
 
 <div id="outline-container-orgc4388f7" class="outline-2">
-<h2 id="orgc4388f7"><a id="ID-57d2c75a-220f-43cd-97d1-ecd47f9010f8"></a>Amber's new <b>compiler</b></h2>
+<h2 id="orgc4388f7">Amber's new <b>compiler</b></h2>
 <div class="outline-text-2" id="text-orgc4388f7">
 <div class="pubdate">
 October 18, 2013
@@ -289,7 +301,7 @@ more flexible and extensible compiler.
 </div>
 
 <div id="outline-container-org9fbdd7e" class="outline-3">
-<h3 id="org9fbdd7e"><a id="ID-b922a3e9-fa23-4db9-a86b-8df6bf730977"></a>The new architecture</h3>
+<h3 id="org9fbdd7e">The new architecture</h3>
 <div class="outline-text-3" id="text-org9fbdd7e">
 <p>
 The AST produced by the parser is first annotated and validated by
@@ -302,11 +314,11 @@ directly in nodes.
 
 
 <div class="org-src-container">
-<pre><code class="src src-ruby">   | ast ir output |
+<pre class="src src-ruby">   | ast ir output |
 
    ast := <span style="color: #61afef;">Smalltalk</span> current <span style="color: #da8548; font-weight: bold;">parse:</span> <span style="color: #98be65;">'foo true ifTrue: [ ^ self asString ]'</span>.
    (<span style="color: #61afef;">SemanticAnalyzer</span> <span style="color: #da8548; font-weight: bold;">on:</span> <span style="color: #61afef;">Object</span>) visit: ast.
-</code></pre>
+</pre>
 </div>
 
 
@@ -319,8 +331,8 @@ cut down most of the tree into a flat list of instructions.
 
 
 <div class="org-src-container">
-<pre><code class="src src-ruby">   ir := <span style="color: #61afef;">IRASTTranslator</span> new <span style="color: #da8548; font-weight: bold;">visit:</span> ast.
-</code></pre>
+<pre class="src src-ruby">   ir := <span style="color: #61afef;">IRASTTranslator</span> new <span style="color: #da8548; font-weight: bold;">visit:</span> ast.
+</pre>
 </div>
 
 
@@ -340,11 +352,11 @@ in the appropriate class.
 
 
 <div class="org-src-container">
-<pre><code class="src src-ruby">   output := <span style="color: #61afef;">IRJSTranslator</span> new
+<pre class="src src-ruby">   output := <span style="color: #61afef;">IRJSTranslator</span> new
         <span style="color: #da8548; font-weight: bold;">currentClass:</span> <span style="color: #61afef;">Object</span>;
         <span style="color: #da8548; font-weight: bold;">visit:</span> ir;
         contents
-</code></pre>
+</pre>
 </div>
 
 
@@ -355,7 +367,7 @@ The following diagram shows the current architecture.
 </div>
 </div>
 <div id="outline-container-org5cdbce5" class="outline-3">
-<h3 id="org5cdbce5"><a id="ID-b9289317-95e2-422d-b90c-7b0fcd7d7890"></a>The public API</h3>
+<h3 id="org5cdbce5">The public API</h3>
 <div class="outline-text-3" id="text-org5cdbce5">
 <p>
 The <code>Compiler</code> facade hides all the internals away and provides the
@@ -366,7 +378,8 @@ the optional inlining step.
 </p>
 
 <div class="org-src-container">
-<pre><code class="src src-ruby">   <span style="color: #98be65;">"Compiling without installing"</span>
+<pre class="src src-ruby">
+   <span style="color: #98be65;">"Compiling without installing"</span>
    <span style="color: #61afef;">Compiler</span> new
         <span style="color: #da8548; font-weight: bold;">codeGeneratorClass:</span> <span style="color: #61afef;">InliningCodeGenerator</span>; <span style="color: #98be65;">"Default, can be omitted"</span>
         <span style="color: #da8548; font-weight: bold;">compile:</span> <span style="color: #98be65;">'foo true ifTrue: [ ^ self asString ]'</span>
@@ -379,13 +392,13 @@ the optional inlining step.
         <span style="color: #da8548; font-weight: bold;">forClass:</span> <span style="color: #61afef;">Object</span>
         <span style="color: #da8548; font-weight: bold;">category:</span> <span style="color: #98be65;">'foo'</span>
 
-</code></pre>
+</pre>
 </div>
 </div>
 </div>
 
 <div id="outline-container-org6ca2648" class="outline-3">
-<h3 id="org6ca2648"><a id="ID-f0d4cc95-d0ba-451b-984f-953b67c4c72d"></a>The end</h3>
+<h3 id="org6ca2648">The end</h3>
 <div class="outline-text-3" id="text-org6ca2648">
 <p>
 That's all for now. The new compiler is a very important brick for
@@ -423,9 +436,9 @@ steps. Stay tuned!
 </div>
 <div id="postamble" class="status">
 <div class='footer'>
-Copyright 2017 Nicolas Petton.<br>
-Last updated 2017-08-02 Wed 09:53. <br>
-Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.2.1 (<a href="http://orgmode.org">Org</a> mode 9.0.9).
+Copyright 2020 Nicolas Petton.<br>
+Last updated 2020-08-24 Mon 14:42. <br>
+Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.3.6).
 </div>
 </div>
 </body>

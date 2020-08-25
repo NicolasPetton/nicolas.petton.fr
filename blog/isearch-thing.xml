@@ -14,10 +14,10 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Wed, 02 Aug 2017 09:56:08 +0200</pubDate>
-  <lastBuildDate>Wed, 02 Aug 2017 09:56:08 +0200</lastBuildDate>
-  <generator>Emacs 25.2 Org-mode 9.0.9</generator>
-  <webMaster>nicolas@petton.fr (Nicolas Petton)</webMaster>
+  <pubDate>Mon, 24 Aug 2020 14:43:02 +0200</pubDate>
+  <lastBuildDate>Mon, 24 Aug 2020 14:43:02 +0200</lastBuildDate>
+  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
     <title></title>
@@ -27,7 +27,7 @@
   <item>
     <title>*isearch* thing</title>
     <link>http://nicolas-petton.fr/blog/isearch-thing.html#orgff3669a</link>
-    <author>nicolas@petton.fr (Nicolas Petton)</author>
+    <author>nico@petton.fr (Nicolas Petton)</author>
     <guid isPermaLink="false">http://nicolas-petton.fr/blog/isearch-thing.html#orgff3669a</guid>
     <pubDate>Tue, 26 Aug 2014 14:00:00 +0200</pubDate>
 
@@ -47,7 +47,7 @@
     </p>
 
     <div class="org-src-container">
-    <pre><code class="src src-emacs-lisp">(<span style="color: #c678dd; font-weight: bold;">defun</span> <span style="color: #61afef;">symbol-name-at-point</span> ()
+    <pre class="src src-emacs-lisp">(<span style="color: #c678dd; font-weight: bold;">defun</span> <span style="color: #61afef;">symbol-name-at-point</span> ()
     (<span style="color: #c678dd; font-weight: bold;">let</span> ((symbol (symbol-at-point)))
     (<span style="color: #c678dd; font-weight: bold;">if</span> symbol
     (symbol-name symbol)
@@ -71,7 +71,7 @@
     (isearch-yank-string (current-thing)))
 
     (define-key isearch-mode-map (kbd <span style="color: #98be65;">"C-t"</span>) #'isearch-thing)
-    </code></pre>
+    </pre>
     </div>
 
 

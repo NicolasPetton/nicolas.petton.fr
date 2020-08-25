@@ -14,10 +14,10 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Wed, 02 Aug 2017 10:02:27 +0200</pubDate>
-  <lastBuildDate>Wed, 02 Aug 2017 10:02:27 +0200</lastBuildDate>
-  <generator>Emacs 25.2 Org-mode 9.0.9</generator>
-  <webMaster>nicolas@petton.fr (Nicolas Petton)</webMaster>
+  <pubDate>Mon, 24 Aug 2020 14:42:50 +0200</pubDate>
+  <lastBuildDate>Mon, 24 Aug 2020 14:42:50 +0200</lastBuildDate>
+  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
     <title>Working on the Emacs website</title>
@@ -26,10 +26,10 @@
 
 
   <item>
-    <title>Working on the *Emacs website*</title>
-    <link>http://nicolas-petton.fr/blog/working-on-the-emacs-website.html#orgc1d70fc</link>
-    <author>nicolas@petton.fr (Nicolas Petton)</author>
-    <guid isPermaLink="false">http://nicolas-petton.fr/blog/working-on-the-emacs-website.html#orgc1d70fc</guid>
+    <title>Working on the Emacs website</title>
+    <link>http://nicolas-petton.fr/blog/working-on-the-emacs-website.html#org4e57fd1</link>
+    <author>nico@petton.fr (Nicolas Petton)</author>
+    <guid isPermaLink="false">http://nicolas-petton.fr/blog/working-on-the-emacs-website.html#org4e57fd1</guid>
     <pubDate>Sun, 29 Nov 2015 00:40:00 +0100</pubDate>
 
     <description><![CDATA[<div class="pubdate">
@@ -37,13 +37,13 @@
     </div>
 
     <p>
-    After working on the <a href="http://nicolas-petton.fr/blog/working-on-the-emacs-logo.html#orgc79f6f0">Emacs logo</a> and the <a href="http://nicolas-petton.fr/ressources/elpa/">ELPA website</a>, I'm now working on the
+    After working on the <a href="working-on-the-emacs-logo.html">Emacs logo</a> and the <a href="http://nicolas-petton.fr/ressources/elpa/">ELPA website</a>, I'm now working on the
     Emacs website, you can have a look at my work (in progress) <a href="http://nicolas-petton.fr/ressources/emacs-website/">here</a>!
     </p>
 
 
     <div class="figure">
-    <p><img src="http://nicolas-petton.fr/blog/../images/emacs-website.png" alt="emacs-website.png" />
+    <p><img src="../images/emacs-website.png" alt="emacs-website.png" />
     </p>
     </div>
 

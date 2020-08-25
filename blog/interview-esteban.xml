@@ -14,10 +14,10 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Wed, 02 Aug 2017 10:02:17 +0200</pubDate>
-  <lastBuildDate>Wed, 02 Aug 2017 10:02:17 +0200</lastBuildDate>
-  <generator>Emacs 25.2 Org-mode 9.0.9</generator>
-  <webMaster>nicolas@petton.fr (Nicolas Petton)</webMaster>
+  <pubDate>Mon, 24 Aug 2020 14:43:09 +0200</pubDate>
+  <lastBuildDate>Mon, 24 Aug 2020 14:43:09 +0200</lastBuildDate>
+  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
     <title>Interview RMoD #2: Esteban Lorenzano</title>
@@ -28,7 +28,7 @@
   <item>
     <title>Interview with *Esteban* Lorenzano</title>
     <link>http://nicolas-petton.fr/blog/interview-esteban.html#orga747567</link>
-    <author>nicolas@petton.fr (Nicolas Petton)</author>
+    <author>nico@petton.fr (Nicolas Petton)</author>
     <guid isPermaLink="false">http://nicolas-petton.fr/blog/interview-esteban.html#orga747567</guid>
     <pubDate>Thu, 06 Feb 2014 17:03:00 +0100</pubDate>
 
@@ -37,9 +37,9 @@
     </div>
 
     <p>
-    This is the second post of my series of interviews, in which I
-    <a href="http://nicolas-petton.fr/blog/working-at-rmod.html#org4a24e79">interview my colleagues</a> of the <a href="http://rmod.lille.inria.fr/web/">RMoD</a> team. After the <a href="http://nicolas-petton.fr/blog/interview-damien.html#org600da5b">interview of
-    Damien Cassou</a>, I interview <a href="http://smallworks.com.ar/web/blog">Esteban Lorenzano</a>.
+    This is the second post of my series of interviews, in which I <a href="working-at-rmod.html">interview my
+    colleagues</a> of the <a href="http://rmod.lille.inria.fr/web/">RMoD</a> team. After the <a href="interview-damien.html">interview of Damien Cassou</a>, I interview
+    <a href="http://smallworks.com.ar/web/blog">Esteban Lorenzano</a>.
     </p>
 
     <p>
@@ -59,7 +59,7 @@
 
 
     <div class="figure">
-    <p><img src="http://nicolas-petton.fr/blog/../images/esteban1.jpg" alt="Esteban Lorenzano image" align="center" />
+    <p><img src="../images/esteban1.jpg" alt="Esteban Lorenzano image" align="center" />
     </p>
     <p><span class="figure-number">Figure 1: </span>Esteban, focused and working hard as always</p>
     </div>
@@ -110,7 +110,7 @@
 
 
     <div class="figure">
-    <p><img src="http://nicolas-petton.fr/blog/../images/esteban2.jpg" alt="Mate image" align="center" />
+    <p><img src="../images/esteban2.jpg" alt="Mate image" align="center" />
     </p>
     <p><span class="figure-number">Figure 2: </span>Esteban's Mate</p>
     </div>
@@ -191,7 +191,7 @@
 
     <p>
     If you liked this interview, you might also want to check out the
-    <a href="http://nicolas-petton.fr/blog/interview-damien.html#org600da5b">interview of Damien Cassou</a>.
+    <a href="interview-damien.html">interview of Damien Cassou</a>.
     </p>
 
     <div id="disqus_thread"></div>

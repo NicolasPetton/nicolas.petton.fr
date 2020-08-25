@@ -14,10 +14,10 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Wed, 02 Aug 2017 10:02:16 +0200</pubDate>
-  <lastBuildDate>Wed, 02 Aug 2017 10:02:16 +0200</lastBuildDate>
-  <generator>Emacs 25.2 Org-mode 9.0.9</generator>
-  <webMaster>nicolas@petton.fr (Nicolas Petton)</webMaster>
+  <pubDate>Mon, 24 Aug 2020 14:43:02 +0200</pubDate>
+  <lastBuildDate>Mon, 24 Aug 2020 14:43:02 +0200</lastBuildDate>
+  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
     <title><b>Amber</b> 0.13</title>
@@ -28,7 +28,7 @@
   <item>
     <title>*Amber* 0.13</title>
     <link>http://nicolas-petton.fr/blog/amber-0.13-released.html#orgf1e21b8</link>
-    <author>nicolas@petton.fr (Nicolas Petton)</author>
+    <author>nico@petton.fr (Nicolas Petton)</author>
     <guid isPermaLink="false">http://nicolas-petton.fr/blog/amber-0.13-released.html#orgf1e21b8</guid>
     <pubDate>Fri, 10 Oct 2014 14:22:00 +0200</pubDate>
 
@@ -71,7 +71,7 @@
 
     <p>
     Commits: <a href="https://github.com/amber-smalltalk/amber/compare/0.12.6...0.13.0">https://github.com/amber-smalltalk/amber/compare/0.12.6...0.13.0</a>
-    Issues:  <a href="https://github.com/amber-smalltalk/amber/issues?q=is:issue+is:closed+milestone:0.13.0">https://github.com/amber-smalltalk/amber/issues?q=is:issue+is:closed+milestone:0.13.0</a>
+    Issues:  <a href="https://github.com/amber-smalltalk/amber/issues?q=is%3Aissue+is%3Aclosed+milestone%3A0.13.0">https://github.com/amber-smalltalk/amber/issues?q=is%3Aissue+is%3Aclosed+milestone%3A0.13.0</a>
     </p>
 
     <p>

@@ -14,10 +14,10 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Wed, 02 Aug 2017 10:02:31 +0200</pubDate>
-  <lastBuildDate>Wed, 02 Aug 2017 10:02:31 +0200</lastBuildDate>
-  <generator>Emacs 25.2 Org-mode 9.0.9</generator>
-  <webMaster>nicolas@petton.fr (Nicolas Petton)</webMaster>
+  <pubDate>Mon, 24 Aug 2020 14:42:59 +0200</pubDate>
+  <lastBuildDate>Mon, 24 Aug 2020 14:42:59 +0200</lastBuildDate>
+  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
     <title>Interview Företagsplatsen #2: <b>Benjamin</b> Van Ryseghem</title>
@@ -28,7 +28,7 @@
   <item>
     <title>Interview with *Benjamin* Van Ryseghem</title>
     <link>http://nicolas-petton.fr/blog/interview-ben.html#orgf2e2ca2</link>
-    <author>nicolas@petton.fr (Nicolas Petton)</author>
+    <author>nico@petton.fr (Nicolas Petton)</author>
     <guid isPermaLink="false">http://nicolas-petton.fr/blog/interview-ben.html#orgf2e2ca2</guid>
     <pubDate>Mon, 08 Dec 2014 17:38:00 +0100</pubDate>
 
@@ -67,7 +67,7 @@
 
 
     <div class="figure">
-    <p><img src="http://nicolas-petton.fr/blog/../images/ben-at-work.jpg" alt="Benjamin Van Ryseghem image" align="center" />
+    <p><img src="../images/ben-at-work.jpg" alt="Benjamin Van Ryseghem image" align="center" />
     </p>
     <p><span class="figure-number">Figure 1: </span>Ben at work</p>
     </div>
@@ -104,14 +104,14 @@
 
 
     <div class="figure">
-    <p><img src="http://nicolas-petton.fr/blog/../images/ben-laptop.jpg" alt="Ben's laptop image" align="center" />
+    <p><img src="../images/ben-laptop.jpg" alt="Ben's laptop image" align="center" />
     </p>
     <p><span class="figure-number">Figure 2: </span>Ben's laptop</p>
     </div>
 
 
     <div class="figure">
-    <p><img src="http://nicolas-petton.fr/blog/../images/ben-keyboard.jpg" alt="Ben's keyboard image" align="center" />
+    <p><img src="../images/ben-keyboard.jpg" alt="Ben's keyboard image" align="center" />
     </p>
     <p><span class="figure-number">Figure 3: </span>Ben's keyboard</p>
     </div>
@@ -162,7 +162,7 @@
 
 
     <div class="figure">
-    <p><img src="http://nicolas-petton.fr/blog/../images/ben-fika.jpg" alt="fika" align="center" />
+    <p><img src="../images/ben-fika.jpg" alt="fika" align="center" />
     </p>
     <p><span class="figure-number">Figure 4: </span>A swedish fika</p>
     </div>
@@ -198,7 +198,7 @@
     </p>
 
     <p>
-    <b><i>In his <a href="http://nicolas-petton.fr/blog/interview-johan.html#org295482a">interview</a>, Johan has a question for you:</i></b>
+    <b><i>In his <a href="interview-johan.html">interview</a>, Johan has a question for you:</i></b>
     </p>
 
     <p>

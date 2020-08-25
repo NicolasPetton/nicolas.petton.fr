@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-08-02 Wed 09:56 -->
+<!-- 2020-08-25 Tue 15:42 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>A simple object model in JavaScript (part #2)</title>
@@ -161,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -182,7 +195,7 @@
 </style>
 <link href='/images/favicon.ico' rel='shortcut icon' type='image/x-icon'>
 <link rel='stylesheet' href='https://code.cdn.mozilla.net/fonts/fira.css'>
-<link rel='stylesheet' href='../css/site.css?v=2' type='text/css'/>
+<link rel='stylesheet' href='../css/site.css?v=3' type='text/css'/>
 <link rel='stylesheet' href='../css/blog.css?v=2' type='text/css'/>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <script src='/js/jquery.js' type='text/javascript'></script>
@@ -203,7 +216,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2017 Free Software Foundation, Inc.
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -258,10 +271,9 @@ for the JavaScript code in this tag.
 <li><a href='/'>Home</a>–</li>
 <li><a href='/blog/index.html'>Blog</a>–</li>
 <li><a href='https://emacs.cafe'>Emacs Café</a>–</li>
-<li><a href='https://petton.fr/git/nico'>GitLab</a>–</li>
-<li><a href='http://github.com/NicolasPetton'>GitHub</a>–</li>
-<li><a href='http://twitter.com/NicolasPetton'>Twitter</a>–</li>
-<li><a href='/contact.html'>Contact</a></li>
+<li><a href='/contact.html'>Contact</a>–</li>
+<li><a href='http://github.com/NicolasPetton'><i class="fa fa-github"></i></a>–</li>
+<li><a href='http://twitter.com/NicolasPetton'><i class="fa fa-twitter"></i></a></li>
 </ul>
 </div>
 </div>
@@ -269,7 +281,7 @@ for the JavaScript code in this tag.
 <h1 class="title">A simple object model in JavaScript (part #2)</h1>
 
 <div id="outline-container-org30d0d8b" class="outline-2">
-<h2 id="org30d0d8b"><a id="ID-c86ce246-ce99-41ba-a417-1add14a9cfb9"></a>A simple <b>object model</b> in JavaScript part #2</h2>
+<h2 id="org30d0d8b">A simple <b>object model</b> in JavaScript part #2</h2>
 <div class="outline-text-2" id="text-org30d0d8b">
 <div class="pubdate">
 Feb 22, 2016
@@ -283,14 +295,14 @@ outside of the class definition) without showing how that can be done.
 </div>
 
 <div id="outline-container-org75ead43" class="outline-3">
-<h3 id="org75ead43"><a id="ID-0da6cc32-c206-4287-8e1c-7ffb6906ea79"></a>An example</h3>
+<h3 id="org75ead43">An example</h3>
 <div class="outline-text-3" id="text-org75ead43">
 <p>
 Let's take the same <code>animal</code> example as before:
 </p>
 
 <div class="org-src-container">
-<pre><code class="src src-js"><span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #61afef;">animal</span> = object.subclass(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">that</span>, <span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
+<pre class="src src-js"><span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #61afef;">animal</span> = object.subclass(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">that</span>, <span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
 
     <span style="color: #c678dd; font-weight: bold;">that</span>.initialize = <span style="color: #c678dd; font-weight: bold;">function</span>() {
         <span style="color: #c678dd; font-weight: bold;">my</span>.name = <span style="color: #c678dd; font-weight: bold;">spec</span>.name;
@@ -311,7 +323,7 @@ Let's take the same <code>animal</code> example as before:
         <span style="color: #c678dd; font-weight: bold;">return</span> <span style="color: #98be65;">'dog named'</span> + <span style="color: #c678dd; font-weight: bold;">that</span>.<span style="color: #c678dd; font-weight: bold;">super</span>.getName();
     };
 });
-</code></pre>
+</pre>
 </div>
 
 <p>
@@ -320,12 +332,12 @@ within the file defining <code>animal</code> to extend it, like the following:
 </p>
 
 <div class="org-src-container">
-<pre><code class="src src-js">object.extend(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">that</span>, <span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
+<pre class="src src-js">object.extend(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">that</span>, <span style="color: #c678dd; font-weight: bold;">spec</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
     <span style="color: #c678dd; font-weight: bold;">that</span>.isAnimal = <span style="color: #c678dd; font-weight: bold;">function</span>() {
         <span style="color: #c678dd; font-weight: bold;">return</span> <span style="color: #da8548; font-weight: bold;">false</span>;
     };
 })
-</code></pre>
+</pre>
 </div>
 
 <p>
@@ -339,7 +351,7 @@ The implementation is quite straightforward:
 </p>
 
 <div class="org-src-container">
-<pre><code class="src src-js">object.extensions = [];
+<pre class="src src-js">object.extensions = [];
 
 object.subclass = <span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #61afef;">builder</span>) {
     <span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #c678dd; font-weight: bold;">that</span> = <span style="color: #da8548; font-weight: bold;">this</span>;
@@ -378,7 +390,7 @@ object.subclass = <span style="color: #c678dd; font-weight: bold;">function</spa
 object.extend = <span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #61afef;">builder</span>) {
     <span style="color: #da8548; font-weight: bold;">this</span>.extensions.push(builder);
 };
-</code></pre>
+</pre>
 </div>
 
 <p>
@@ -406,9 +418,9 @@ over to <a href="https://github.com/foretagsplatsen/objectjs">GitHub</a> if you 
 </div>
 <div id="postamble" class="status">
 <div class='footer'>
-Copyright 2017 Nicolas Petton.<br>
-Last updated 2017-08-02 Wed 09:53. <br>
-Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.2.1 (<a href="http://orgmode.org">Org</a> mode 9.0.9).
+Copyright 2020 Nicolas Petton.<br>
+Last updated 2020-08-24 Mon 14:43. <br>
+Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.3.6).
 </div>
 </div>
 </body>

@@ -14,10 +14,10 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Wed, 02 Aug 2017 10:02:27 +0200</pubDate>
-  <lastBuildDate>Wed, 02 Aug 2017 10:02:27 +0200</lastBuildDate>
-  <generator>Emacs 25.2 Org-mode 9.0.9</generator>
-  <webMaster>nicolas@petton.fr (Nicolas Petton)</webMaster>
+  <pubDate>Mon, 24 Aug 2020 14:43:12 +0200</pubDate>
+  <lastBuildDate>Mon, 24 Aug 2020 14:43:12 +0200</lastBuildDate>
+  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
     <title>Working on the Emacs logo</title>
@@ -28,7 +28,7 @@
   <item>
     <title>Working on the *Emacs logo*</title>
     <link>http://nicolas-petton.fr/blog/working-on-the-emacs-logo.html#org012b40b</link>
-    <author>nicolas@petton.fr (Nicolas Petton)</author>
+    <author>nico@petton.fr (Nicolas Petton)</author>
     <guid isPermaLink="false">http://nicolas-petton.fr/blog/working-on-the-emacs-logo.html#org012b40b</guid>
     <pubDate>Wed, 21 Oct 2015 18:49:00 +0200</pubDate>
 
@@ -61,7 +61,7 @@
 
 
     <div class="figure">
-    <p><img src="http://nicolas-petton.fr/blog/../images/emacs-logo-old-new.png" alt="emacs-logo-old-new.png" />
+    <p><img src="../images/emacs-logo-old-new.png" alt="emacs-logo-old-new.png" />
     </p>
     </div>
 
@@ -76,13 +76,13 @@
 
 
     <div class="figure">
-    <p><img src="http://nicolas-petton.fr/blog/../images/emacs-in-context1.png" alt="emacs-in-context1.png" />
+    <p><img src="../images/emacs-in-context1.png" alt="emacs-in-context1.png" />
     </p>
     </div>
 
 
     <div class="figure">
-    <p><img src="http://nicolas-petton.fr/blog/../images/emacs-in-context2.png" alt="emacs-in-context2.png" />
+    <p><img src="../images/emacs-in-context2.png" alt="emacs-in-context2.png" />
     </p>
     </div>
 

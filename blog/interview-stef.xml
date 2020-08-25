@@ -14,10 +14,10 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Wed, 02 Aug 2017 10:02:12 +0200</pubDate>
-  <lastBuildDate>Wed, 02 Aug 2017 10:02:12 +0200</lastBuildDate>
-  <generator>Emacs 25.2 Org-mode 9.0.9</generator>
-  <webMaster>nicolas@petton.fr (Nicolas Petton)</webMaster>
+  <pubDate>Mon, 24 Aug 2020 14:42:05 +0200</pubDate>
+  <lastBuildDate>Mon, 24 Aug 2020 14:42:05 +0200</lastBuildDate>
+  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
     <title>Interview RMoD #3: Stéphane Ducasse</title>
@@ -28,7 +28,7 @@
   <item>
     <title>Interview with *Stéphane* Ducasse</title>
     <link>http://nicolas-petton.fr/blog/interview-stef.html#orga319120</link>
-    <author>nicolas@petton.fr (Nicolas Petton)</author>
+    <author>nico@petton.fr (Nicolas Petton)</author>
     <guid isPermaLink="false">http://nicolas-petton.fr/blog/interview-stef.html#orga319120</guid>
     <pubDate>Fri, 07 Feb 2014 10:24:00 +0100</pubDate>
 
@@ -37,7 +37,7 @@
     </div>
 
     <p>
-    <b>This is the third post of a series</b>, in which I <a href="http://nicolas-petton.fr/blog/working-at-rmod.html#org4a24e79">interview my
+    <b>This is the third post of a series</b>, in which I <a href="working-at-rmod.html">interview my
     colleagues</a> of the <a href="http://rmod.lille.inria.fr/web/">RMoD</a> team (in Lille, France), with the hope that I
     can share part of what it really means to work here.
     </p>
@@ -57,7 +57,7 @@
 
 
     <div class="figure">
-    <p><img src="http://nicolas-petton.fr/blog/../images/stef-1.jpg" alt="Stef image" align="center" />
+    <p><img src="../images/stef-1.jpg" alt="Stef image" align="center" />
     </p>
     <p><span class="figure-number">Figure 1: </span>Stef in his office, always smiling</p>
     </div>
@@ -149,7 +149,7 @@
 
 
     <div class="figure">
-    <p><img src="http://nicolas-petton.fr/blog/../images/stef-2.jpg" alt="Iznogoud" align="center" />
+    <p><img src="../images/stef-2.jpg" alt="Iznogoud" align="center" />
     </p>
     <p><span class="figure-number">Figure 2: </span>In front of Stef's office</p>
     </div>
@@ -190,7 +190,7 @@
 
 
     <div class="figure">
-    <p><img src="http://nicolas-petton.fr/blog/../images/stef-3.jpg" alt="Stef's toys" align="center" />
+    <p><img src="../images/stef-3.jpg" alt="Stef's toys" align="center" />
     </p>
     <p><span class="figure-number">Figure 3: </span>Stef has the playful mind of a kid  :)</p>
     </div>
@@ -265,8 +265,8 @@
     Other RMoD members interviews:
     </p>
     <ul class="org-ul">
-    <li><a href="http://nicolas-petton.fr/blog/interview-esteban.html#orgf56bc87">Esteban Lorenzano</a></li>
-    <li><a href="http://nicolas-petton.fr/blog/interview-damien.html#org600da5b">Damien Cassou</a></li>
+    <li><a href="interview-esteban.html">Esteban Lorenzano</a></li>
+    <li><a href="interview-damien.html">Damien Cassou</a></li>
     </ul>
 
     <div id="disqus_thread"></div>
