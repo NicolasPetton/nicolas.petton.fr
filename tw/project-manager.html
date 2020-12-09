@@ -163,6 +163,14 @@ Error message and password prompt
 
 <li>$:/plugins/nico/notebook-mobile</li>
 
+<li>$:/plugins/nico/notebook/base</li>
+
+<li>$:/plugins/nico/notebook/palette</li>
+
+<li>$:/plugins/nico/notebook/ui/Buttons/menu</li>
+
+<li>$:/plugins/nico/notebook/ui/Topbar</li>
+
 <li>$:/plugins/nico/pm</li>
 
 <li>$:/SiteTitle</li>
@@ -9639,7 +9647,7 @@ Error message and password prompt
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[$:/plugins/nico/notebook]]</pre>
+# [[$:/plugins/nico/notebook/ui/Buttons/menu]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -10500,224 +10508,988 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20200425205442979" dependents="$:/plugins/kixam/moment $:/plugins/kixam/datepicker $:/plugins/flibbles/relink" description="Simple project management for TiddlyWiki" list="installation usage" modified="20200427153510728" name="Project Manager" plugin-type="plugin" tags="" title="$:/plugins/nico/pm" type="application/json" version="0.0.45">
+<div bag="default" created="20200419141443144" creator="nico" modified="20201209202527278" modifier="nico" revision="0" tags="$:/tags/Stylesheet" title="$:/plugins/nico/notebook/base" type="text/vnd.tiddlywiki">
+<pre>\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline
+
+\define if-sidebar(text)
+  &lt;$reveal state=&quot;$:/state/notebook-sidebar&quot; type=&quot;match&quot; text=&quot;yes&quot;&gt;
+    $text$
+  &lt;/$reveal&gt;
+\end
+
+/* Top and bottom bars */
+
+/* Hide the top-right bar */
+.tc-topbar.tc-topbar-right {
+  display: none;
+}
+
+div.tc-sidebar-header {
+  padding: 0;
+  min-height: 0;
+}
+
+.tc-story-river {
+  padding: 6px 0 !important;
+  max-width: 960px !important;
+  margin: 0 auto !important;
+  margin-top: 36px !important;
+}
+
+div.tc-tiddler-frame {
+  margin: 20px 0;
+  background: &lt;&lt;colour tiddler-background&gt;&gt;;
+  box-shadow: 0 0 20px #cecece;
+  border-radius: 6px;
+}
+
+h1.tc-site-title {
+  margin-top: 14px;
+  font-size: 1.5em !important;
+}
+
+.nc-bar {
+  padding: 10px;
+  height: {{$:/plugins/nico/notebook/metrics/topbar-height}};
+  background: &lt;&lt;colour page-background&gt;&gt;;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nc-topbar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.nc-bar.nc-topbar {
+  top: 0;
+  background: #f4f4f4ee;
+  max-width: 1000px;
+  padding: 10px 40px;
+  margin: 0 auto;
+}
+
+.nc-bar.nc-bottombar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+}
+
+.nc-bar .left svg {
+  fill: &lt;&lt;colour sidebar-controls-foreground&gt;&gt;;
+}
+
+.nc-bar input[type=&quot;search&quot;] {
+  width: 400px;
+  padding: .6em 1em;
+  margin-top: -.2em;
+  background: #ddd;
+  color: #283c46;
+  transition: all ease-in .2s;
+  border: 1px solid transparent;
+  outline: 0;
+}
+
+.nc-bar input[type=&quot;search&quot;]:focus {
+  background: white;
+  border: 1px solid #38aee8;
+  box-shadow: 0 0 0 .2rem #e6f0ff;
+}
+
+.nc-bar .tc-block-dropdown.tc-search-drop-down {
+  margin-left: 0;
+  width: 400px;
+  border: 0;
+  box-shadow: 0 0 6px 0 #ccc;
+  border-radius: 6px;
+  padding: 20px;
+}
+
+.nc-bar p {
+  margin: 0;
+}
+
+.nc-bar .tc-page-controls {
+  margin-top: 0;
+}
+
+.nc-bar .tc-page-controls button {
+  margin-right: .8em;
+}
+
+.nc-bar .tc-block-dropdown {
+  max-height: 70vh;
+  overflow: auto;
+}
+
+@media (max-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+  .nc-topbar {
+    display: none;
+  }
+
+  .tc-story-river {
+    padding: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 60px !important;
+  }
+
+  div.tc-tiddler-frame {
+    margin: 0;
+    box-shadow: none;
+    border-radius: 0;
+    border-top: 0;
+  }
+}
+
+@media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+  .nc-bottombar {
+    display: none;
+  }
+}
+
+@media(max-width: 1400px) {
+  .tc-story-river {
+    max-width: 800px !important;
+  }
+
+  .nc-bar.nc-topbar {
+    max-width: 840px;
+  }
+}
+
+@media(max-width: 1100px) {
+  .tc-story-river {
+    max-width: 600px !important;
+  }
+
+  .nc-bar.nc-topbar {
+    max-width: 640px;
+  }
+
+  .nc-bar input[type=&quot;search&quot;] {
+    width: 200px;
+  }
+}
+
+/* Sidebar */
+
+@keyframes sidebar-appear {
+  0%   {
+    left: -{{$:/plugins/nico/notebook/metrics/sidebar-width}};
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes sidebar-toggle-appear {
+  0%   {
+    left: 6px;
+  }
+  100% {
+    left: calc({{$:/plugins/nico/notebook/metrics/sidebar-width}} + 6px);
+  }
+}
+
+&lt;&lt;if-sidebar &quot;&quot;&quot;
+@media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+  .nc-sidebar {
+    animation: sidebar-appear .14s;
+  }
+
+  .sidebar-toggle {
+    animation: sidebar-toggle-appear .14s;
+  }
+}
+&quot;&quot;&quot;&gt;&gt;
+
+.nc-sidebar {
+  background: &lt;&lt;colour tiddler-background&gt;&gt;;
+  border-right: 1px solid &lt;&lt;colour tiddler-border&gt;&gt;;
+  width: {{$:/plugins/nico/notebook/metrics/sidebar-width}};
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  padding-top: 10px;
+  z-index: 1;
+}
+
+.nc-sidebar .segment {
+  border-bottom: 1px solid #eee;
+}
+
+.nc-sidebar a {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nc-sidebar ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  line-height: 1.8em;
+}
+
+.nc-sidebar ol ol {
+  padding-left: 18px;
+}
+
+@media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+  .nc-sidebar .mobile-only {
+    display: none;
+  }
+}
+
+.nc-sidebar h1.tc-site-title {
+  margin: 0;
+}
+
+.nc-sidebar p {
+  margin: 0;
+}
+
+.nc-sidebar .tc-site-subtitle {
+  color: &lt;&lt;colour site-title-foreground&gt;&gt;;
+}
+
+.nc-sidebar .section .label {
+  padding: 2px 0;
+  color: &lt;&lt;colour site-title-foreground&gt;&gt;;
+  fill: &lt;&lt;colour site-title-foreground&gt;&gt;;
+  font-weight: bold;
+  line-height: 1.6em;
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 8px 15px;
+}
+
+.nc-sidebar .section:not(.open) .label:hover {
+  background: #eee;
+}
+
+.nc-sidebar .section.open .label {
+  color: white;
+  fill: white;
+  background: &lt;&lt;colour primary&gt;&gt;;
+  border-bottom: 1px solid #eee;
+}
+
+.nc-sidebar .section .label .caret {
+  display: inline-block;
+  width: 15px;
+  float: right;
+}
+
+.nc-sidebar .content {
+  padding: 6px 15px;
+  font-size: 1em;
+}
+
+.nc-sidebar .tc-tiddlylink {
+  color: &lt;&lt;colour primary&gt;&gt;;
+}
+
+@media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+  .nc-sidebar {
+    position: fixed;
+    left: 0;
+    top:  0;
+    bottom: 0;
+  }
+}
+
+&lt;&lt;if-sidebar &quot;&quot;&quot;
+@media (max-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+  @keyframes sidebar-slide {
+    0%   {
+      left: -100vw;
+    }
+    100% {
+      left: 0;
+    }
+  }
+  .nc-sidebar {
+    overflow: auto;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 48px;
+    z-index: 3000;
+    animation: sidebar-slide .2s;
+    animation-fill-mode: forwards;
+  }
+}
+
+@media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+  .tc-page-container {
+    margin-left: {{$:/plugins/nico/notebook/metrics/sidebar-width}} !important;
+  }
+
+  .nc-topbar-wrapper {
+    left: {{$:/plugins/nico/notebook/metrics/sidebar-width}};
+  }
+}
+&quot;&quot;&quot;&gt;&gt;
+
+/* Animate the hamburger button */
+
+@keyframes menu-bars-1 {
+  0%   {}
+  100% {
+    transform: rotate(-45deg) translateY(-10px) translateX(-6px);
+    fill: #3B3B41;
+  }
+}
+
+@keyframes menu-bars-2 {
+  0%   {}
+  100% { opacity: 0; }
+}
+
+@keyframes menu-bars-3 {
+  0%   {}
+  100% {
+    transform: rotate(45deg) translateY(6px) translateX(2px);
+    fill: #3B3B41;
+  }
+}
+
+.sidebar-toggle {
+  position: fixed;
+  top: 6px;
+  left: 6px;
+  z-index: 2;
+  padding: 4px;
+  border-radius: 8px;
+  transition: all ease-in-out .2s;
+  fill: &lt;&lt;colour sidebar-controls-foreground&gt;&gt;;
+}
+
+.sidebar-toggle:hover,
+.sidebar-toggle.open {
+  fill: &lt;&lt;colour sidebar-controls-foreground-hover&gt;&gt;;
+}
+
+&lt;&lt;if-sidebar &quot;&quot;&quot;
+@media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+  .sidebar-toggle {
+    left: calc({{$:/plugins/nico/notebook/metrics/sidebar-width}} + 6px);
+  }
+}
+&quot;&quot;&quot;&gt;&gt;
+
+@media (max-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+  .sidebar-toggle {
+    top: auto;
+    bottom: 10px;
+  }
+}
+
+.sidebar-toggle .bars .bar {
+    transform: rotate(0) translateY(0) translateX(0);
+    opacity: 1;
+    transform-origin: 20px 10px;
+    transition: transform 0.4s ease-in-out, opacity 0.2s ease-in-out, fill .4s ease-in-out;
+}
+
+.sidebar-toggle .bars .bar:nth-of-type(3) {
+    transform-origin: 20px 20px;
+}
+
+.sidebar-toggle.open .bars .bar:nth-of-type(1) {
+  animation: menu-bars-1 .6s;
+  animation-fill-mode: forwards;
+}
+.sidebar-toggle.open .bars .bar:nth-of-type(2) {
+  animation: menu-bars-2 .6s;
+  animation-fill-mode: forwards;
+}
+.sidebar-toggle.open .bars .bar:nth-of-type(3) {
+  animation: menu-bars-3 .6s;
+  animation-fill-mode: forwards;
+}
+
+@media (max-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+  div.tc-tiddler-frame {
+    padding: 14px;
+  }
+}
+
+/* Inputs &amp; fonts */
+
+hr {
+  border: 3px solid &lt;&lt;colour tiddler-title-foreground&gt;&gt;;
+  border-bottom: 0;
+  margin: 40px 0 30px 0;
+}
+
+input {
+  transition: box-shadow 0.15s ease-in-out;
+  border: 1px solid #d9d9d9;
+  padding: 0.3em;
+  border-radius: 4px;
+}
+
+input:focus {
+  border-color: #aaa;
+}
+
+.tc-titlebar h2, .tc-site-title {
+  font-size: 28px !important;
+  line-height: 34px !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.5px !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: &lt;&lt;colour tiddler-title-foreground&gt;&gt;
+}
+
+@media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+  .tc-tiddler-frame .tc-tiddler-controls svg {
+    fill: transparent;
+    transition: all .2s ease-in;
+  }
+
+  .tc-tiddler-controls svg.tc-image-close-button,
+  .tc-tiddler-controls .pm-toggle-todo-button svg,
+  .tc-tiddler-controls svg.tc-image-done-button,
+  .tc-tiddler-frame .tc-tiddler-controls:hover svg {
+    fill: #cccccc;
+  }
+
+  .tc-tiddler-controls .pm-toggle-todo-button .done svg {
+    fill: #2da562;
+  }
+}
+
+.tc-tiddler-body h1,
+.tc-tiddler-body h2,
+.tc-tiddler-preview-preview h1,
+.tc-tiddler-preview-preview h2 {
+  font-weight: bold;
+}
+
+button:active, button:focus {
+  outline: none;
+}
+
+button.tc-tag-label, span.tc-tag-label {
+  padding: 0.3em 1em !important;
+}
+
+.nc-refs {
+  color: #888;
+  font-size: .9em;
+}
+
+.nc-refs h4 {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.nc-post-created {
+  color: #acacac;
+  font-size: .8em;
+}
+</pre>
+</div>
+<div created="20200422134229153" creator="nico" description="A colour paletter that complements the notebook theme" modified="20201209194445905" modifier="nico" name="Notebook" tags="$:/tags/Palette" title="$:/plugins/nico/notebook/palette" type="application/x-tiddler-dictionary">
+<pre>alert-background: #ffe476
+alert-border: #b99e2f
+alert-highlight: #881122
+alert-muted-foreground: #b99e2f
+background: #ffffff
+blockquote-bar: &lt;&lt;colour muted-foreground&gt;&gt;
+button-background:
+button-foreground:
+button-border:
+code-background: #f7f7f9
+code-border: #e1e1e8
+code-foreground: #dd1144
+dirty-indicator: #ff0000
+download-background: #66cccc
+download-foreground: &lt;&lt;colour background&gt;&gt;
+dragger-background: &lt;&lt;colour foreground&gt;&gt;
+dragger-foreground: &lt;&lt;colour background&gt;&gt;
+dropdown-background: &lt;&lt;colour background&gt;&gt;
+dropdown-border: &lt;&lt;colour muted-foreground&gt;&gt;
+dropdown-tab-background-selected: #fff
+dropdown-tab-background: #ececec
+dropzone-background: #da8548
+external-link-background-hover: inherit
+external-link-background-visited: inherit
+external-link-background: inherit
+external-link-foreground-hover: inherit
+external-link-foreground-visited: #0000aa
+external-link-foreground: #0000ee
+foreground: #283c46
+message-background: #ecf2ff
+message-border: #cfd6e6
+message-foreground: #547599
+modal-backdrop: &lt;&lt;colour foreground&gt;&gt;
+modal-background: &lt;&lt;colour background&gt;&gt;
+modal-border: #999999
+modal-footer-background: #f5f5f5
+modal-footer-border: #dddddd
+modal-header-border: #eeeeee
+muted-foreground: #999999
+notification-background: #ffffdd
+notification-border: #999999
+page-background: #f4f4f4
+pre-background: #f6f6f6
+pre-border: #cccccc
+primary: #127edd
+primary-old: #009fff
+select-tag-background:
+select-tag-foreground:
+sidebar-button-foreground: &lt;&lt;colour foreground&gt;&gt;
+sidebar-controls-foreground-hover: #000000
+sidebar-controls-foreground: #aaa
+sidebar-foreground-shadow: rgba(255,255,255, 0.8)
+sidebar-foreground: #acacac
+sidebar-muted-foreground-hover: #444444
+sidebar-muted-foreground: #c0c0c0
+sidebar-tab-background-selected: #ffffff
+sidebar-tab-background: &lt;&lt;colour tab-background&gt;&gt;
+sidebar-tab-border-selected: &lt;&lt;colour tab-border-selected&gt;&gt;
+sidebar-tab-border: &lt;&lt;colour tab-border&gt;&gt;
+sidebar-tab-divider: &lt;&lt;colour tab-divider&gt;&gt;
+sidebar-tab-foreground-selected: 
+sidebar-tab-foreground: &lt;&lt;colour tab-foreground&gt;&gt;
+sidebar-tiddler-link-foreground-hover: white
+sidebar-tiddler-link-foreground: &lt;&lt;colour tab-foreground&gt;&gt;
+site-title-foreground: #353748
+static-alert-foreground: #aaaaaa
+tab-background-selected: #ffffff
+tab-background: #eeeeee
+tab-border-selected: #cccccc
+tab-border: #cccccc
+tab-divider: #d8d8d8
+tab-foreground-selected: &lt;&lt;colour tab-foreground&gt;&gt;
+tab-foreground: #666666
+table-border: #dddddd
+table-footer-background: #a8a8a8
+table-header-background: #f0f0f0
+tag-background: #ffeedd
+tag-foreground: #000
+tiddler-background: &lt;&lt;colour background&gt;&gt;
+tiddler-border: #ddd
+tiddler-controls-foreground-hover: #888888
+tiddler-controls-foreground-selected: #444444
+tiddler-controls-foreground: #cccccc
+tiddler-editor-background: #f8f8f8
+tiddler-editor-border-image: #ffffff
+tiddler-editor-border: #cccccc
+tiddler-editor-fields-even: #e0e8e0
+tiddler-editor-fields-odd: #f0f4f0
+tiddler-info-background: #f8f8f8
+tiddler-info-border: #dddddd
+tiddler-info-tab-background: #f8f8f8
+tiddler-link-background: &lt;&lt;colour background&gt;&gt;
+tiddler-link-foreground: &lt;&lt;colour primary&gt;&gt;
+tiddler-subtitle-foreground: #c0c0c0
+tiddler-title-foreground: #333
+toolbar-new-button:
+toolbar-options-button:
+toolbar-save-button:
+toolbar-info-button:
+toolbar-edit-button:
+toolbar-close-button:
+toolbar-delete-button:
+toolbar-cancel-button:
+toolbar-done-button:
+untagged-background: #999999
+very-muted-foreground: #888888
+</pre>
+</div>
+<div created="20200429115248943" modified="20201203203543185" tags="$:/tags/PageTemplate" title="$:/plugins/nico/notebook/ui/Buttons/menu">
+<pre>&lt;$reveal type=&quot;match&quot; state=&quot;$:/state/notebook-sidebar&quot; text=&quot;yes&quot;&gt;
+  &lt;$button set=&quot;$:/state/notebook-sidebar&quot; setTo=&quot;no&quot; tooltip=&quot;Toggle menu&quot; class=&quot;tc-btn-invisible sidebar-toggle open&quot;&gt;
+    {{$:/plugins/nico/notebook/images/bars}}
+  &lt;/$button&gt;
+&lt;/$reveal&gt;
+
+&lt;$reveal type=&quot;nomatch&quot; state=&quot;$:/state/notebook-sidebar&quot; text=&quot;yes&quot;&gt;
+  &lt;$button set=&quot;$:/state/notebook-sidebar&quot; setTo=&quot;yes&quot; tooltip=&quot;Toggle menu&quot; class=&quot;tc-btn-invisible sidebar-toggle&quot;&gt;
+    {{$:/plugins/nico/notebook/images/bars}}
+  &lt;/$button&gt;
+&lt;/$reveal&gt;
+</pre>
+</div>
+<div created="20200428203101797" creator="nico" modified="20201209175431898" modifier="nico" tags="$:/tags/PageTemplate" title="$:/plugins/nico/notebook/ui/Topbar">
+<pre>&lt;$reveal state=&quot;$:/state/notebook-topbar&quot; type=&quot;match&quot; text=&quot;yes&quot; default=&quot;yes&quot; retain=&quot;yes&quot; animate=&quot;yes&quot;&gt;
+  &lt;div class=&quot;nc-topbar-wrapper&quot;&gt;
+    &lt;div class=&quot;nc-bar nc-topbar tc-adjust-top-of-scroll&quot;&gt;
+      &lt;$list filter=&quot;[all[shadows+tiddlers]tag[$:/tags/NotebookTopbar]!has[draft.of]]&quot; variable=&quot;listItem&quot;&gt;
+        &lt;$reveal type=&quot;nomatch&quot; state=&lt;&lt;config-title&gt;&gt; text=&quot;hide&quot;  tag=&quot;div&quot;&gt;
+          &lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt; mode=&quot;block&quot;/&gt;
+        &lt;/$reveal&gt;
+      &lt;/$list&gt;
+      &lt;div class=&quot;center&quot;&gt;
+        &lt;!-- &lt;input type=&quot;search&quot; placeholder=&quot;Search...&quot;/&gt; --&gt;
+        {{$:/plugins/nico/notebook/ui/Sidebar/Search}}
+      &lt;/div&gt;
+      &lt;div class=&quot;right&quot;&gt;
+        {{$:/core/ui/SideBarSegments/page-controls}}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/$reveal&gt;
+
+</pre>
+</div>
+<div author="NicolasPetton" bag="default" core-version="&gt;=5.0.8" dependents="$:/plugins/kixam/moment $:/plugins/kixam/datepicker $:/plugins/flibbles/relink" description="Simple project management for TiddlyWiki" list="installation usage changelog" name="Project Manager" plugin-type="plugin" revision="0" source="https://github.com/NicolasPetton/pm" title="$:/plugins/nico/pm" type="application/json" version="0.3.0">
 <pre>{
     &quot;tiddlers&quot;: {
-        &quot;$:/plugins/nico/pm/images/calendar-check&quot;: {
-            &quot;created&quot;: &quot;20200423195159541&quot;,
-            &quot;text&quot;: &quot;&lt;svg width=\&quot;18\&quot; height=\&quot;18\&quot; version=\&quot;1.1\&quot; viewBox=\&quot;0 0 18 18\&quot; xmlns=\&quot;http://www.w3.org/2000/svg\&quot;&gt;\n &lt;path d=\&quot;m16.379 5.7482h-14.758c-0.23066 0-0.41768-0.18701-0.41768-0.41768v-1.253c0-0.92271 0.74799-1.6707 1.6707-1.6707h1.6707v-1.8099c0-0.23066 0.18701-0.41768 0.41768-0.41768h1.3923c0.23066 0 0.41768 0.18701 0.41768 0.41768v1.8099h4.4552v-1.8099c0-0.23066 0.18702-0.41768 0.41768-0.41768h1.3923c0.23066 0 0.41768 0.18701 0.41768 0.41768v1.8099h1.6707c0.92271 0 1.6707 0.74799 1.6707 1.6707v1.253c0 0.23066-0.18701 0.41768-0.41768 0.41768zm-14.758 1.1138h14.758c0.23066 0 0.41768 0.18701 0.41768 0.41768v9.0496c0 0.92272-0.74799 1.6707-1.6707 1.6707h-12.252c-0.92271 0-1.6707-0.74799-1.6707-1.6707v-9.0496c0-0.23066 0.18701-0.41768 0.41768-0.41768zm11.601 3.3396-0.98046-0.98843c-0.16244-0.16376-0.4269-0.16484-0.59066-0.0023667l-3.6908 3.6611-1.6004-1.6133c-0.16244-0.16376-0.42693-0.16484-0.5907-0.002412l-0.98839 0.98049c-0.16376 0.16244-0.16484 0.4269-0.00237 0.59066l2.875 2.8983c0.16244 0.16376 0.4269 0.16484 0.59066 0.0024l4.9757-4.9357c0.16376-0.16244 0.16484-0.4269 0.0024-0.59066z\&quot; stroke-width=\&quot;.034806\&quot;/&gt;\n&lt;/svg&gt;\n&quot;,
-            &quot;type&quot;: &quot;&quot;,
-            &quot;title&quot;: &quot;$:/plugins/nico/pm/images/calendar-check&quot;,
-            &quot;tags&quot;: &quot;$:/tags/Image&quot;,
-            &quot;modified&quot;: &quot;20200425210042911&quot;
-        },
-        &quot;$:/plugins/nico/pm/images/target&quot;: {
-            &quot;created&quot;: &quot;20200425202748433&quot;,
-            &quot;title&quot;: &quot;$:/plugins/nico/pm/images/target&quot;,
-            &quot;text&quot;: &quot;&lt;svg width=\&quot;18\&quot; height=\&quot;18\&quot; xmlns=\&quot;http://www.w3.org/2000/svg\&quot; viewBox=\&quot;0 0 496 512\&quot;&gt;&lt;path d=\&quot;M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm0 432c-101.69 0-184-82.29-184-184 0-101.69 82.29-184 184-184 101.69 0 184 82.29 184 184 0 101.69-82.29 184-184 184zm0-312c-70.69 0-128 57.31-128 128s57.31 128 128 128 128-57.31 128-128-57.31-128-128-128zm0 192c-35.29 0-64-28.71-64-64s28.71-64 64-64 64 28.71 64 64-28.71 64-64 64z\&quot;/&gt;&lt;/svg&gt;&quot;,
-            &quot;modified&quot;: &quot;20200425210120397&quot;,
-            &quot;tags&quot;: &quot;$:/tags/Image&quot;
-        },
-        &quot;$:/plugins/nico/pm/images/tasks&quot;: {
-            &quot;created&quot;: &quot;20200424203654397&quot;,
-            &quot;text&quot;: &quot;&lt;svg width=\&quot;18\&quot; height=\&quot;18\&quot; xmlns=\&quot;http://www.w3.org/2000/svg\&quot; viewBox=\&quot;0 0 448 512\&quot;&gt;&lt;path d=\&quot;M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm0 400H48V80h352v352zm-35.864-241.724L191.547 361.48c-4.705 4.667-12.303 4.637-16.97-.068l-90.781-91.516c-4.667-4.705-4.637-12.303.069-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l59.792 60.277 141.352-140.216c4.705-4.667 12.303-4.637 16.97.068l22.536 22.718c4.667 4.706 4.637 12.304-.068 16.971z\&quot;/&gt;&lt;/svg&gt;&quot;,
-            &quot;title&quot;: &quot;$:/plugins/nico/pm/images/tasks&quot;,
-            &quot;tags&quot;: &quot;$:/tags/Image&quot;,
-            &quot;modified&quot;: &quot;20200425210145182&quot;
-        },
-        &quot;$:/plugins/nico/pm/macros/project&quot;: {
-            &quot;created&quot;: &quot;20200422200514984&quot;,
-            &quot;text&quot;: &quot;\\define archive-project()\n  &lt;$fieldmangler&gt;\n    &lt;$button class=\&quot;pm-btn btn-danger nc-archive-project\&quot;&gt;\n      &lt;$action-sendmessage $message=\&quot;tm-add-tag\&quot; $param=\&quot;Archived\&quot;/&gt;\n        {{$:/core/images/delete-button}} Archive project\n    &lt;/$button&gt;\n  &lt;/$fieldmangler&gt;\n\\end\n\n\\define restore-project()\n  &lt;$fieldmangler&gt;\n    &lt;$button class=\&quot;tc-btn-invisible\&quot;&gt;\n      &lt;$action-sendmessage $message=\&quot;tm-remove-tag\&quot; $param=\&quot;Archived\&quot;/&gt;\n        Restore project\n    &lt;/$button&gt;\n  &lt;/$fieldmangler&gt;\n\\end\n\n\\define todo-list(tag emptyMessage:\&quot;''🙌 All done!''\&quot;)\n  &lt;&lt;list-tagged-draggable tag:\&quot;$tag$\&quot; subFilter:\&quot;!has[draft.of]!tag[done]\&quot; itemTemplate:\&quot;$:/plugins/nico/pm/ui/TodoTemplate\&quot; emptyMessage:\&quot;$emptyMessage$\&quot;&gt;&gt;\n\\end\n\n\\define todo-list-completed(tag)\n  &lt;$list filter=\&quot;[!has[draft.of]tag[$tag$]tag[done]sort[created]]\&quot; template=\&quot;$:/plugins/nico/pm/ui/CompletedTodoTemplate\&quot;/&gt;\n\\end\n\n\\define new-todo-button(tag label)\n  &lt;$button class=\&quot;pm-btn\&quot;&gt;\n    &lt;$action-sendmessage $message=\&quot;tm-new-tiddler\&quot; tags=\&quot;[[$tag$]] todo\&quot;/&gt;\n    {{$:/core/images/list-bullet}}\n    $label$\n  &lt;/$button&gt;\n\\end\n\n\\define todo-count(tag)\n  &lt;span class=\&quot;pm-todo-count\&quot;&gt;\n    &lt;$list filter=\&quot;[tag[$tag$]!has[draft.of]tag[done]count[]]\&quot;&gt;{{!!title}}&lt;/$list&gt; \n    / \n    &lt;$list filter=\&quot;[tag[$tag$]!has[draft.of]count[]]\&quot;&gt;{{!!title}}&lt;/$list&gt;\n  &lt;/span&gt;\n\\end\n\n\\define project-with-tag(tag newTodoLabel:\&quot;Add a todo\&quot;)\n  &lt;$list filter=\&quot;[is[current]tag[Archived]]\&quot;&gt;\n    &lt;div class=\&quot;pm-banner\&quot;&gt;\n      This project is archived. &lt;$macrocall $name=\&quot;restore-project\&quot;/&gt;\n    &lt;/div&gt;\n  &lt;/$list&gt;\n\n  &lt;h2&gt;Todos \n    &lt;$macrocall $name=\&quot;todo-count\&quot; tag=\&quot;$tag$\&quot;/&gt;\n  &lt;/h2&gt;\n  \n  &lt;$macrocall $name=\&quot;todo-list\&quot; tag=\&quot;$tag$\&quot;/&gt;\n  &lt;$macrocall $name=\&quot;new-todo-button\&quot; tag=\&quot;$tag$\&quot; label=\&quot;$newTodoLabel$\&quot;/&gt;\n  &lt;$list filter=\&quot;[is[current]!tag[Archived]]\&quot;&gt;\n    or &lt;$macrocall $name=\&quot;archive-project\&quot;/&gt;\n  &lt;/$list&gt;\n  \n  &lt;h2&gt;Completed&lt;/h2&gt;\n\n  &lt;$macrocall $name=\&quot;todo-list-completed\&quot; tag=\&quot;$tag$\&quot;/&gt;\n\\end\n\n\\define project()\n  &lt;$macrocall $name=\&quot;project-with-tag\&quot; tag={{!!title}}/&gt;\n\\end&quot;,
-            &quot;title&quot;: &quot;$:/plugins/nico/pm/macros/project&quot;,
-            &quot;tags&quot;: &quot;$:/tags/Macro&quot;,
-            &quot;modified&quot;: &quot;20200427163705930&quot;
-        },
-        &quot;$:/plugins/nico/pm/ui/CompletedTodoTemplate&quot;: {
-            &quot;created&quot;: &quot;20200425151042805&quot;,
-            &quot;text&quot;: &quot;&lt;div class=\&quot;pm-todo pm-completed\&quot;&gt;\n  &lt;$checkbox tag=\&quot;done\&quot;&gt;\n    {{||$:/plugins/nico/pm/ui/CheckboxTemplate}}\n    &lt;$link to={{!!title}}&gt;~~&lt;$view field=\&quot;title\&quot;/&gt;~~&lt;/$link&gt;\n  &lt;/$checkbox&gt;\n&lt;/div&gt;&quot;,
-            &quot;title&quot;: &quot;$:/plugins/nico/pm/ui/CompletedTodoTemplate&quot;,
-            &quot;tags&quot;: &quot;&quot;,
-            &quot;modified&quot;: &quot;20200428152746736&quot;
-        },
-        &quot;$:/plugins/nico/pm/ui/Dashboard&quot;: {
-            &quot;created&quot;: &quot;20200424192751342&quot;,
-            &quot;text&quot;: &quot;&lt;&lt;tabs \&quot;[all[tiddlers+shadows]tag[$:/plugins/nico/pm/tags/dashboard]]\&quot; \&quot;$:/plugins/nico/pm/ui/InboxAndProjects\&quot; \&quot;$:/state/projects-and-schedule\&quot;  \&quot;pm-tabs\&quot;&gt;&gt;&quot;,
-            &quot;title&quot;: &quot;$:/plugins/nico/pm/ui/Dashboard&quot;,
-            &quot;tags&quot;: &quot;&quot;,
-            &quot;modified&quot;: &quot;20200426195523518&quot;
-        },
-        &quot;$:/plugins/nico/pm/ui/Inbox&quot;: {
-            &quot;created&quot;: &quot;20200425193337699&quot;,
-            &quot;text&quot;: &quot;\\define inbox-count()\n  &lt;span class=\&quot;pm-count\&quot;&gt;\n    &lt;$list filter=\&quot;[tag[Inbox]!has[draft.of]!tag[done]count[]]\&quot;&gt;{{!!title}}&lt;/$list&gt; \n  &lt;/span&gt;\n\\end\n\n&lt;h2&gt;Inbox &lt;$macrocall $name=\&quot;inbox-count\&quot;/&gt;&lt;/h2&gt;\n\n&lt;$keyboard key=\&quot;enter\&quot;&gt;\n  &lt;$action-setfield $tiddler={{$:/state/Inbox!!todo_name}} tags=\&quot;Inbox todo\&quot;/&gt;\n  &lt;$action-setfield $tiddler=\&quot;$:/state/Inbox\&quot; todo_name=\&quot;\&quot;/&gt;\n  &lt;$edit-text class=\&quot;pm-input\&quot; tiddler=\&quot;$:/state/Inbox\&quot; field=\&quot;todo_name\&quot; placeholder=\&quot;Add to inbox...\&quot;/&gt;\n&lt;/$keyboard&gt;\n\n&lt;$macrocall class=\&quot;nc-inbox-input\&quot; $name=\&quot;todo-list\&quot; tag=\&quot;Inbox\&quot; emptyMessage=\&quot;🌞 You're all done! Have a good day.\&quot;/&gt;&quot;,
-            &quot;tags&quot;: &quot;&quot;,
-            &quot;title&quot;: &quot;$:/plugins/nico/pm/ui/Inbox&quot;,
-            &quot;modified&quot;: &quot;20200427142337684&quot;,
-            &quot;caption&quot;: &quot;{{$:/plugins/nico/pm/images/inbox}} Inbox&quot;
-        },
-        &quot;$:/plugins/nico/pm/ui/InboxAndProjects&quot;: {
-            &quot;text&quot;: &quot;{{$:/plugins/nico/pm/ui/Inbox}}\n{{$:/plugins/nico/pm/ui/Projects}}&quot;,
-            &quot;title&quot;: &quot;$:/plugins/nico/pm/ui/InboxAndProjects&quot;,
-            &quot;tags&quot;: &quot;$:/plugins/nico/pm/tags/dashboard&quot;,
-            &quot;modified&quot;: &quot;20200425221954056&quot;,
-            &quot;created&quot;: &quot;20200425193559847&quot;,
-            &quot;caption&quot;: &quot;{{$:/plugins/nico/pm/images/tasks}} Projects&quot;
-        },
-        &quot;$:/plugins/nico/pm/ui/NextActions&quot;: {
-            &quot;created&quot;: &quot;20200425195221581&quot;,
-            &quot;text&quot;: &quot;&lt;dl&gt;\n  &lt;$list filter=\&quot;[tag[Project]!tag[Archived]]\&quot; template=\&quot;$:/plugins/nico/pm/ui/ProjectNextActionTemplate\&quot;/&gt;\n  &lt;/dl&gt;&quot;,
-            &quot;title&quot;: &quot;$:/plugins/nico/pm/ui/NextActions&quot;,
-            &quot;tags&quot;: &quot;$:/plugins/nico/pm/tags/dashboard&quot;,
-            &quot;modified&quot;: &quot;20200428193415536&quot;,
-            &quot;list-after&quot;: &quot;$:/plugins/nico/pm/ui/Schedule&quot;,
-            &quot;caption&quot;: &quot;{{$:/plugins/nico/pm/images/target}} Next&quot;
-        },
-        &quot;$:/plugins/nico/pm/ui/ProjectNextActionTemplate&quot;: {
-            &quot;created&quot;: &quot;20200425201356996&quot;,
-            &quot;text&quot;: &quot;&lt;dt&gt;\n  {{!!title}} &lt;$macrocall $name=\&quot;todo-count\&quot; tag={{!!title}}/&gt;\n&lt;/dt&gt;\n&lt;dd&gt;\n  &lt;$list filter=\&quot;[!has[daft.of]tag{!!title}tag[todo]!tag[done]limit[1]]\&quot; template=\&quot;$:/plugins/nico/pm/ui/TodoTemplate\&quot;&gt;&lt;/$list&gt;\n&lt;/dd&gt;&quot;,
-            &quot;tags&quot;: &quot;&quot;,
-            &quot;title&quot;: &quot;$:/plugins/nico/pm/ui/ProjectNextActionTemplate&quot;,
-            &quot;modified&quot;: &quot;20200428193910490&quot;
-        },
-        &quot;$:/plugins/nico/pm/ui/Projects&quot;: {
-            &quot;created&quot;: &quot;20200424193106051&quot;,
-            &quot;text&quot;: &quot;\\define refile-inbox-actions()\n  &lt;$fieldmangler tiddler=&lt;&lt;actionTiddler&gt;&gt;&gt;\n    &lt;$action-sendmessage $message=\&quot;tm-add-tag\&quot; $param=&lt;&lt;currentTiddler&gt;&gt;/&gt;\n    &lt;$action-sendmessage $message=\&quot;tm-remove-tag\&quot; $param=\&quot;Inbox\&quot;/&gt;\n  &lt;/$fieldmangler&gt;\n\\end\n\n&lt;h2&gt;Projects&lt;/h2&gt;\n\n&lt;ul class=\&quot;pm-projects\&quot;&gt;\n  &lt;$list filter=\&quot;[tag[Project]!title[Inbox]!tag[Archived]]\&quot;&gt;\n      &lt;$droppable actions=&lt;&lt;refile-inbox-actions&gt;&gt;&gt;\n        &lt;li&gt;&lt;$link to={{!!title}}&gt;&lt;$view field=\&quot;title\&quot;/&gt;&lt;/$link&gt; &lt;$macrocall $name=\&quot;todo-count\&quot; tag={{!!title}}/&gt;&lt;/li&gt;\n      &lt;/$droppable&gt;\n  &lt;/$list&gt;\n&lt;/ul&gt;\n\n&lt;$button class=\&quot;pm-btn btn-primary\&quot;&gt;\n  &lt;$action-sendmessage $message=\&quot;tm-new-tiddler\&quot; tags=\&quot;Project\&quot; text=\&quot;&lt;&lt;project&gt;&gt;\&quot;/&gt;\n  {{$:/core/images/edit-button}}\n  New project\n&lt;/$button&gt; \nor\n&lt;$reveal type=\&quot;match\&quot; state=\&quot;$:/state/pm-show-archived\&quot; text=\&quot;\&quot;&gt;\n  &lt;$button class=\&quot;tc-btn-invisible tc-tiddlylink\&quot; set=\&quot;$:/state/pm-show-archived\&quot; setTo=\&quot;show\&quot;&gt;\n    Show archived\n  &lt;/$button&gt;\n&lt;/$reveal&gt;\n&lt;$reveal type=\&quot;match\&quot; state=\&quot;$:/state/pm-show-archived\&quot; text=\&quot;show\&quot;&gt;\n  &lt;$button class=\&quot;tc-btn-invisible tc-tiddlylink\&quot; set=\&quot;$:/state/pm-show-archived\&quot; setTo=\&quot;\&quot;&gt;\n    Hide archived\n  &lt;/$button&gt;\n\n  &lt;h2&gt;Archive&lt;/h2&gt;\n\n  &lt;ul&gt;\n    &lt;$list filter=\&quot;[tag[Project]!title[Inbox]tag[Archived]]\&quot; emptyMessage=\&quot;No archived project yet.\&quot;&gt;\n      &lt;li&gt;&lt;$link to={{!!title}}&gt;&lt;$view field=\&quot;title\&quot;/&gt;&lt;/$link&gt; &lt;$macrocall $name=\&quot;todo-count\&quot; tag={{!!title}}/&gt;&lt;/li&gt;\n    &lt;/$list&gt;\n  &lt;/ul&gt;\n  \n&lt;/$reveal&gt;\n&quot;,
-            &quot;title&quot;: &quot;$:/plugins/nico/pm/ui/Projects&quot;,
-            &quot;modified&quot;: &quot;20200428113631277&quot;,
-            &quot;caption&quot;: &quot;{{$:/plugins/nico/pm/images/tasks}} Projects&quot;,
-            &quot;tags&quot;: &quot;$:/plugins/nico/pm/ui/Projects&quot;
-        },
-        &quot;$:/plugins/nico/pm/ui/Schedule&quot;: {
-            &quot;created&quot;: &quot;20200424193230404&quot;,
-            &quot;text&quot;: &quot;\\define schedule-today()\n  &lt;$list filter=\&quot;[!has[draft.of]!tag[done]tag[todo]days:due[0]]\&quot; template=\&quot;$:/plugins/nico/pm/ui/TodoTemplate\&quot; emptyMessage=\&quot;🌞 All clear!\&quot;/&gt;\n\\end\n\n\\define schedule-range(start end)\n  &lt;$list filter=\&quot;[!has[draft.of]!tag[done]tag[todo]!days:due[$start$]days:due[$end$]sort[due]]\&quot; template=\&quot;$:/plugins/nico/pm/ui/TodoTemplate\&quot; emptyMessage=\&quot;🌞 All clear!\&quot;/&gt;\n\\end\n\n\\define schedule-overdue()\n  &lt;$list filter=\&quot;[!has[draft.of]!tag[done]tag[todo]!days:due[-1]sort[due]]\&quot; template=\&quot;$:/plugins/nico/pm/ui/TodoTemplate\&quot;/&gt;\n\\end\n\n&lt;$list filter=\&quot;[!has[draft.of]!tag[done]tag[todo]!days:due[-1]limit[1]]\&quot;&gt;\n\n  !! Overdue\n\n  &lt;&lt;schedule-overdue&gt;&gt;\n\n&lt;/$list&gt;\n\n!! Today\n\n&lt;&lt;schedule-today&gt;&gt;\n\n!! Next 7 days\n\n&lt;&lt;schedule-range 1 7&gt;&gt;\n\n!! Next 30 days\n\n&lt;&lt;schedule-range 7 30&gt;&gt;&quot;,
-            &quot;title&quot;: &quot;$:/plugins/nico/pm/ui/Schedule&quot;,
-            &quot;tags&quot;: &quot;$:/plugins/nico/pm/tags/dashboard&quot;,
-            &quot;modified&quot;: &quot;20200428120734010&quot;,
-            &quot;list-after&quot;: &quot;$:/plugins/nico/pm/ui/InboxAndProjects&quot;,
-            &quot;caption&quot;: &quot;{{$:/plugins/nico/pm/images/calendar-check}} Schedule&quot;
-        },
-        &quot;$:/plugins/nico/pm/ui/TiddlerDueDateTemplate&quot;: {
-            &quot;created&quot;: &quot;20200420105800700&quot;,
-            &quot;text&quot;: &quot;&lt;$list filter=\&quot;[all[current]tag[todo]]\&quot;&gt;\n  &lt;div class=\&quot;pm-tiddler-due-date\&quot;&gt;\n    {{||$:/plugins/nico/pm/ui/TodoDueDateTemplate}}\n  &lt;/div&gt;\n&lt;/$list&gt;&quot;,
-            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;title&quot;: &quot;$:/plugins/nico/pm/ui/TiddlerDueDateTemplate&quot;,
-            &quot;tags&quot;: &quot;$:/tags/ViewTemplate&quot;,
-            &quot;revision&quot;: &quot;0&quot;,
-            &quot;modified&quot;: &quot;20200426193312979&quot;,
-            &quot;list-after&quot;: &quot;$:/core/ui/ViewTemplate/tags&quot;,
-            &quot;bag&quot;: &quot;default&quot;
-        },
-        &quot;$:/plugins/nico/pm/ui/TodoDueDateTemplate&quot;: {
-            &quot;created&quot;: &quot;20200424135048294&quot;,
-            &quot;text&quot;: &quot;&lt;$reveal type=\&quot;nomatch\&quot; state=\&quot;!!due\&quot; text=\&quot;\&quot;&gt;\n  &lt;span class=\&quot;pm-due-date\&quot;&gt;\n    &lt;$edit-date tag=\&quot;span\&quot; field=\&quot;due\&quot; icon=\&quot;$:/plugins/nico/pm/images/calendar-check\&quot; /&gt;\n    Due &lt;$view field=\&quot;due\&quot; format=\&quot;date\&quot; template=\&quot;DDth mmm\&quot;/&gt;.\n\n    &lt;$button tag=\&quot;a\&quot;&gt;&lt;$action-deletefield $field=\&quot;due\&quot; /&gt;Clear&lt;/$button&gt;\n\n    &lt;$list filter=\&quot;[all[current]!has[draft.of]!tag[done]!days:due[-1]]\&quot;&gt;\n      &lt;span class=\&quot;pm-count\&quot;&gt;\n        &lt;$view field=\&quot;due\&quot; format=\&quot;relativedate\&quot;/&gt;\n      &lt;/span&gt;\n    &lt;/$list&gt;\n\n  &lt;/span&gt;\n&lt;/$reveal&gt;\n\n&lt;$reveal type=\&quot;match\&quot; state=\&quot;!!due\&quot; text=\&quot;\&quot;&gt;\n  &lt;span class=\&quot;pm-due-date no-due-date\&quot;&gt;\n    &lt;$edit-date tag=\&quot;span\&quot; field=\&quot;due\&quot; icon=\&quot;$:/plugins/nico/pm/images/calendar-check\&quot; /&gt;\n    Schedule\n  &lt;/span&gt;\n&lt;/$reveal&gt;&quot;,
-            &quot;title&quot;: &quot;$:/plugins/nico/pm/ui/TodoDueDateTemplate&quot;,
-            &quot;tags&quot;: &quot;&quot;,
-            &quot;modified&quot;: &quot;20200428195812946&quot;
-        },
-        &quot;$:/plugins/nico/pm/ui/TodoTemplate&quot;: {
-            &quot;text&quot;: &quot;&lt;div class=\&quot;pm-todo\&quot;&gt;\n  &lt;$checkbox tag=\&quot;done\&quot;&gt;\n    {{||$:/plugins/nico/pm/ui/CheckboxTemplate}}\n    &lt;$link to={{!!title}}&gt;&lt;$view field=\&quot;title\&quot;/&gt;&lt;/$link&gt;\n  &lt;/$checkbox&gt; {{||$:/plugins/nico/pm/ui/TodoDueDateTemplate}}\n&lt;/div&gt;&quot;,
-            &quot;title&quot;: &quot;$:/plugins/nico/pm/ui/TodoTemplate&quot;,
-            &quot;tags&quot;: &quot;&quot;,
-            &quot;modified&quot;: &quot;20200428152140296&quot;,
-            &quot;created&quot;: &quot;20200422200123438&quot;
-        },
-        &quot;$:/plugins/nico/pm/stylesheet&quot;: {
-            &quot;text&quot;: &quot;\\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline\n\n.pm-btn {\n  border-radius: 1.5em;\n  border: 1px solid #ccc;\n  background: white;\n  padding: .3em 1em;\n  cursor: pointer;\n}\n\n.pm-btn.btn-primary {\n  background-color: #2da562;\n  border-color: #2da562;\n  color: white;\n  fill: white;\n}\n\n.pm-btn.btn-danger {\n  background-color: #ffefef;\n  border-color: #c63636;\n  color: #c63636;\n  fill: #c63636;\n}\n\ninput.pm-input {\n  transition: box-shadow 0.15s ease-in-out;\n  border: 1px solid #d9d9d9;\n  padding: 0.3em;\n  border-radius: 4px;\n}\n\ninput.pm-input:focus {\n  border-color: &lt;&lt;colour primary&gt;&gt;;\n}\n\ninput.pm-input.input-large {\n  width: 100%;\n  padding: .5em 1em;\n  font-size: 1.1em;\n}\n\n.pm-todo input[type=\&quot;checkbox\&quot;] {\n  display: none;\n}\n\n.pm-checkbox {\n  fill: &lt;&lt;colour muted-foreground&gt;&gt;;\n  cursor: pointer;\n  transition: all ease-in .2s;\n  margin-right: 3px;\n}\n\n.pm-checkbox .todo-hover {\n  display: none;\n}\n\n.pm-checkbox:hover .todo-hover {\n  display: initial;\n}\n\n.pm-checkbox:hover .todo {\n  display: none;\n}\n\n.pm-checkbox:hover {\n  fill: #2da562;\n}\n\n.pm-checkbox .done {\n  fill: #2da562;\n}\n\n.pm-label {\n  display: block;\n  text-align: right;\n  font-size: .8em;\n  opacity: .6;\n}\n\n.pm-todo {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n\n.pm-todo-count {\n  background: #2da562;\n  border-radius: 1em;\n  font-size: .6em;\n  font-weight: bold;\n  padding: .1em .5em;\n  color: white;\n  vertical-align: middle;\n}\n\n.pm-count {\n  background: #df3f3f;\n  color: white;\n  font-weight: bold;\n  padding: .2em .7em;\n  border-radius: 1em;\n  font-size: 12px;\n  vertical-align: middle;\n}\n\n.pm-tiddler-due-date {\n  margin-top: 5px;\n}\n\n.pm-due-date {\n  color: #753e2d;\n  fill: #753e2d;\n  white-space: nowrap;\n}\n\n.pm-due-date svg {\n  cursor: pointer;\n}\n\n.pm-due-date a {\n  text-decoration: underline;\n  cursor: pointer;\n}\n\n.pm-todo .pm-due-date {\n  padding-left: 14px;\n  font-size: .8em;\n  transition: opacity ease-in-out .15s;\n}\n\n.pm-todo .pm-due-date.no-due-date {\n  opacity: 0;\n}\n\n@media (max-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {\n  .pm-todo .pm-due-date {\n    display: block;\n    margin-left: 6px;\n  }\n  \n  .pm-todo .pm-due-date.no-due-date {\n    display: none;\n  }\n}\n\n.pm-todo:hover .pm-due-date.no-due-date {\n  opacity: 1;\n}\n\n.pm-projects .tc-droppable.tc-dragover {\n  background: #ffd;\n  display: block;\n}\n\n.pm-tabs.tc-tab-buttons button {\n  font-weight: bold;\n  font-size: 1.3em;\n  border: 0;\n  padding: 5px 10px;\n  background: transparent;\n  cursor: pointer;\n  color: &lt;&lt;colour tiddler-title-foreground&gt;&gt;;\n}\n\n.pm-tabs.tc-tab-buttons button.tc-tab-selected {\n  border: 0;\n  border-bottom: 4px solid &lt;&lt;colour primary&gt;&gt;;\n  color: &lt;&lt;colour tiddler-title-foreground&gt;&gt;;\n}\n\n.pm-banner {\n  padding: 10px 20px;\n  background: #f9f9d5;\n  border: 1px solid #dbdba8;\n  color: #626235;\n  margin: 10px 0;\n  border-radius: 3px;\n}\n\n.pm-banner button {\n  color: #554535;\n  fill: #554535;\n  text-decoration: underline;\n}&quot;,
-            &quot;title&quot;: &quot;$:/plugins/nico/pm/stylesheet&quot;,
-            &quot;tags&quot;: &quot;$:/tags/Stylesheet&quot;,
-            &quot;modified&quot;: &quot;20200428155151225&quot;,
-            &quot;created&quot;: &quot;20200426194806637&quot;
-        },
-        &quot;$:/plugins/nico/pm/images/inbox&quot;: {
-            &quot;created&quot;: &quot;20200427142105097&quot;,
-            &quot;title&quot;: &quot;$:/plugins/nico/pm/images/inbox&quot;,
-            &quot;text&quot;: &quot;&lt;svg width=\&quot;18\&quot; height=\&quot;18\&quot; xmlns=\&quot;http://www.w3.org/2000/svg\&quot; viewBox=\&quot;0 0 576 512\&quot;&gt;&lt;path d=\&quot;M567.938 243.908L462.25 85.374A48.003 48.003 0 0 0 422.311 64H153.689a48 48 0 0 0-39.938 21.374L8.062 243.908A47.994 47.994 0 0 0 0 270.533V400c0 26.51 21.49 48 48 48h480c26.51 0 48-21.49 48-48V270.533a47.994 47.994 0 0 0-8.062-26.625zM162.252 128h251.497l85.333 128H376l-32 64H232l-32-64H76.918l85.334-128z\&quot;/&gt;&lt;/svg&gt;&quot;,
-            &quot;modified&quot;: &quot;20200427142130500&quot;
-        },
-        &quot;$:/plugins/nico/pm/usage&quot;: {
-            &quot;created&quot;: &quot;20200427133943777&quot;,
-            &quot;text&quot;: &quot;! How to display the project dashboard\n\nThe main entry point to the Project Manager plugin is the dashboard.\nThe dashboard can be embedded ([[transcluded|https://tiddlywiki.com/#Transclusion]]) in any tiddler using the following:\n\n```\n{{$:/plugins/nico/pm/ui/Dashboard}}\n```\n&lt;$reveal type=\&quot;match\&quot; state=\&quot;$:/state/pm-usage-show-dashboard\&quot; text=\&quot;show\&quot;&gt;\n  &lt;$button class=\&quot;pm-btn btn-primary\&quot; set=\&quot;$:/state/pm-usage-show-dashboard\&quot; setTo=\&quot;\&quot;&gt;Hide&lt;/$button&gt;\n  &lt;hr/&gt;\n  {{$:/plugins/nico/pm/ui/Dashboard}}\n  &lt;hr/&gt;\n&lt;/$reveal&gt;\n\n&lt;$reveal type=\&quot;nomatch\&quot; state=\&quot;$:/state/pm-usage-show-dashboard\&quot; text=\&quot;show\&quot;&gt;\n  &lt;$button class=\&quot;pm-btn btn-primary\&quot; set=\&quot;$:/state/pm-usage-show-dashboard\&quot; setTo=\&quot;show\&quot;&gt;Show result&lt;/$button&gt;\n&lt;/$reveal&gt;\n\n! How to add extra tabs to the Dashboard\n\nAny tiddler with the tag &lt;&lt;tag $:/plugins/nico/pm/tags/dashboard&gt;&gt; will be displayed as a tab in the dashboard.\n\n! What if I want to display the Inbox in a separate tab?\n\nYou can build your own Dashboard using the following:\n\n```\n&lt;&lt;tabs \&quot;$:/plugins/nico/pm/ui/Inbox $:/plugins/nico/pm/ui/Projects $:/plugins/nico/pm/ui/Schedule\&quot; \&quot;$:/plugins/nico/pm/ui/Inbox\&quot; \&quot;$:/state/pm-custom-dashboard\&quot;  \&quot;pm-tabs\&quot;&gt;&gt;\n```\n&lt;$reveal type=\&quot;match\&quot; state=\&quot;$:/state/pm-usage-custom-dashboard\&quot; text=\&quot;show\&quot;&gt;\n  &lt;$button class=\&quot;pm-btn btn-primary\&quot; set=\&quot;$:/state/pm-usage-custom-dashboard\&quot; setTo=\&quot;\&quot;&gt;Hide&lt;/$button&gt;\n  &lt;hr/&gt;\n  &lt;&lt;tabs \&quot;$:/plugins/nico/pm/ui/Inbox $:/plugins/nico/pm/ui/Projects $:/plugins/nico/pm/ui/Schedule\&quot; \&quot;$:/plugins/nico/pm/ui/Inbox\&quot; \&quot;$:/state/pm-custom-dashboard\&quot;  \&quot;pm-tabs\&quot;&gt;&gt;\n  &lt;hr/&gt;\n&lt;/$reveal&gt;\n\n&lt;$reveal type=\&quot;nomatch\&quot; state=\&quot;$:/state/pm-usage-custom-dashboard\&quot; text=\&quot;show\&quot;&gt;\n  &lt;$button class=\&quot;pm-btn btn-primary\&quot; set=\&quot;$:/state/pm-usage-custom-dashboard\&quot; setTo=\&quot;show\&quot;&gt;Show result&lt;/$button&gt;\n&lt;/$reveal&gt;\n\n! Can I make sub-projects?\n\nYes, any todo (or tiddler, for that matter) can be used as a project using the `&lt;&lt;project&gt;&gt;` macro.\nThis means that you can effectively make any todo a sub-project of another project, and go as deep as you wish!\n\nNote that only tiddlers with the &lt;&lt;tag Project&gt;&gt; tag will be listed in the Dashboard.\n\n```\n&lt;&lt;project&gt;&gt;\n```\n&lt;$reveal type=\&quot;match\&quot; state=\&quot;$:/state/pm-usage-subproject\&quot; text=\&quot;show\&quot;&gt;\n  &lt;$button class=\&quot;pm-btn btn-primary\&quot; set=\&quot;$:/state/pm-usage-subproject\&quot; setTo=\&quot;\&quot;&gt;Hide&lt;/$button&gt;\n  &lt;hr/&gt;\n  &lt;&lt;project&gt;&gt;\n  &lt;hr/&gt;\n&lt;/$reveal&gt;\n\n&lt;$reveal type=\&quot;nomatch\&quot; state=\&quot;$:/state/pm-usage-subproject\&quot; text=\&quot;show\&quot;&gt;\n  &lt;$button class=\&quot;pm-btn btn-primary\&quot; set=\&quot;$:/state/pm-usage-subproject\&quot; setTo=\&quot;show\&quot;&gt;Show result&lt;/$button&gt;\n&lt;/$reveal&gt;\n\n! Can I quickly capture todos to my inbox?\n\n''Yes!'' The default shortcut is {{$:/config/shortcuts/pm-quick-capture}}, but you can change it in the [[Keyboard section of the Control Panel|$:/core/ui/ControlPanel/KeyboardShortcuts]].\n\n! Can I easily move todos out of the inbox?\n\nYes, just drag a todo from the inbox into one of the projects.&quot;,
-            &quot;tags&quot;: &quot;&quot;,
-            &quot;title&quot;: &quot;$:/plugins/nico/pm/usage&quot;,
-            &quot;modified&quot;: &quot;20200428112415184&quot;,
-            &quot;caption&quot;: &quot;Usage &amp; Help&quot;
-        },
-        &quot;$:/plugins/nico/pm/installation&quot;: {
-            &quot;created&quot;: &quot;20200427152938733&quot;,
-            &quot;text&quot;: &quot;! Dependencies\n\nProject-Manager depends on the following plugins:\n\n* [[$:/plugins/kixam/moment]]\n* [[$:/plugins/kixam/datepicker]]\n\nInstall these plugins by dragging the above links to your wiki.\n\nWhile not strictly required, we strongly recommand installing the [[Relink|$:/plugins/flibbles/relink]] plugin as well, as it makes renaming projects much more convenient.\n\n* [[$:/plugins/flibbles/relink]]\n\n! Plugin\n\nDrag&amp;drop the following link into your wiki\n\n* [[$:/plugins/nico/pm]]\n\nThen save &amp; reload your wiki.\n\n! Getting started\n\nTransclude the Dashboard tiddler into another tiddler like the following:\n\n```\n{{$:/plugins/nico/pm/ui/Dashboard}}\n```\n\nSee [[Usage|$:/plugins/nico/pm/usage]] for more information.&quot;,
-            &quot;tags&quot;: &quot;&quot;,
-            &quot;title&quot;: &quot;$:/plugins/nico/pm/installation&quot;,
-            &quot;modified&quot;: &quot;20200427202405183&quot;
-        },
-        &quot;$:/plugins/nico/pm/images/quick-capture&quot;: {
-            &quot;created&quot;: &quot;20200427142105097&quot;,
-            &quot;title&quot;: &quot;$:/plugins/nico/pm/images/quick-capture&quot;,
-            &quot;text&quot;: &quot;&lt;svg width=\&quot;22\&quot; height=\&quot;22\&quot; xmlns=\&quot;http://www.w3.org/2000/svg\&quot; viewBox=\&quot;0 0 576 512\&quot;&gt;&lt;path d=\&quot;M567.938 243.908L462.25 85.374A48.003 48.003 0 0 0 422.311 64H153.689a48 48 0 0 0-39.938 21.374L8.062 243.908A47.994 47.994 0 0 0 0 270.533V400c0 26.51 21.49 48 48 48h480c26.51 0 48-21.49 48-48V270.533a47.994 47.994 0 0 0-8.062-26.625zM162.252 128h251.497l85.333 128H376l-32 64H232l-32-64H76.918l85.334-128z\&quot;/&gt;&lt;/svg&gt;&quot;,
-            &quot;modified&quot;: &quot;20200427194028910&quot;
-        },
-        &quot;$:/plugins/nico/pm/quick-capture&quot;: {
-            &quot;created&quot;: &quot;20200427182745230&quot;,
-            &quot;text&quot;: &quot;&lt;$navigator story=\&quot;$:/StoryList\&quot; history=\&quot;$:/HistoryList\&quot;&gt;\n  &lt;$action-navigate $to=\&quot;$:/plugins/nico/pm/ui/QuickCapture\&quot;/&gt;\n&lt;/$navigator&gt;\n&quot;,
-            &quot;tags&quot;: &quot;$:/tags/KeyboardShortcut&quot;,
-            &quot;title&quot;: &quot;$:/plugins/nico/pm/quick-capture&quot;,
-            &quot;modified&quot;: &quot;20200427183238838&quot;,
-            &quot;key&quot;: &quot;((pm-quick-capture))&quot;
-        },
-        &quot;$:/plugins/nico/pm/ui/QuickCapture&quot;: {
-            &quot;created&quot;: &quot;20200427182956318&quot;,
-            &quot;text&quot;: &quot;!! {{$:/plugins/nico/pm/images/tasks}} Quick add todo\n\n&lt;$keyboard key=\&quot;enter\&quot;&gt;\n  &lt;$action-setfield $tiddler={{$:/state/Inbox!!todo_name}} tags=\&quot;Inbox todo\&quot;/&gt;\n  &lt;$action-setfield $tiddler=\&quot;$:/state/Inbox\&quot; todo_name=\&quot;\&quot;/&gt;\n  &lt;$action-sendmessage $message=\&quot;tm-close-tiddler\&quot;/&gt;\n  &lt;$edit-text class=\&quot;pm-input input-large\&quot; tiddler=\&quot;$:/state/Inbox\&quot; field=\&quot;todo_name\&quot; placeholder=\&quot;Add to inbox...\&quot; focus=\&quot;true\&quot;/&gt; \n  &lt;label class=\&quot;pm-label\&quot;&gt;Press ⏎ to capture&lt;/label&gt;\n&lt;/$keyboard&gt;&quot;,
-            &quot;tags&quot;: &quot;&quot;,
-            &quot;title&quot;: &quot;$:/plugins/nico/pm/ui/QuickCapture&quot;,
-            &quot;modified&quot;: &quot;20200427194203442&quot;,
-            &quot;icon&quot;: &quot;$:/plugins/nico/pm/images/quick-capture&quot;,
-            &quot;color&quot;: &quot;#0088cc&quot;
-        },
         &quot;$:/config/ShortcutInfo/pm-quick-capture&quot;: {
-            &quot;created&quot;: &quot;20200427182541625&quot;,
-            &quot;text&quot;: &quot;Trigger a quick capture to add a todo to the inbox.&quot;,
-            &quot;tags&quot;: &quot;&quot;,
             &quot;title&quot;: &quot;$:/config/ShortcutInfo/pm-quick-capture&quot;,
-            &quot;modified&quot;: &quot;20200427194808907&quot;
+            &quot;created&quot;: &quot;20200427182541625&quot;,
+            &quot;modified&quot;: &quot;20201130170204047&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;Trigger a quick capture to add a todo to the inbox.&quot;
         },
         &quot;$:/config/shortcuts/pm-quick-capture&quot;: {
-            &quot;created&quot;: &quot;20200427182712912&quot;,
-            &quot;text&quot;: &quot;alt+c&quot;,
-            &quot;tags&quot;: &quot;&quot;,
             &quot;title&quot;: &quot;$:/config/shortcuts/pm-quick-capture&quot;,
-            &quot;modified&quot;: &quot;20200427182722819&quot;
-        },
-        &quot;$:/plugins/nico/pm/images/check-circle&quot;: {
-            &quot;text&quot;: &quot;&lt;svg width=\&quot;18\&quot; height=\&quot;18\&quot; xmlns=\&quot;http://www.w3.org/2000/svg\&quot; viewBox=\&quot;0 0 512 512\&quot;&gt;&lt;path d=\&quot;M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z\&quot;/&gt;&lt;/svg&gt;&quot;,
-            &quot;title&quot;: &quot;$:/plugins/nico/pm/images/check-circle&quot;,
-            &quot;modified&quot;: &quot;20200428152003974&quot;,
-            &quot;created&quot;: &quot;20200428151952093&quot;
-        },
-        &quot;$:/plugins/nico/pm/images/check-circle-light&quot;: {
-            &quot;created&quot;: &quot;20200428152931864&quot;,
-            &quot;title&quot;: &quot;$:/plugins/nico/pm/images/check-circle-light&quot;,
-            &quot;text&quot;: &quot;&lt;svg width=\&quot;18px\&quot; height=\&quot;18px\&quot; xmlns=\&quot;http://www.w3.org/2000/svg\&quot; viewBox=\&quot;0 0 512 512\&quot;&gt;&lt;path d=\&quot;M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z\&quot;/&gt;&lt;/svg&gt;&quot;,
-            &quot;modified&quot;: &quot;20200428153209573&quot;
-        },
-        &quot;$:/plugins/nico/pm/images/circle&quot;: {
-            &quot;text&quot;: &quot;&lt;svg width=\&quot;18\&quot; height=\&quot;18\&quot; xmlns=\&quot;http://www.w3.org/2000/svg\&quot; viewBox=\&quot;0 0 512 512\&quot;&gt;&lt;path d=\&quot;M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z\&quot;/&gt;&lt;/svg&gt;&quot;,
-            &quot;title&quot;: &quot;$:/plugins/nico/pm/images/circle&quot;,
-            &quot;modified&quot;: &quot;20200428151935151&quot;,
-            &quot;created&quot;: &quot;20200428151856963&quot;
-        },
-        &quot;$:/plugins/nico/pm/ui/CheckboxTemplate&quot;: {
-            &quot;created&quot;: &quot;20200428151242242&quot;,
-            &quot;text&quot;: &quot;&lt;span class=\&quot;pm-checkbox\&quot;&gt;\n  &lt;$list filter=\&quot;[is[current]!tag[done]]\&quot;&gt;\n    &lt;span class=\&quot;todo\&quot;&gt; {{$:/plugins/nico/pm/images/circle}}&lt;/span&gt;\n    &lt;span class=\&quot;todo-hover\&quot;&gt; {{$:/plugins/nico/pm/images/check-circle-light}}&lt;/span&gt;\n  &lt;/$list&gt;\n  &lt;$list filter=\&quot;[is[current]tag[done]]\&quot;&gt;\n    &lt;span class=\&quot;done\&quot;&gt; {{$:/plugins/nico/pm/images/check-circle}}&lt;/span&gt;\n  &lt;/$list&gt;\n&lt;/span&gt;&quot;,
-            &quot;title&quot;: &quot;$:/plugins/nico/pm/ui/CheckboxTemplate&quot;,
+            &quot;created&quot;: &quot;20200427182712912&quot;,
+            &quot;modified&quot;: &quot;20201130170204080&quot;,
             &quot;tags&quot;: &quot;&quot;,
-            &quot;modified&quot;: &quot;20200428153225673&quot;
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;alt+c&quot;
         },
         &quot;$:/plugins/nico/pm/NotebookSidebar/Projects&quot;: {
-            &quot;created&quot;: &quot;20200430123440360&quot;,
-            &quot;text&quot;: &quot;&lt;&lt;toc-selective-expandable \&quot;Project\&quot; \&quot;!tag[Archived]sort[title]\&quot;&gt;&gt;&quot;,
             &quot;title&quot;: &quot;$:/plugins/nico/pm/NotebookSidebar/Projects&quot;,
-            &quot;tags&quot;: &quot;$:/plugins/nico/notebook/tags/SidebarSection&quot;,
-            &quot;modified&quot;: &quot;20200430131023326&quot;,
+            &quot;caption&quot;: &quot;Projects&quot;,
+            &quot;created&quot;: &quot;20200430123440360&quot;,
             &quot;list-before&quot;: &quot;$:/plugins/nico/notebook/Sidebar/Open&quot;,
-            &quot;caption&quot;: &quot;Projects&quot;
+            &quot;modified&quot;: &quot;20201207210232011&quot;,
+            &quot;tags&quot;: &quot;$:/plugins/nico/notebook/tags/SidebarSection&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;toc-selective-expandable \&quot;Project\&quot; \&quot;!tag[done]!tag[done]sort[title]\&quot;&gt;&gt;\n&quot;
+        },
+        &quot;$:/plugins/nico/pm/changelog&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/changelog&quot;,
+            &quot;caption&quot;: &quot;Usage &amp; Help&quot;,
+            &quot;created&quot;: &quot;20201208093546936&quot;,
+            &quot;modified&quot;: &quot;20201208185522392&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;! Release 1.0.0\n\n!! Features\n\n* Todos can now moved between projects using drag &amp; drop\n* Todos can now be made into sub-projects by clicking the `Make this into a sub-project` button\n* Empty projects and Inbox now show a welcome screen\n* New checkbox button in the view toolbar of todo tiddlers\n* New form to add new projects including an input for the project title\n* The number of todos in a project is now represented with a small pie chart icon\n* Projects without active todos are now omitted from the \&quot;Next\&quot; dashboard section\n\n!! Improvements\n\n* New icon set\n* Improved style for checkboxes, buttons and inputs\n* Improved style for the dashboard projects section\n* Improved layout for completed todos in a project\n* Added a drag handle for draggable todo items\n\n!! Fixes\n\n* Fix creation of projects with triple double quotes\n* Fix creation of todos with triple double quotes\n* Fix drag&amp;drop of todos with double quotes or triple double quotes\n\n!! Breaking changes\n\n* The `&lt;&lt;project&gt;&gt;` macro should not be used anymore. Instead, the plugin adds the &lt;&lt;tag SubProject&gt;&gt; tag to sub projects and renders their todo-list automatically.\n* Projects are now archived using the &lt;&lt;tag done&gt;&gt; tag. The former `Archived` tag is not used anymore.\n&quot;
+        },
+        &quot;$:/plugins/nico/pm/images/archive&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/images/archive&quot;,
+            &quot;created&quot;: &quot;2020120217278433&quot;,
+            &quot;modified&quot;: &quot;2020120217278433&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Image&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;svg width=\&quot;16px\&quot; height=\&quot;16px\&quot; viewBox=\&quot;0 0 16 16\&quot; class=\&quot;bi bi-archive\&quot; fill=\&quot;currentColor\&quot; xmlns=\&quot;http://www.w3.org/2000/svg\&quot;&gt;\n  &lt;path fill-rule=\&quot;evenodd\&quot; d=\&quot;M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 12.5V5a1 1 0 0 1-1-1V2zm2 3v7.5A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5V5H2zm13-3H1v2h14V2zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z\&quot;/&gt;\n&lt;/svg&gt;&quot;
+        },
+        &quot;$:/plugins/nico/pm/images/calendar-check&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/images/calendar-check&quot;,
+            &quot;created&quot;: &quot;20200423195159541&quot;,
+            &quot;modified&quot;: &quot;20201130163459505&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Image&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;svg width=\&quot;16px\&quot; height=\&quot;16px\&quot; viewBox=\&quot;0 0 16 16\&quot; class=\&quot;bi bi-calendar-week\&quot; fill=\&quot;currentColor\&quot; xmlns=\&quot;http://www.w3.org/2000/svg\&quot;&gt;\n  &lt;path fill-rule=\&quot;evenodd\&quot; d=\&quot;M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z\&quot;/&gt;\n  &lt;path d=\&quot;M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z\&quot;/&gt;\n&lt;/svg&gt;&quot;
+        },
+        &quot;$:/plugins/nico/pm/images/check-circle-light&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/images/check-circle-light&quot;,
+            &quot;created&quot;: &quot;20200428152931864&quot;,
+            &quot;modified&quot;: &quot;20201130164535573&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;svg width=\&quot;18px\&quot; height=\&quot;18px\&quot; xmlns=\&quot;http://www.w3.org/2000/svg\&quot; viewBox=\&quot;0 0 512 512\&quot;&gt;&lt;path d=\&quot;M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z\&quot;/&gt;&lt;/svg&gt;&quot;
+        },
+        &quot;$:/plugins/nico/pm/images/check-circle&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/images/check-circle&quot;,
+            &quot;created&quot;: &quot;20200428151952093&quot;,
+            &quot;modified&quot;: &quot;20201130164535276&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;svg width=\&quot;18\&quot; height=\&quot;18\&quot; xmlns=\&quot;http://www.w3.org/2000/svg\&quot; viewBox=\&quot;0 0 512 512\&quot;&gt;&lt;path d=\&quot;M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z\&quot;/&gt;&lt;/svg&gt;&quot;
+        },
+        &quot;$:/plugins/nico/pm/images/checkbox-checked-solid&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/images/checkbox-checked-solid&quot;,
+            &quot;created&quot;: &quot;20200428151856963&quot;,
+            &quot;modified&quot;: &quot;20201207180957503&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;svg\n  width=\&quot;1em\&quot;\n  height=\&quot;1em\&quot;\n  fill=\&quot;currentColor\&quot;\n  version=\&quot;1.1\&quot;\n  viewBox=\&quot;0 0 16 16\&quot;\n  xmlns=\&quot;http://www.w3.org/2000/svg\&quot;\n&gt;\n  &lt;rect width=\&quot;16\&quot; height=\&quot;16\&quot; rx=\&quot;2\&quot; /&gt;\n  &lt;path\n    d=\&quot;m13.354 4.146a0.5 0.5 0 0 1 0 0.708l-7 7a0.5 0.5 0 0 1-0.708 0l-3-3a0.50063 0.50063 0 1 1 0.708-0.708l2.646 2.647 6.646-6.647a0.5 0.5 0 0 1 0.708 0z\&quot;\n    clip-rule=\&quot;evenodd\&quot;\n    fill=\&quot;#fff\&quot;\n    fill-rule=\&quot;evenodd\&quot;\n  /&gt;\n&lt;/svg&gt;\n&quot;
+        },
+        &quot;$:/plugins/nico/pm/images/checkbox-checked&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/images/checkbox-checked&quot;,
+            &quot;created&quot;: &quot;20200428151856963&quot;,
+            &quot;modified&quot;: &quot;20201207181004275&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;svg\n  width=\&quot;1em\&quot;\n  height=\&quot;1em\&quot;\n  viewBox=\&quot;0 0 4.2333 4.2333\&quot;\n  xmlns=\&quot;http://www.w3.org/2000/svg\&quot;\n&gt;\n  &lt;g\n    transform=\&quot;translate(0 -292.77)\&quot;\n    clip-rule=\&quot;evenodd\&quot;\n    fill=\&quot;currentColor\&quot;\n    fill-rule=\&quot;evenodd\&quot;\n    stroke-width=\&quot;.26458\&quot;\n  &gt;\n    &lt;path d=\&quot;m3.7042 293.03h-3.175a0.26458 0.26458 0 0 0-0.26458 0.26459v3.175a0.26458 0.26458 0 0 0 0.26458 0.26458h3.175a0.26458 0.26458 0 0 0 0.26458-0.26458v-3.175a0.26458 0.26458 0 0 0-0.26458-0.26459zm-3.175-0.26458a0.52917 0.52917 0 0 0-0.52917 0.52917v3.175a0.52917 0.52917 0 0 0 0.52917 0.52916h3.175a0.52917 0.52917 0 0 0 0.52917-0.52916v-3.175a0.52917 0.52917 0 0 0-0.52917-0.52917z\&quot; /&gt;\n    &lt;path d=\&quot;m3.5335 293.86a0.13229 0.13229 0 0 1 0 0.18733l-1.8521 1.8521a0.13229 0.13229 0 0 1-0.18732 0l-0.79375-0.79375a0.13246 0.13246 0 1 1 0.18732-0.18732l0.70009 0.70035 1.7584-1.7587a0.13229 0.13229 0 0 1 0.18732 0z\&quot; /&gt;\n  &lt;/g&gt;\n&lt;/svg&gt;\n\n&quot;
+        },
+        &quot;$:/plugins/nico/pm/images/checkbox&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/images/checkbox&quot;,
+            &quot;created&quot;: &quot;20200428151856963&quot;,
+            &quot;modified&quot;: &quot;20201207181012532&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;svg\n  width=\&quot;1em\&quot;\n  height=\&quot;1em\&quot;\n  viewBox=\&quot;0 0 16 16\&quot;\n  fill=\&quot;currentColor\&quot;\n  xmlns=\&quot;http://www.w3.org/2000/svg\&quot;\n&gt;\n  &lt;path\n    fill-rule=\&quot;evenodd\&quot;\n    d=\&quot;M14 1H2a1 1 0 00-1 1v12a1 1 0 001 1h12a1 1 0 001-1V2a1 1 0 00-1-1zM2 0a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V2a2 2 0 00-2-2H2z\&quot;\n    clip-rule=\&quot;evenodd\&quot;\n  /&gt;\n&lt;/svg&gt;\n&quot;
+        },
+        &quot;$:/plugins/nico/pm/images/circle&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/images/circle&quot;,
+            &quot;created&quot;: &quot;20200428151856963&quot;,
+            &quot;modified&quot;: &quot;20201130164535597&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;svg width=\&quot;18\&quot; height=\&quot;18\&quot; xmlns=\&quot;http://www.w3.org/2000/svg\&quot; viewBox=\&quot;0 0 512 512\&quot;&gt;&lt;path d=\&quot;M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z\&quot;/&gt;&lt;/svg&gt;&quot;
+        },
+        &quot;$:/plugins/nico/pm/images/drag-handle&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/images/drag-handle&quot;,
+            &quot;created&quot;: &quot;20201203121002043&quot;,
+            &quot;modified&quot;: &quot;20201203121033836&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;svg\n  width=\&quot;1em\&quot;\n  height=\&quot;1em\&quot;\n  viewBox=\&quot;0 0 16 16\&quot;\n  fill=\&quot;currentColor\&quot;\n  xmlns=\&quot;http://www.w3.org/2000/svg\&quot;\n&gt;\n  &lt;path\n    fill-rule=\&quot;evenodd\&quot;\n    d=\&quot;M2.5 11.5A.5.5 0 013 11h10a.5.5 0 010 1H3a.5.5 0 01-.5-.5zm0-4A.5.5 0 013 7h10a.5.5 0 010 1H3a.5.5 0 01-.5-.5zm0-4A.5.5 0 013 3h10a.5.5 0 010 1H3a.5.5 0 01-.5-.5z\&quot;\n    clip-rule=\&quot;evenodd\&quot;\n  /&gt;\n&lt;/svg&gt;\n&quot;
+        },
+        &quot;$:/plugins/nico/pm/images/eye&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/images/eye&quot;,
+            &quot;created&quot;: &quot;20201208134634473&quot;,
+            &quot;modified&quot;: &quot;20201208135025122&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Image&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;svg\n  width=\&quot;1em\&quot;\n  height=\&quot;1em\&quot;\n  viewBox=\&quot;0 0 16 16\&quot;\n  fill=\&quot;currentColor\&quot;\n  xmlns=\&quot;http://www.w3.org/2000/svg\&quot;\n&gt;\n  &lt;path\n    fill-rule=\&quot;evenodd\&quot;\n    d=\&quot;M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 001.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0014.828 8a13.133 13.133 0 00-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 001.172 8z\&quot;\n    clip-rule=\&quot;evenodd\&quot;\n  /&gt;\n  &lt;path\n    fill-rule=\&quot;evenodd\&quot;\n    d=\&quot;M8 5.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM4.5 8a3.5 3.5 0 117 0 3.5 3.5 0 01-7 0z\&quot;\n    clip-rule=\&quot;evenodd\&quot;\n  /&gt;\n&lt;/svg&gt;\n&quot;
+        },
+        &quot;$:/plugins/nico/pm/images/eyeslash&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/images/eyeslash&quot;,
+            &quot;created&quot;: &quot;20201208134755202&quot;,
+            &quot;modified&quot;: &quot;20201208134822209&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Image&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;svg\n  width=\&quot;1em\&quot;\n  height=\&quot;1em\&quot;\n  viewBox=\&quot;0 0 16 16\&quot;\n  fill=\&quot;currentColor\&quot;\n  xmlns=\&quot;http://www.w3.org/2000/svg\&quot;\n&gt;\n  &lt;path d=\&quot;M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7.028 7.028 0 00-2.79.588l.77.771A5.944 5.944 0 018 3.5c2.12 0 3.879 1.168 5.168 2.457A13.134 13.134 0 0114.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486l.708.709z\&quot; /&gt;\n  &lt;path d=\&quot;M11.297 9.176a3.5 3.5 0 00-4.474-4.474l.823.823a2.5 2.5 0 012.829 2.829l.822.822zm-2.943 1.299l.822.822a3.5 3.5 0 01-4.474-4.474l.823.823a2.5 2.5 0 002.829 2.829z\&quot; /&gt;\n  &lt;path d=\&quot;M3.35 5.47c-.18.16-.353.322-.518.487A13.134 13.134 0 001.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7.029 7.029 0 018 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709z\&quot; /&gt;\n  &lt;path\n    fill-rule=\&quot;evenodd\&quot;\n    d=\&quot;M13.646 14.354l-12-12 .708-.708 12 12-.708.708z\&quot;\n    clip-rule=\&quot;evenodd\&quot;\n  /&gt;\n&lt;/svg&gt;\n&quot;
+        },
+        &quot;$:/plugins/nico/pm/images/funnel&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/images/funnel&quot;,
+            &quot;created&quot;: &quot;20200425202748433&quot;,
+            &quot;modified&quot;: &quot;20201130164535630&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Image&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;svg width=\&quot;16px\&quot; height=\&quot;16px\&quot; viewBox=\&quot;0 0 16 16\&quot; class=\&quot;bi bi-funnel\&quot; fill=\&quot;currentColor\&quot; xmlns=\&quot;http://www.w3.org/2000/svg\&quot;&gt;\n  &lt;path fill-rule=\&quot;evenodd\&quot; d=\&quot;M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2zm1 .5v1.308l4.372 4.858A.5.5 0 0 1 7 8.5v5.306l2-.666V8.5a.5.5 0 0 1 .128-.334L13.5 3.308V2h-11z\&quot;/&gt;\n&lt;/svg&gt;&quot;
+        },
+        &quot;$:/plugins/nico/pm/images/inbox&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/images/inbox&quot;,
+            &quot;created&quot;: &quot;20200427142105097&quot;,
+            &quot;modified&quot;: &quot;20201130164535605&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;svg width=\&quot;18\&quot; height=\&quot;18\&quot; viewBox=\&quot;0 0 16 16\&quot; class=\&quot;bi bi-inbox-fill\&quot; fill=\&quot;currentColor\&quot; xmlns=\&quot;http://www.w3.org/2000/svg\&quot;&gt;\n  &lt;path fill-rule=\&quot;evenodd\&quot; d=\&quot;M4.98 4a.5.5 0 0 0-.39.188L1.54 8H6a.5.5 0 0 1 .5.5 1.5 1.5 0 1 0 3 0A.5.5 0 0 1 10 8h4.46l-3.05-3.812A.5.5 0 0 0 11.02 4H4.98zm-1.17-.437A1.5 1.5 0 0 1 4.98 3h6.04a1.5 1.5 0 0 1 1.17.563l3.7 4.625a.5.5 0 0 1 .106.374l-.39 3.124A1.5 1.5 0 0 1 14.117 13H1.883a1.5 1.5 0 0 1-1.489-1.314l-.39-3.124a.5.5 0 0 1 .106-.374l3.7-4.625z\&quot;/&gt;\n&lt;/svg&gt;&quot;
+        },
+        &quot;$:/plugins/nico/pm/images/pie&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/images/pie&quot;,
+            &quot;created&quot;: &quot;20201207124527891&quot;,
+            &quot;modified&quot;: &quot;20201207131854771&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;$set name=\&quot;PI\&quot; value=\&quot;3.14\&quot;&gt;\n  &lt;$set name=\&quot;circumference\&quot; value={{{ [&lt;PI&gt;multiply[2]multiply[5]] }}}&gt;\n    &lt;$set name=\&quot;all\&quot; value={{{ [tag&lt;currentTiddler&gt;!has[draft.of]count[]] }}}&gt;\n      &lt;$set name=\&quot;closed\&quot; value={{{ [tag&lt;currentTiddler&gt;!has[draft.of]tag[done]count[]]}}}&gt;\n\t&lt;$set name=\&quot;ratio\&quot; value={{{ [&lt;all&gt;is[0]then&lt;circumference&gt;else&lt;circumference&gt;multiply&lt;closed&gt;divide&lt;all&gt;] }}}&gt;\n        &lt;svg\n          class=\&quot;pm-icon pm-pie\&quot;\n          height=\&quot;1em\&quot;\n          width=\&quot;1em\&quot;\n          viewBox=\&quot;0 0 30 30\&quot;&gt;\n\n          &lt;circle\n            class=\&quot;border\&quot;\n            r=\&quot;14\&quot;\n            cx=\&quot;15\&quot;\n            cy=\&quot;15\&quot;\n            fill=\&quot;white\&quot;\n            stroke=\&quot;tomato\&quot;\n            stroke-width=\&quot;2\&quot;/&gt;\n\n          &lt;circle\n            class=\&quot;border\&quot;\n            r=\&quot;5\&quot;\n            cx=\&quot;15\&quot;\n            cy=\&quot;15\&quot;\n            fill=\&quot;transparent\&quot;\n            stroke=\&quot;tomato\&quot;\n            stroke-width=\&quot;10\&quot;\n            transform=\&quot;rotate(-90) translate(-30)\&quot;\n            stroke-dasharray={{{ [&lt;ratio&gt;addsuffix[ 31.42]] }}}/&gt;\n\n        &lt;/svg&gt;\n      &lt;/$set&gt;\n    &lt;/$set&gt;\n  &lt;/$set&gt;\n&lt;/$set&gt;\n&quot;
+        },
+        &quot;$:/plugins/nico/pm/images/quick-capture&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/images/quick-capture&quot;,
+            &quot;created&quot;: &quot;20200427142105097&quot;,
+            &quot;modified&quot;: &quot;20201130164535613&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;svg width=\&quot;22\&quot; height=\&quot;22\&quot; xmlns=\&quot;http://www.w3.org/2000/svg\&quot; viewBox=\&quot;0 0 576 512\&quot;&gt;&lt;path d=\&quot;M567.938 243.908L462.25 85.374A48.003 48.003 0 0 0 422.311 64H153.689a48 48 0 0 0-39.938 21.374L8.062 243.908A47.994 47.994 0 0 0 0 270.533V400c0 26.51 21.49 48 48 48h480c26.51 0 48-21.49 48-48V270.533a47.994 47.994 0 0 0-8.062-26.625zM162.252 128h251.497l85.333 128H376l-32 64H232l-32-64H76.918l85.334-128z\&quot;/&gt;&lt;/svg&gt;&quot;
+        },
+        &quot;$:/plugins/nico/pm/images/tasks&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/images/tasks&quot;,
+            &quot;created&quot;: &quot;20200424203654397&quot;,
+            &quot;modified&quot;: &quot;20201130164535638&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Image&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;svg width=\&quot;16px\&quot; height=\&quot;16px\&quot; viewBox=\&quot;0 0 16 16\&quot; class=\&quot;bi bi-check-square\&quot; fill=\&quot;currentColor\&quot; xmlns=\&quot;http://www.w3.org/2000/svg\&quot;&gt;\n  &lt;path fill-rule=\&quot;evenodd\&quot; d=\&quot;M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z\&quot;/&gt;\n  &lt;path fill-rule=\&quot;evenodd\&quot; d=\&quot;M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z\&quot;/&gt;\n&lt;/svg&gt;&quot;
+        },
+        &quot;$:/plugins/nico/pm/installation&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/installation&quot;,
+            &quot;created&quot;: &quot;20200427152938733&quot;,
+            &quot;modified&quot;: &quot;20201130164535652&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;! Dependencies\n\nProject-Manager depends on the following plugins:\n\n* [[$:/plugins/kixam/moment]]\n* [[$:/plugins/kixam/datepicker]]\n\nInstall these plugins by dragging the above links to your wiki.\n\nWhile not strictly required, we strongly recommand installing the [[Relink|$:/plugins/flibbles/relink]] plugin as well, as it makes renaming projects much more convenient.\n\n* [[$:/plugins/flibbles/relink]]\n\n! Plugin\n\nDrag&amp;drop the following link into your wiki\n\n* [[$:/plugins/nico/pm]]\n\nThen save &amp; reload your wiki.\n\n! Getting started\n\nTransclude the Dashboard tiddler into another tiddler like the following:\n\n```\n{{$:/plugins/nico/pm/ui/Dashboard}}\n```\n\nSee [[Usage|$:/plugins/nico/pm/usage]] for more information.&quot;
+        },
+        &quot;$:/plugins/nico/pm/macros/project&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/macros/project&quot;,
+            &quot;created&quot;: &quot;20200422200514984&quot;,
+            &quot;modified&quot;: &quot;20201201195659287&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Macro&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define archive-project()\n  &lt;$fieldmangler&gt;\n    &lt;$button class=\&quot;pm-btn btn-danger nc-archive-project\&quot;&gt;\n      &lt;$action-sendmessage $message=\&quot;tm-add-tag\&quot; $param=\&quot;done\&quot;/&gt;\n        {{$:/core/images/delete-button}} Archive project\n    &lt;/$button&gt;\n  &lt;/$fieldmangler&gt;\n\\end\n\n\\define restore-project()\n  &lt;$fieldmangler&gt;\n    &lt;$button class=\&quot;tc-btn-invisible\&quot;&gt;\n      &lt;$action-sendmessage $message=\&quot;tm-remove-tag\&quot; $param=\&quot;done\&quot;/&gt;\n        Restore project\n    &lt;/$button&gt;\n  &lt;/$fieldmangler&gt;\n\\end\n\n\\define project-completed-todos(tag)\n  &lt;$list filter=\&quot;[!has[draft.of]tag&lt;__tag__&gt;tag[done]limit[1]]\&quot; variable=\&quot;ignore\&quot;&gt;\n    &lt;$vars stateTiddler={{{ [&lt;__tag__&gt;addprefix[$:/state/pm-show-completed-]] }}} completed={{{ [!has[draft.of]tag&lt;__tag__&gt;tag[done]count[]] }}}&gt;\n\n      &lt;$reveal type=\&quot;match\&quot; state=&lt;&lt;stateTiddler&gt;&gt; text=\&quot;\&quot;&gt;\n        &lt;$button class=\&quot;tc-btn-invisible pm-link-muted\&quot; set=&lt;&lt;stateTiddler&gt;&gt; setTo=\&quot;show\&quot;&gt;\n          {{$:/plugins/nico/pm/images/eye}} &lt;&lt;completed&gt;&gt; completed\n        &lt;/$button&gt;\n      &lt;/$reveal&gt;\n\n      &lt;$reveal type=\&quot;match\&quot; state=&lt;&lt;stateTiddler&gt;&gt; text=\&quot;show\&quot;&gt;\n        &lt;$macrocall $name=\&quot;todo-list-completed\&quot; tag=&lt;&lt;__tag__&gt;&gt;/&gt;\n\n\t&lt;div class=\&quot;pm-actions\&quot;&gt;\n          &lt;$button class=\&quot;tc-btn-invisible pm-link-muted\&quot; set=&lt;&lt;stateTiddler&gt;&gt; setTo=\&quot;\&quot;&gt;\n            {{$:/plugins/nico/pm/images/eyeslash}} Hide completed\n          &lt;/$button&gt;\n\t&lt;/div&gt;\n      &lt;/$reveal&gt;\n\n    &lt;/$vars&gt;\n  &lt;/$list&gt;\n\\end\n\n\\define project-add-todo-actions()\n  &lt;$action-createtiddler\n    $basetitle={{{ [&lt;stateTiddler&gt;get[todo_name]] }}}\n    tags=\&quot;\&quot;\&quot;[[$(projectTiddler)$]] todo\&quot;\&quot;\&quot;\n  /&gt;\n\n  &lt;$action-setfield $tiddler=&lt;&lt;stateTiddler&gt;&gt; todo_name=\&quot;\&quot;/&gt;\n\\end\n\n\\define project-actions-form(tag label)\n  &lt;$vars stateTiddler={{{ [&lt;__tag__&gt;addprefix[$:/state/pm-form-]] }}} projectTiddler=&lt;&lt;__tag__&gt;&gt;&gt;\n    &lt;div class=\&quot;pm-actions\&quot;&gt;\n\n      &lt;$reveal type=\&quot;match\&quot; state=&lt;&lt;stateTiddler&gt;&gt; text=\&quot;\&quot;&gt;\n        &lt;$button class=\&quot;pm-btn\&quot; set=&lt;&lt;stateTiddler&gt;&gt; setTo=\&quot;show\&quot;&gt;\n          {{$:/core/images/list-bullet}}\n          $label$\n        &lt;/$button&gt;\n        &lt;$list filter=\&quot;[is[current]!tag[done]]\&quot;&gt;\n          or &lt;$macrocall $name=\&quot;archive-project\&quot;/&gt;\n        &lt;/$list&gt;\n      &lt;/$reveal&gt;\n\n      &lt;$reveal type=\&quot;match\&quot; state=&lt;&lt;stateTiddler&gt;&gt; text=\&quot;show\&quot;&gt;\n        &lt;$keyboard key=\&quot;enter\&quot;&gt;\n          &lt;&lt;project-add-todo-actions&gt;&gt;\n          &lt;$edit-text class=\&quot;pm-input\&quot; focus=\&quot;true\&quot; tiddler=&lt;&lt;stateTiddler&gt;&gt; field=\&quot;todo_name\&quot; placeholder=\&quot;Describe this task\&quot;/&gt;\n        &lt;/$keyboard&gt;\n        &lt;div class=\&quot;pm-actions\&quot;&gt;\n          &lt;$button class=\&quot;pm-btn btn-primary\&quot;&gt;\n            &lt;&lt;project-add-todo-actions&gt;&gt;\n            Add task\n          &lt;/$button&gt;\n            or\n            &lt;$button class=\&quot;pm-btn\&quot; set=&lt;&lt;stateTiddler&gt;&gt; setTo=\&quot;\&quot;&gt;\n            Cancel\n          &lt;/$button&gt;\n        &lt;/div&gt;\n      &lt;/$reveal&gt;\n\n    &lt;/div&gt;\n  &lt;/$vars&gt;\n\\end\n\n\\define project-with-tag(tag newTodoLabel:\&quot;Add a todo\&quot;)\n  &lt;$list filter=\&quot;[is[current]tag[done]]\&quot;&gt;\n    &lt;div class=\&quot;pm-banner\&quot;&gt;\n      This project is archived. &lt;$macrocall $name=\&quot;restore-project\&quot;/&gt;\n    &lt;/div&gt;\n  &lt;/$list&gt;\n    \n  &lt;h2&gt;Todos {{$tag$||$:/plugins/nico/pm/images/pie}}&lt;/h2&gt;\n\n  &lt;$macrocall $name=\&quot;todo-list\&quot; tag=&lt;&lt;__tag__&gt;&gt; emptyMessage={{$:/plugins/nico/pm/ui/EmptyProject}}/&gt;\n  &lt;$macrocall $name=\&quot;project-actions-form\&quot; tag=&lt;&lt;__tag__&gt;&gt; label=\&quot;\&quot;\&quot;$newTodoLabel$\&quot;\&quot;\&quot;/&gt;\n  &lt;$macrocall $name=\&quot;project-completed-todos\&quot; tag=&lt;&lt;__tag__&gt;&gt;/&gt;\n\\end\n\n\\define project()\n  &lt;$macrocall $name=\&quot;project-with-tag\&quot; tag={{!!title}}/&gt;\n\\end\n&quot;
+        },
+        &quot;$:/plugins/nico/pm/macros/todo-list&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/macros/todo-list&quot;,
+            &quot;created&quot;: &quot;20201202200514984&quot;,
+            &quot;modified&quot;: &quot;20201202200514984&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Macro&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define todo-dragstart-actions()\n  &lt;$action-listops $tags=\&quot;-[&lt;projectTag&gt;]\&quot;/&gt;\n\\end\n\n\\define todo-list(tag emptyMessage:\&quot;''🙌 All done!''\&quot;)\n  &lt;$vars projectTag=&lt;&lt;__tag__&gt;&gt; dragHandle=\&quot;yes\&quot;&gt;\n    &lt;div class=\&quot;pm-todos\&quot;&gt;\n      &lt;$macrocall\n        $name=\&quot;list-tagged-draggable\&quot;\n        tag=&lt;&lt;__tag__&gt;&gt;\n        subFilter=\&quot;!has[draft.of]!tag[done]\&quot;\n        emptyMessage=&lt;&lt;__emptyMessage__&gt;&gt;\n        itemTemplate=\&quot;$:/plugins/nico/pm/templates/TodoItemTemplate\&quot;\n      /&gt;\n    &lt;/div&gt;\n  &lt;/$vars&gt;\n\\end\n\n\\define todo-list-completed(tag)\n  &lt;div class=\&quot;pm-todos\&quot;&gt;\n    &lt;$list\n      filter=\&quot;[!has[draft.of]tag&lt;__tag__&gt;tag[done]sort[created]]\&quot;\n      template=\&quot;$:/plugins/nico/pm/templates/TodoItemTemplate\&quot;\n    /&gt;\n  &lt;/div&gt;\n\\end\n&quot;
+        },
+        &quot;$:/plugins/nico/pm/quick-capture&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/quick-capture&quot;,
+            &quot;created&quot;: &quot;20200427182745230&quot;,
+            &quot;key&quot;: &quot;((pm-quick-capture))&quot;,
+            &quot;modified&quot;: &quot;20201130164535681&quot;,
+            &quot;tags&quot;: &quot;$:/tags/KeyboardShortcut&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;$navigator story=\&quot;$:/StoryList\&quot; history=\&quot;$:/HistoryList\&quot;&gt;\n  &lt;$action-navigate $to=\&quot;$:/plugins/nico/pm/ui/QuickCapture\&quot;/&gt;\n&lt;/$navigator&gt;\n&quot;
+        },
+        &quot;$:/plugins/nico/pm/stylesheet&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/stylesheet&quot;,
+            &quot;created&quot;: &quot;20200426194806637&quot;,
+            &quot;modified&quot;: &quot;20201208132110518&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Stylesheet&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline\n\n.pm-btn {\n  border-radius: 1.5em;\n  border: 1px solid #ccc;\n  background: white;\n  padding: .3em 1em;\n  cursor: pointer;\n  transition: box-shadow ease-in .1s;\n}\n\n.pm-btn:focus {\n  outline: 0 none;\n}\n\n.pm-btn:active {\n  box-shadow: 0 0 0 0.2rem #cccccc55;\n}\n\n.pm-btn.btn-primary {\n  background-color: &lt;&lt;colour primary&gt;&gt;;\n  border-color: &lt;&lt;colour primary&gt;&gt;;\n  color: white;\n  fill: white;\n}\n\n.pm-btn.btn-primary:active {\n  box-shadow: 0 0 0 0.2rem #d0e7ff;\n}\n\n.pm-btn.btn-danger {\n  background-color: #ffefef;\n  border-color: #c63636;\n  color: #c63636;\n  fill: #c63636;\n}\n\n.pm-btn.btn-danger:active {\n  box-shadow: 0 0 0 0.2rem #ffdcda;\n}\n\n.pm-link-muted {\n  text-decoration: underline;\n  color: &lt;&lt;colour muted-foreground&gt;&gt;;\n}\n\n.pm-link-muted:hover,\n.pm-link-muted:active {\n  color: &lt;&lt;colour primary&gt;&gt;;\n}\n\n.pm-actions {\n  margin: 10px 0 20px 0;\n}\n\n.pm-icon {\n  vertical-align: middle;\n}\n\n.pm-pie circle {\n  stroke: &lt;&lt;colour primary&gt;&gt;;\n}\n\ninput.pm-input {\n  transition: border .14s ease-in-out;\n  border: 1px solid #d9d9d9;\n  padding: 8px;\n  border-radius: 4px;\n  width: 300px;\n}\n\ninput.pm-input:focus {\n  box-shadow: 0 0 0 0.2rem #e6f0ff;\n  outline: 0;\n  border-color: &lt;&lt;colour primary&gt;&gt;;\n\n}\n\ninput.pm-input.input-large {\n  width: 100%;\n  padding: .5em 1em;\n  font-size: 1.1em;\n}\n\n.pm-todo input[type=\&quot;checkbox\&quot;],\n.pm-toggle-todo-button input[type=\&quot;checkbox\&quot;] {\n  display: none;\n}\n\n.pm-checkbox {\n  color: &lt;&lt;colour muted-foreground&gt;&gt;;\n  cursor: pointer;\n  transition: all ease-in .2s;\n  margin-right: 3px;\n}\n\n.pm-checkbox .todo-hover {\n  display: none;\n}\n\n.pm-checkbox:hover .todo-hover {\n  display: initial;\n}\n\n.pm-checkbox:hover .todo {\n  display: none;\n}\n\n.pm-checkbox:hover {\n  color: #2da562;\n}\n\n.pm-checkbox .done {\n  color: #2da562;\n}\n\n.pm-label {\n  display: block;\n  font-size: .8em;\n  opacity: .6;\n}\n\n.pm-right-aligned {\n  text-align: right;\n}\n\n.pm-projects, .pm-todos {\n  padding-left: 0;\n}\n\n.pm-projects .pm-project,\n.pm-todos .tc-menu-list-item {\n    border-bottom: 1px solid #eee;\n}\n\n.pm-projects,\n.pm-todos .tc-menu-list-item:first-child {\n    border-top: 1px solid #eee;\n}\n\n.pm-todo, .pm-project {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  padding: 5px 0;\n}\n\n.pm-project a {\n  font-weight: bold;\n}\n\n.pm-project .pm-project-infos {\n  font-size: .8em;\n  line-height: 1em;\n  color: &lt;&lt;colour muted-foreground&gt;&gt;;\n  margin-left: 20px;\n}\n\n/* Align the completed todo with the non-completed ones that have a drag handle */\n.pm-todo.pm-completed &gt; * {\n  padding-left: 18px;\n}\n\t      \n.pm-todo.pm-completed a {\n  color: &lt;&lt;colour muted-foreground&gt;&gt;;\n}\n\t    \n.pm-drag-handle {\n  color: &lt;&lt;colour muted-foreground&gt;&gt;;\n}\n\n.pm-drag-handle svg {\n  vertical-align: middle;\n}\n\n.pm-count {\n  background: #df3f3f;\n  color: white;\n  font-weight: bold;\n  padding: 6px;\n  font-size: 12px;\n  text-align: center;\n  display: inline-block;\n  border-radius: 24px;\n  min-width: 24px;\n  line-height: 1;\n  vertical-align: middle;\n}\n\n.pm-count.info {\n  background: &lt;&lt;colour primary&gt;&gt;;\n}\n\n.pm-todo-heading {\n  margin-top: 5px;\n  margin-bottom: 5px;\n}\n\n.pm-due-date,\n.pm-todo-heading button.tc-btn-invisible {\n  color: #753e2d;\n  fill: #753e2d;\n  white-space: nowrap;\n}\n\n.pm-todo-heading button.tc-btn-invisible {\n  text-decoration: underline;\n}\n\n.pm-due-date svg {\n  cursor: pointer;\n}\n\n.pm-due-date a {\n  text-decoration: underline;\n  cursor: pointer;\n}\n\n.pm-todo .pm-due-date {\n  padding-left: 14px;\n  font-size: .8em;\n  transition: opacity ease-in-out .15s;\n}\n\n.pm-todo .pm-due-date.no-due-date {\n  opacity: 0;\n}\n\n@media (max-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {\n  .pm-todo .pm-due-date {\n    display: block;\n    margin-left: 6px;\n  }\n\n  .pm-todo .pm-due-date.no-due-date {\n    display: none;\n  }\n}\n\n.pm-todo:hover .pm-due-date.no-due-date {\n  opacity: 1;\n}\n\n.pm-projects .tc-droppable.tc-dragover {\n  background: #ffd;\n  display: block;\n}\n\n.pm-tabs.tc-tab-buttons button {\n  font-weight: bold;\n  font-size: 1.3em;\n  border: 0;\n  padding: 5px 10px;\n  background: transparent;\n  cursor: pointer;\n  color: &lt;&lt;colour tiddler-title-foreground&gt;&gt;;\n}\n\n.pm-tabs.tc-tab-buttons button.tc-tab-selected {\n  border: 0;\n  border-bottom: 4px solid &lt;&lt;colour primary&gt;&gt;;\n  color: &lt;&lt;colour tiddler-title-foreground&gt;&gt;;\n}\n\n.pm-banner {\n  padding: 10px 20px;\n  background: #f9f9d5;\n  border: 1px solid #dbdba8;\n  color: #626235;\n  margin: 10px 0;\n  border-radius: 3px;\n}\n\n.pm-banner button {\n  color: #554535;\n  fill: #554535;\n  text-decoration: underline;\n}\n\n.pm-welcome {\n  max-width: 800px;\n  text-align: center;\n  padding: 40px 20px;\n  margin: 20px auto;\n  background: &lt;&lt;colour message-background&gt;&gt;;\n  border-radius: 12px;\n}\n\n.pm-welcome .icon {\n  font-size: 3em;\n}\n\n.pm-welcome h3 {\n  font-weight: bold;\n}\n\n.pm-welcome p {\n  margin: 0;\n}\n&quot;
+        },
+        &quot;$:/plugins/nico/pm/templates/CheckboxTemplate&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/templates/CheckboxTemplate&quot;,
+            &quot;created&quot;: &quot;20200428151242242&quot;,
+            &quot;modified&quot;: &quot;20201130164535704&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;span class=\&quot;pm-checkbox\&quot;&gt;\n  &lt;$list filter=\&quot;[is[current]!tag[done]]\&quot;&gt;\n    &lt;span class=\&quot;todo\&quot;&gt; {{$:/plugins/nico/pm/images/checkbox}}&lt;/span&gt;\n    &lt;span class=\&quot;todo-hover\&quot;&gt; {{$:/plugins/nico/pm/images/checkbox-checked}}&lt;/span&gt;\n  &lt;/$list&gt;\n  &lt;$list filter=\&quot;[is[current]tag[done]]\&quot;&gt;\n    &lt;span class=\&quot;done\&quot;&gt; {{$:/plugins/nico/pm/images/checkbox-checked-solid}}&lt;/span&gt;\n  &lt;/$list&gt;\n&lt;/span&gt;&quot;
+        },
+        &quot;$:/plugins/nico/pm/templates/ProjectNextActionTemplate&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/templates/ProjectNextActionTemplate&quot;,
+            &quot;created&quot;: &quot;20200425201356996&quot;,
+            &quot;modified&quot;: &quot;20201130164535753&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;$list filter=\&quot;[!has[draft.of]tag{!!title}!tag[done]limit[1]]\&quot; variable=\&quot;ignore\&quot;&gt;\n  &lt;dt class=\&quot;pm-project\&quot;&gt;\n    &lt;$link to={{!!title}}&gt;&lt;$view field=\&quot;title\&quot;/&gt;&lt;/$link&gt; {{||$:/plugins/nico/pm/images/pie}}\n  &lt;/dt&gt;\n  &lt;dd&gt;\n    &lt;$list filter=\&quot;[!has[daft.of]tag{!!title}tag[todo]!tag[done]limit[1]]\&quot; template=\&quot;$:/plugins/nico/pm/templates/TodoItemTemplate\&quot;&gt;&lt;/$list&gt;\n  &lt;/dd&gt;\n&lt;/$list&gt;\n&quot;
+        },
+        &quot;$:/plugins/nico/pm/templates/ProjectTemplate&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/templates/ProjectTemplate&quot;,
+            &quot;created&quot;: &quot;20201207165347344&quot;,
+            &quot;list-after&quot;: &quot;$:/plugins/nico/pm/templates/TiddlerDueDateTemplate&quot;,
+            &quot;modified&quot;: &quot;20201208130544734&quot;,
+            &quot;tags&quot;: &quot;$:/tags/ViewTemplate&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;$list filter=\&quot;[all[current]tag[Project]] [all[current]tag[SubProject]]\&quot; variable=\&quot;ignore\&quot;&gt;\n  &lt;&lt;project&gt;&gt;\n&lt;/$list&gt;\n&quot;
+        },
+        &quot;$:/plugins/nico/pm/templates/TodoDueDateTemplate&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/templates/TodoDueDateTemplate&quot;,
+            &quot;created&quot;: &quot;20200424135048294&quot;,
+            &quot;modified&quot;: &quot;20201201203419519&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;$reveal type=\&quot;nomatch\&quot; state=\&quot;!!due\&quot; text=\&quot;\&quot;&gt;\n  &lt;span class=\&quot;pm-due-date\&quot;&gt;\n    &lt;$edit-date tag=\&quot;span\&quot; field=\&quot;due\&quot; icon=\&quot;$:/plugins/nico/pm/images/calendar-check\&quot; /&gt;\n    Due &lt;$view field=\&quot;due\&quot; format=\&quot;date\&quot; template=\&quot;DDth mmm\&quot;/&gt;.\n\n    &lt;$button tag=\&quot;a\&quot;&gt;&lt;$action-deletefield $field=\&quot;due\&quot; /&gt;Clear&lt;/$button&gt;\n\n    &lt;$list filter=\&quot;[all[current]!has[draft.of]!tag[done]!days:due[-1]]\&quot;&gt;\n      &lt;span class=\&quot;pm-count\&quot;&gt;\n        &lt;$view field=\&quot;due\&quot; format=\&quot;relativedate\&quot;/&gt;\n      &lt;/span&gt;\n    &lt;/$list&gt;\n\n  &lt;/span&gt;\n&lt;/$reveal&gt;\n\n&lt;$reveal type=\&quot;match\&quot; state=\&quot;!!due\&quot; text=\&quot;\&quot;&gt;\n  &lt;span class=\&quot;pm-due-date no-due-date\&quot;&gt;\n    &lt;$edit-date tag=\&quot;span\&quot; field=\&quot;due\&quot; icon=\&quot;$:/plugins/nico/pm/images/calendar-check\&quot; /&gt;\n    Schedule\n  &lt;/span&gt;\n&lt;/$reveal&gt;&quot;
+        },
+        &quot;$:/plugins/nico/pm/templates/TodoHeadingTemplate&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/templates/TodoHeadingTemplate&quot;,
+            &quot;created&quot;: &quot;20200420105800700&quot;,
+            &quot;list-after&quot;: &quot;$:/core/ui/ViewTemplate/tags&quot;,
+            &quot;modified&quot;: &quot;20201208002341422&quot;,
+            &quot;tags&quot;: &quot;$:/tags/ViewTemplate&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;$list filter=\&quot;[all[current]tag[todo]]\&quot;&gt;\n  &lt;div class=\&quot;pm-todo-heading\&quot;&gt;\n    {{||$:/plugins/nico/pm/templates/TodoDueDateTemplate}}\n\n    &lt;$list filter=\&quot;[all[current]!tag[SubProject]]\&quot;&gt;\n      or\n      &lt;$button class=\&quot;tc-btn-invisible\&quot;&gt;\n        Make into a sub-project\n\t&lt;$action-listops $tags=\&quot;[[SubProject]]\&quot;&gt;\n      &lt;/$button&gt;\n    &lt;/$list&gt;\n    \n  &lt;/div&gt;\n&lt;/$list&gt;\n\n&quot;
+        },
+        &quot;$:/plugins/nico/pm/templates/TodoItemTemplate&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/templates/TodoItemTemplate&quot;,
+            &quot;created&quot;: &quot;20200422200123438&quot;,
+            &quot;modified&quot;: &quot;20201203125935145&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define drag-handle()\n  &lt;$draggable\n    tag=\&quot;span\&quot;\n    class=\&quot;pm-drag-handle\&quot;\n    tiddler={{!!title}}\n    startactions=&lt;&lt;todo-dragstart-actions&gt;&gt;&gt;\n      {{$:/plugins/nico/pm/images/drag-handle}}\n  &lt;/$draggable&gt;\n\\end\n\n&lt;div class={{{ [all[current]tag[done]then[pm-todo pm-completed]else[pm-todo]] }}}&gt;\n  &lt;$list filter=\&quot;[&lt;dragHandle&gt;!is[blank]]\&quot; variable=\&quot;ignore\&quot;&gt;\n    &lt;&lt;drag-handle&gt;&gt;\n  &lt;/$list&gt;\n  \n  &lt;$checkbox tag=\&quot;done\&quot;&gt;\n    {{||$:/plugins/nico/pm/templates/CheckboxTemplate}}\n    &lt;$link to={{!!title}}&gt;&lt;$view field=\&quot;title\&quot;/&gt;&lt;/$link&gt;\n  &lt;/$checkbox&gt;\n  \n  &lt;$list filter=\&quot;[all[current]!tag[done]]\&quot;&gt;\n    {{||$:/plugins/nico/pm/templates/TodoDueDateTemplate}}\n  &lt;/$list&gt;\n&lt;/div&gt;\n&quot;
+        },
+        &quot;$:/plugins/nico/pm/templates/ToggleTodoButton&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/templates/ToggleTodoButton&quot;,
+            &quot;created&quot;: &quot;20200420105800700&quot;,
+            &quot;modified&quot;: &quot;20201207184038860&quot;,
+            &quot;tags&quot;: &quot;$:/tags/ViewToolbar&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;$list filter=\&quot;[all[current]tag[todo]]\&quot;&gt;\n  &lt;span class=\&quot;pm-toggle-todo-button\&quot;&gt;\n    &lt;$checkbox tag=\&quot;done\&quot;&gt;\n      {{||$:/plugins/nico/pm/templates/CheckboxTemplate}}\n    &lt;/$checkbox&gt;\n  &lt;/span&gt;\n&lt;/$list&gt;\n\n&quot;
+        },
+        &quot;$:/plugins/nico/pm/ui/Dashboard&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/ui/Dashboard&quot;,
+            &quot;created&quot;: &quot;20200424192751342&quot;,
+            &quot;modified&quot;: &quot;20201130164535721&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;tabs \&quot;[all[tiddlers+shadows]tag[$:/plugins/nico/pm/tags/dashboard]]\&quot; \&quot;$:/plugins/nico/pm/ui/InboxAndProjects\&quot; \&quot;$:/state/projects-and-schedule\&quot;  \&quot;pm-tabs\&quot;&gt;&gt;&quot;
+        },
+        &quot;$:/plugins/nico/pm/ui/EmptyInbox&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/ui/EmptyInbox&quot;,
+            &quot;created&quot;: &quot;20201208175952867&quot;,
+            &quot;modified&quot;: &quot;20201208205846660&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;div class=\&quot;pm-welcome\&quot;&gt;\n  &lt;div class=\&quot;icon\&quot;&gt;🎉&lt;/div&gt;\n  &lt;h3&gt;You're all done!&lt;/h3&gt;\n  &lt;p&gt;Everything is well organized, have a great &lt;&lt;now DDD&gt;&gt;!&lt;/p&gt;\n&lt;/div&gt;\n&quot;
+        },
+        &quot;$:/plugins/nico/pm/ui/EmptyProject&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/ui/EmptyProject&quot;,
+            &quot;created&quot;: &quot;20201208175952867&quot;,
+            &quot;modified&quot;: &quot;20201208205209098&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define emptyWelcomeMessage()\n  &lt;div class=\&quot;pm-welcome\&quot;&gt;\n    &lt;div class=\&quot;icon\&quot;&gt;🚀&lt;/div&gt;\n    &lt;h3&gt;Let's get started!&lt;/h3&gt;\n    &lt;p&gt;\n      Keep your work organised by grouping todos in projects. &lt;br/&gt;\n      Drag &amp; drop todos to move them between projects.\n    &lt;/p&gt;\n  &lt;/div&gt;\n\\end\n  \n&lt;$list\n  filter=\&quot;[!has[draft.of]tag&lt;currentTiddler&gt;limit[1]]\&quot;\n  emptyMessage=&lt;&lt;emptyWelcomeMessage&gt;&gt;\n  variable=\&quot;ignore\&quot;&gt;\n\n  &lt;div class=\&quot;pm-welcome\&quot;&gt;\n    &lt;div class=\&quot;icon\&quot;&gt;🙌&lt;/div&gt;\n    &lt;h3&gt;Well done!&lt;/h3&gt;\n    &lt;p&gt;Looks like you've completed this project!&lt;/p&gt;\n  &lt;/div&gt;\n&lt;/$list&gt;\n&quot;
+        },
+        &quot;$:/plugins/nico/pm/ui/Inbox&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/ui/Inbox&quot;,
+            &quot;caption&quot;: &quot;{{$:/plugins/nico/pm/images/inbox}} Inbox&quot;,
+            &quot;created&quot;: &quot;20200425193337699&quot;,
+            &quot;modified&quot;: &quot;20201130164535731&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define inbox-count()\n  &lt;span class=\&quot;pm-count\&quot;&gt;\n    &lt;$list filter=\&quot;[tag[Inbox]!has[draft.of]!tag[done]count[]]\&quot;&gt;{{!!title}}&lt;/$list&gt; \n  &lt;/span&gt;\n\\end\n\n&lt;h2&gt;Inbox &lt;$macrocall $name=\&quot;inbox-count\&quot;/&gt;&lt;/h2&gt;\n\n&lt;$keyboard key=\&quot;enter\&quot;&gt;\n  &lt;$action-createtiddler $basetitle={{$:/state/Inbox!!todo_name}} tags=\&quot;Inbox todo\&quot;/&gt;\n  &lt;$action-setfield $tiddler=\&quot;$:/state/Inbox\&quot; todo_name=\&quot;\&quot;/&gt;\n  &lt;$edit-text class=\&quot;pm-input\&quot; tiddler=\&quot;$:/state/Inbox\&quot; field=\&quot;todo_name\&quot; placeholder=\&quot;Add to inbox...\&quot;/&gt;\n    &lt;label class=\&quot;pm-label\&quot;&gt;Press ⏎ add to the inbox&lt;/label&gt;\n&lt;/$keyboard&gt;\n\n&lt;$macrocall class=\&quot;pm-inbox-input\&quot; $name=\&quot;todo-list\&quot; tag=\&quot;Inbox\&quot; emptyMessage={{$:/plugins/nico/pm/ui/EmptyInbox}}/&gt;\n&quot;
+        },
+        &quot;$:/plugins/nico/pm/ui/InboxAndProjects&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/ui/InboxAndProjects&quot;,
+            &quot;caption&quot;: &quot;{{$:/plugins/nico/pm/images/tasks}} Projects&quot;,
+            &quot;created&quot;: &quot;20200425193559847&quot;,
+            &quot;modified&quot;: &quot;20201130164535737&quot;,
+            &quot;tags&quot;: &quot;$:/plugins/nico/pm/tags/dashboard&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;{{$:/plugins/nico/pm/ui/Inbox}}\n{{$:/plugins/nico/pm/ui/Projects}}&quot;
+        },
+        &quot;$:/plugins/nico/pm/ui/NextActions&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/ui/NextActions&quot;,
+            &quot;caption&quot;: &quot;{{$:/plugins/nico/pm/images/funnel}} Next&quot;,
+            &quot;created&quot;: &quot;20200425195221581&quot;,
+            &quot;list-after&quot;: &quot;$:/plugins/nico/pm/ui/Schedule&quot;,
+            &quot;modified&quot;: &quot;20201130164535747&quot;,
+            &quot;tags&quot;: &quot;$:/plugins/nico/pm/tags/dashboard&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;dl&gt;\n  &lt;$list filter=\&quot;[tag[Project]!tag[done]]\&quot; template=\&quot;$:/plugins/nico/pm/templates/ProjectNextActionTemplate\&quot;/&gt;\n  &lt;/dl&gt;\n&quot;
+        },
+        &quot;$:/plugins/nico/pm/ui/Projects&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/ui/Projects&quot;,
+            &quot;caption&quot;: &quot;{{$:/plugins/nico/pm/images/tasks}} Projects&quot;,
+            &quot;created&quot;: &quot;20200424193106051&quot;,
+            &quot;modified&quot;: &quot;20201208151416455&quot;,
+            &quot;tags&quot;: &quot;$:/plugins/nico/pm/ui/Projects&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define refile-inbox-actions()\n  &lt;$fieldmangler tiddler=&lt;&lt;actionTiddler&gt;&gt;&gt;\n    &lt;$action-sendmessage $message=\&quot;tm-add-tag\&quot; $param=&lt;&lt;currentTiddler&gt;&gt;/&gt;\n    &lt;$action-sendmessage $message=\&quot;tm-remove-tag\&quot; $param=\&quot;Inbox\&quot;/&gt;\n  &lt;/$fieldmangler&gt;\n\\end\n\n\\define projects-actions()\n  &lt;$reveal type=\&quot;match\&quot; state=\&quot;$:/state/pm-show-new-project-form\&quot; text=\&quot;\&quot;&gt;\n\n    &lt;$button class=\&quot;pm-btn btn-primary\&quot; set=\&quot;$:/state/pm-show-new-project-form\&quot; setTo=\&quot;show\&quot;&gt;\n      {{$:/core/images/edit-button}}\n      New project\n    &lt;/$button&gt;\n  &lt;/$reveal&gt;\n\n  &lt;$reveal type=\&quot;match\&quot; state=\&quot;$:/state/pm-show-new-project-form\&quot; text=\&quot;show\&quot;&gt;\n    &lt;$keyboard key=\&quot;enter\&quot;&gt;\n      &lt;$action-createtiddler $basetitle={{$:/state/pm-new-project!!project_name}} tags=\&quot;Project\&quot;/&gt;\n      &lt;$action-setfield $tiddler=\&quot;$:/state/pm-new-project\&quot; project_name=\&quot;\&quot;/&gt;\n      &lt;$edit-text class=\&quot;pm-input\&quot; focus=\&quot;true\&quot; tiddler=\&quot;$:/state/pm-new-project\&quot; field=\&quot;project_name\&quot; placeholder=\&quot;Describe this project\&quot;/&gt;\n    &lt;/$keyboard&gt;\n    &lt;div class=\&quot;pm-actions\&quot;&gt;\n      &lt;$button class=\&quot;pm-btn btn-primary\&quot;&gt;\n        &lt;$action-createtiddler $basetitle={{$:/state/pm-new-project!!project_name}} tags=\&quot;Project\&quot;/&gt;\n        &lt;$action-setfield $tiddler=\&quot;$:/state/pm-new-project\&quot; project_name=\&quot;\&quot;/&gt;\n        Add project\n      &lt;/$button&gt;\n       or\n      &lt;$button class=\&quot;pm-btn\&quot; set=\&quot;$:/state/pm-show-new-project-form\&quot; setTo=\&quot;\&quot;&gt;\n        Cancel\n      &lt;/$button&gt;\n    &lt;/div&gt;\n  &lt;/$reveal&gt;\n\\end\n\n\\define archived-projects()\n  &lt;$list filter=\&quot;[tag[Project]!title[Inbox]tag[done]limit[1]]\&quot; variable=\&quot;ignore\&quot;&gt;\n    &lt;$reveal type=\&quot;match\&quot; state=\&quot;$:/state/pm-show-archived\&quot; text=\&quot;\&quot;&gt;\n      &lt;$button class=\&quot;tc-btn-invisible pm-link-muted\&quot; set=\&quot;$:/state/pm-show-archived\&quot; setTo=\&quot;show\&quot;&gt;\n        {{$:/plugins/nico/pm/images/eye}} Show archived\n      &lt;/$button&gt;\n    &lt;/$reveal&gt;\n\n    &lt;$reveal type=\&quot;match\&quot; state=\&quot;$:/state/pm-show-archived\&quot; text=\&quot;show\&quot;&gt;\n      &lt;$button class=\&quot;tc-btn-invisible pm-link-muted\&quot; set=\&quot;$:/state/pm-show-archived\&quot; setTo=\&quot;\&quot;&gt;\n        {{$:/plugins/nico/pm/images/eyeslash}} Hide archived\n      &lt;/$button&gt;\n\n      &lt;h2&gt;Archive&lt;/h2&gt;\n\n      &lt;ul class=\&quot;pm-projects\&quot;&gt;\n        &lt;$list filter=\&quot;[tag[Project]!title[Inbox]tag[done]]\&quot;&gt;\n          &lt;li class=\&quot;pm-project\&quot;&gt;\n            {{||$:/plugins/nico/pm/images/pie}} &lt;$link to={{!!title}}&gt;&lt;$view field=\&quot;title\&quot;/&gt;&lt;/$link&gt;\n            &lt;div class=\&quot;pm-project-infos\&quot;&gt;\n              &lt;$count filter=\&quot;[tag{!!title}!has[draft.of]!tag[done]]\&quot;/&gt; open tasks\n            &lt;/div&gt;\n          &lt;/li&gt;\n        &lt;/$list&gt;\n      &lt;/ul&gt;\n    &lt;/$reveal&gt;\n  &lt;/$list&gt;\n\\end\n\n&lt;h2&gt;Projects&lt;/h2&gt;\n\n&lt;ul class=\&quot;pm-projects\&quot;&gt;\n  &lt;$list filter=\&quot;[tag[Project]!title[Inbox]!tag[done]]\&quot;&gt;\n      &lt;$droppable actions=&lt;&lt;refile-inbox-actions&gt;&gt;&gt;\n        &lt;li class=\&quot;pm-project\&quot;&gt;\n          {{||$:/plugins/nico/pm/images/pie}} &lt;$link to={{!!title}}&gt;&lt;$view field=\&quot;title\&quot;/&gt;&lt;/$link&gt;\n          &lt;div class=\&quot;pm-project-infos\&quot;&gt;\n            &lt;$count filter=\&quot;[tag{!!title}!has[draft.of]!tag[done]]\&quot;/&gt; open tasks\n          &lt;/div&gt;\n        &lt;/li&gt;\n      &lt;/$droppable&gt;\n  &lt;/$list&gt;\n&lt;/ul&gt;\n\n&lt;&lt;projects-actions&gt;&gt;\n&lt;&lt;archived-projects&gt;&gt;\n&quot;
+        },
+        &quot;$:/plugins/nico/pm/ui/QuickCapture&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/ui/QuickCapture&quot;,
+            &quot;color&quot;: &quot;#0088cc&quot;,
+            &quot;created&quot;: &quot;20200427182956318&quot;,
+            &quot;icon&quot;: &quot;$:/plugins/nico/pm/images/quick-capture&quot;,
+            &quot;modified&quot;: &quot;20201208130255270&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;!! {{$:/plugins/nico/pm/images/tasks}} Quick add todo\n\n&lt;$keyboard key=\&quot;enter\&quot;&gt;\n  &lt;$action-createtiddler $basetitle={{$:/state/Inbox!!todo_name}} tags=\&quot;Inbox todo\&quot;/&gt;\n  &lt;$action-setfield $tiddler=\&quot;$:/state/Inbox\&quot; todo_name=\&quot;\&quot;/&gt;\n  &lt;$action-sendmessage $message=\&quot;tm-close-tiddler\&quot;/&gt;\n  &lt;$edit-text class=\&quot;pm-input input-large\&quot; tiddler=\&quot;$:/state/Inbox\&quot; field=\&quot;todo_name\&quot; placeholder=\&quot;Add to inbox...\&quot; focus=\&quot;true\&quot;/&gt; \n  &lt;label class=\&quot;pm-label pm-right-aligned\&quot;&gt;Press ⏎ to capture&lt;/label&gt;\n&lt;/$keyboard&gt;\n&quot;
+        },
+        &quot;$:/plugins/nico/pm/ui/Schedule&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/ui/Schedule&quot;,
+            &quot;caption&quot;: &quot;{{$:/plugins/nico/pm/images/calendar-check}} Schedule&quot;,
+            &quot;created&quot;: &quot;20200424193230404&quot;,
+            &quot;list-after&quot;: &quot;$:/plugins/nico/pm/ui/InboxAndProjects&quot;,
+            &quot;modified&quot;: &quot;20201130164535781&quot;,
+            &quot;tags&quot;: &quot;$:/plugins/nico/pm/tags/dashboard&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define schedule-today()\n  &lt;$list filter=\&quot;[!has[draft.of]!tag[done]tag[todo]days:due[0]]\&quot; template=\&quot;$:/plugins/nico/pm/templates/TodoItemTemplate\&quot; emptyMessage=\&quot;🌞 All clear!\&quot;/&gt;\n\\end\n\n\\define schedule-range(start end)\n  &lt;$list filter=\&quot;[!has[draft.of]!tag[done]tag[todo]!days:due[$start$]days:due[$end$]sort[due]]\&quot; template=\&quot;$:/plugins/nico/pm/templates/TodoItemTemplate\&quot; emptyMessage=\&quot;🌞 All clear!\&quot;/&gt;\n\\end\n\n\\define schedule-overdue()\n  &lt;$list filter=\&quot;[!has[draft.of]!tag[done]tag[todo]!days:due[-1]sort[due]]\&quot; template=\&quot;$:/plugins/nico/pm/templates/TodoItemTemplate\&quot;/&gt;\n\\end\n\n&lt;$list filter=\&quot;[!has[draft.of]!tag[done]tag[todo]!days:due[-1]limit[1]]\&quot;&gt;\n\n  !! Overdue\n\n  &lt;&lt;schedule-overdue&gt;&gt;\n\n&lt;/$list&gt;\n\n!! Today\n\n&lt;&lt;schedule-today&gt;&gt;\n\n!! Next 7 days\n\n&lt;&lt;schedule-range 1 7&gt;&gt;\n\n!! Next 30 days\n\n&lt;&lt;schedule-range 7 30&gt;&gt;\n&quot;
+        },
+        &quot;$:/plugins/nico/pm/usage&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/pm/usage&quot;,
+            &quot;caption&quot;: &quot;Usage &amp; Help&quot;,
+            &quot;created&quot;: &quot;20200427133943777&quot;,
+            &quot;modified&quot;: &quot;20201208093054789&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;! How to display the project dashboard\n\nThe main entry point to the Project Manager plugin is the dashboard.\nThe dashboard can be embedded ([[transcluded|https://tiddlywiki.com/#Transclusion]]) in any tiddler using the following:\n\n```\n{{$:/plugins/nico/pm/ui/Dashboard}}\n```\n&lt;$reveal type=\&quot;match\&quot; state=\&quot;$:/state/pm-usage-show-dashboard\&quot; text=\&quot;show\&quot;&gt;\n  &lt;$button class=\&quot;pm-btn btn-primary\&quot; set=\&quot;$:/state/pm-usage-show-dashboard\&quot; setTo=\&quot;\&quot;&gt;Hide&lt;/$button&gt;\n  &lt;hr/&gt;\n  {{$:/plugins/nico/pm/ui/Dashboard}}\n  &lt;hr/&gt;\n&lt;/$reveal&gt;\n\n&lt;$reveal type=\&quot;nomatch\&quot; state=\&quot;$:/state/pm-usage-show-dashboard\&quot; text=\&quot;show\&quot;&gt;\n  &lt;$button class=\&quot;pm-btn btn-primary\&quot; set=\&quot;$:/state/pm-usage-show-dashboard\&quot; setTo=\&quot;show\&quot;&gt;Show result&lt;/$button&gt;\n&lt;/$reveal&gt;\n\n! How to add extra tabs to the Dashboard\n\nAny tiddler with the tag &lt;&lt;tag $:/plugins/nico/pm/tags/dashboard&gt;&gt; will be displayed as a tab in the dashboard.\n\n! What if I want to display the Inbox in a separate tab?\n\nYou can build your own Dashboard using the following:\n\n```\n&lt;&lt;tabs \&quot;$:/plugins/nico/pm/ui/Inbox $:/plugins/nico/pm/ui/Projects $:/plugins/nico/pm/ui/Schedule\&quot; \&quot;$:/plugins/nico/pm/ui/Inbox\&quot; \&quot;$:/state/pm-custom-dashboard\&quot;  \&quot;pm-tabs\&quot;&gt;&gt;\n```\n&lt;$reveal type=\&quot;match\&quot; state=\&quot;$:/state/pm-usage-custom-dashboard\&quot; text=\&quot;show\&quot;&gt;\n  &lt;$button class=\&quot;pm-btn btn-primary\&quot; set=\&quot;$:/state/pm-usage-custom-dashboard\&quot; setTo=\&quot;\&quot;&gt;Hide&lt;/$button&gt;\n  &lt;hr/&gt;\n  &lt;&lt;tabs \&quot;$:/plugins/nico/pm/ui/Inbox $:/plugins/nico/pm/ui/Projects $:/plugins/nico/pm/ui/Schedule\&quot; \&quot;$:/plugins/nico/pm/ui/Inbox\&quot; \&quot;$:/state/pm-custom-dashboard\&quot;  \&quot;pm-tabs\&quot;&gt;&gt;\n  &lt;hr/&gt;\n&lt;/$reveal&gt;\n\n&lt;$reveal type=\&quot;nomatch\&quot; state=\&quot;$:/state/pm-usage-custom-dashboard\&quot; text=\&quot;show\&quot;&gt;\n  &lt;$button class=\&quot;pm-btn btn-primary\&quot; set=\&quot;$:/state/pm-usage-custom-dashboard\&quot; setTo=\&quot;show\&quot;&gt;Show result&lt;/$button&gt;\n&lt;/$reveal&gt;\n\n! Can I make sub-projects?\n\nYes, just click the button `Make this into a sub-project` in the todo tiddler.\nThis means that you can effectively make any todo a sub-project of another project, and go as deep as you wish!\n\nNote that only tiddlers with the &lt;&lt;tag Project&gt;&gt; tag will be listed in the Dashboard.\n\n```\n&lt;&lt;project&gt;&gt;\n```\n&lt;$reveal type=\&quot;match\&quot; state=\&quot;$:/state/pm-usage-subproject\&quot; text=\&quot;show\&quot;&gt;\n  &lt;$button class=\&quot;pm-btn btn-primary\&quot; set=\&quot;$:/state/pm-usage-subproject\&quot; setTo=\&quot;\&quot;&gt;Hide&lt;/$button&gt;\n  &lt;hr/&gt;\n  &lt;&lt;project&gt;&gt;\n  &lt;hr/&gt;\n&lt;/$reveal&gt;\n\n&lt;$reveal type=\&quot;nomatch\&quot; state=\&quot;$:/state/pm-usage-subproject\&quot; text=\&quot;show\&quot;&gt;\n  &lt;$button class=\&quot;pm-btn btn-primary\&quot; set=\&quot;$:/state/pm-usage-subproject\&quot; setTo=\&quot;show\&quot;&gt;Show result&lt;/$button&gt;\n&lt;/$reveal&gt;\n\n! Can I quickly capture todos to my inbox?\n\n''Yes!'' The default shortcut is {{$:/config/shortcuts/pm-quick-capture}}, but you can change it in the [[Keyboard section of the Control Panel|$:/core/ui/ControlPanel/KeyboardShortcuts]].\n\n! Can I easily move todos out of the inbox?\n\nYes, just drag a todo from the inbox into one of the projects.\n\n! Can I easily move todos between projects?\n\nYes, just like with todos in the inbox, drag &amp; drop a todo from one project into\nanother to move it.\n&quot;
         }
     }
 }</pre>
@@ -10728,7 +11500,7 @@ Error message and password prompt
 <div created="20200427201909319" modified="20200427202700859" title="$:/state/Inbox" todo_name="">
 <pre></pre>
 </div>
-<div created="20200429142736872" modified="20200430132321341" title="$:/state/notebook-sidebar">
+<div created="20200429142736872" modified="20201209221333134" title="$:/state/notebook-sidebar">
 <pre>no</pre>
 </div>
 <div created="20200427202508002" modified="20200428112148144" title="$:/state/plugin-info--1250430794-$:/plugins/nico/pm--613631494">
@@ -10740,7 +11512,7 @@ Error message and password prompt
 <div created="20200427203207938" modified="20200427203316748" title="$:/state/pm-show-archived">
 <pre></pre>
 </div>
-<div created="20200427202709233" modified="20200430082556911" title="$:/state/projects-and-schedule-643664625">
+<div created="20200427202709233" modified="20201209221124318" title="$:/state/projects-and-schedule-643664625">
 <pre>$:/plugins/nico/pm/ui/InboxAndProjects</pre>
 </div>
 <div created="20200427201516404" modified="20200427201516404" title="$:/state/showeditpreview">
@@ -10765,9 +11537,9 @@ Error message and password prompt
 <pre>$:/core/ui/SideBar/Open</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
-<pre>yes</pre>
+<pre>no</pre>
 </div>
-<div created="20200430155304465" list="$:/Import $:/ControlPanel $:/plugins/nico/notebook $:/plugins/nico/notebook/js/notebookSidebarNav.js [[Project Manager]] Demo Usage Installation" modified="20200430155324035" title="$:/StoryList">
+<div list="$:/Import [[Project Manager]] Demo Usage Installation" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200430082619375" modified="20200430084830919" title="$:/temp/advancedsearch">
@@ -10786,27 +11558,27 @@ Error message and password prompt
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;http://localhost:4003/tiddlywiki/project-manager.html&quot;
+            &quot;text&quot;: &quot;file:///home/nico/Public/nicolas-petton.fr/tw/project-manager.html&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
-            &quot;text&quot;: &quot;localhost:4003&quot;
+            &quot;text&quot;: &quot;&quot;
         },
         &quot;$:/info/url/hostname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/hostname&quot;,
-            &quot;text&quot;: &quot;localhost&quot;
+            &quot;text&quot;: &quot;&quot;
         },
         &quot;$:/info/url/protocol&quot;: {
             &quot;title&quot;: &quot;$:/info/url/protocol&quot;,
-            &quot;text&quot;: &quot;http:&quot;
+            &quot;text&quot;: &quot;file:&quot;
         },
         &quot;$:/info/url/port&quot;: {
             &quot;title&quot;: &quot;$:/info/url/port&quot;,
-            &quot;text&quot;: &quot;4003&quot;
+            &quot;text&quot;: &quot;&quot;
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/tiddlywiki/project-manager.html&quot;
+            &quot;text&quot;: &quot;/home/nico/Public/nicolas-petton.fr/tw/project-manager.html&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -10814,7 +11586,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/origin&quot;: {
             &quot;title&quot;: &quot;$:/info/url/origin&quot;,
-            &quot;text&quot;: &quot;http://localhost:4003&quot;
+            &quot;text&quot;: &quot;null&quot;
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
@@ -10981,10 +11753,10 @@ I started this project as an experiment to see how good ~TiddlyWiki could be as 
 <div created="20200427202913804" modified="20200427203003222" tags="Project" title="Reading list">
 <pre>&lt;&lt;project&gt;&gt;</pre>
 </div>
-<div created="20200427202812671" due="20200430000000000" modified="20200427202824969" tags="[[Product roadmap]] todo" title="Schedule meeting with John">
+<div created="20200427202812671" due="20210101000000000" modified="20201209221110909" tags="[[Product roadmap]] todo" title="Schedule meeting with John">
 <pre></pre>
 </div>
-<div created="20200427203004810" due="20200429000000000" modified="20200427203145497" tags="[[Reading list]] todo" title="TiddlyWiki website on WikiText">
+<div created="20200427203004810" due="20210108000000000" modified="20201209221102903" tags="[[Reading list]] todo" title="TiddlyWiki website on WikiText">
 <pre>https://tiddlywiki.com/#WikiText</pre>
 </div>
 <div created="20200427202754318" modified="20200427202808287" tags="[[Product roadmap]] todo" title="Update the brand">
@@ -10996,7 +11768,7 @@ I started this project as an experiment to see how good ~TiddlyWiki could be as 
 <div created="20200427202110842" modified="20200427202123865" tags="" title="Usage">
 <pre>{{$:/plugins/nico/pm/usage}}</pre>
 </div>
-<div created="20200427202700859" due="20200428000000000" modified="20200428121425332" tags="Inbox todo" title="Water plants">
+<div created="20200427202700859" due="20201216000000000" modified="20201209221119988" tags="Inbox todo" title="Water plants">
 <pre></pre>
 </div>
 
