@@ -9,27 +9,27 @@
      xmlns:georss="http://www.georss.org/georss"
      xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
      xmlns:media="http://search.yahoo.com/mrss/"><channel>
-  <title>A Superia-like Fujifilm recipe Blog posts and notes.</title>
+  <title>A Superia-like Fujifilm recipe</title>
   <atom:link href="http://nicolas-petton.fr/blog/superia-like-recipe.xml" rel="self" type="application/rss+xml" />
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Tue, 25 Aug 2020 15:43:37 +0200</pubDate>
-  <lastBuildDate>Tue, 25 Aug 2020 15:43:37 +0200</lastBuildDate>
-  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <pubDate>Sat, 26 Nov 2022 13:51:30 +0100</pubDate>
+  <lastBuildDate>Sat, 26 Nov 2022 13:51:30 +0100</lastBuildDate>
+  <generator>Emacs 28.1 Org-mode 9.4.4</generator>
   <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
-    <title>A Superia-like Fujifilm recipe Blog posts and notes.</title>
+    <title>A Superia-like Fujifilm recipe</title>
     <link>http://nicolas-petton.fr/blog/</link>
   </image>
 
 
   <item>
     <title>A Superia-like *Fujifilm recipe*</title>
-    <link>http://nicolas-petton.fr/blog/superia-like-recipe.html#orgc7fac0c</link>
+    <link>http://nicolas-petton.fr/blog/superia-like-recipe.html#org4c2538a</link>
     <author>nico@petton.fr (Nicolas Petton)</author>
-    <guid isPermaLink="false">http://nicolas-petton.fr/blog/superia-like-recipe.html#orgc7fac0c</guid>
+    <guid isPermaLink="false">http://nicolas-petton.fr/blog/superia-like-recipe.html#org4c2538a</guid>
     <pubDate>Tue, 25 Aug 2020 17:00:00 +0200</pubDate>
 
     <description><![CDATA[<div class="pubdate">
@@ -66,9 +66,9 @@
     <a href="https://fujixweekly.com/2020/07/27/fujifilm-x100v-film-simulation-recipe-fujicolor-superia-800/">Superia 800</a>, and went shooting jpeg-only for a few days.
     </p>
 
-    <div id="outline-container-orgead29e3" class="outline-3">
-    <h3 id="orgead29e3">Superia</h3>
-    <div class="outline-text-3" id="text-orgead29e3">
+    <div id="outline-container-org1cdc99d" class="outline-3">
+    <h3 id="org1cdc99d">Superia</h3>
+    <div class="outline-text-3" id="text-org1cdc99d">
     <p>
     While I really liked the aesthetics of both Kodachrome and Portra 400, I couldn't
     resist the amazing look of the new Classic Neg film simulation, and the various
@@ -99,9 +99,9 @@
 
     <p>
     I found it a bit too desaturated for my taste, though it can be used to great
-    effect. I also found the grain to be too much.  Since I didn't really tried to
+    effect. I also found the grain to be too much.  Since I didn't really try to
     emulate a specific Superia film, but rather to get a good general use
-    Superia-like recipe, I ended up tweaking the Superia 1600 recipe to my likings,
+    Superia-like recipe, I ended up tweaking the Superia 1600 recipe to my liking,
     making it a tad richer in color, and less grainy.
     </p>
 
@@ -127,9 +127,9 @@
     </div>
     </div>
 
-    <div id="outline-container-orge78308d" class="outline-3">
-    <h3 id="orge78308d">Sample images</h3>
-    <div class="outline-text-3" id="text-orge78308d">
+    <div id="outline-container-orgee2ddc7" class="outline-3">
+    <h3 id="orgee2ddc7">Sample images</h3>
+    <div class="outline-text-3" id="text-orgee2ddc7">
     <p>
     Here are some photographs I took with the above recipe, straight out of camera.
     </p>
@@ -137,40 +137,47 @@
     <div class="gallery">
 
 
-    <div class="figure">
+    <div id="org271a10e" class="figure">
     <p><img src="../images/superia-4.jpg" alt="Sample image 4" align="center" class="landscape" />
     </p>
     </div>
 
 
-    <div class="figure">
+    <div id="org0a3f96d" class="figure">
     <p><img src="../images/superia-1.jpg" alt="Sample image 1" align="center" />
     </p>
     </div>
 
 
-    <div class="figure">
+    <div id="org67e7539" class="figure">
     <p><img src="../images/superia-2.jpg" alt="Sample image 2" align="center" />
     </p>
     </div>
 
 
-    <div class="figure">
+    <div id="orgeb9ab14" class="figure">
     <p><img src="../images/superia-3.jpg" alt="Sample image 3" align="center" />
     </p>
     </div>
 
 
-    <div class="figure">
+    <div id="orgf2950a6" class="figure">
     <p><img src="../images/superia-6.jpg" alt="Sample image 6" align="center" />
     </p>
     </div>
 
 
-    <div class="figure">
-    <p><img src="../images/superia-7.jpg" alt="Sample image 6" align="center" class="landscape" />
+    <div id="orgce2f265" class="figure">
+    <p><img src="../images/superia-9.jpg" alt="Sample image 9" align="center" />
     </p>
     </div>
+
+
+    <div id="org9801169" class="figure">
+    <p><img src="../images/superia-10.jpg" alt="Sample image 10" align="center" />
+    </p>
+    </div>
+
 
     </div>
 
@@ -180,199 +187,23 @@
     </p>
 
 
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'nicolas-petton'; // required: replace example with your forum shortname
 
-    <p>
-    <b><a href="superia-like.html">→ Read more</a></b>
-    </p>
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     </div>
     </div>
     ]]></description>
-</item>
-
-<item>
-  <title>Old *Blog posts*</title>
-  <link>http://nicolas-petton.fr/blog/superia-like-recipe.html#orgfe198b9</link>
-  <author>nico@petton.fr (Nicolas Petton)</author>
-  <guid isPermaLink="false">http://nicolas-petton.fr/blog/superia-like-recipe.html#orgfe198b9</guid>
-  <pubDate>Mon, 24 Aug 2020 14:37:00 +0200</pubDate>
-
-  <description><![CDATA[<p>
-  I'm keeping old posts from a few years back for curiosity and reference, they
-  can be read <a href="old.html">here</a>.
-  </p>
-  ]]></description>
-</item>
-
-<item>
-  <title>A Superia-like Fujifilm recipe</title>
-  <link>http://nicolas-petton.fr/blog/superia-like.html</link>
-  <author>nico@petton.fr (Nicolas Petton)</author>
-  <guid isPermaLink="false">http://nicolas-petton.fr/blog/superia-like.html</guid>
-  <pubDate>Tue, 25 Aug 2020 17:00:00 +0200</pubDate>
-
-  <description><![CDATA[<div class="pubdate">
-  Oct 25, 2020
-  </div>
-
-  <p>
-  Ever since I stumbled upon the work of Ritchie on <a href="https://fujixweekly.com">Fuji X Weekly</a> and his film
-  simulation recipes, I've tried to set up my camera with various recipes and
-  shoot jpeg only.
-  </p>
-
-  <p>
-  I found shooting jpeg quite liberating.  I used to expose for highlights,
-  sometimes shoot wider than necessary, thinking that I would figure that out
-  later in post, knowing that my raw files have all the data I needed.  In the end
-  I spent more time editing raw files -- with the trustworthy <a href="https://www.darktable.org">Darktable</a> -- than
-  actually shooting. 
-  </p>
-
-  <p>
-  Editing raw files can be very, very time consuming.  To the point that I decided
-  to only edit my best photographs.
-  </p>
-
-  <p>
-  I've realized that if I had to get everything right in camera, I would be forced
-  to be more present when shooting, be more aware of the composition, colors and
-  light, instead of delaying the creative part to later.
-  </p>
-
-  <p>
-  So I "loaded" a few film recipes that I liked: <a href="https://fujixweekly.com/2020/05/27/my-fujifilm-x100v-kodachrome-64-film-simulation-recipe/">Kodachrome 64</a>, <a href="https://fujixweekly.com/2020/06/10/fujifilm-x100v-film-simulation-kodak-portra-400/">Portra 400</a> and
-  <a href="https://fujixweekly.com/2020/07/27/fujifilm-x100v-film-simulation-recipe-fujicolor-superia-800/">Superia 800</a>, and went shooting jpeg-only for a few days.
-  </p>
-
-  <div id="outline-container-org1cdc99d" class="outline-3">
-  <h3 id="org1cdc99d">Superia</h3>
-  <div class="outline-text-3" id="text-org1cdc99d">
-  <p>
-  While I really liked the aesthetics of both Kodachrome and Portra 400, I couldn't
-  resist the amazing look of the new Classic Neg film simulation, and the various
-  Superia recipes Ritchie has made on top of it.  They're truly excellent.
-  </p>
-
-  <p>
-  I decided to search for a Superia-like feel (not necessarily one exact film).
-  </p>
-
-  <p>
-  I live in <a href="https://en.wikipedia.org/wiki/Brittany">a part of the world</a> where the sky is often overcast&#x2026; when rain is
-  not pouring.  <a href="https://fujixweekly.com/2020/07/27/fujifilm-x100v-film-simulation-recipe-fujicolor-superia-800/">Superia 800</a> is great in many situations, but it really shines in
-  dreary days.
-  </p>
-
-  <p>
-  I found however that it is not very good for skin tones, as there's a quite
-  strong yellowish or green cast to it, resulting in unnatural skin tone
-  rendition.  I then moved on to another Superia recipe from Ritchie: <a href="https://fujixweekly.com/2020/06/29/fujifilm-x100v-film-simulation-recipe-fujicolor-superia-1600/">Superia
-  1600</a>, which is nothing short of amazing.
-  </p>
-
-  <p>
-  Superia 1600 has more contrast, but less color saturation. The white balance
-  tint gives very pleasing skin tones, and it has this unmistakable Superia look.
-  </p>
-
-  <p>
-  I found it a bit too desaturated for my taste, though it can be used to great
-  effect. I also found the grain to be too much.  Since I didn't really tried to
-  emulate a specific Superia film, but rather to get a good general use
-  Superia-like recipe, I ended up tweaking the Superia 1600 recipe to my likings,
-  making it a tad richer in color, and less grainy.
-  </p>
-
-  <p>
-  I found that richer colors make the white balance shift more visible, especially
-  on reds, browns and skin tones, which I like a lot.
-  </p>
-
-  <ul class="org-ul">
-  <li>Classic Negative</li>
-  <li>Dynamic Range: DR400</li>
-  <li>Highlight: 0</li>
-  <li>Shadow: +2</li>
-  <li>Color: -1</li>
-  <li>Noise Reduction: -4</li>
-  <li>Sharpening: -1</li>
-  <li>Clarity: -4</li>
-  <li>Grain Effect: Weak, Small</li>
-  <li>Color Chrome Effect: Strong</li>
-  <li>Color Chrome Effect Blue: Strong</li>
-  <li>White Balance: Daylight, +3 Red &amp; +1 Blue</li>
-  </ul>
-  </div>
-  </div>
-
-  <div id="outline-container-orgee2ddc7" class="outline-3">
-  <h3 id="orgee2ddc7">Sample images</h3>
-  <div class="outline-text-3" id="text-orgee2ddc7">
-  <p>
-  Here are some photographs I took with the above recipe, straight out of camera.
-  </p>
-
-  <div class="gallery">
-
-
-  <div class="figure">
-  <p><img src="../images/superia-4.jpg" alt="Sample image 4" align="center" class="landscape" />
-  </p>
-  </div>
-
-
-  <div class="figure">
-  <p><img src="../images/superia-1.jpg" alt="Sample image 1" align="center" />
-  </p>
-  </div>
-
-
-  <div class="figure">
-  <p><img src="../images/superia-2.jpg" alt="Sample image 2" align="center" />
-  </p>
-  </div>
-
-
-  <div class="figure">
-  <p><img src="../images/superia-3.jpg" alt="Sample image 3" align="center" />
-  </p>
-  </div>
-
-
-  <div class="figure">
-  <p><img src="../images/superia-6.jpg" alt="Sample image 6" align="center" />
-  </p>
-  </div>
-
-
-  <div class="figure">
-  <p><img src="../images/superia-7.jpg" alt="Sample image 6" align="center" class="landscape" />
-  </p>
-  </div>
-
-  </div>
-
-  <p>
-  Thanks a ton to Ritchie for his work on his film simulation recipes, be sure to
-  check his blog at <a href="https://fujixweekly.com">fujixweekly.com</a>!
-  </p>
-  </div>
-  </div>
-  ]]></description>
-</item>
-
-<item>
-  <title>Old *Blog posts*</title>
-  <link>http://nicolas-petton.fr/blog/superia-like-recipe.html#org9cc9348</link>
-  <author>nico@petton.fr (Nicolas Petton)</author>
-  <guid isPermaLink="false">http://nicolas-petton.fr/blog/superia-like-recipe.html#org9cc9348</guid>
-  <pubDate>Mon, 24 Aug 2020 14:37:00 +0200</pubDate>
-
-  <description><![CDATA[<p>
-  I'm keeping old posts from a few years back for curiosity and reference, they
-  can be read <a href="old.html">here</a>.
-  </p>
-  ]]></description>
 </item>
 </channel>
 </rss>
