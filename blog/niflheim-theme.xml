@@ -14,9 +14,9 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Mon, 24 Aug 2020 14:42:52 +0200</pubDate>
-  <lastBuildDate>Mon, 24 Aug 2020 14:42:52 +0200</lastBuildDate>
-  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <pubDate>Sat, 26 Nov 2022 13:59:34 +0100</pubDate>
+  <lastBuildDate>Sat, 26 Nov 2022 13:59:34 +0100</lastBuildDate>
+  <generator>Emacs 28.1 Org-mode 9.4.4</generator>
   <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
@@ -27,9 +27,9 @@
 
   <item>
     <title>A *dark theme* for Emacs</title>
-    <link>http://nicolas-petton.fr/blog/niflheim-theme.html#org0c39c43</link>
+    <link>http://nicolas-petton.fr/blog/niflheim-theme.html#org1eae238</link>
     <author>nico@petton.fr (Nicolas Petton)</author>
-    <guid isPermaLink="false">http://nicolas-petton.fr/blog/niflheim-theme.html#org0c39c43</guid>
+    <guid isPermaLink="false">http://nicolas-petton.fr/blog/niflheim-theme.html#org1eae238</guid>
     <pubDate>Fri, 28 Mar 2014 15:22:00 +0100</pubDate>
 
     <description><![CDATA[<div class="pubdate">
@@ -41,16 +41,16 @@
     </p>
 
 
-    <div class="figure">
+    <div id="orgd138d9e" class="figure">
     <p><img src="https://raw.githubusercontent.com/niflheim-theme/emacs/master/screenshot.png" alt="niflheim" />
     </p>
     <p><span class="figure-number">Figure 1: </span>Niflheim theme</p>
     </div>
 
-    <div id="outline-container-org3686c70" class="outline-3">
-    <h3 id="org3686c70">The best way to install it is to use the <a href="http://melpa.milkbox.net/">MELPA</a> package archive:</h3>
-    <div class="outline-text-3" id="text-org3686c70">
-    <div class="SH">
+    <div id="outline-container-org8a186fe" class="outline-3">
+    <h3 id="org8a186fe">The best way to install it is to use the <a href="http://melpa.milkbox.net/">MELPA</a> package archive:</h3>
+    <div class="outline-text-3" id="text-org8a186fe">
+    <div class="SH" id="orgfe4c93b">
     <p>
     M-x package-install RET niflheim-theme
     </p>

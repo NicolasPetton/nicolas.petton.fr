@@ -14,9 +14,9 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Mon, 24 Aug 2020 14:42:45 +0200</pubDate>
-  <lastBuildDate>Mon, 24 Aug 2020 14:42:45 +0200</lastBuildDate>
-  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <pubDate>Sat, 26 Nov 2022 13:59:29 +0100</pubDate>
+  <lastBuildDate>Sat, 26 Nov 2022 13:59:29 +0100</lastBuildDate>
+  <generator>Emacs 28.1 Org-mode 9.4.4</generator>
   <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
@@ -27,9 +27,9 @@
 
   <item>
     <title>*Per-computer* Emacs settings</title>
-    <link>http://nicolas-petton.fr/blog/per-computer-emacs-settings.html#orge4177ef</link>
+    <link>http://nicolas-petton.fr/blog/per-computer-emacs-settings.html#orgaa2c10a</link>
     <author>nico@petton.fr (Nicolas Petton)</author>
-    <guid isPermaLink="false">http://nicolas-petton.fr/blog/per-computer-emacs-settings.html#orge4177ef</guid>
+    <guid isPermaLink="false">http://nicolas-petton.fr/blog/per-computer-emacs-settings.html#orgaa2c10a</guid>
     <pubDate>Fri, 13 Jun 2014 16:13:00 +0200</pubDate>
 
     <description><![CDATA[<div class="pubdate">
@@ -63,12 +63,12 @@
     </p>
 
     <div class="org-src-container">
-    <pre class="src src-elisp">(<span style="color: #c678dd; font-weight: bold;">defvar</span> <span style="color: #61afef;">host</span> (substring (shell-command-to-string <span style="color: #98be65;">"hostname"</span>) 0 -1))
-    (<span style="color: #c678dd; font-weight: bold;">defvar</span> <span style="color: #61afef;">host-dir</span> (concat <span style="color: #98be65;">"~/.emacs.d/hosts/"</span> host))
+    <pre class="src src-elisp">(<span style="color: #FF8080;">defvar</span> <span style="color: #FFE9AA;">host</span> (substring (shell-command-to-string <span style="color: #FFE9AA;">"hostname"</span>) 0 -1))
+    (<span style="color: #FF8080;">defvar</span> <span style="color: #FFE9AA;">host-dir</span> (concat <span style="color: #FFE9AA;">"~/.emacs.d/hosts/"</span> host))
     (add-to-list 'load-path host-dir)
 
-    (<span style="color: #c678dd; font-weight: bold;">let</span> ((init-host-feature (intern (concat <span style="color: #98be65;">"init-"</span> host))))
-    (<span style="color: #c678dd; font-weight: bold;">require</span> <span style="color: #da8548; font-weight: bold;">init-host-feature</span> nil 'noerror))
+    (<span style="color: #FF8080;">let</span> ((init-host-feature (intern (concat <span style="color: #FFE9AA;">"init-"</span> host))))
+    (<span style="color: #FF8080;">require</span> <span style="color: #AAFFE4;">init-host-feature</span> nil 'noerror))
     </pre>
     </div>
 
@@ -84,10 +84,10 @@
     </p>
 
     <div class="org-src-container">
-    <pre class="src src-elisp">(<span style="color: #c678dd; font-weight: bold;">defvar</span> <span style="color: #61afef;">private-dir</span> <span style="color: #98be65;">"~/.priv/elisp"</span> 
-    <span style="color: #9eac8c;">"Private elisp directory"</span>)
+    <pre class="src src-elisp">(<span style="color: #FF8080;">defvar</span> <span style="color: #FFE9AA;">private-dir</span> <span style="color: #FFE9AA;">"~/.priv/elisp"</span> 
+    <span style="color: #858FA5;">"Private elisp directory"</span>)
 
-    (<span style="color: #c678dd; font-weight: bold;">if</span> (file-exists-p private-dir)
+    (<span style="color: #FF8080;">if</span> (file-exists-p private-dir)
     (add-to-list 'load-path private-dir))
     </pre>
     </div>

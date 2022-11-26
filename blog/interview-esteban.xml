@@ -14,9 +14,9 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Mon, 24 Aug 2020 14:43:09 +0200</pubDate>
-  <lastBuildDate>Mon, 24 Aug 2020 14:43:09 +0200</lastBuildDate>
-  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <pubDate>Sat, 26 Nov 2022 13:59:47 +0100</pubDate>
+  <lastBuildDate>Sat, 26 Nov 2022 13:59:47 +0100</lastBuildDate>
+  <generator>Emacs 28.1 Org-mode 9.4.4</generator>
   <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
@@ -27,9 +27,9 @@
 
   <item>
     <title>Interview with *Esteban* Lorenzano</title>
-    <link>http://nicolas-petton.fr/blog/interview-esteban.html#orga747567</link>
+    <link>http://nicolas-petton.fr/blog/interview-esteban.html#orgc74f041</link>
     <author>nico@petton.fr (Nicolas Petton)</author>
-    <guid isPermaLink="false">http://nicolas-petton.fr/blog/interview-esteban.html#orga747567</guid>
+    <guid isPermaLink="false">http://nicolas-petton.fr/blog/interview-esteban.html#orgc74f041</guid>
     <pubDate>Thu, 06 Feb 2014 17:03:00 +0100</pubDate>
 
     <description><![CDATA[<div class="pubdate">
@@ -58,7 +58,7 @@
     </p>
 
 
-    <div class="figure">
+    <div id="orgbab6e5a" class="figure">
     <p><img src="../images/esteban1.jpg" alt="Esteban Lorenzano image" align="center" />
     </p>
     <p><span class="figure-number">Figure 1: </span>Esteban, focused and working hard as always</p>
@@ -109,7 +109,7 @@
     </p>
 
 
-    <div class="figure">
+    <div id="org7971beb" class="figure">
     <p><img src="../images/esteban2.jpg" alt="Mate image" align="center" />
     </p>
     <p><span class="figure-number">Figure 2: </span>Esteban's Mate</p>

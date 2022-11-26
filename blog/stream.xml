@@ -14,9 +14,9 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Mon, 24 Aug 2020 14:42:45 +0200</pubDate>
-  <lastBuildDate>Mon, 24 Aug 2020 14:42:45 +0200</lastBuildDate>
-  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <pubDate>Sat, 26 Nov 2022 13:59:17 +0100</pubDate>
+  <lastBuildDate>Sat, 26 Nov 2022 13:59:17 +0100</lastBuildDate>
+  <generator>Emacs 28.1 Org-mode 9.4.4</generator>
   <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
@@ -27,9 +27,9 @@
 
   <item>
     <title>*Lazy sequences* in Emacs with stream.el</title>
-    <link>http://nicolas-petton.fr/blog/stream.html#org9aed758</link>
+    <link>http://nicolas-petton.fr/blog/stream.html#org1a46d27</link>
     <author>nico@petton.fr (Nicolas Petton)</author>
-    <guid isPermaLink="false">http://nicolas-petton.fr/blog/stream.html#org9aed758</guid>
+    <guid isPermaLink="false">http://nicolas-petton.fr/blog/stream.html#org1a46d27</guid>
     <pubDate>Wed, 14 Oct 2015 17:25:00 +0200</pubDate>
 
     <description><![CDATA[<div class="pubdate">
@@ -81,10 +81,10 @@
     </p>
 
     <div class="org-src-container">
-    <pre class="src src-emacs-lisp">(<span style="color: #c678dd; font-weight: bold;">defun</span> <span style="color: #61afef;">ones</span> ()
+    <pre class="src src-emacs-lisp">(<span style="color: #FF8080;">defun</span> <span style="color: #C991E1;">ones</span> ()
     (stream-cons 1 (ones)))
 
-    (ones) <span style="color: #687080; font-style: italic;">;; </span><span style="color: #687080; font-style: italic;">=&gt; stream</span>
+    (ones) <span style="color: #565575;">;; </span><span style="color: #565575;">=&gt; stream</span>
     </pre>
     </div>
 
@@ -94,7 +94,7 @@
     </p>
 
     <div class="org-src-container">
-    <pre class="src src-emacs-lisp">(<span style="color: #c678dd; font-weight: bold;">defun</span> <span style="color: #61afef;">fib</span> (a b)
+    <pre class="src src-emacs-lisp">(<span style="color: #FF8080;">defun</span> <span style="color: #C991E1;">fib</span> (a b)
     (stream-cons a (fib b (+ a b))))
 
     (fib 0 1)
@@ -107,7 +107,7 @@
     </p>
 
     <div class="org-src-container">
-    <pre class="src src-emacs-lisp">(seq-take (stream (current-buffer)) 50) <span style="color: #687080; font-style: italic;">;; </span><span style="color: #687080; font-style: italic;">=&gt; stream</span>
+    <pre class="src src-emacs-lisp">(seq-take (stream (current-buffer)) 50) <span style="color: #565575;">;; </span><span style="color: #565575;">=&gt; stream</span>
     </pre>
     </div>
 
@@ -118,7 +118,7 @@
     </p>
 
     <div class="org-src-container">
-    <pre class="src src-emacs-lisp">(seq-map #'1+ (seq-take (fib 0 1) 50)) <span style="color: #687080; font-style: italic;">;; </span><span style="color: #687080; font-style: italic;">=&gt; stream</span>
+    <pre class="src src-emacs-lisp">(seq-map #'1+ (seq-take (fib 0 1) 50)) <span style="color: #565575;">;; </span><span style="color: #565575;">=&gt; stream</span>
     </pre>
     </div>
 

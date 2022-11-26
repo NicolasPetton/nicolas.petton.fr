@@ -14,9 +14,9 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Mon, 24 Aug 2020 14:42:18 +0200</pubDate>
-  <lastBuildDate>Mon, 24 Aug 2020 14:42:18 +0200</lastBuildDate>
-  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <pubDate>Sat, 26 Nov 2022 13:59:29 +0100</pubDate>
+  <lastBuildDate>Sat, 26 Nov 2022 13:59:29 +0100</lastBuildDate>
+  <generator>Emacs 28.1 Org-mode 9.4.4</generator>
   <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
@@ -27,9 +27,9 @@
 
   <item>
     <title>Data binding with *objectjs*</title>
-    <link>http://nicolas-petton.fr/blog/objectjs-data-binding.html#orgbc12f63</link>
+    <link>http://nicolas-petton.fr/blog/objectjs-data-binding.html#orgb6550eb</link>
     <author>nico@petton.fr (Nicolas Petton)</author>
-    <guid isPermaLink="false">http://nicolas-petton.fr/blog/objectjs-data-binding.html#orgbc12f63</guid>
+    <guid isPermaLink="false">http://nicolas-petton.fr/blog/objectjs-data-binding.html#orgb6550eb</guid>
     <pubDate>Tue, 06 Sep 2016 22:09:00 +0200</pubDate>
 
     <description><![CDATA[<div class="pubdate">
@@ -53,49 +53,49 @@
     took.
     </p>
 
-    <div id="outline-container-orgc109f69" class="outline-3">
-    <h3 id="orgc109f69">The counter example revisited</h3>
-    <div class="outline-text-3" id="text-orgc109f69">
+    <div id="outline-container-org413e3b1" class="outline-3">
+    <h3 id="org413e3b1">The counter example revisited</h3>
+    <div class="outline-text-3" id="text-org413e3b1">
     <p>
     Let's have a look at a simple counter widget with two buttons to increment and
     decrement a counter, as it is today in <a href="https://github.com/foretagsplatsen/widgetjs">widgetjs</a>.
     </p>
 
     <div class="org-src-container">
-    <pre class="src src-js">    <span style="color: #687080; font-style: italic;">// </span><span style="color: #687080; font-style: italic;">The counter model</span>
-    <span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #61afef;">counter</span> = objectjs.object.subclass(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">that</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
-    <span style="color: #c678dd; font-weight: bold;">my</span>.initialize = <span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>) {
-    <span style="color: #c678dd; font-weight: bold;">my</span>.<span style="color: #c678dd; font-weight: bold;">super</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>);
-    <span style="color: #c678dd; font-weight: bold;">my</span>.count = 0;
+    <pre class="src src-js">    <span style="color: #565575;">// </span><span style="color: #565575;">The counter model</span>
+    <span style="color: #FF8080;">var</span> <span style="color: #FFE9AA;">counter</span> = objectjs.object.subclass(<span style="color: #FF8080;">function</span>(<span style="color: #FFE9AA;">that</span>, <span style="color: #FFE9AA;">my</span>) {
+    my.initialize = <span style="color: #FF8080;">function</span>(<span style="color: #FFE9AA;">spec</span>) {
+    my.<span style="color: #FF8080;">super</span>(spec);
+    my.count = 0;
     };
 
-    <span style="color: #c678dd; font-weight: bold;">my</span>.get(<span style="color: #98be65;">"count"</span>);
+    my.get(<span style="color: #FFE9AA;">"count"</span>);
 
-    <span style="color: #c678dd; font-weight: bold;">that</span>.increment = <span style="color: #c678dd; font-weight: bold;">function</span>() {
-    <span style="color: #c678dd; font-weight: bold;">my</span>.count++;
+    that.increment = <span style="color: #FF8080;">function</span>() {
+    my.count++;
     };
 
-    <span style="color: #c678dd; font-weight: bold;">that</span>.decrement = <span style="color: #c678dd; font-weight: bold;">function</span>() {
-    <span style="color: #c678dd; font-weight: bold;">my</span>.count--;
+    that.decrement = <span style="color: #FF8080;">function</span>() {
+    my.count--;
     };
     });
 
-    <span style="color: #687080; font-style: italic;">// </span><span style="color: #687080; font-style: italic;">The counter widget</span>
-    <span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #61afef;">counterWidget</span> = widgetjs.widget.subclass(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">that</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
-    <span style="color: #c678dd; font-weight: bold;">my</span>.initialize = <span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>) {
-    <span style="color: #c678dd; font-weight: bold;">my</span>.<span style="color: #c678dd; font-weight: bold;">super</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>);
-    <span style="color: #c678dd; font-weight: bold;">my</span>.counter = counter();
+    <span style="color: #565575;">// </span><span style="color: #565575;">The counter widget</span>
+    <span style="color: #FF8080;">var</span> <span style="color: #FFE9AA;">counterWidget</span> = widgetjs.widget.subclass(<span style="color: #FF8080;">function</span>(<span style="color: #FFE9AA;">that</span>, <span style="color: #FFE9AA;">my</span>) {
+    my.initialize = <span style="color: #FF8080;">function</span>(<span style="color: #FFE9AA;">spec</span>) {
+    my.<span style="color: #FF8080;">super</span>(spec);
+    my.counter = counter();
     };
 
-    <span style="color: #c678dd; font-weight: bold;">that</span>.renderContentOn = <span style="color: #c678dd; font-weight: bold;">function</span> (<span style="color: #61afef;">html</span>) {
-    html.<span style="color: #61afef; background-color: #38394c; font-weight: bold;">h1</span>(<span style="color: #c678dd; font-weight: bold;">my</span>.counter.getCount());
-    html.<span style="color: #61afef; background-color: #38394c; font-weight: bold;">button</span>(<span style="color: #98be65;">'+'</span>).click(<span style="color: #c678dd; font-weight: bold;">function</span>() {
-    <span style="color: #c678dd; font-weight: bold;">my</span>.counter.increment();
-    <span style="color: #c678dd; font-weight: bold;">that</span>.update();
+    that.renderContentOn = <span style="color: #FF8080;">function</span> (<span style="color: #FFE9AA;">html</span>) {
+    html.h1(my.counter.getCount());
+    html.button(<span style="color: #FFE9AA;">'+'</span>).click(<span style="color: #FF8080;">function</span>() {
+    my.counter.increment();
+    that.update();
     });
-    html.<span style="color: #61afef; background-color: #38394c; font-weight: bold;">button</span>(<span style="color: #98be65;">'-'</span>).click(<span style="color: #c678dd; font-weight: bold;">function</span>() {
-    <span style="color: #c678dd; font-weight: bold;">my</span>.counter.decrement();
-    <span style="color: #c678dd; font-weight: bold;">that</span>.update();
+    html.button(<span style="color: #FFE9AA;">'-'</span>).click(<span style="color: #FF8080;">function</span>() {
+    my.counter.decrement();
+    that.update();
     });
     };
     });
@@ -116,26 +116,26 @@
     </div>
     </div>
 
-    <div id="outline-container-org446edd8" class="outline-3">
-    <h3 id="org446edd8">Properties in <code>objectjs</code></h3>
-    <div class="outline-text-3" id="text-org446edd8">
+    <div id="outline-container-org71b7caf" class="outline-3">
+    <h3 id="org71b7caf">Properties in <code>objectjs</code></h3>
+    <div class="outline-text-3" id="text-org71b7caf">
     <p>
     The first thing to get data binding is a way to listen to domain attribute
     changes.  That's easy enough with ECMAScript5 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty">object properties</a>:
     </p>
 
     <div class="org-src-container">
-    <pre class="src src-js">object.extend(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">that</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
-    <span style="color: #c678dd; font-weight: bold;">my</span>.property = <span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #61afef;">propName</span>, <span style="color: #61afef;">initialValue</span>) {
-    <span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #61afef;">value</span> = initialValue;
-    Object.defineProperty(<span style="color: #c678dd; font-weight: bold;">my</span>, propName, {
-    configurable: <span style="color: #da8548; font-weight: bold;">true</span>,
-    enumerable: <span style="color: #da8548; font-weight: bold;">true</span>,
-    <span style="color: #61afef;">get</span>: <span style="color: #c678dd; font-weight: bold;">function</span>() {
+    <pre class="src src-js">object.extend(<span style="color: #FF8080;">function</span>(<span style="color: #FFE9AA;">that</span>, <span style="color: #FFE9AA;">my</span>) {
+    my.property = <span style="color: #FF8080;">function</span>(<span style="color: #FFE9AA;">propName</span>, <span style="color: #FFE9AA;">initialValue</span>) {
+    <span style="color: #FF8080;">var</span> <span style="color: #FFE9AA;">value</span> = initialValue;
+    Object.defineProperty(my, propName, {
+    configurable: <span style="color: #AAFFE4;">true</span>,
+    enumerable: <span style="color: #AAFFE4;">true</span>,
+    <span style="color: #C991E1;">get</span>: <span style="color: #FF8080;">function</span>() {
     emitPropertyAccess(propName);
-    <span style="color: #c678dd; font-weight: bold;">return</span> value;
+    <span style="color: #FF8080;">return</span> value;
     },
-    <span style="color: #61afef;">set</span>: <span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #61afef;">newValue</span>) {
+    <span style="color: #C991E1;">set</span>: <span style="color: #FF8080;">function</span>(<span style="color: #FFE9AA;">newValue</span>) {
     value = newValue;
     emitPropertyChange(propName, value);
     }
@@ -157,10 +157,10 @@
     </p>
 
     <div class="org-src-container">
-    <pre class="src src-js">    <span style="color: #687080; font-style: italic;">// </span><span style="color: #687080; font-style: italic;">Register to property accesses for data binding</span>
-    objectjs.propertyEventEmitter.instance().onAccess(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #61afef;">instance</span>, <span style="color: #61afef;">propName</span>) {
-    <span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #61afef;">widget</span> = currentWidget.get();
-    <span style="color: #c678dd; font-weight: bold;">if</span> (widget) {
+    <pre class="src src-js">    <span style="color: #565575;">// </span><span style="color: #565575;">Register to property accesses for data binding</span>
+    objectjs.propertyEventEmitter.instance().onAccess(<span style="color: #FF8080;">function</span>(<span style="color: #FFE9AA;">instance</span>, <span style="color: #FFE9AA;">propName</span>) {
+    <span style="color: #FF8080;">var</span> <span style="color: #FFE9AA;">widget</span> = currentWidget.get();
+    <span style="color: #FF8080;">if</span> (widget) {
     instance.onPropertyChange(propName, widget.update);
     }
     });
@@ -175,41 +175,41 @@
     </div>
     </div>
 
-    <div id="outline-container-org3dc9ffb" class="outline-3">
-    <h3 id="org3dc9ffb">A better counter example</h3>
-    <div class="outline-text-3" id="text-org3dc9ffb">
+    <div id="outline-container-org6b5f127" class="outline-3">
+    <h3 id="org6b5f127">A better counter example</h3>
+    <div class="outline-text-3" id="text-org6b5f127">
     <p>
     Now we can define properties and let the widgets update themselves whenever they change:
     </p>
 
     <div class="org-src-container">
-    <pre class="src src-js"><span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #61afef;">counter</span> = objectjs.object.subclass(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">that</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
-    <span style="color: #c678dd; font-weight: bold;">my</span>.initialize = <span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>) {
-    <span style="color: #c678dd; font-weight: bold;">my</span>.<span style="color: #c678dd; font-weight: bold;">super</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>);
-    <span style="color: #c678dd; font-weight: bold;">my</span>.property(<span style="color: #98be65;">"count"</span>, 0);
+    <pre class="src src-js"><span style="color: #FF8080;">var</span> <span style="color: #FFE9AA;">counter</span> = objectjs.object.subclass(<span style="color: #FF8080;">function</span>(<span style="color: #FFE9AA;">that</span>, <span style="color: #FFE9AA;">my</span>) {
+    my.initialize = <span style="color: #FF8080;">function</span>(<span style="color: #FFE9AA;">spec</span>) {
+    my.<span style="color: #FF8080;">super</span>(spec);
+    my.property(<span style="color: #FFE9AA;">"count"</span>, 0);
     };
 
-    <span style="color: #c678dd; font-weight: bold;">my</span>.get(<span style="color: #98be65;">"count"</span>);
+    my.get(<span style="color: #FFE9AA;">"count"</span>);
 
-    <span style="color: #c678dd; font-weight: bold;">that</span>.increment = <span style="color: #c678dd; font-weight: bold;">function</span>() {
-    <span style="color: #c678dd; font-weight: bold;">my</span>.count++;
+    that.increment = <span style="color: #FF8080;">function</span>() {
+    my.count++;
     };
 
-    <span style="color: #c678dd; font-weight: bold;">that</span>.decrement = <span style="color: #c678dd; font-weight: bold;">function</span>() {
-    <span style="color: #c678dd; font-weight: bold;">my</span>.count--;
+    that.decrement = <span style="color: #FF8080;">function</span>() {
+    my.count--;
     };
     });
 
-    <span style="color: #c678dd; font-weight: bold;">var</span> <span style="color: #61afef;">counterWidget</span> = widgetjs.widget.subclass(<span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">that</span>, <span style="color: #c678dd; font-weight: bold;">my</span>) {
-    <span style="color: #c678dd; font-weight: bold;">my</span>.initialize = <span style="color: #c678dd; font-weight: bold;">function</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>) {
-    <span style="color: #c678dd; font-weight: bold;">my</span>.<span style="color: #c678dd; font-weight: bold;">super</span>(<span style="color: #c678dd; font-weight: bold;">spec</span>);
-    <span style="color: #c678dd; font-weight: bold;">my</span>.counter = counter();
+    <span style="color: #FF8080;">var</span> <span style="color: #FFE9AA;">counterWidget</span> = widgetjs.widget.subclass(<span style="color: #FF8080;">function</span>(<span style="color: #FFE9AA;">that</span>, <span style="color: #FFE9AA;">my</span>) {
+    my.initialize = <span style="color: #FF8080;">function</span>(<span style="color: #FFE9AA;">spec</span>) {
+    my.<span style="color: #FF8080;">super</span>(spec);
+    my.counter = counter();
     };
 
-    <span style="color: #c678dd; font-weight: bold;">that</span>.renderContentOn = <span style="color: #c678dd; font-weight: bold;">function</span> (<span style="color: #61afef;">html</span>) {
-    html.<span style="color: #61afef; background-color: #38394c; font-weight: bold;">h1</span>(<span style="color: #c678dd; font-weight: bold;">my</span>.counter.getCount());
-    html.<span style="color: #61afef; background-color: #38394c; font-weight: bold;">button</span>(<span style="color: #98be65;">'+'</span>).click(<span style="color: #c678dd; font-weight: bold;">my</span>.counter.increment);
-    html.<span style="color: #61afef; background-color: #38394c; font-weight: bold;">button</span>(<span style="color: #98be65;">'-'</span>).click(<span style="color: #c678dd; font-weight: bold;">my</span>.counter.decrement);
+    that.renderContentOn = <span style="color: #FF8080;">function</span> (<span style="color: #FFE9AA;">html</span>) {
+    html.h1(my.counter.getCount());
+    html.button(<span style="color: #FFE9AA;">'+'</span>).click(my.counter.increment);
+    html.button(<span style="color: #FFE9AA;">'-'</span>).click(my.counter.decrement);
     };
     });
     </pre>
@@ -263,9 +263,9 @@
     </div>
 
 
-    <div id="outline-container-orgbe6754c" class="outline-3">
-    <h3 id="orgbe6754c">Benefits</h3>
-    <div class="outline-text-3" id="text-orgbe6754c">
+    <div id="outline-container-orgcecd8d1" class="outline-3">
+    <h3 id="orgcecd8d1">Benefits</h3>
+    <div class="outline-text-3" id="text-orgcecd8d1">
     <p>
     The approach taken is a bit different from React, but I think it has its
     benefits:

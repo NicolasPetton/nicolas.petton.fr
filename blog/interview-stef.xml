@@ -14,9 +14,9 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Mon, 24 Aug 2020 14:42:05 +0200</pubDate>
-  <lastBuildDate>Mon, 24 Aug 2020 14:42:05 +0200</lastBuildDate>
-  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <pubDate>Sat, 26 Nov 2022 13:59:35 +0100</pubDate>
+  <lastBuildDate>Sat, 26 Nov 2022 13:59:35 +0100</lastBuildDate>
+  <generator>Emacs 28.1 Org-mode 9.4.4</generator>
   <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
@@ -27,9 +27,9 @@
 
   <item>
     <title>Interview with *Stéphane* Ducasse</title>
-    <link>http://nicolas-petton.fr/blog/interview-stef.html#orga319120</link>
+    <link>http://nicolas-petton.fr/blog/interview-stef.html#orgf55756d</link>
     <author>nico@petton.fr (Nicolas Petton)</author>
-    <guid isPermaLink="false">http://nicolas-petton.fr/blog/interview-stef.html#orga319120</guid>
+    <guid isPermaLink="false">http://nicolas-petton.fr/blog/interview-stef.html#orgf55756d</guid>
     <pubDate>Fri, 07 Feb 2014 10:24:00 +0100</pubDate>
 
     <description><![CDATA[<div class="pubdate">
@@ -56,7 +56,7 @@
     </p>
 
 
-    <div class="figure">
+    <div id="orga12494c" class="figure">
     <p><img src="../images/stef-1.jpg" alt="Stef image" align="center" />
     </p>
     <p><span class="figure-number">Figure 1: </span>Stef in his office, always smiling</p>
@@ -148,7 +148,7 @@
     </p>
 
 
-    <div class="figure">
+    <div id="org832e148" class="figure">
     <p><img src="../images/stef-2.jpg" alt="Iznogoud" align="center" />
     </p>
     <p><span class="figure-number">Figure 2: </span>In front of Stef's office</p>
@@ -189,7 +189,7 @@
     </p>
 
 
-    <div class="figure">
+    <div id="org4abd150" class="figure">
     <p><img src="../images/stef-3.jpg" alt="Stef's toys" align="center" />
     </p>
     <p><span class="figure-number">Figure 3: </span>Stef has the playful mind of a kid  :)</p>

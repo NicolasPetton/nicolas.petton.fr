@@ -14,9 +14,9 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Mon, 24 Aug 2020 14:42:58 +0200</pubDate>
-  <lastBuildDate>Mon, 24 Aug 2020 14:42:58 +0200</lastBuildDate>
-  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <pubDate>Sat, 26 Nov 2022 14:12:59 +0100</pubDate>
+  <lastBuildDate>Sat, 26 Nov 2022 14:12:59 +0100</lastBuildDate>
+  <generator>Emacs 28.1 Org-mode 9.4.4</generator>
   <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
@@ -27,9 +27,9 @@
 
   <item>
     <title>Amber 0.10.0 released!</title>
-    <link>http://nicolas-petton.fr/blog/amber-0.10.0-released.html#orgb85a697</link>
+    <link>http://nicolas-petton.fr/blog/amber-0.10.0-released.html#orge21245a</link>
     <author>nico@petton.fr (Nicolas Petton)</author>
-    <guid isPermaLink="false">http://nicolas-petton.fr/blog/amber-0.10.0-released.html#orgb85a697</guid>
+    <guid isPermaLink="false">http://nicolas-petton.fr/blog/amber-0.10.0-released.html#orge21245a</guid>
     <pubDate>Wed, 13 Mar 2013 12:00:00 +0100</pubDate>
     <category><![CDATA[amber]]></category>
     <category><![CDATA[smalltalk]]></category>

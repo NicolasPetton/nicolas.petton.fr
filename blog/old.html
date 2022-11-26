@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-08-25 Tue 15:42 -->
+<!-- 2022-11-26 Sat 13:59 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Blog posts and notes.</title>
@@ -40,7 +40,7 @@
   }
   pre.src {
     position: relative;
-    overflow: visible;
+    overflow: auto;
     padding-top: 1.2em;
   }
   pre.src:before {
@@ -52,7 +52,7 @@
     padding: 3px;
     border: 1px solid black;
   }
-  pre.src:hover:before { display: inline;}
+  pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
@@ -212,50 +212,26 @@
                 href="http://nicolas-petton.fr/blog/index.xml"
                 title="RSS feed">
 <script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2020 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
 </script>
 </head>
 <body>
@@ -269,20 +245,21 @@ for the JavaScript code in this tag.
 <div class='nav'>
 <ul>
 <li><a href='/'>Home</a>–</li>
+<li><a href='https://dreamedaway.com'>Dreamed Away</a>–</li>
 <li><a href='/blog/index.html'>Blog</a>–</li>
 <li><a href='https://emacs.cafe'>Emacs Café</a>–</li>
 <li><a href='/contact.html'>Contact</a>–</li>
 <li><a href='http://github.com/NicolasPetton'><i class="fa fa-github"></i></a>–</li>
-<li><a href='http://twitter.com/NicolasPetton'><i class="fa fa-twitter"></i></a></li>
+<li><a href='http://twitter.com/DreamedAwayRPG'><i class="fa fa-twitter"></i></a></li>
 </ul>
 </div>
 </div>
 <div id="content">
 <h1 class="title">Blog posts and notes.</h1>
 
-<div id="outline-container-org6e10079" class="outline-2">
-<h2 id="org6e10079">Interview with <b>Damien</b> Cassou</h2>
-<div class="outline-text-2" id="text-org6e10079">
+<div id="outline-container-org791d7fa" class="outline-2">
+<h2 id="org791d7fa">Interview with <b>Damien</b> Cassou</h2>
+<div class="outline-text-2" id="text-org791d7fa">
 <div class="pubdate">
 Nov 11, 2016
 </div>
@@ -303,7 +280,7 @@ like self-hosting or Free Software.
 </p>
 
 
-<div class="figure">
+<div id="org8b4ebe9" class="figure">
 <p><img src="../images/damien-3.jpg" alt="Damien Cassou at work image" align="center" />
 </p>
 <p><span class="figure-number">Figure 1: </span>Damien at work</p>
@@ -315,9 +292,9 @@ like self-hosting or Free Software.
 </div>
 </div>
 
-<div id="outline-container-org8a4cf77" class="outline-2">
-<h2 id="org8a4cf77">Data binding with <b>objectjs</b></h2>
-<div class="outline-text-2" id="text-org8a4cf77">
+<div id="outline-container-org3a5b8c4" class="outline-2">
+<h2 id="org3a5b8c4">Data binding with <b>objectjs</b></h2>
+<div class="outline-text-2" id="text-org3a5b8c4">
 <div class="pubdate">
 Sept 6, 2016
 </div>
@@ -345,17 +322,17 @@ took.
 </div>
 </div>
 
-<div id="outline-container-orge6f4ca0" class="outline-2">
-<h2 id="orge6f4ca0">Going for a ThinkPad x220</h2>
-<div class="outline-text-2" id="text-orge6f4ca0">
+<div id="outline-container-org7931355" class="outline-2">
+<h2 id="org7931355">Going for a ThinkPad x220</h2>
+<div class="outline-text-2" id="text-org7931355">
 <div class="pubdate">
 July 1, 2016
 </div>
 </div>
 
-<div id="outline-container-orgd697d83" class="outline-3">
-<h3 id="orgd697d83">Looking for the perfect secondary laptop</h3>
-<div class="outline-text-3" id="text-orgd697d83">
+<div id="outline-container-orgda66398" class="outline-3">
+<h3 id="orgda66398">Looking for the perfect secondary laptop</h3>
+<div class="outline-text-3" id="text-orgda66398">
 <p>
 I've been looking for a second hand laptop to use at home and for travelling for
 a while, so that I wouldn't have to carry my primary laptop from and to work
@@ -373,7 +350,7 @@ ThinkPad.
 </p>
 
 
-<div class="figure">
+<div id="orgd00ecee" class="figure">
 <p><img src="../images/x220-keyboard.jpg" alt="x220 image" align="center" />
 </p>
 <p><span class="figure-number">Figure 2: </span>The keyboard of the ThinkPad x220</p>
@@ -386,9 +363,9 @@ ThinkPad.
 </div>
 </div>
 
-<div id="outline-container-org0634b3b" class="outline-2">
-<h2 id="org0634b3b">Interview with <b>Mikael</b> Hägerbro</h2>
-<div class="outline-text-2" id="text-org0634b3b">
+<div id="outline-container-org96e293f" class="outline-2">
+<h2 id="org96e293f">Interview with <b>Mikael</b> Hägerbro</h2>
+<div class="outline-text-2" id="text-org96e293f">
 <div class="pubdate">
 Feb 22, 2016
 </div>
@@ -410,9 +387,9 @@ for the past 6 years! Time really flies.
 </div>
 
 
-<div id="outline-container-org03cf924" class="outline-2">
-<h2 id="org03cf924">A simple <b>object model</b> in JavaScript part #2</h2>
-<div class="outline-text-2" id="text-org03cf924">
+<div id="outline-container-org2833030" class="outline-2">
+<h2 id="org2833030">A simple <b>object model</b> in JavaScript part #2</h2>
+<div class="outline-text-2" id="text-org2833030">
 <div class="pubdate">
 Feb 22, 2016
 </div>
@@ -429,9 +406,9 @@ outside of the class definition) without showing how that can be done.
 </div>
 </div>
 
-<div id="outline-container-org86ff161" class="outline-2">
-<h2 id="org86ff161">A simple <b>object model</b> in JavaScript</h2>
-<div class="outline-text-2" id="text-org86ff161">
+<div id="outline-container-org7fae6a0" class="outline-2">
+<h2 id="org7fae6a0">A simple <b>object model</b> in JavaScript</h2>
+<div class="outline-text-2" id="text-org7fae6a0">
 <div class="pubdate">
 Feb 12, 2016
 </div>
@@ -449,9 +426,9 @@ described by Douglas Crockford in his book "JavaScript, the good parts" as
 </div>
 </div>
 
-<div id="outline-container-org71fe679" class="outline-2">
-<h2 id="org71fe679">Interview with <b>Seçkin</b> Savaşçı</h2>
-<div class="outline-text-2" id="text-org71fe679">
+<div id="outline-container-org5343c00" class="outline-2">
+<h2 id="org5343c00">Interview with <b>Seçkin</b> Savaşçı</h2>
+<div class="outline-text-2" id="text-org5343c00">
 <div class="pubdate">
 Feb 9, 2016
 </div>
@@ -474,9 +451,9 @@ Stockholm).
 </div>
 
 
-<div id="outline-container-org8a7b80f" class="outline-2">
-<h2 id="org8a7b80f">Working on the <b>Emacs website</b></h2>
-<div class="outline-text-2" id="text-org8a7b80f">
+<div id="outline-container-org86ad6d4" class="outline-2">
+<h2 id="org86ad6d4">Working on the <b>Emacs website</b></h2>
+<div class="outline-text-2" id="text-org86ad6d4">
 <div class="pubdate">
 November 29, 2015
 </div>
@@ -487,7 +464,7 @@ Emacs website, you can have a look at my work (in progress) <a href="http://nico
 </p>
 
 
-<div class="figure">
+<div id="org8e6ca98" class="figure">
 <p><img src="../images/emacs-website.png" alt="emacs-website.png" />
 </p>
 </div>
@@ -511,9 +488,9 @@ As always, feedback welcome!
 </div>
 </div>
 
-<div id="outline-container-orgc57d26b" class="outline-2">
-<h2 id="orgc57d26b">Working on the <b>Emacs logo</b></h2>
-<div class="outline-text-2" id="text-orgc57d26b">
+<div id="outline-container-orgbd6fbcc" class="outline-2">
+<h2 id="orgbd6fbcc">Working on the <b>Emacs logo</b></h2>
+<div class="outline-text-2" id="text-orgbd6fbcc">
 <div class="pubdate">
 October 21, 2015
 </div>
@@ -530,7 +507,7 @@ current website, and designing a proper website for GNU ELPA.
 </p>
 
 
-<div class="figure">
+<div id="org20a2a51" class="figure">
 <p><img src="../images/emacs-in-context2.png" alt="emacs-in-context2.png" />
 </p>
 </div>
@@ -541,9 +518,9 @@ current website, and designing a proper website for GNU ELPA.
 </div>
 </div>
 
-<div id="outline-container-org00a35e0" class="outline-2">
-<h2 id="org00a35e0"><b>Lazy sequences</b> in Emacs with stream.el</h2>
-<div class="outline-text-2" id="text-org00a35e0">
+<div id="outline-container-org131d835" class="outline-2">
+<h2 id="org131d835"><b>Lazy sequences</b> in Emacs with stream.el</h2>
+<div class="outline-text-2" id="text-org131d835">
 <div class="pubdate">
 October 14, 2015
 </div>
@@ -561,9 +538,9 @@ to Clojure's lazy sequences.
 </div>
 </div>
 
-<div id="outline-container-org50ae83d" class="outline-2">
-<h2 id="org50ae83d">Fourth <b>Emacs Meetup</b></h2>
-<div class="outline-text-2" id="text-org50ae83d">
+<div id="outline-container-orga8207ba" class="outline-2">
+<h2 id="orga8207ba">Fourth <b>Emacs Meetup</b></h2>
+<div class="outline-text-2" id="text-orga8207ba">
 <div class="pubdate">
 June 14, 2015
 </div>
@@ -589,9 +566,9 @@ I plan to host another meetup in August, so stay tuned!
 </div>
 </div>
 
-<div id="outline-container-org42c9e03" class="outline-2">
-<h2 id="org42c9e03">Third Emacs <b>Meetup</b></h2>
-<div class="outline-text-2" id="text-org42c9e03">
+<div id="outline-container-orgc06adce" class="outline-2">
+<h2 id="orgc06adce">Third Emacs <b>Meetup</b></h2>
+<div class="outline-text-2" id="text-orgc06adce">
 <div class="pubdate">
 March 18, 2015
 </div>
@@ -623,9 +600,9 @@ tips, so bring your laptops with you!
 </div>
 </div>
 
-<div id="outline-container-orgedf9a0f" class="outline-2">
-<h2 id="orgedf9a0f">Interview with <b>Louise</b> Axhake</h2>
-<div class="outline-text-2" id="text-orgedf9a0f">
+<div id="outline-container-org89cd48a" class="outline-2">
+<h2 id="org89cd48a">Interview with <b>Louise</b> Axhake</h2>
+<div class="outline-text-2" id="text-org89cd48a">
 <div class="pubdate">
 Jan 30, 2015
 </div>
@@ -649,9 +626,9 @@ now, which has been a lot of fun!
 </div>
 </div>
 
-<div id="outline-container-org13d8f14" class="outline-2">
-<h2 id="org13d8f14">Emacs <b>Meetup</b></h2>
-<div class="outline-text-2" id="text-org13d8f14">
+<div id="outline-container-org7a47d61" class="outline-2">
+<h2 id="org7a47d61">Emacs <b>Meetup</b></h2>
+<div class="outline-text-2" id="text-org7a47d61">
 <div class="pubdate">
 January 19, 2015
 </div>
@@ -680,9 +657,9 @@ tips, so bring your laptops with you!
 </div>
 </div>
 
-<div id="outline-container-orge80d285" class="outline-2">
-<h2 id="orge80d285">No <b>Smalltalk</b> anymore.</h2>
-<div class="outline-text-2" id="text-orge80d285">
+<div id="outline-container-orga9f8a50" class="outline-2">
+<h2 id="orga9f8a50">No <b>Smalltalk</b> anymore.</h2>
+<div class="outline-text-2" id="text-orga9f8a50">
 <div class="pubdate">
 December 19, 2014
 </div>
@@ -709,9 +686,9 @@ Smalltalk.
 </div>
 
 
-<div id="outline-container-org56fc88c" class="outline-2">
-<h2 id="org56fc88c">Interview with <b>Benjamin</b> Van Ryseghem</h2>
-<div class="outline-text-2" id="text-org56fc88c">
+<div id="outline-container-orgb97b313" class="outline-2">
+<h2 id="orgb97b313">Interview with <b>Benjamin</b> Van Ryseghem</h2>
+<div class="outline-text-2" id="text-orgb97b313">
 <div class="pubdate">
 Dec 8, 2014
 </div>
@@ -733,9 +710,9 @@ three of us had a lot of fun working together.
 </div>
 </div>
 
-<div id="outline-container-orgdf2fbbb" class="outline-2">
-<h2 id="orgdf2fbbb"><b>Watching Buffers</b> with buffer-watcher.el</h2>
-<div class="outline-text-2" id="text-orgdf2fbbb">
+<div id="outline-container-orge7434fe" class="outline-2">
+<h2 id="orge7434fe"><b>Watching Buffers</b> with buffer-watcher.el</h2>
+<div class="outline-text-2" id="text-orge7434fe">
 <div class="pubdate">
 October 24, 2014
 </div>
@@ -757,8 +734,8 @@ in the project <code>proj</code>:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #c678dd; font-weight: bold;">require</span> '<span style="color: #da8548; font-weight: bold;">buffer-watcher</span>)
-(add-to-list 'buffer-watcher-commands '(<span style="color: #98be65;">"Lessc hook"</span> less-css-mode <span style="color: #98be65;">"~/projects/proj/"</span> <span style="color: #98be65;">"lessc % &gt; style.css"</span>))
+<pre class="src src-emacs-lisp">(<span style="color: #FF8080;">require</span> '<span style="color: #AAFFE4;">buffer-watcher</span>)
+(add-to-list 'buffer-watcher-commands '(<span style="color: #FFE9AA;">"Lessc hook"</span> less-css-mode <span style="color: #FFE9AA;">"~/projects/proj/"</span> <span style="color: #FFE9AA;">"lessc % &gt; style.css"</span>))
 </pre>
 </div>
 
@@ -773,7 +750,7 @@ If you're into <code>customize</code>, you can <code>M-x customize-group RET
 </p>
 
 
-<div class="figure">
+<div id="orgb04c88c" class="figure">
 <p><img src="../images/buffer-watcher.png" alt="buffer-watcher.png" />
 </p>
 </div>
@@ -788,9 +765,9 @@ You can grab buffer-watcher from my <a href="https://github.com/NicolasPetton/em
 </div>
 </div>
 
-<div id="outline-container-org1d235f8" class="outline-2">
-<h2 id="org1d235f8">Interview with <b>Johan</b> Degerfeldt</h2>
-<div class="outline-text-2" id="text-org1d235f8">
+<div id="outline-container-org1b5ac51" class="outline-2">
+<h2 id="org1b5ac51">Interview with <b>Johan</b> Degerfeldt</h2>
+<div class="outline-text-2" id="text-org1b5ac51">
 <div class="pubdate">
 Oct 16, 2014
 </div>
@@ -820,9 +797,9 @@ really cool guy to work with.
 </div>
 
 
-<div id="outline-container-org074d6dc" class="outline-2">
-<h2 id="org074d6dc"><b>Amber</b> 0.13</h2>
-<div class="outline-text-2" id="text-org074d6dc">
+<div id="outline-container-org4fc6325" class="outline-2">
+<h2 id="org4fc6325"><b>Amber</b> 0.13</h2>
+<div class="outline-text-2" id="text-org4fc6325">
 <p>
 Amber 0.13.1 has been released!
 </p>
@@ -833,9 +810,9 @@ Amber 0.13.1 has been released!
 </div>
 </div>
 
-<div id="outline-container-orga426d2c" class="outline-2">
-<h2 id="orga426d2c"><b>Amber</b> has a new maintainer</h2>
-<div class="outline-text-2" id="text-orga426d2c">
+<div id="outline-container-org52a50e4" class="outline-2">
+<h2 id="org52a50e4"><b>Amber</b> has a new maintainer</h2>
+<div class="outline-text-2" id="text-org52a50e4">
 <p>
 As you have probably noticed, I've been a bit away from Amber for some
 time.
@@ -861,9 +838,9 @@ It does not mean that I will totally disappear, I'll stay around!
 </div>
 </div>
 
-<div id="outline-container-orgac5f306" class="outline-2">
-<h2 id="orgac5f306"><b>Multi-occur</b> on projects</h2>
-<div class="outline-text-2" id="text-orgac5f306">
+<div id="outline-container-org8bb341d" class="outline-2">
+<h2 id="org8bb341d"><b>Multi-occur</b> on projects</h2>
+<div class="outline-text-2" id="text-org8bb341d">
 <p>
 <b>Update</b>: <a href="http://damiencassou.seasidehosting.st/">Damien Cassou</a> tricked me into extracting it in a
 package. You can get it here: <a href="https://github.com/NicolasPetton/noccur.el">github.com/NicolasPetton/noccur.el</a>.
@@ -886,28 +863,28 @@ I wrote a tiny package containing the following functions that does just that:
 
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #c678dd; font-weight: bold;">require</span> '<span style="color: #da8548; font-weight: bold;">projectile</span>)
+<pre class="src src-emacs-lisp">(<span style="color: #FF8080;">require</span> '<span style="color: #AAFFE4;">projectile</span>)
 
-(<span style="color: #c678dd; font-weight: bold;">defun</span> <span style="color: #61afef;">noccur-dired</span> (regexp <span style="color: #61afef;">&amp;optional</span> nlines)
-  <span style="color: #9eac8c;">"Perform `</span><span style="color: #da8548; font-weight: bold;">multi-occur</span><span style="color: #9eac8c;">' with REGEXP in all dired marked files.</span>
-<span style="color: #9eac8c;">When called with a prefix argument NLINES, display NLINES lines before and after."</span>
-  (<span style="color: #c678dd; font-weight: bold;">interactive</span> (occur-read-primary-args))
+(<span style="color: #FF8080;">defun</span> <span style="color: #C991E1;">noccur-dired</span> (regexp <span style="color: #91DDFF;">&amp;optional</span> nlines)
+  <span style="color: #858FA5;">"Perform `</span><span style="color: #AAFFE4;">multi-occur</span><span style="color: #858FA5;">' with REGEXP in all dired marked files.</span>
+<span style="color: #858FA5;">When called with a prefix argument NLINES, display NLINES lines before and after."</span>
+  (<span style="color: #FF8080;">interactive</span> (occur-read-primary-args))
   (multi-occur (mapcar #'find-file (dired-get-marked-files)) regexp nlines))
 
-(<span style="color: #c678dd; font-weight: bold;">defun</span> <span style="color: #61afef;">noccur-project</span> (regexp <span style="color: #61afef;">&amp;optional</span> nlines)
-  <span style="color: #9eac8c;">"Perform `</span><span style="color: #da8548; font-weight: bold;">multi-occur</span><span style="color: #9eac8c;">' in the current project files."</span>
-  (<span style="color: #c678dd; font-weight: bold;">interactive</span> (occur-read-primary-args))
-  (<span style="color: #c678dd; font-weight: bold;">let*</span> ((directory (read-directory-name <span style="color: #98be65;">"Search in directory: "</span>))
-         (files (<span style="color: #c678dd; font-weight: bold;">if</span> (<span style="color: #c678dd; font-weight: bold;">and</span> directory (not (string= directory (projectile-project-root))))
+(<span style="color: #FF8080;">defun</span> <span style="color: #C991E1;">noccur-project</span> (regexp <span style="color: #91DDFF;">&amp;optional</span> nlines)
+  <span style="color: #858FA5;">"Perform `</span><span style="color: #AAFFE4;">multi-occur</span><span style="color: #858FA5;">' in the current project files."</span>
+  (<span style="color: #FF8080;">interactive</span> (occur-read-primary-args))
+  (<span style="color: #FF8080;">let*</span> ((directory (read-directory-name <span style="color: #FFE9AA;">"Search in directory: "</span>))
+         (files (<span style="color: #FF8080;">if</span> (<span style="color: #FF8080;">and</span> directory (not (string= directory (projectile-project-root))))
                     (projectile-files-in-project-directory directory)
                   (projectile-current-project-files)))
          (buffers (mapcar #'find-file 
-                          (mapcar #'(lambda (file)
+                          (mapcar #'(<span style="color: #FF8080;">lambda</span> (file)
                                       (expand-file-name file (projectile-project-root)))
                                   files))))
     (multi-occur buffers regexp nlines)))
 
-(<span style="color: #c678dd; font-weight: bold;">provide</span> '<span style="color: #da8548; font-weight: bold;">noccur</span>)
+(<span style="color: #FF8080;">provide</span> '<span style="color: #AAFFE4;">noccur</span>)
 </pre>
 </div>
 
@@ -933,9 +910,9 @@ modified buffer and go back to <code>occur-mode</code> press <code>C-c C-c</code
 </div>
 
 
-<div id="outline-container-org618f0f0" class="outline-2">
-<h2 id="org618f0f0"><b>Dark Emacs windows</b> in GNOME</h2>
-<div class="outline-text-2" id="text-org618f0f0">
+<div id="outline-container-org6cf86db" class="outline-2">
+<h2 id="org6cf86db"><b>Dark Emacs windows</b> in GNOME</h2>
+<div class="outline-text-2" id="text-org6cf86db">
 <p>
 Gnome 3's default theme Adwaita has support for both light and dark
 window decorations. Many media apps like Totem use the dark theme. It
@@ -949,14 +926,14 @@ bit of elisp with xprop!
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #c678dd; font-weight: bold;">defun</span> <span style="color: #61afef;">set-selected-frame-dark</span> ()
-  (<span style="color: #c678dd; font-weight: bold;">interactive</span>)
-  (<span style="color: #c678dd; font-weight: bold;">let</span> ((frame-name (get-frame-name (selected-frame))))
-    (call-process-shell-command (concat <span style="color: #98be65;">"xprop -f _GTK_THEME_VARIANT 8u -set _GTK_THEME_VARIANT \"dark\" -name \""</span>
+<pre class="src src-emacs-lisp">(<span style="color: #FF8080;">defun</span> <span style="color: #C991E1;">set-selected-frame-dark</span> ()
+  (<span style="color: #FF8080;">interactive</span>)
+  (<span style="color: #FF8080;">let</span> ((frame-name (get-frame-name (selected-frame))))
+    (call-process-shell-command (concat <span style="color: #FFE9AA;">"xprop -f _GTK_THEME_VARIANT 8u -set _GTK_THEME_VARIANT \"dark\" -name \""</span>
                                         frame-name
-                                        <span style="color: #98be65;">"\""</span>))))
+                                        <span style="color: #FFE9AA;">"\""</span>))))
 
-(<span style="color: #c678dd; font-weight: bold;">if</span> (window-system)
+(<span style="color: #FF8080;">if</span> (window-system)
     (set-selected-frame-dark))
 </pre>
 </div>
@@ -977,9 +954,9 @@ Here's a screenshot of both versions:
 </div>
 
 
-<div id="outline-container-org4289785" class="outline-2">
-<h2 id="org4289785"><b>isearch</b> thing</h2>
-<div class="outline-text-2" id="text-org4289785">
+<div id="outline-container-orge156978" class="outline-2">
+<h2 id="orge156978"><b>isearch</b> thing</h2>
+<div class="outline-text-2" id="text-orge156978">
 <p>
 Wouldn't it be awesome if when using isearch, I could search for the symbol
 under the cursor, or the active region if any?
@@ -996,30 +973,30 @@ Note: it overrides <code>C-t</code> in isearch-mode, but as I never use it, I do
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #c678dd; font-weight: bold;">defun</span> <span style="color: #61afef;">symbol-name-at-point</span> ()
-  (<span style="color: #c678dd; font-weight: bold;">let</span> ((symbol (symbol-at-point)))
-    (<span style="color: #c678dd; font-weight: bold;">if</span> symbol
+<pre class="src src-emacs-lisp">(<span style="color: #FF8080;">defun</span> <span style="color: #C991E1;">symbol-name-at-point</span> ()
+  (<span style="color: #FF8080;">let</span> ((symbol (symbol-at-point)))
+    (<span style="color: #FF8080;">if</span> symbol
         (symbol-name symbol)
-      <span style="color: #98be65;">""</span>)))
+      <span style="color: #FFE9AA;">""</span>)))
 
-(<span style="color: #c678dd; font-weight: bold;">defun</span> <span style="color: #61afef;">current-thing</span> ()
-  <span style="color: #9eac8c;">"Return the current \"thing\":</span>
-<span style="color: #9eac8c;">- if the region is active, return the region's text and deactivate the mark</span>
-<span style="color: #9eac8c;">- else return the symbol at point or the empty string."</span>
-  (<span style="color: #c678dd; font-weight: bold;">let</span> ((thing (<span style="color: #c678dd; font-weight: bold;">if</span> (region-active-p)
+(<span style="color: #FF8080;">defun</span> <span style="color: #C991E1;">current-thing</span> ()
+  <span style="color: #858FA5;">"Return the current \"thing\":</span>
+<span style="color: #858FA5;">- if the region is active, return the region's text and deactivate the mark</span>
+<span style="color: #858FA5;">- else return the symbol at point or the empty string."</span>
+  (<span style="color: #FF8080;">let</span> ((thing (<span style="color: #FF8080;">if</span> (region-active-p)
                    (buffer-substring (region-beginning) (region-end))
                  (symbol-name-at-point))))
     (deactivate-mark)
     thing))
 
-(<span style="color: #c678dd; font-weight: bold;">defun</span> <span style="color: #61afef;">isearch-thing</span> ()
-  <span style="color: #9eac8c;">"Search for the current \"thing\":</span>
-<span style="color: #9eac8c;">- if the region is active, return the region's text and deactivate the mark</span>
-<span style="color: #9eac8c;">- else return the symbol at point or the empty string."</span>
-  (<span style="color: #c678dd; font-weight: bold;">interactive</span>)
+(<span style="color: #FF8080;">defun</span> <span style="color: #C991E1;">isearch-thing</span> ()
+  <span style="color: #858FA5;">"Search for the current \"thing\":</span>
+<span style="color: #858FA5;">- if the region is active, return the region's text and deactivate the mark</span>
+<span style="color: #858FA5;">- else return the symbol at point or the empty string."</span>
+  (<span style="color: #FF8080;">interactive</span>)
   (isearch-yank-string (current-thing)))
 
-(define-key isearch-mode-map (kbd <span style="color: #98be65;">"C-t"</span>) #'isearch-thing)
+(define-key isearch-mode-map (kbd <span style="color: #FFE9AA;">"C-t"</span>) #'isearch-thing)
 </pre>
 </div>
 
@@ -1030,9 +1007,9 @@ Note: it overrides <code>C-t</code> in isearch-mode, but as I never use it, I do
 </div>
 
 
-<div id="outline-container-orgf5fca3b" class="outline-2">
-<h2 id="orgf5fca3b"><b>Farewell</b> RMoD!</h2>
-<div class="outline-text-2" id="text-orgf5fca3b">
+<div id="outline-container-org2670012" class="outline-2">
+<h2 id="org2670012"><b>Farewell</b> RMoD!</h2>
+<div class="outline-text-2" id="text-org2670012">
 <p>
 Today is my last day at <a href="http://rmod.inria.fr/">RMoD</a>. 
 </p>
@@ -1070,9 +1047,9 @@ adventure that will begin, so stay tuned!
 </div>
 
 
-<div id="outline-container-org582a510" class="outline-2">
-<h2 id="org582a510">Interview with <b>Clara</b> Allende</h2>
-<div class="outline-text-2" id="text-org582a510">
+<div id="outline-container-org8d84927" class="outline-2">
+<h2 id="org8d84927">Interview with <b>Clara</b> Allende</h2>
+<div class="outline-text-2" id="text-org8d84927">
 <div class="pubdate">
 July 18, 2014
 </div>
@@ -1099,9 +1076,9 @@ members, as I'm leaving the team today.
 </div>
 
 
-<div id="outline-container-org702efc6" class="outline-2">
-<h2 id="org702efc6"><b>Tide &amp; Marina</b> at RMoD</h2>
-<div class="outline-text-2" id="text-org702efc6">
+<div id="outline-container-orgfdc7b4c" class="outline-2">
+<h2 id="orgfdc7b4c"><b>Tide &amp; Marina</b> at RMoD</h2>
+<div class="outline-text-2" id="text-orgfdc7b4c">
 <div class="pubdate">
 July 3, 2014
 </div>
@@ -1123,9 +1100,9 @@ Here are the <a href="http://nicolas-petton.fr/ressources/tide-marina-rmod-2014/
 </div>
 </div>
 
-<div id="outline-container-orga76e7e6" class="outline-2">
-<h2 id="orga76e7e6"><b>tmate.io</b> terminal sharing made easy</h2>
-<div class="outline-text-2" id="text-orga76e7e6">
+<div id="outline-container-orgffe74db" class="outline-2">
+<h2 id="orgffe74db"><b>tmate.io</b> terminal sharing made easy</h2>
+<div class="outline-text-2" id="text-orgffe74db">
 <div class="pubdate">
 July 3, 2014
 </div>
@@ -1175,9 +1152,9 @@ Emacs session.
 
 
 
-<div id="outline-container-org73a949d" class="outline-2">
-<h2 id="org73a949d"><b>Amber</b> 0.12.6</h2>
-<div class="outline-text-2" id="text-org73a949d">
+<div id="outline-container-org633062e" class="outline-2">
+<h2 id="org633062e"><b>Amber</b> 0.12.6</h2>
+<div class="outline-text-2" id="text-org633062e">
 <div class="pubdate">
 July 1, 2014
 </div>
@@ -1188,9 +1165,9 @@ Read the <a href="amber-0.12.6-released.html">announcement</a>.
 </div>
 </div>
 
-<div id="outline-container-orgaadd36d" class="outline-2">
-<h2 id="orgaadd36d">Interview with <b>Guillermo</b> Polito</h2>
-<div class="outline-text-2" id="text-orgaadd36d">
+<div id="outline-container-org2149eea" class="outline-2">
+<h2 id="org2149eea">Interview with <b>Guillermo</b> Polito</h2>
+<div class="outline-text-2" id="text-org2149eea">
 <div class="pubdate">
 June 18, 2014
 </div>
@@ -1216,9 +1193,9 @@ work.
 </div>
 
 
-<div id="outline-container-org94e8991" class="outline-2">
-<h2 id="org94e8991"><b>Per-computer</b> Emacs settings</h2>
-<div class="outline-text-2" id="text-org94e8991">
+<div id="outline-container-orgf3a0641" class="outline-2">
+<h2 id="orgf3a0641"><b>Per-computer</b> Emacs settings</h2>
+<div class="outline-text-2" id="text-orgf3a0641">
 <div class="pubdate">
 June 11, 2014
 </div>
@@ -1235,9 +1212,9 @@ these settings really matter for one specific computer.
 </div>
 </div>
 
-<div id="outline-container-org092e618" class="outline-2">
-<h2 id="org092e618">Interview with <b>Jean-Baptiste</b> Arnaud</h2>
-<div class="outline-text-2" id="text-org092e618">
+<div id="outline-container-org34b2f21" class="outline-2">
+<h2 id="org34b2f21">Interview with <b>Jean-Baptiste</b> Arnaud</h2>
+<div class="outline-text-2" id="text-org34b2f21">
 <div class="pubdate">
 June 11, 2014
 </div>
@@ -1259,9 +1236,9 @@ This time I interview Jean-Baptiste Arnaud.
 </div>
 
 
-<div id="outline-container-org902912d" class="outline-2">
-<h2 id="org902912d"><b>Amber</b> test runner</h2>
-<div class="outline-text-2" id="text-org902912d">
+<div id="outline-container-org8a9f744" class="outline-2">
+<h2 id="org8a9f744"><b>Amber</b> test runner</h2>
+<div class="outline-text-2" id="text-org8a9f744">
 <div class="pubdate">
 May 13, 2014
 </div>
@@ -1273,7 +1250,7 @@ a fully functional test runner.
 </p>
 
 
-<div class="figure">
+<div id="org99c3970" class="figure">
 <p><img src="../images/helios-sunit.png" alt="helios sunit" width="600px" />
 </p>
 <p><span class="figure-number">Figure 6: </span>Helios' test runner</p>
@@ -1286,9 +1263,9 @@ a fully functional test runner.
 </div>
 
 
-<div id="outline-container-org5e07bc7" class="outline-2">
-<h2 id="org5e07bc7"><b>Amber</b> 0.12.4</h2>
-<div class="outline-text-2" id="text-org5e07bc7">
+<div id="outline-container-orgb19e96b" class="outline-2">
+<h2 id="orgb19e96b"><b>Amber</b> 0.12.4</h2>
+<div class="outline-text-2" id="text-orgb19e96b">
 <div class="pubdate">
 April 11, 2014
 </div>
@@ -1328,9 +1305,9 @@ Install Amber 0.12.4 from <a href="http://docs.amber-lang.net">here</a>!
 </div>
 
 
-<div id="outline-container-org7926cd9" class="outline-2">
-<h2 id="org7926cd9"><b>Helios</b> as a desktop app</h2>
-<div class="outline-text-2" id="text-org7926cd9">
+<div id="outline-container-orgefa283f" class="outline-2">
+<h2 id="orgefa283f"><b>Helios</b> as a desktop app</h2>
+<div class="outline-text-2" id="text-orgefa283f">
 <div class="pubdate">
 April 3, 2014
 </div>
@@ -1341,7 +1318,7 @@ Helios running as a desktop app, remotely connected to an Amber app.
 </p>
 
 
-<div class="figure">
+<div id="org9affc0f" class="figure">
 <p><img src="../images/nw-helios.png" alt="niflheim" />  
 </p>
 <p><span class="figure-number">Figure 7: </span>Niflheim theme</p>
@@ -1352,7 +1329,7 @@ To try it yourself, you'll first need to install <a href="https://github.com/rog
 run from the `hw-helios-app` branch:
 </p>
 
-<div class="BASH">
+<div class="BASH" id="orgbfba6c0">
 <p>
 nw helios.nw
 </p>
@@ -1366,9 +1343,9 @@ nw helios.nw
 </div>
 
 
-<div id="outline-container-orgacab1ca" class="outline-2">
-<h2 id="orgacab1ca">Interview with <b>Stéphane</b> Ducasse</h2>
-<div class="outline-text-2" id="text-orgacab1ca">
+<div id="outline-container-org3365cd8" class="outline-2">
+<h2 id="org3365cd8">Interview with <b>Stéphane</b> Ducasse</h2>
+<div class="outline-text-2" id="text-org3365cd8">
 <div class="pubdate">
 February 7, 2014
 </div>
@@ -1385,9 +1362,9 @@ leader and the backbone of RMoD.
 </div>
 </div>
 
-<div id="outline-container-org36d2f82" class="outline-2">
-<h2 id="org36d2f82">A <b>dark theme</b> for Emacs</h2>
-<div class="outline-text-2" id="text-org36d2f82">
+<div id="outline-container-org29972a5" class="outline-2">
+<h2 id="org29972a5">A <b>dark theme</b> for Emacs</h2>
+<div class="outline-text-2" id="text-org29972a5">
 <div class="pubdate">
 March 28, 2014
 </div>
@@ -1397,7 +1374,7 @@ Together with <a href="http://benjamin.vanryseghem.com/">Benjamin</a> we made a 
 </p>
 
 
-<div class="figure">
+<div id="orgb975c17" class="figure">
 <p><img src="https://raw.githubusercontent.com/niflheim-theme/emacs/master/screenshot.png" alt="niflheim" />
 </p>
 <p><span class="figure-number">Figure 8: </span>Niflheim theme</p>
@@ -1405,10 +1382,10 @@ Together with <a href="http://benjamin.vanryseghem.com/">Benjamin</a> we made a 
 </div>
 
 
-<div id="outline-container-org1793eb0" class="outline-3">
-<h3 id="org1793eb0">The best way to install it is to use the <a href="http://melpa.milkbox.net/">MELPA</a> package archive:</h3>
-<div class="outline-text-3" id="text-org1793eb0">
-<div class="SH">
+<div id="outline-container-org5f57fbd" class="outline-3">
+<h3 id="org5f57fbd">The best way to install it is to use the <a href="http://melpa.milkbox.net/">MELPA</a> package archive:</h3>
+<div class="outline-text-3" id="text-org5f57fbd">
+<div class="SH" id="orge80d6cd">
 <p>
 M-x package-install RET niflheim-theme
 </p>
@@ -1423,9 +1400,9 @@ M-x package-install RET niflheim-theme
 </div>
 
 
-<div id="outline-container-org2c6bed5" class="outline-2">
-<h2 id="org2c6bed5">Interview with <b>Esteban</b> Lorenzano</h2>
-<div class="outline-text-2" id="text-org2c6bed5">
+<div id="outline-container-org2c39bc1" class="outline-2">
+<h2 id="org2c39bc1">Interview with <b>Esteban</b> Lorenzano</h2>
+<div class="outline-text-2" id="text-org2c39bc1">
 <div class="pubdate">
 February 6, 2014
 </div>
@@ -1442,9 +1419,9 @@ interview Esteban Lorenzano, my neighbour, colleague and friend.
 </div>
 </div>
 
-<div id="outline-container-org103f36e" class="outline-2">
-<h2 id="org103f36e"><b>Details</b> matter</h2>
-<div class="outline-text-2" id="text-org103f36e">
+<div id="outline-container-org8d16baf" class="outline-2">
+<h2 id="org8d16baf"><b>Details</b> matter</h2>
+<div class="outline-text-2" id="text-org8d16baf">
 <div class="pubdate">
 February 6, 2014
 </div>
@@ -1469,9 +1446,9 @@ most.
 </div>
 </div>
 
-<div id="outline-container-orgc77634b" class="outline-2">
-<h2 id="orgc77634b"><b>Help us</b> write a documentation for Amber!</h2>
-<div class="outline-text-2" id="text-orgc77634b">
+<div id="outline-container-org7e5fb1c" class="outline-2">
+<h2 id="org7e5fb1c"><b>Help us</b> write a documentation for Amber!</h2>
+<div class="outline-text-2" id="text-org7e5fb1c">
 <div class="pubdate">
 January 29, 2014
 </div>
@@ -1500,9 +1477,9 @@ We need more topics covered, reviews, etc.
 </div>
 </div>
 
-<div id="outline-container-org2733ad6" class="outline-2">
-<h2 id="org2733ad6">Interview with <b>Damien</b> Cassou</h2>
-<div class="outline-text-2" id="text-org2733ad6">
+<div id="outline-container-org7773644" class="outline-2">
+<h2 id="org7773644">Interview with <b>Damien</b> Cassou</h2>
+<div class="outline-text-2" id="text-org7773644">
 <div class="pubdate">
 January 15, 2014
 </div>
@@ -1520,9 +1497,9 @@ really means to work here.
 </div>
 
 
-<div id="outline-container-org91b612c" class="outline-2">
-<h2 id="org91b612c"><b>RMoD</b> A series of interviews</h2>
-<div class="outline-text-2" id="text-org91b612c">
+<div id="outline-container-orga53b2f2" class="outline-2">
+<h2 id="orga53b2f2"><b>RMoD</b> A series of interviews</h2>
+<div class="outline-text-2" id="text-orga53b2f2">
 <div class="pubdate">
 January 14, 2014
 </div>
@@ -1559,9 +1536,9 @@ I will post the interviews as they get completed, so stay tuned!
 </div>
 </div>
 
-<div id="outline-container-org3e55af9" class="outline-2">
-<h2 id="org3e55af9"><b>Poll</b> What would you like to have in future releases of Amber?</h2>
-<div class="outline-text-2" id="text-org3e55af9">
+<div id="outline-container-org63337f6" class="outline-2">
+<h2 id="org63337f6"><b>Poll</b> What would you like to have in future releases of Amber?</h2>
+<div class="outline-text-2" id="text-org63337f6">
 <div class="pubdate">
 January 13, 2014
 </div>
@@ -1578,9 +1555,9 @@ Fill the form <a href="https://docs.google.com/forms/d/1wNTxIk3LZh2JHCVL_SSst_QJ
 </div>
 </div>
 
-<div id="outline-container-org9e34c62" class="outline-2">
-<h2 id="org9e34c62"><b>Keybindings</b> in Amber's new IDE</h2>
-<div class="outline-text-2" id="text-org9e34c62">
+<div id="outline-container-org3118b59" class="outline-2">
+<h2 id="org3118b59"><b>Keybindings</b> in Amber's new IDE</h2>
+<div class="outline-text-2" id="text-org3118b59">
 <div class="pubdate">
 January 13, 2014
 </div>
@@ -1597,9 +1574,9 @@ time, and keyboard shortcuts as well as their UI are no exception.
 </div>
 </div>
 
-<div id="outline-container-org02d8f0b" class="outline-2">
-<h2 id="org02d8f0b"><b>Amber</b> 0.12.2</h2>
-<div class="outline-text-2" id="text-org02d8f0b">
+<div id="outline-container-org27bf053" class="outline-2">
+<h2 id="org27bf053"><b>Amber</b> 0.12.2</h2>
+<div class="outline-text-2" id="text-org27bf053">
 <div class="pubdate">
 December 3, 2013
 </div>
@@ -1615,9 +1592,9 @@ days after the release of version <a href="https://groups.google.com/d/msg/amber
 </div>
 </div>
 
-<div id="outline-container-org02a3903" class="outline-2">
-<h2 id="org02a3903">Slides from my presentation at <b>Smalltalks 2013</b></h2>
-<div class="outline-text-2" id="text-org02a3903">
+<div id="outline-container-orgca93d1b" class="outline-2">
+<h2 id="orgca93d1b">Slides from my presentation at <b>Smalltalks 2013</b></h2>
+<div class="outline-text-2" id="text-orgca93d1b">
 <div class="pubdate">
 December 3, 2013
 </div>
@@ -1628,9 +1605,9 @@ I just put online <a href="http://nicolas-petton.fr/ressources/amber-smalltalks-
 </div>
 </div>
 
-<div id="outline-container-org5bc9d0b" class="outline-2">
-<h2 id="org5bc9d0b"><b>Amber</b> 0.12.0</h2>
-<div class="outline-text-2" id="text-org5bc9d0b">
+<div id="outline-container-org695e199" class="outline-2">
+<h2 id="org695e199"><b>Amber</b> 0.12.0</h2>
+<div class="outline-text-2" id="text-org695e199">
 <div class="pubdate">
 November 12, 2013
 </div>
@@ -1651,9 +1628,9 @@ Helios, the CLI tools and the compiler, among other changes.
 </div>
 </div>
 
-<div id="outline-container-org697167e" class="outline-2">
-<h2 id="org697167e">Amber's new <b>compiler</b></h2>
-<div class="outline-text-2" id="text-org697167e">
+<div id="outline-container-org203a852" class="outline-2">
+<h2 id="org203a852">Amber's new <b>compiler</b></h2>
+<div class="outline-text-2" id="text-org203a852">
 <div class="pubdate">
 October 18, 2013
 </div>
@@ -1676,9 +1653,9 @@ more flexible and extensible compiler.
 </div>
 </div>
 
-<div id="outline-container-orge5de544" class="outline-2">
-<h2 id="orge5de544">Arrived in <b>Buenos Aires</b></h2>
-<div class="outline-text-2" id="text-orge5de544">
+<div id="outline-container-org34a7c23" class="outline-2">
+<h2 id="org34a7c23">Arrived in <b>Buenos Aires</b></h2>
+<div class="outline-text-2" id="text-org34a7c23">
 <div class="pubdate">
 October 18, 2013
 </div>
@@ -1700,9 +1677,9 @@ I hope to see you there!
 </div>
 </div>
 
-<div id="outline-container-orgb677a43" class="outline-2">
-<h2 id="orgb677a43">Installing <b>Pharo on Ubuntu</b></h2>
-<div class="outline-text-2" id="text-orgb677a43">
+<div id="outline-container-org3d92fc9" class="outline-2">
+<h2 id="org3d92fc9">Installing <b>Pharo on Ubuntu</b></h2>
+<div class="outline-text-2" id="text-org3d92fc9">
 <div class="pubdate">
 October 15, 2013
 </div>
@@ -1720,9 +1697,9 @@ a ppa for it.
 </div>
 </div>
 
-<div id="outline-container-orgbee4478" class="outline-2">
-<h2 id="orgbee4478">Blogging with <b>org-mode</b></h2>
-<div class="outline-text-2" id="text-orgbee4478">
+<div id="outline-container-orgd57d9a6" class="outline-2">
+<h2 id="orgd57d9a6">Blogging with <b>org-mode</b></h2>
+<div class="outline-text-2" id="text-orgd57d9a6">
 <div class="pubdate">
 October 15, 2013
 </div>
@@ -1742,9 +1719,9 @@ exporter</a> in the <i>contrib</i> directory and together with its HTML
 </div>
 
 
-<div id="outline-container-org4167257" class="outline-2">
-<h2 id="org4167257">Amber <b>0.10.0</b></h2>
-<div class="outline-text-2" id="text-org4167257">
+<div id="outline-container-orgda5f9bc" class="outline-2">
+<h2 id="orgda5f9bc">Amber <b>0.10.0</b></h2>
+<div class="outline-text-2" id="text-orgda5f9bc">
 <div class="pubdate">
 March 13, 2013
 </div>
@@ -1763,9 +1740,9 @@ Read the <a href="https://groups.google.com/forum/#!searchin/amber-lang/0.10.0/a
 </div>
 <div id="postamble" class="status">
 <div class='footer'>
-Copyright 2020 Nicolas Petton.<br>
+Copyright 2022 Nicolas Petton.<br>
 Last updated 2020-08-24 Mon 14:42. <br>
-Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.3.6).
+Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.1 (<a href="https://orgmode.org">Org</a> mode 9.4.4).
 </div>
 </div>
 </body>

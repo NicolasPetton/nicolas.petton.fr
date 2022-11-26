@@ -14,9 +14,9 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Mon, 24 Aug 2020 14:42:52 +0200</pubDate>
-  <lastBuildDate>Mon, 24 Aug 2020 14:42:52 +0200</lastBuildDate>
-  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <pubDate>Sat, 26 Nov 2022 13:59:58 +0100</pubDate>
+  <lastBuildDate>Sat, 26 Nov 2022 13:59:58 +0100</lastBuildDate>
+  <generator>Emacs 28.1 Org-mode 9.4.4</generator>
   <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
@@ -26,9 +26,9 @@
 
   <item>
     <title>discover-js2-refactor</title>
-    <link>http://nicolas-petton.fr/blog/discover-js2-refactor.html#org91dc432</link>
+    <link>http://nicolas-petton.fr/blog/discover-js2-refactor.html#orgd0237cc</link>
     <author>nico@petton.fr (Nicolas Petton)</author>
-    <guid isPermaLink="false">http://nicolas-petton.fr/blog/discover-js2-refactor.html#org91dc432</guid>
+    <guid isPermaLink="false">http://nicolas-petton.fr/blog/discover-js2-refactor.html#orgd0237cc</guid>
     <pubDate>Wed, 29 Jan 2014 15:37:00 +0100</pubDate>
     <category><![CDATA[emacs]]></category>
     <category><![CDATA[javascript]]></category>
@@ -36,9 +36,9 @@
     January 29, 2014
     </div>
 
-    <div id="outline-container-orgba474a5" class="outline-3">
-    <h3 id="orgba474a5">Making js2-refactor more discoverable</h3>
-    <div class="outline-text-3" id="text-orgba474a5">
+    <div id="outline-container-orgc16e5aa" class="outline-3">
+    <h3 id="orgc16e5aa">Making js2-refactor more discoverable</h3>
+    <div class="outline-text-3" id="text-orgc16e5aa">
     <p>
     Since I started using Emacs for most of my development, I've been a
     big fan of <a href="https://github.com/mooz/js2-mode/">js2-mode</a>, a major mode for editing JavaScript files based
@@ -59,7 +59,7 @@
     </p>
 
 
-    <div class="figure">
+    <div id="org6c499d1" class="figure">
     <p><img src="https://raw.github.com/NicolasPetton/discover-js2-refactor/master/screenshot.png" alt="screenshot.png" />
     </p>
     <p><span class="figure-number">Figure 1: </span>discover-js2-refactor, the mandatory screenshot</p>
@@ -67,9 +67,9 @@
     </div>
     </div>
 
-    <div id="outline-container-orgcb2b7a0" class="outline-3">
-    <h3 id="orgcb2b7a0">Installing discover-js2-refactor</h3>
-    <div class="outline-text-3" id="text-orgcb2b7a0">
+    <div id="outline-container-org8f09275" class="outline-3">
+    <h3 id="org8f09275">Installing discover-js2-refactor</h3>
+    <div class="outline-text-3" id="text-org8f09275">
     <p>
     The package is available on <a href="http://melpa.milkbox.net/#/">melpa</a>, if you have it enabled you can
     simply evaluate the following code to install the package.

@@ -14,9 +14,9 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Mon, 24 Aug 2020 14:42:51 +0200</pubDate>
-  <lastBuildDate>Mon, 24 Aug 2020 14:42:51 +0200</lastBuildDate>
-  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <pubDate>Sat, 26 Nov 2022 13:59:57 +0100</pubDate>
+  <lastBuildDate>Sat, 26 Nov 2022 13:59:57 +0100</lastBuildDate>
+  <generator>Emacs 28.1 Org-mode 9.4.4</generator>
   <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
@@ -27,9 +27,9 @@
 
   <item>
     <title>*Dark Emacs windows* in GNOME</title>
-    <link>http://nicolas-petton.fr/blog/emacs-dark-window-decoration.html#org4b93f26</link>
+    <link>http://nicolas-petton.fr/blog/emacs-dark-window-decoration.html#orgfac3596</link>
     <author>nico@petton.fr (Nicolas Petton)</author>
-    <guid isPermaLink="false">http://nicolas-petton.fr/blog/emacs-dark-window-decoration.html#org4b93f26</guid>
+    <guid isPermaLink="false">http://nicolas-petton.fr/blog/emacs-dark-window-decoration.html#orgfac3596</guid>
     <pubDate>Fri, 29 Aug 2014 09:25:00 +0200</pubDate>
 
     <description><![CDATA[<p>
@@ -45,14 +45,14 @@
     </p>
 
     <div class="org-src-container">
-    <pre class="src src-emacs-lisp">(<span style="color: #c678dd; font-weight: bold;">defun</span> <span style="color: #61afef;">set-selected-frame-dark</span> ()
-    (<span style="color: #c678dd; font-weight: bold;">interactive</span>)
-    (<span style="color: #c678dd; font-weight: bold;">let</span> ((frame-name (get-frame-name (selected-frame))))
-    (call-process-shell-command (concat <span style="color: #98be65;">"xprop -f _GTK_THEME_VARIANT 8u -set _GTK_THEME_VARIANT \"dark\" -name \""</span>
+    <pre class="src src-emacs-lisp">(<span style="color: #FF8080;">defun</span> <span style="color: #C991E1;">set-selected-frame-dark</span> ()
+    (<span style="color: #FF8080;">interactive</span>)
+    (<span style="color: #FF8080;">let</span> ((frame-name (get-frame-name (selected-frame))))
+    (call-process-shell-command (concat <span style="color: #FFE9AA;">"xprop -f _GTK_THEME_VARIANT 8u -set _GTK_THEME_VARIANT \"dark\" -name \""</span>
     frame-name
-    <span style="color: #98be65;">"\""</span>))))
+    <span style="color: #FFE9AA;">"\""</span>))))
 
-    (<span style="color: #c678dd; font-weight: bold;">if</span> (window-system)
+    (<span style="color: #FF8080;">if</span> (window-system)
     (set-selected-frame-dark))
     </pre>
     </div>

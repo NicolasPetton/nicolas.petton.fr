@@ -14,9 +14,9 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Mon, 24 Aug 2020 14:42:27 +0200</pubDate>
-  <lastBuildDate>Mon, 24 Aug 2020 14:42:27 +0200</lastBuildDate>
-  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <pubDate>Sat, 26 Nov 2022 13:59:33 +0100</pubDate>
+  <lastBuildDate>Sat, 26 Nov 2022 13:59:33 +0100</lastBuildDate>
+  <generator>Emacs 28.1 Org-mode 9.4.4</generator>
   <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
@@ -27,9 +27,9 @@
 
   <item>
     <title>*Helios* as a desktop app</title>
-    <link>http://nicolas-petton.fr/blog/nw-helios.html#orgbbb31c4</link>
+    <link>http://nicolas-petton.fr/blog/nw-helios.html#org891dcbb</link>
     <author>nico@petton.fr (Nicolas Petton)</author>
-    <guid isPermaLink="false">http://nicolas-petton.fr/blog/nw-helios.html#orgbbb31c4</guid>
+    <guid isPermaLink="false">http://nicolas-petton.fr/blog/nw-helios.html#org891dcbb</guid>
     <pubDate>Thu, 03 Apr 2014 11:17:00 +0200</pubDate>
 
     <description><![CDATA[<div class="pubdate">
@@ -42,7 +42,7 @@
     </p>
 
 
-    <div class="figure">
+    <div id="org10fc071" class="figure">
     <p><img src="../images/nw-helios.png" alt="niflheim" />  
     </p>
     <p><span class="figure-number">Figure 1: </span>Niflheim theme</p>
@@ -53,7 +53,7 @@
     run from the `hw-helios-app` branch:
     </p>
 
-    <div class="BASH">
+    <div class="BASH" id="org24e3746">
     <p>
     nw helios.nw
     </p>

@@ -14,9 +14,9 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Mon, 24 Aug 2020 14:42:55 +0200</pubDate>
-  <lastBuildDate>Mon, 24 Aug 2020 14:42:55 +0200</lastBuildDate>
-  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <pubDate>Sat, 26 Nov 2022 13:59:42 +0100</pubDate>
+  <lastBuildDate>Sat, 26 Nov 2022 13:59:42 +0100</lastBuildDate>
+  <generator>Emacs 28.1 Org-mode 9.4.4</generator>
   <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
@@ -27,9 +27,9 @@
 
   <item>
     <title>Interview with *Johan* Degerfeldt</title>
-    <link>http://nicolas-petton.fr/blog/interview-johan.html#org713f312</link>
+    <link>http://nicolas-petton.fr/blog/interview-johan.html#org7b5a009</link>
     <author>nico@petton.fr (Nicolas Petton)</author>
-    <guid isPermaLink="false">http://nicolas-petton.fr/blog/interview-johan.html#org713f312</guid>
+    <guid isPermaLink="false">http://nicolas-petton.fr/blog/interview-johan.html#org7b5a009</guid>
     <pubDate>Wed, 11 Jun 2014 15:53:00 +0200</pubDate>
 
     <description><![CDATA[<div class="pubdate">
@@ -56,7 +56,7 @@
 
 
 
-    <div class="figure">
+    <div id="orgd8c7cd4" class="figure">
     <p><img src="../images/johan1.jpg" alt="Johan Degerfeldt image" align="center" />
     </p>
     <p><span class="figure-number">Figure 1: </span>Johan Degerfeldt</p>
@@ -122,7 +122,7 @@
 
 
 
-    <div class="figure">
+    <div id="org554d0e5" class="figure">
     <p><img src="../images/johan2.jpg" alt="Johan" align="center" />
     </p>
     <p><span class="figure-number">Figure 2: </span>Johan the business man</p>
@@ -162,7 +162,7 @@
     </p>
 
 
-    <div class="figure">
+    <div id="org51d9ae9" class="figure">
     <p><img src="../images/boardmeeting.jpg" alt="board meeting" align="center" />
     </p>
     <p><span class="figure-number">Figure 3: </span>A board meeting</p>
@@ -212,7 +212,7 @@
     </ul>
 
 
-    <div class="figure">
+    <div id="org4a4423a" class="figure">
     <p><img src="../images/johan3.jpg" alt="Johan" align="center" />
     </p>
     <p><span class="figure-number">Figure 4: </span>Johan the family man</p>

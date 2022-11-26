@@ -14,9 +14,9 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Mon, 24 Aug 2020 14:42:46 +0200</pubDate>
-  <lastBuildDate>Mon, 24 Aug 2020 14:42:46 +0200</lastBuildDate>
-  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <pubDate>Sat, 26 Nov 2022 13:59:39 +0100</pubDate>
+  <lastBuildDate>Sat, 26 Nov 2022 13:59:39 +0100</lastBuildDate>
+  <generator>Emacs 28.1 Org-mode 9.4.4</generator>
   <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
@@ -27,9 +27,9 @@
 
   <item>
     <title>Interview with *Mikael* Hägerbro</title>
-    <link>http://nicolas-petton.fr/blog/interview-mikael.html#org5efdbea</link>
+    <link>http://nicolas-petton.fr/blog/interview-mikael.html#org9d1689e</link>
     <author>nico@petton.fr (Nicolas Petton)</author>
-    <guid isPermaLink="false">http://nicolas-petton.fr/blog/interview-mikael.html#org5efdbea</guid>
+    <guid isPermaLink="false">http://nicolas-petton.fr/blog/interview-mikael.html#org9d1689e</guid>
     <pubDate>Mon, 22 Feb 2016 09:30:00 +0100</pubDate>
 
     <description><![CDATA[<div class="pubdate">
@@ -58,7 +58,7 @@
     </p>
 
 
-    <div class="figure">
+    <div id="org1d8100f" class="figure">
     <p><img src="../images/mikael2.png" alt="Mikael image" align="center" />
     </p>
     <p><span class="figure-number">Figure 1: </span>Mikael hanging out at a kaffebar</p>
@@ -102,7 +102,7 @@
     </p>
 
 
-    <div class="figure">
+    <div id="org0613a4c" class="figure">
     <p><img src="../images/mikael4.jpg" alt="tcp ip illustrated image" align="center" />
     </p>
     <p><span class="figure-number">Figure 2: </span>tcp ip illustrated - The networking bible</p>
@@ -115,7 +115,7 @@
     </p>
 
 
-    <div class="figure">
+    <div id="orgfd136c8" class="figure">
     <p><img src="../images/mikael3.png" alt="virtua figther image" align="center" />
     </p>
     <p><span class="figure-number">Figure 3: </span>Sega Virtua Fighter - Was so awesome back in the days</p>
@@ -167,7 +167,7 @@
     </p>
 
 
-    <div class="figure">
+    <div id="orgc80503e" class="figure">
     <p><img src="../images/mikael1.png" alt="4kkube figther image" align="center" />
     </p>
     <p><span class="figure-number">Figure 4: </span>A 4k intro I made. Graphic programming under constraints is fun</p>
@@ -180,7 +180,7 @@
     </p>
 
 
-    <div class="figure">
+    <div id="org197f3a4" class="figure">
     <p><img src="../images/mikael5.jpg" alt="Mikael figther image" align="center" />
     </p>
     <p><span class="figure-number">Figure 5: </span>Val Thorens - Skiing is also one of my interests</p>

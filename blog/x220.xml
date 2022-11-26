@@ -14,9 +14,9 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Mon, 24 Aug 2020 14:42:26 +0200</pubDate>
-  <lastBuildDate>Mon, 24 Aug 2020 14:42:26 +0200</lastBuildDate>
-  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <pubDate>Sat, 26 Nov 2022 13:59:16 +0100</pubDate>
+  <lastBuildDate>Sat, 26 Nov 2022 13:59:16 +0100</lastBuildDate>
+  <generator>Emacs 28.1 Org-mode 9.4.4</generator>
   <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
@@ -27,18 +27,18 @@
 
   <item>
     <title>Going for a ThinkPad x220</title>
-    <link>http://nicolas-petton.fr/blog/x220.html#orgd5e5043</link>
+    <link>http://nicolas-petton.fr/blog/x220.html#orgd4bc05e</link>
     <author>nico@petton.fr (Nicolas Petton)</author>
-    <guid isPermaLink="false">http://nicolas-petton.fr/blog/x220.html#orgd5e5043</guid>
+    <guid isPermaLink="false">http://nicolas-petton.fr/blog/x220.html#orgd4bc05e</guid>
     <pubDate>Sun, 03 Jul 2016 23:45:00 +0200</pubDate>
 
     <description><![CDATA[<div class="pubdate">
     July 1, 2016
     </div>
 
-    <div id="outline-container-orgd422c7f" class="outline-3">
-    <h3 id="orgd422c7f">Looking for the perfect secondary laptop</h3>
-    <div class="outline-text-3" id="text-orgd422c7f">
+    <div id="outline-container-orgb78a7ef" class="outline-3">
+    <h3 id="orgb78a7ef">Looking for the perfect secondary laptop</h3>
+    <div class="outline-text-3" id="text-orgb78a7ef">
     <p>
     I've been looking for a second hand laptop to use at home and for travelling for
     a while, so that I wouldn't have to carry my primary laptop from and to work
@@ -56,7 +56,7 @@
     </p>
 
 
-    <div class="figure">
+    <div id="orgfb92e05" class="figure">
     <p><img src="../images/x220-keyboard.jpg" alt="x220 image" align="center" />
     </p>
     <p><span class="figure-number">Figure 1: </span>The keyboard of the ThinkPad x220</p>
@@ -64,9 +64,9 @@
     </div>
     </div>
 
-    <div id="outline-container-org75e545d" class="outline-3">
-    <h3 id="org75e545d">Going for a x220</h3>
-    <div class="outline-text-3" id="text-org75e545d">
+    <div id="outline-container-org69c00ed" class="outline-3">
+    <h3 id="org69c00ed">Going for a x220</h3>
+    <div class="outline-text-3" id="text-org69c00ed">
     <p>
     After doing a bit of research, I decided to go for a refurbished ThinkPad
     x220. I found one in a local store in a very good shape, the laptop looks almost
@@ -80,9 +80,9 @@
     </div>
     </div>
 
-    <div id="outline-container-orgb2d39cd" class="outline-3">
-    <h3 id="orgb2d39cd">Review</h3>
-    <div class="outline-text-3" id="text-orgb2d39cd">
+    <div id="outline-container-orgc74a8ec" class="outline-3">
+    <h3 id="orgc74a8ec">Review</h3>
+    <div class="outline-text-3" id="text-orgc74a8ec">
     <p>
     I think the x220 is an amazing little machine!  
     </p>

@@ -14,9 +14,9 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Mon, 24 Aug 2020 14:43:02 +0200</pubDate>
-  <lastBuildDate>Mon, 24 Aug 2020 14:43:02 +0200</lastBuildDate>
-  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <pubDate>Sat, 26 Nov 2022 13:59:35 +0100</pubDate>
+  <lastBuildDate>Sat, 26 Nov 2022 13:59:35 +0100</lastBuildDate>
+  <generator>Emacs 28.1 Org-mode 9.4.4</generator>
   <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
@@ -26,9 +26,9 @@
 
   <item>
     <title>*isearch* thing</title>
-    <link>http://nicolas-petton.fr/blog/isearch-thing.html#orgff3669a</link>
+    <link>http://nicolas-petton.fr/blog/isearch-thing.html#org4d3bcd7</link>
     <author>nico@petton.fr (Nicolas Petton)</author>
-    <guid isPermaLink="false">http://nicolas-petton.fr/blog/isearch-thing.html#orgff3669a</guid>
+    <guid isPermaLink="false">http://nicolas-petton.fr/blog/isearch-thing.html#org4d3bcd7</guid>
     <pubDate>Tue, 26 Aug 2014 14:00:00 +0200</pubDate>
 
     <description><![CDATA[<p>
@@ -47,30 +47,30 @@
     </p>
 
     <div class="org-src-container">
-    <pre class="src src-emacs-lisp">(<span style="color: #c678dd; font-weight: bold;">defun</span> <span style="color: #61afef;">symbol-name-at-point</span> ()
-    (<span style="color: #c678dd; font-weight: bold;">let</span> ((symbol (symbol-at-point)))
-    (<span style="color: #c678dd; font-weight: bold;">if</span> symbol
+    <pre class="src src-emacs-lisp">(<span style="color: #FF8080;">defun</span> <span style="color: #C991E1;">symbol-name-at-point</span> ()
+    (<span style="color: #FF8080;">let</span> ((symbol (symbol-at-point)))
+    (<span style="color: #FF8080;">if</span> symbol
     (symbol-name symbol)
-    <span style="color: #98be65;">""</span>)))
+    <span style="color: #FFE9AA;">""</span>)))
 
-    (<span style="color: #c678dd; font-weight: bold;">defun</span> <span style="color: #61afef;">current-thing</span> ()
-    <span style="color: #9eac8c;">"Return the current \"thing\":</span>
-    <span style="color: #9eac8c;">- if the region is active, return the region's text and deactivate the mark</span>
-    <span style="color: #9eac8c;">- else return the symbol at point or the empty string."</span>
-    (<span style="color: #c678dd; font-weight: bold;">let</span> ((thing (<span style="color: #c678dd; font-weight: bold;">if</span> (region-active-p)
+    (<span style="color: #FF8080;">defun</span> <span style="color: #C991E1;">current-thing</span> ()
+    <span style="color: #858FA5;">"Return the current \"thing\":</span>
+    <span style="color: #858FA5;">- if the region is active, return the region's text and deactivate the mark</span>
+    <span style="color: #858FA5;">- else return the symbol at point or the empty string."</span>
+    (<span style="color: #FF8080;">let</span> ((thing (<span style="color: #FF8080;">if</span> (region-active-p)
     (buffer-substring (region-beginning) (region-end))
     (symbol-name-at-point))))
     (deactivate-mark)
     thing))
 
-    (<span style="color: #c678dd; font-weight: bold;">defun</span> <span style="color: #61afef;">isearch-thing</span> ()
-    <span style="color: #9eac8c;">"Search for the current \"thing\":</span>
-    <span style="color: #9eac8c;">- if the region is active, return the region's text and deactivate the mark</span>
-    <span style="color: #9eac8c;">- else return the symbol at point or the empty string."</span>
-    (<span style="color: #c678dd; font-weight: bold;">interactive</span>)
+    (<span style="color: #FF8080;">defun</span> <span style="color: #C991E1;">isearch-thing</span> ()
+    <span style="color: #858FA5;">"Search for the current \"thing\":</span>
+    <span style="color: #858FA5;">- if the region is active, return the region's text and deactivate the mark</span>
+    <span style="color: #858FA5;">- else return the symbol at point or the empty string."</span>
+    (<span style="color: #FF8080;">interactive</span>)
     (isearch-yank-string (current-thing)))
 
-    (define-key isearch-mode-map (kbd <span style="color: #98be65;">"C-t"</span>) #'isearch-thing)
+    (define-key isearch-mode-map (kbd <span style="color: #FFE9AA;">"C-t"</span>) #'isearch-thing)
     </pre>
     </div>
 

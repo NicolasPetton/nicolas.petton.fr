@@ -14,9 +14,9 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Mon, 24 Aug 2020 14:42:48 +0200</pubDate>
-  <lastBuildDate>Mon, 24 Aug 2020 14:42:48 +0200</lastBuildDate>
-  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <pubDate>Sat, 26 Nov 2022 14:13:00 +0100</pubDate>
+  <lastBuildDate>Sat, 26 Nov 2022 14:13:00 +0100</lastBuildDate>
+  <generator>Emacs 28.1 Org-mode 9.4.4</generator>
   <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
@@ -52,7 +52,7 @@
     </p>
 
 
-    <div class="figure">
+    <div id="org3fa7132" class="figure">
     <p><img src="../images/damien-3.jpg" alt="Damien Cassou at work image" align="center" />
     </p>
     <p><span class="figure-number">Figure 1: </span>Damien at work</p>
@@ -109,9 +109,9 @@
     July 1, 2016
     </div>
 
-    <div id="outline-container-org2fd2c21" class="outline-3">
-    <h3 id="org2fd2c21">Looking for the perfect secondary laptop</h3>
-    <div class="outline-text-3" id="text-org2fd2c21">
+    <div id="outline-container-org6b67167" class="outline-3">
+    <h3 id="org6b67167">Looking for the perfect secondary laptop</h3>
+    <div class="outline-text-3" id="text-org6b67167">
     <p>
     I've been looking for a second hand laptop to use at home and for travelling for
     a while, so that I wouldn't have to carry my primary laptop from and to work
@@ -129,7 +129,7 @@
     </p>
 
 
-    <div class="figure">
+    <div id="org460127a" class="figure">
     <p><img src="../images/x220-keyboard.jpg" alt="x220 image" align="center" />
     </p>
     <p><span class="figure-number">Figure 2: </span>The keyboard of the ThinkPad x220</p>
@@ -264,7 +264,7 @@
     </p>
 
 
-    <div class="figure">
+    <div id="org38fe48d" class="figure">
     <p><img src="../images/emacs-website.png" alt="emacs-website.png" />
     </p>
     </div>
@@ -311,7 +311,7 @@
     </p>
 
 
-    <div class="figure">
+    <div id="org33f4d55" class="figure">
     <p><img src="../images/emacs-in-context2.png" alt="emacs-in-context2.png" />
     </p>
     </div>
@@ -570,8 +570,8 @@
     </p>
 
     <div class="org-src-container">
-    <pre class="src src-emacs-lisp">(<span style="color: #c678dd; font-weight: bold;">require</span> '<span style="color: #da8548; font-weight: bold;">buffer-watcher</span>)
-    (add-to-list 'buffer-watcher-commands '(<span style="color: #98be65;">"Lessc hook"</span> less-css-mode <span style="color: #98be65;">"~/projects/proj/"</span> <span style="color: #98be65;">"lessc % &gt; style.css"</span>))
+    <pre class="src src-emacs-lisp">(<span style="color: #FF8080;">require</span> '<span style="color: #AAFFE4;">buffer-watcher</span>)
+    (add-to-list 'buffer-watcher-commands '(<span style="color: #FFE9AA;">"Lessc hook"</span> less-css-mode <span style="color: #FFE9AA;">"~/projects/proj/"</span> <span style="color: #FFE9AA;">"lessc % &gt; style.css"</span>))
     </pre>
     </div>
 
@@ -586,7 +586,7 @@
     </p>
 
 
-    <div class="figure">
+    <div id="orga9b29ac" class="figure">
     <p><img src="../images/buffer-watcher.png" alt="buffer-watcher.png" />
     </p>
     </div>
@@ -715,28 +715,28 @@
 
 
     <div class="org-src-container">
-    <pre class="src src-emacs-lisp">(<span style="color: #c678dd; font-weight: bold;">require</span> '<span style="color: #da8548; font-weight: bold;">projectile</span>)
+    <pre class="src src-emacs-lisp">(<span style="color: #FF8080;">require</span> '<span style="color: #AAFFE4;">projectile</span>)
 
-    (<span style="color: #c678dd; font-weight: bold;">defun</span> <span style="color: #61afef;">noccur-dired</span> (regexp <span style="color: #61afef;">&amp;optional</span> nlines)
-    <span style="color: #9eac8c;">"Perform `</span><span style="color: #da8548; font-weight: bold;">multi-occur</span><span style="color: #9eac8c;">' with REGEXP in all dired marked files.</span>
-    <span style="color: #9eac8c;">When called with a prefix argument NLINES, display NLINES lines before and after."</span>
-    (<span style="color: #c678dd; font-weight: bold;">interactive</span> (occur-read-primary-args))
+    (<span style="color: #FF8080;">defun</span> <span style="color: #C991E1;">noccur-dired</span> (regexp <span style="color: #91DDFF;">&amp;optional</span> nlines)
+    <span style="color: #858FA5;">"Perform `</span><span style="color: #AAFFE4;">multi-occur</span><span style="color: #858FA5;">' with REGEXP in all dired marked files.</span>
+    <span style="color: #858FA5;">When called with a prefix argument NLINES, display NLINES lines before and after."</span>
+    (<span style="color: #FF8080;">interactive</span> (occur-read-primary-args))
     (multi-occur (mapcar #'find-file (dired-get-marked-files)) regexp nlines))
 
-    (<span style="color: #c678dd; font-weight: bold;">defun</span> <span style="color: #61afef;">noccur-project</span> (regexp <span style="color: #61afef;">&amp;optional</span> nlines)
-    <span style="color: #9eac8c;">"Perform `</span><span style="color: #da8548; font-weight: bold;">multi-occur</span><span style="color: #9eac8c;">' in the current project files."</span>
-    (<span style="color: #c678dd; font-weight: bold;">interactive</span> (occur-read-primary-args))
-    (<span style="color: #c678dd; font-weight: bold;">let*</span> ((directory (read-directory-name <span style="color: #98be65;">"Search in directory: "</span>))
-    (files (<span style="color: #c678dd; font-weight: bold;">if</span> (<span style="color: #c678dd; font-weight: bold;">and</span> directory (not (string= directory (projectile-project-root))))
+    (<span style="color: #FF8080;">defun</span> <span style="color: #C991E1;">noccur-project</span> (regexp <span style="color: #91DDFF;">&amp;optional</span> nlines)
+    <span style="color: #858FA5;">"Perform `</span><span style="color: #AAFFE4;">multi-occur</span><span style="color: #858FA5;">' in the current project files."</span>
+    (<span style="color: #FF8080;">interactive</span> (occur-read-primary-args))
+    (<span style="color: #FF8080;">let*</span> ((directory (read-directory-name <span style="color: #FFE9AA;">"Search in directory: "</span>))
+    (files (<span style="color: #FF8080;">if</span> (<span style="color: #FF8080;">and</span> directory (not (string= directory (projectile-project-root))))
     (projectile-files-in-project-directory directory)
     (projectile-current-project-files)))
     (buffers (mapcar #'find-file 
-    (mapcar #'(lambda (file)
+    (mapcar #'(<span style="color: #FF8080;">lambda</span> (file)
     (expand-file-name file (projectile-project-root)))
     files))))
     (multi-occur buffers regexp nlines)))
 
-    (<span style="color: #c678dd; font-weight: bold;">provide</span> '<span style="color: #da8548; font-weight: bold;">noccur</span>)
+    (<span style="color: #FF8080;">provide</span> '<span style="color: #AAFFE4;">noccur</span>)
     </pre>
     </div>
 
@@ -782,14 +782,14 @@
     </p>
 
     <div class="org-src-container">
-    <pre class="src src-emacs-lisp">(<span style="color: #c678dd; font-weight: bold;">defun</span> <span style="color: #61afef;">set-selected-frame-dark</span> ()
-    (<span style="color: #c678dd; font-weight: bold;">interactive</span>)
-    (<span style="color: #c678dd; font-weight: bold;">let</span> ((frame-name (get-frame-name (selected-frame))))
-    (call-process-shell-command (concat <span style="color: #98be65;">"xprop -f _GTK_THEME_VARIANT 8u -set _GTK_THEME_VARIANT \"dark\" -name \""</span>
+    <pre class="src src-emacs-lisp">(<span style="color: #FF8080;">defun</span> <span style="color: #C991E1;">set-selected-frame-dark</span> ()
+    (<span style="color: #FF8080;">interactive</span>)
+    (<span style="color: #FF8080;">let</span> ((frame-name (get-frame-name (selected-frame))))
+    (call-process-shell-command (concat <span style="color: #FFE9AA;">"xprop -f _GTK_THEME_VARIANT 8u -set _GTK_THEME_VARIANT \"dark\" -name \""</span>
     frame-name
-    <span style="color: #98be65;">"\""</span>))))
+    <span style="color: #FFE9AA;">"\""</span>))))
 
-    (<span style="color: #c678dd; font-weight: bold;">if</span> (window-system)
+    (<span style="color: #FF8080;">if</span> (window-system)
     (set-selected-frame-dark))
     </pre>
     </div>
@@ -833,30 +833,30 @@
     </p>
 
     <div class="org-src-container">
-    <pre class="src src-emacs-lisp">(<span style="color: #c678dd; font-weight: bold;">defun</span> <span style="color: #61afef;">symbol-name-at-point</span> ()
-    (<span style="color: #c678dd; font-weight: bold;">let</span> ((symbol (symbol-at-point)))
-    (<span style="color: #c678dd; font-weight: bold;">if</span> symbol
+    <pre class="src src-emacs-lisp">(<span style="color: #FF8080;">defun</span> <span style="color: #C991E1;">symbol-name-at-point</span> ()
+    (<span style="color: #FF8080;">let</span> ((symbol (symbol-at-point)))
+    (<span style="color: #FF8080;">if</span> symbol
     (symbol-name symbol)
-    <span style="color: #98be65;">""</span>)))
+    <span style="color: #FFE9AA;">""</span>)))
 
-    (<span style="color: #c678dd; font-weight: bold;">defun</span> <span style="color: #61afef;">current-thing</span> ()
-    <span style="color: #9eac8c;">"Return the current \"thing\":</span>
-    <span style="color: #9eac8c;">- if the region is active, return the region's text and deactivate the mark</span>
-    <span style="color: #9eac8c;">- else return the symbol at point or the empty string."</span>
-    (<span style="color: #c678dd; font-weight: bold;">let</span> ((thing (<span style="color: #c678dd; font-weight: bold;">if</span> (region-active-p)
+    (<span style="color: #FF8080;">defun</span> <span style="color: #C991E1;">current-thing</span> ()
+    <span style="color: #858FA5;">"Return the current \"thing\":</span>
+    <span style="color: #858FA5;">- if the region is active, return the region's text and deactivate the mark</span>
+    <span style="color: #858FA5;">- else return the symbol at point or the empty string."</span>
+    (<span style="color: #FF8080;">let</span> ((thing (<span style="color: #FF8080;">if</span> (region-active-p)
     (buffer-substring (region-beginning) (region-end))
     (symbol-name-at-point))))
     (deactivate-mark)
     thing))
 
-    (<span style="color: #c678dd; font-weight: bold;">defun</span> <span style="color: #61afef;">isearch-thing</span> ()
-    <span style="color: #9eac8c;">"Search for the current \"thing\":</span>
-    <span style="color: #9eac8c;">- if the region is active, return the region's text and deactivate the mark</span>
-    <span style="color: #9eac8c;">- else return the symbol at point or the empty string."</span>
-    (<span style="color: #c678dd; font-weight: bold;">interactive</span>)
+    (<span style="color: #FF8080;">defun</span> <span style="color: #C991E1;">isearch-thing</span> ()
+    <span style="color: #858FA5;">"Search for the current \"thing\":</span>
+    <span style="color: #858FA5;">- if the region is active, return the region's text and deactivate the mark</span>
+    <span style="color: #858FA5;">- else return the symbol at point or the empty string."</span>
+    (<span style="color: #FF8080;">interactive</span>)
     (isearch-yank-string (current-thing)))
 
-    (define-key isearch-mode-map (kbd <span style="color: #98be65;">"C-t"</span>) #'isearch-thing)
+    (define-key isearch-mode-map (kbd <span style="color: #FFE9AA;">"C-t"</span>) #'isearch-thing)
     </pre>
     </div>
 
@@ -869,9 +869,9 @@
 
   <item>
     <title>Farewell RMoD</title>
-    <link>http://nicolas-petton.fr/blog/old.html#orgd1c776a</link>
+    <link>http://nicolas-petton.fr/blog/old.html#org6dc40ee</link>
     <author>nico@petton.fr (Nicolas Petton)</author>
-    <guid isPermaLink="false">http://nicolas-petton.fr/blog/old.html#orgd1c776a</guid>
+    <guid isPermaLink="false">http://nicolas-petton.fr/blog/old.html#org6dc40ee</guid>
     <pubDate>Fri, 18 Jul 2014 15:41:00 +0200</pubDate>
 
     <description><![CDATA[<p>
@@ -946,9 +946,9 @@
 
   <item>
     <title>Tide and Marina at RMoD</title>
-    <link>http://nicolas-petton.fr/blog/old.html#orgc99c44b</link>
+    <link>http://nicolas-petton.fr/blog/old.html#orga55bd0a</link>
     <author>nico@petton.fr (Nicolas Petton)</author>
-    <guid isPermaLink="false">http://nicolas-petton.fr/blog/old.html#orgc99c44b</guid>
+    <guid isPermaLink="false">http://nicolas-petton.fr/blog/old.html#orga55bd0a</guid>
     <pubDate>Fri, 04 Jul 2014 15:30:00 +0200</pubDate>
 
     <description><![CDATA[<div class="pubdate">
@@ -974,9 +974,9 @@
 
   <item>
     <title>tmate.io: terminal sharing made easy</title>
-    <link>http://nicolas-petton.fr/blog/old.html#org90837b6</link>
+    <link>http://nicolas-petton.fr/blog/old.html#orgde155a3</link>
     <author>nico@petton.fr (Nicolas Petton)</author>
-    <guid isPermaLink="false">http://nicolas-petton.fr/blog/old.html#org90837b6</guid>
+    <guid isPermaLink="false">http://nicolas-petton.fr/blog/old.html#orgde155a3</guid>
     <pubDate>Thu, 03 Jul 2014 15:34:00 +0200</pubDate>
 
     <description><![CDATA[<div class="pubdate">
@@ -1079,9 +1079,9 @@
 
   <item>
     <title>Per-computer Emacs settings</title>
-    <link>http://nicolas-petton.fr/blog/old.html#org038da1b</link>
+    <link>http://nicolas-petton.fr/blog/old.html#org067a70e</link>
     <author>nico@petton.fr (Nicolas Petton)</author>
-    <guid isPermaLink="false">http://nicolas-petton.fr/blog/old.html#org038da1b</guid>
+    <guid isPermaLink="false">http://nicolas-petton.fr/blog/old.html#org067a70e</guid>
     <pubDate>Wed, 11 Jun 2014 16:36:00 +0200</pubDate>
 
     <description><![CDATA[<div class="pubdate">
@@ -1146,7 +1146,7 @@
     </p>
 
 
-    <div class="figure">
+    <div id="org2a5ce7e" class="figure">
     <p><img src="../images/helios-sunit.png" alt="helios sunit" width="600px" />
     </p>
     <p><span class="figure-number">Figure 6: </span>Helios' test runner</p>
@@ -1222,7 +1222,7 @@
     </p>
 
 
-    <div class="figure">
+    <div id="org137af9e" class="figure">
     <p><img src="../images/nw-helios.png" alt="niflheim" />  
     </p>
     <p><span class="figure-number">Figure 7: </span>Niflheim theme</p>
@@ -1233,7 +1233,7 @@
     run from the `hw-helios-app` branch:
     </p>
 
-    <div class="BASH">
+    <div class="BASH" id="orgf263453">
     <p>
     nw helios.nw
     </p>
@@ -1272,9 +1272,9 @@
 
   <item>
     <title>A dark theme for Emacs</title>
-    <link>http://nicolas-petton.fr/blog/old.html#orgd6b8ba4</link>
+    <link>http://nicolas-petton.fr/blog/old.html#orgfb2a092</link>
     <author>nico@petton.fr (Nicolas Petton)</author>
-    <guid isPermaLink="false">http://nicolas-petton.fr/blog/old.html#orgd6b8ba4</guid>
+    <guid isPermaLink="false">http://nicolas-petton.fr/blog/old.html#orgfb2a092</guid>
     <pubDate>Fri, 28 Mar 2014 15:22:00 +0100</pubDate>
 
     <description><![CDATA[<div class="pubdate">
@@ -1286,17 +1286,17 @@
     </p>
 
 
-    <div class="figure">
+    <div id="orgc438274" class="figure">
     <p><img src="https://raw.githubusercontent.com/niflheim-theme/emacs/master/screenshot.png" alt="niflheim" />
     </p>
     <p><span class="figure-number">Figure 8: </span>Niflheim theme</p>
     </div>
 
 
-    <div id="outline-container-org287956b" class="outline-3">
-    <h3 id="org287956b">The best way to install it is to use the <a href="http://melpa.milkbox.net/">MELPA</a> package archive:</h3>
-    <div class="outline-text-3" id="text-org287956b">
-    <div class="SH">
+    <div id="outline-container-orgd4a5a3c" class="outline-3">
+    <h3 id="orgd4a5a3c">The best way to install it is to use the <a href="http://melpa.milkbox.net/">MELPA</a> package archive:</h3>
+    <div class="outline-text-3" id="text-orgd4a5a3c">
+    <div class="SH" id="orge5248ec">
     <p>
     M-x package-install RET niflheim-theme
     </p>

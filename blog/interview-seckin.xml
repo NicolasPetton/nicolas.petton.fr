@@ -14,9 +14,9 @@
   <link>http://nicolas-petton.fr/blog/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Mon, 24 Aug 2020 14:42:24 +0200</pubDate>
-  <lastBuildDate>Mon, 24 Aug 2020 14:42:24 +0200</lastBuildDate>
-  <generator>Emacs 26.3 Org-mode 9.3.6</generator>
+  <pubDate>Sat, 26 Nov 2022 13:59:38 +0100</pubDate>
+  <lastBuildDate>Sat, 26 Nov 2022 13:59:38 +0100</lastBuildDate>
+  <generator>Emacs 28.1 Org-mode 9.4.4</generator>
   <webMaster>nico@petton.fr (Nicolas Petton)</webMaster>
   <image>
     <url>http://nicolas-petton.fr/images/nicolas-petton.png</url>
@@ -27,9 +27,9 @@
 
   <item>
     <title>Interview with *Seçkin* Savaşçı</title>
-    <link>http://nicolas-petton.fr/blog/interview-seckin.html#orgbccce0b</link>
+    <link>http://nicolas-petton.fr/blog/interview-seckin.html#orga5eaadf</link>
     <author>nico@petton.fr (Nicolas Petton)</author>
-    <guid isPermaLink="false">http://nicolas-petton.fr/blog/interview-seckin.html#orgbccce0b</guid>
+    <guid isPermaLink="false">http://nicolas-petton.fr/blog/interview-seckin.html#orga5eaadf</guid>
     <pubDate>Fri, 12 Feb 2016 17:07:00 +0100</pubDate>
 
     <description><![CDATA[<div class="pubdate">
@@ -49,7 +49,7 @@
     </p>
 
 
-    <div class="figure">
+    <div id="org8b88e91" class="figure">
     <p><img src="../images/seckin2.jpg" alt="Seckin image" align="center" />
     </p>
     <p><span class="figure-number">Figure 1: </span>Seçkin</p>
@@ -77,7 +77,7 @@
     </p>
 
 
-    <div class="figure">
+    <div id="org0193185" class="figure">
     <p><img src="http://i.imgur.com/S6FegGz.jpg" alt="S6FegGz.jpg" />
     </p>
     </div>
@@ -117,7 +117,7 @@
     </p>
 
 
-    <div class="figure">
+    <div id="org6247545" class="figure">
     <p><img src="../images/seckin1.jpg" alt="fika" align="center" />
     </p>
     <p><span class="figure-number">Figure 3: </span>Seçkin and Melike in Uskudar, Istanbul</p>
