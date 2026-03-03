@@ -21,7 +21,7 @@ main {
 }
 
 article, footer {
-  padding-block: 20px;
+  padding-block: 20px 40px;
 }
 
 h1 {
