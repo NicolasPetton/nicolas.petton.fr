@@ -38,3 +38,30 @@ a:hover {
   background: #d8b702;
   color: black;
 }
+
+a.github {
+  color: #ffc8ff;
+}
+
+a.github:hover {
+  background: #ffc8ff;
+  color: black;
+}
+
+a.wakeup {
+  color: #ffd2d2;
+}
+
+a.wakeup:hover {
+  background: #ffd2d2;
+  color: black;
+}
+
+a.discord, a.bluesky {
+  color: #ebebff;
+}
+
+a.discord:hover, a.bluesky:hover {
+  background: #ebebff;
+  color: black;
+}
