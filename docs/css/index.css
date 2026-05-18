@@ -72,3 +72,20 @@ a.discord:hover, a.bluesky:hover {
   background: #ebebff;
   color: black;
 }
+
+a.twitch {
+  color: #cdacff;
+}
+
+a.twitch:hover {
+  background: #a970ff;
+  color: white;
+}
+a.youtube {
+  color: #ffa4ad;
+}
+
+a.youtube:hover {
+  background: #ff273b;
+  color: white;
+}
